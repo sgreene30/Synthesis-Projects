@@ -782,7 +782,6 @@
     )
   )
 
-
   (junction (at 121.92 45.72) (diameter 0) (color 0 0 0 0)
     (uuid 0d2f7036-7128-4c56-aa6c-3ca7fe70c9e9)
   )
@@ -3463,7 +3462,7 @@
   )
 
   (symbol (lib_id "Device:R_US") (at 163.83 130.81 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid aa1278a7-da82-475d-9191-378443c466f0)
     (property "Reference" "R37" (at 163.83 125.73 90)
       (effects (font (size 1.27 1.27)))
