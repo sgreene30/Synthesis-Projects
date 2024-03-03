@@ -1,4 +1,4 @@
-build/common_hello.o: common_hello.cpp \
+build/daisy_common.o: daisy_common.cpp \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h \
@@ -93,7 +93,7 @@ build/common_hello.o: common_hello.cpp \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h \
- ../../DaisyExamples/libDaisy//src/daisy_seed.h \
+ daisy_common.h ../../DaisyExamples/libDaisy//src/daisy_seed.h \
  ../../DaisyExamples/libDaisy//src/daisy.h \
  ../../DaisyExamples/libDaisy//src/daisy_core.h \
  ../../DaisyExamples/libDaisy//src/version.h \
@@ -178,62 +178,7 @@ build/common_hello.o: common_hello.cpp \
  ../../DaisyExamples/libDaisy//src/util/VoctCalibration.h \
  ../../DaisyExamples/libDaisy//src/util/WaveTableLoader.h \
  ../../DaisyExamples/libDaisy//src/sys/fatfs.h \
- ../../DaisyExamples/libDaisy//src/util/WavWriter.h \
- ../../DaisyExamples/DaisySP//Source/daisysp.h \
- ../../DaisyExamples/DaisySP//Source/Control/adenv.h \
- ../../DaisyExamples/DaisySP//Source/Control/adsr.h \
- ../../DaisyExamples/DaisySP//Source/Control/phasor.h \
- ../../DaisyExamples/DaisySP//Source/Drums/analogbassdrum.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h \
- ../../DaisyExamples/DaisySP//Source/Utility/dsp.h \
- ../../DaisyExamples/DaisySP//Source/Filters/svf.h \
- ../../DaisyExamples/DaisySP//Source/Drums/analogsnaredrum.h \
- ../../DaisyExamples/DaisySP//Source/Drums/hihat.h \
- ../../DaisyExamples/DaisySP//Source/Drums/synthbassdrum.h \
- ../../DaisyExamples/DaisySP//Source/Drums/synthsnaredrum.h \
- ../../DaisyExamples/DaisySP//Source/Dynamics/crossfade.h \
- ../../DaisyExamples/DaisySP//Source/Dynamics/limiter.h \
- ../../DaisyExamples/DaisySP//Source/Effects/autowah.h \
- ../../DaisyExamples/DaisySP//Source/Effects/chorus.h \
- ../../DaisyExamples/DaisySP//Source/Utility/delayline.h \
- ../../DaisyExamples/DaisySP//Source/Effects/decimator.h \
- ../../DaisyExamples/DaisySP//Source/Effects/flanger.h \
- ../../DaisyExamples/DaisySP//Source/Effects/overdrive.h \
- ../../DaisyExamples/DaisySP//Source/Effects/pitchshifter.h \
- ../../DaisyExamples/DaisySP//Source/Effects/phaser.h \
- ../../DaisyExamples/DaisySP//Source/Effects/sampleratereducer.h \
- ../../DaisyExamples/DaisySP//Source/Effects/tremolo.h \
- ../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h \
- ../../DaisyExamples/DaisySP//Source/Utility/dcblock.h \
- ../../DaisyExamples/DaisySP//Source/Filters/onepole.h \
- ../../DaisyExamples/DaisySP//Source/Filters/fir.h \
- ../../DaisyExamples/DaisySP//Source/Filters/soap.h \
- ../../DaisyExamples/DaisySP//Source/Noise/clockednoise.h \
- ../../DaisyExamples/DaisySP//Source/Noise/dust.h \
- ../../DaisyExamples/DaisySP//Source/Noise/fractal_noise.h \
- ../../DaisyExamples/DaisySP//Source/Noise/grainlet.h \
- ../../DaisyExamples/DaisySP//Source/Noise/particle.h \
- ../../DaisyExamples/DaisySP//Source/Noise/whitenoise.h \
- ../../DaisyExamples/DaisySP//Source/PhysicalModeling/drip.h \
- ../../DaisyExamples/DaisySP//Source/PhysicalModeling/KarplusString.h \
- ../../DaisyExamples/DaisySP//Source/Filters/onepole.h \
- ../../DaisyExamples/DaisySP//Source/PhysicalModeling/modalvoice.h \
- ../../DaisyExamples/DaisySP//Source/PhysicalModeling/resonator.h \
- ../../DaisyExamples/DaisySP//Source/PhysicalModeling/stringvoice.h \
- ../../DaisyExamples/DaisySP//Source/Sampling/granularplayer.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/fm2.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/formantosc.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/harmonic_osc.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/oscillatorbank.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/variablesawosc.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/variableshapeosc.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/vosim.h \
- ../../DaisyExamples/DaisySP//Source/Synthesis/zoscillator.h \
- ../../DaisyExamples/DaisySP//Source/Utility/looper.h \
- ../../DaisyExamples/DaisySP//Source/Utility/maytrig.h \
- ../../DaisyExamples/DaisySP//Source/Utility/metro.h \
- ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h \
- ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h
+ ../../DaisyExamples/libDaisy//src/util/WavWriter.h
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h:
@@ -328,6 +273,7 @@ build/common_hello.o: common_hello.cpp \
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h:
+daisy_common.h:
 ../../DaisyExamples/libDaisy//src/daisy_seed.h:
 ../../DaisyExamples/libDaisy//src/daisy.h:
 ../../DaisyExamples/libDaisy//src/daisy_core.h:
@@ -414,58 +360,3 @@ build/common_hello.o: common_hello.cpp \
 ../../DaisyExamples/libDaisy//src/util/WaveTableLoader.h:
 ../../DaisyExamples/libDaisy//src/sys/fatfs.h:
 ../../DaisyExamples/libDaisy//src/util/WavWriter.h:
-../../DaisyExamples/DaisySP//Source/daisysp.h:
-../../DaisyExamples/DaisySP//Source/Control/adenv.h:
-../../DaisyExamples/DaisySP//Source/Control/adsr.h:
-../../DaisyExamples/DaisySP//Source/Control/phasor.h:
-../../DaisyExamples/DaisySP//Source/Drums/analogbassdrum.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h:
-../../DaisyExamples/DaisySP//Source/Utility/dsp.h:
-../../DaisyExamples/DaisySP//Source/Filters/svf.h:
-../../DaisyExamples/DaisySP//Source/Drums/analogsnaredrum.h:
-../../DaisyExamples/DaisySP//Source/Drums/hihat.h:
-../../DaisyExamples/DaisySP//Source/Drums/synthbassdrum.h:
-../../DaisyExamples/DaisySP//Source/Drums/synthsnaredrum.h:
-../../DaisyExamples/DaisySP//Source/Dynamics/crossfade.h:
-../../DaisyExamples/DaisySP//Source/Dynamics/limiter.h:
-../../DaisyExamples/DaisySP//Source/Effects/autowah.h:
-../../DaisyExamples/DaisySP//Source/Effects/chorus.h:
-../../DaisyExamples/DaisySP//Source/Utility/delayline.h:
-../../DaisyExamples/DaisySP//Source/Effects/decimator.h:
-../../DaisyExamples/DaisySP//Source/Effects/flanger.h:
-../../DaisyExamples/DaisySP//Source/Effects/overdrive.h:
-../../DaisyExamples/DaisySP//Source/Effects/pitchshifter.h:
-../../DaisyExamples/DaisySP//Source/Effects/phaser.h:
-../../DaisyExamples/DaisySP//Source/Effects/sampleratereducer.h:
-../../DaisyExamples/DaisySP//Source/Effects/tremolo.h:
-../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h:
-../../DaisyExamples/DaisySP//Source/Utility/dcblock.h:
-../../DaisyExamples/DaisySP//Source/Filters/onepole.h:
-../../DaisyExamples/DaisySP//Source/Filters/fir.h:
-../../DaisyExamples/DaisySP//Source/Filters/soap.h:
-../../DaisyExamples/DaisySP//Source/Noise/clockednoise.h:
-../../DaisyExamples/DaisySP//Source/Noise/dust.h:
-../../DaisyExamples/DaisySP//Source/Noise/fractal_noise.h:
-../../DaisyExamples/DaisySP//Source/Noise/grainlet.h:
-../../DaisyExamples/DaisySP//Source/Noise/particle.h:
-../../DaisyExamples/DaisySP//Source/Noise/whitenoise.h:
-../../DaisyExamples/DaisySP//Source/PhysicalModeling/drip.h:
-../../DaisyExamples/DaisySP//Source/PhysicalModeling/KarplusString.h:
-../../DaisyExamples/DaisySP//Source/Filters/onepole.h:
-../../DaisyExamples/DaisySP//Source/PhysicalModeling/modalvoice.h:
-../../DaisyExamples/DaisySP//Source/PhysicalModeling/resonator.h:
-../../DaisyExamples/DaisySP//Source/PhysicalModeling/stringvoice.h:
-../../DaisyExamples/DaisySP//Source/Sampling/granularplayer.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/fm2.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/formantosc.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/harmonic_osc.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/oscillatorbank.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/variablesawosc.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/variableshapeosc.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/vosim.h:
-../../DaisyExamples/DaisySP//Source/Synthesis/zoscillator.h:
-../../DaisyExamples/DaisySP//Source/Utility/looper.h:
-../../DaisyExamples/DaisySP//Source/Utility/maytrig.h:
-../../DaisyExamples/DaisySP//Source/Utility/metro.h:
-../../DaisyExamples/DaisySP//Source/Utility/samplehold.h:
-../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h:
