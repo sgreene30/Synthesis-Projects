@@ -1,23 +1,7 @@
 #include "daisy_seed.h"
-#include <vector>
 using namespace daisy::seed;
 using namespace daisy;
 
-struct cv
-{
-    int user_name;
-    int jack;
-    int adc_channel_num;
-    Pin pin;
-};
-struct jack_gpio
-{
-    int user_name;
-    int jack;
-    int direction;
-    Pin pin;
-    GPIO gpio;
-};
 
 namespace daisy
 {
@@ -27,9 +11,6 @@ class daisyCommon
     public:
     daisyCommon() {}
     ~daisyCommon() {}
-
-    std::vector<struct cv> cvs;
-    std::vector<struct jack_gpio> jack_gpios;
 
     enum jacks
     {
@@ -57,26 +38,8 @@ class daisyCommon
     };
     enum jack_config
     {
-        audio_enable = 0,
-        dac_enable,
-        gate_enable,
-        gpio_enable,
-        adc_enable
+        audio_enable = 0, dac_enable, gate_enable, gpio_enable, adc_enable, disable
     };
-
-    struct jack_configs
-    {
-        int out_1 = audio_enable;
-        int out_2 = audio_enable;
-        int gate_1_in_4 = adc_enable;
-        int gate_2_in_8 = adc_enable;
-        int in_1 = adc_enable;
-        int in_2 = adc_enable;
-        int in_3 = adc_enable;
-        int in_5 = adc_enable;
-        int in_6 = adc_enable;
-        int in_7 = adc_enable;
-    }jack_config;
 
     struct input_configs
     {
@@ -107,11 +70,13 @@ class daisyCommon
     knobs knob;
 
     void Init(bool boost = false);
-    void add_cv(int user_name, int jack);
-    void add_jack_gpio(int user_name, int jack, int direction);
     void add_knob(int user_name, int knob_num);
-    float get_knob_value(int user_name);
+    float get_knob(int user_name);
     void print_knob();
+    void add_cv(int user_name, int jack_num);
+    float get_cv(int user_name);
+    void add_dual_control(int user_name, int jack_num, int knob_num);
+    float get_dual_control(int user_name);
 
     //void add_dac(int user_name, int jack);
     DaisySeed seed;
@@ -132,7 +97,37 @@ class daisyCommon
         knob_6_user_name = -1, 
         knob_7_user_name = -1, 
         knob_8_user_name = -1;
+    int jack_1_user_name = -1,
+        jack_2_user_name = -1,
+        jack_3_user_name = -1,
+        jack_4_user_name = -1,
+        jack_5_user_name = -1,
+        jack_6_user_name = -1,
+        jack_7_user_name = -1,
+        jack_8_user_name = -1;
+    int out_1_mode = audio_enable;
+    int out_2_mode = audio_enable;
+    int gate_1_in_4_mode = disable;
+    int gate_2_in_8_mode = disable;
+    int in_1_mode = disable;
+    int in_2_mode = disable;
+    int in_3_mode = disable;
+    int in_5_mode = disable;
+    int in_6_mode = disable;
+    int in_7_mode = disable;
+    int in_1_adc_chan = -1,
+        in_2_adc_chan = -1,
+        in_3_adc_chan = -1,
+        in_4_adc_chan = -1,
+        in_5_adc_chan = -1,
+        in_6_adc_chan = -1,
+        in_7_adc_chan = -1,
+        in_8_adc_chan = -1;
+
     int get_mux(int knob_user_name);
-    int get_adc_chan(int knob_user_name);
+    int get_knob_adc_chan(int knob_user_name);
+    int get_cv_adc_chan(int adc_user_name);
+    int adc_channel_count = 2;
+
 };
 }
