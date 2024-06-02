@@ -1,4 +1,4 @@
-build/daisy_common.o: daisy_common.cpp \
+build/common_hello.o: common_hello.cpp \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h \
@@ -93,7 +93,7 @@ build/daisy_common.o: daisy_common.cpp \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h \
- daisy_common.h ../../DaisyExamples/libDaisy//src/daisy_seed.h \
+ ../../DaisyExamples/libDaisy//src/daisy_seed.h \
  ../../DaisyExamples/libDaisy//src/daisy.h \
  ../../DaisyExamples/libDaisy//src/daisy_core.h \
  ../../DaisyExamples/libDaisy//src/version.h \
@@ -233,7 +233,8 @@ build/daisy_common.o: daisy_common.cpp \
  ../../DaisyExamples/DaisySP//Source/Utility/maytrig.h \
  ../../DaisyExamples/DaisySP//Source/Utility/metro.h \
  ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h \
- ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h
+ ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h \
+ daisy_common.h
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h:
@@ -328,7 +329,6 @@ build/daisy_common.o: daisy_common.cpp \
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h:
-daisy_common.h:
 ../../DaisyExamples/libDaisy//src/daisy_seed.h:
 ../../DaisyExamples/libDaisy//src/daisy.h:
 ../../DaisyExamples/libDaisy//src/daisy_core.h:
@@ -470,3 +470,4 @@ daisy_common.h:
 ../../DaisyExamples/DaisySP//Source/Utility/metro.h:
 ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h:
 ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h:
+daisy_common.h:

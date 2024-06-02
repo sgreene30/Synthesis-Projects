@@ -1,4 +1,4 @@
-build/daisy_common.o: daisy_common.cpp \
+build/fho.o: fho.cpp \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h \
@@ -93,93 +93,7 @@ build/daisy_common.o: daisy_common.cpp \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
  ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h \
- daisy_common.h ../../DaisyExamples/libDaisy//src/daisy_seed.h \
- ../../DaisyExamples/libDaisy//src/daisy.h \
- ../../DaisyExamples/libDaisy//src/daisy_core.h \
- ../../DaisyExamples/libDaisy//src/version.h \
- ../../DaisyExamples/libDaisy//src/sys/system.h \
- ../../DaisyExamples/libDaisy//src/per/tim.h \
- ../../DaisyExamples/libDaisy//src/per/qspi.h \
- ../../DaisyExamples/libDaisy//src/per/dac.h \
- ../../DaisyExamples/libDaisy//src/per/gpio.h \
- ../../DaisyExamples/libDaisy//src/dev/leddriver.h \
- ../../DaisyExamples/libDaisy//src/per/i2c.h \
- ../../DaisyExamples/libDaisy//src/dev/mpr121.h \
- ../../DaisyExamples/libDaisy//src/dev/sdram.h \
- ../../DaisyExamples/libDaisy//src/dev/sr_4021.h \
- ../../DaisyExamples/libDaisy//src/sys/system.h \
- ../../DaisyExamples/libDaisy//src/hid/audio.h \
- ../../DaisyExamples/libDaisy//src/per/sai.h \
- ../../DaisyExamples/libDaisy//src/util/unique_id.h \
- ../../DaisyExamples/libDaisy//src/per/adc.h \
- ../../DaisyExamples/libDaisy//src/per/uart.h \
- ../../DaisyExamples/libDaisy//src/hid/midi.h \
- ../../DaisyExamples/libDaisy//src/util/ringbuffer.h \
- ../../DaisyExamples/libDaisy//src/util/FIFO.h \
- ../../DaisyExamples/libDaisy//src/hid/midi_parser.h \
- ../../DaisyExamples/libDaisy//src/hid/MidiEvent.h \
- ../../DaisyExamples/libDaisy//src/hid/usb_midi.h \
- ../../DaisyExamples/libDaisy//src/hid/usb.h \
- ../../DaisyExamples/libDaisy//src/sys/dma.h \
- ../../DaisyExamples/libDaisy//src/hid/encoder.h \
- ../../DaisyExamples/libDaisy//src/hid/switch.h \
- ../../DaisyExamples/libDaisy//src/hid/switch3.h \
- ../../DaisyExamples/libDaisy//src/hid/ctrl.h \
- ../../DaisyExamples/libDaisy//src/hid/gatein.h \
- ../../DaisyExamples/libDaisy//src/hid/parameter.h \
- ../../DaisyExamples/libDaisy//src/hid/logger.h \
- ../../DaisyExamples/libDaisy//src/hid/logger_impl.h \
- ../../DaisyExamples/libDaisy//src/hid/usb_host.h \
- ../../DaisyExamples/libDaisy//src/per/sdmmc.h \
- ../../DaisyExamples/libDaisy//src/per/spi.h \
- ../../DaisyExamples/libDaisy//src/per/spiMultislave.h \
- ../../DaisyExamples/libDaisy//src/per/rng.h \
- ../../DaisyExamples/libDaisy//src/hid/disp/display.h \
- ../../DaisyExamples/libDaisy//src/util/oled_fonts.h \
- ../../DaisyExamples/libDaisy//src/hid/disp/graphics_common.h \
- ../../DaisyExamples/libDaisy//src/hid/disp/oled_display.h \
- ../../DaisyExamples/libDaisy//src/hid/wavplayer.h \
- ../../DaisyExamples/libDaisy//src/util/wav_format.h \
- ../../DaisyExamples/libDaisy//Middlewares/Third_Party/FatFs/src/ff.h \
- ../../DaisyExamples/libDaisy//Middlewares/Third_Party/FatFs/src/integer.h \
- ../../DaisyExamples/libDaisy//src/sys/ffconf.h \
- ../../DaisyExamples/libDaisy//src/util/bsp_sd_diskio.h \
- ../../DaisyExamples/libDaisy//src/hid/led.h \
- ../../DaisyExamples/libDaisy//src/hid/rgb_led.h \
- ../../DaisyExamples/libDaisy//src/util/color.h \
- ../../DaisyExamples/libDaisy//src/dev/sr_595.h \
- ../../DaisyExamples/libDaisy//src/dev/apds9960.h \
- ../../DaisyExamples/libDaisy//src/dev/codec_pcm3060.h \
- ../../DaisyExamples/libDaisy//src/dev/codec_wm8731.h \
- ../../DaisyExamples/libDaisy//src/dev/dps310.h \
- ../../DaisyExamples/libDaisy//src/dev/lcd_hd44780.h \
- ../../DaisyExamples/libDaisy//src/dev/mcp23x17.h \
- ../../DaisyExamples/libDaisy//src/dev/max11300.h \
- ../../DaisyExamples/libDaisy//src/dev/tlv493d.h \
- ../../DaisyExamples/libDaisy//src/dev/dotstar.h \
- ../../DaisyExamples/libDaisy//src/dev/neopixel.h \
- ../../DaisyExamples/libDaisy//src/dev/neotrellis.h \
- ../../DaisyExamples/libDaisy//src/dev/icm20948.h \
- ../../DaisyExamples/libDaisy//src/ui/ButtonMonitor.h \
- ../../DaisyExamples/libDaisy//src/ui/UiEventQueue.h \
- ../../DaisyExamples/libDaisy//src/ui/../util/scopedirqblocker.h \
- ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/cmsis_gcc.h \
- ../../DaisyExamples/libDaisy//src/ui/../sys/system.h \
- ../../DaisyExamples/libDaisy//src/ui/PotMonitor.h \
- ../../DaisyExamples/libDaisy//src/ui/UI.h \
- ../../DaisyExamples/libDaisy//src/ui/../util/Stack.h \
- ../../DaisyExamples/libDaisy//src/ui/AbstractMenu.h \
- ../../DaisyExamples/libDaisy//src/util/MappedValue.h \
- ../../DaisyExamples/libDaisy//src/util/FixedCapStr.h \
- ../../DaisyExamples/libDaisy//src/ui/FullScreenItemMenu.h \
- ../../DaisyExamples/libDaisy//src/util/CpuLoadMeter.h \
- ../../DaisyExamples/libDaisy//src/util/PersistentStorage.h \
- ../../DaisyExamples/libDaisy//src/per/qspi.h \
- ../../DaisyExamples/libDaisy//src/util/VoctCalibration.h \
- ../../DaisyExamples/libDaisy//src/util/WaveTableLoader.h \
- ../../DaisyExamples/libDaisy//src/sys/fatfs.h \
- ../../DaisyExamples/libDaisy//src/util/WavWriter.h \
- ../../DaisyExamples/DaisySP//Source/daisysp.h \
+ fho.h ../../DaisyExamples/DaisySP//Source/daisysp.h \
  ../../DaisyExamples/DaisySP//Source/Control/adenv.h \
  ../../DaisyExamples/DaisySP//Source/Control/adsr.h \
  ../../DaisyExamples/DaisySP//Source/Control/phasor.h \
@@ -233,7 +147,7 @@ build/daisy_common.o: daisy_common.cpp \
  ../../DaisyExamples/DaisySP//Source/Utility/maytrig.h \
  ../../DaisyExamples/DaisySP//Source/Utility/metro.h \
  ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h \
- ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h
+ ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h multirate.h
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h:
@@ -328,93 +242,7 @@ build/daisy_common.o: daisy_common.cpp \
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
 ../../DaisyExamples/libDaisy//Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hcd.h:
-daisy_common.h:
-../../DaisyExamples/libDaisy//src/daisy_seed.h:
-../../DaisyExamples/libDaisy//src/daisy.h:
-../../DaisyExamples/libDaisy//src/daisy_core.h:
-../../DaisyExamples/libDaisy//src/version.h:
-../../DaisyExamples/libDaisy//src/sys/system.h:
-../../DaisyExamples/libDaisy//src/per/tim.h:
-../../DaisyExamples/libDaisy//src/per/qspi.h:
-../../DaisyExamples/libDaisy//src/per/dac.h:
-../../DaisyExamples/libDaisy//src/per/gpio.h:
-../../DaisyExamples/libDaisy//src/dev/leddriver.h:
-../../DaisyExamples/libDaisy//src/per/i2c.h:
-../../DaisyExamples/libDaisy//src/dev/mpr121.h:
-../../DaisyExamples/libDaisy//src/dev/sdram.h:
-../../DaisyExamples/libDaisy//src/dev/sr_4021.h:
-../../DaisyExamples/libDaisy//src/sys/system.h:
-../../DaisyExamples/libDaisy//src/hid/audio.h:
-../../DaisyExamples/libDaisy//src/per/sai.h:
-../../DaisyExamples/libDaisy//src/util/unique_id.h:
-../../DaisyExamples/libDaisy//src/per/adc.h:
-../../DaisyExamples/libDaisy//src/per/uart.h:
-../../DaisyExamples/libDaisy//src/hid/midi.h:
-../../DaisyExamples/libDaisy//src/util/ringbuffer.h:
-../../DaisyExamples/libDaisy//src/util/FIFO.h:
-../../DaisyExamples/libDaisy//src/hid/midi_parser.h:
-../../DaisyExamples/libDaisy//src/hid/MidiEvent.h:
-../../DaisyExamples/libDaisy//src/hid/usb_midi.h:
-../../DaisyExamples/libDaisy//src/hid/usb.h:
-../../DaisyExamples/libDaisy//src/sys/dma.h:
-../../DaisyExamples/libDaisy//src/hid/encoder.h:
-../../DaisyExamples/libDaisy//src/hid/switch.h:
-../../DaisyExamples/libDaisy//src/hid/switch3.h:
-../../DaisyExamples/libDaisy//src/hid/ctrl.h:
-../../DaisyExamples/libDaisy//src/hid/gatein.h:
-../../DaisyExamples/libDaisy//src/hid/parameter.h:
-../../DaisyExamples/libDaisy//src/hid/logger.h:
-../../DaisyExamples/libDaisy//src/hid/logger_impl.h:
-../../DaisyExamples/libDaisy//src/hid/usb_host.h:
-../../DaisyExamples/libDaisy//src/per/sdmmc.h:
-../../DaisyExamples/libDaisy//src/per/spi.h:
-../../DaisyExamples/libDaisy//src/per/spiMultislave.h:
-../../DaisyExamples/libDaisy//src/per/rng.h:
-../../DaisyExamples/libDaisy//src/hid/disp/display.h:
-../../DaisyExamples/libDaisy//src/util/oled_fonts.h:
-../../DaisyExamples/libDaisy//src/hid/disp/graphics_common.h:
-../../DaisyExamples/libDaisy//src/hid/disp/oled_display.h:
-../../DaisyExamples/libDaisy//src/hid/wavplayer.h:
-../../DaisyExamples/libDaisy//src/util/wav_format.h:
-../../DaisyExamples/libDaisy//Middlewares/Third_Party/FatFs/src/ff.h:
-../../DaisyExamples/libDaisy//Middlewares/Third_Party/FatFs/src/integer.h:
-../../DaisyExamples/libDaisy//src/sys/ffconf.h:
-../../DaisyExamples/libDaisy//src/util/bsp_sd_diskio.h:
-../../DaisyExamples/libDaisy//src/hid/led.h:
-../../DaisyExamples/libDaisy//src/hid/rgb_led.h:
-../../DaisyExamples/libDaisy//src/util/color.h:
-../../DaisyExamples/libDaisy//src/dev/sr_595.h:
-../../DaisyExamples/libDaisy//src/dev/apds9960.h:
-../../DaisyExamples/libDaisy//src/dev/codec_pcm3060.h:
-../../DaisyExamples/libDaisy//src/dev/codec_wm8731.h:
-../../DaisyExamples/libDaisy//src/dev/dps310.h:
-../../DaisyExamples/libDaisy//src/dev/lcd_hd44780.h:
-../../DaisyExamples/libDaisy//src/dev/mcp23x17.h:
-../../DaisyExamples/libDaisy//src/dev/max11300.h:
-../../DaisyExamples/libDaisy//src/dev/tlv493d.h:
-../../DaisyExamples/libDaisy//src/dev/dotstar.h:
-../../DaisyExamples/libDaisy//src/dev/neopixel.h:
-../../DaisyExamples/libDaisy//src/dev/neotrellis.h:
-../../DaisyExamples/libDaisy//src/dev/icm20948.h:
-../../DaisyExamples/libDaisy//src/ui/ButtonMonitor.h:
-../../DaisyExamples/libDaisy//src/ui/UiEventQueue.h:
-../../DaisyExamples/libDaisy//src/ui/../util/scopedirqblocker.h:
-../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/cmsis_gcc.h:
-../../DaisyExamples/libDaisy//src/ui/../sys/system.h:
-../../DaisyExamples/libDaisy//src/ui/PotMonitor.h:
-../../DaisyExamples/libDaisy//src/ui/UI.h:
-../../DaisyExamples/libDaisy//src/ui/../util/Stack.h:
-../../DaisyExamples/libDaisy//src/ui/AbstractMenu.h:
-../../DaisyExamples/libDaisy//src/util/MappedValue.h:
-../../DaisyExamples/libDaisy//src/util/FixedCapStr.h:
-../../DaisyExamples/libDaisy//src/ui/FullScreenItemMenu.h:
-../../DaisyExamples/libDaisy//src/util/CpuLoadMeter.h:
-../../DaisyExamples/libDaisy//src/util/PersistentStorage.h:
-../../DaisyExamples/libDaisy//src/per/qspi.h:
-../../DaisyExamples/libDaisy//src/util/VoctCalibration.h:
-../../DaisyExamples/libDaisy//src/util/WaveTableLoader.h:
-../../DaisyExamples/libDaisy//src/sys/fatfs.h:
-../../DaisyExamples/libDaisy//src/util/WavWriter.h:
+fho.h:
 ../../DaisyExamples/DaisySP//Source/daisysp.h:
 ../../DaisyExamples/DaisySP//Source/Control/adenv.h:
 ../../DaisyExamples/DaisySP//Source/Control/adsr.h:
@@ -470,3 +298,4 @@ daisy_common.h:
 ../../DaisyExamples/DaisySP//Source/Utility/metro.h:
 ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h:
 ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h:
+multirate.h:

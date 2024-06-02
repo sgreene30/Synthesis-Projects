@@ -18,7 +18,7 @@ constexpr Pin IN_4_ADC_PIN = seed::A6;
 constexpr Pin IN_5_ADC_PIN = seed::A1;
 constexpr Pin IN_6_ADC_PIN = seed::A5;
 constexpr Pin IN_7_ADC_PIN = seed::A2;
-constexpr Pin IN_8_ADC_PIN = seed::A8;
+constexpr Pin IN_8_ADC_PIN = seed::A3;
 constexpr Pin GATE_1_IN_4_PIN = seed::D21;
 constexpr Pin GATE_2_IN_8_PIN = seed::D23;
 constexpr Pin IN_1_GPIO_PIN = seed::D15;
@@ -36,19 +36,9 @@ void daisyCommon::add_dual_control(int user_name, int jack_num, int knob_num)
 float daisyCommon::get_dual_control(int user_name)
 {
     float ret;
-    //seed.PrintLine("cv: " FLT_FMT3, FLT_VAR3(get_cv(user_name)));
-    //seed.PrintLine("knob: " FLT_FMT3, FLT_VAR3(get_knob(user_name)));
     ret = get_cv(user_name)-0.5f;
     ret = ret + get_knob(user_name);
-    //seed.PrintLine("ret: " FLT_FMT3, FLT_VAR3(ret));
-    if(ret > 1.0f)
-    {
-        ret = 1.0f;
-    }
-    else if(ret < 0.0f)
-    {
-        ret = 0.0f;
-    }
+    daisysp::fclamp(ret, 0.0f, 1.0f);
     return ret;
 }
 

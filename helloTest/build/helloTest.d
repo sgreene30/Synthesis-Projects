@@ -234,7 +234,7 @@ build/helloTest.o: helloTest.cpp \
  ../../DaisyExamples/DaisySP//Source/Utility/metro.h \
  ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h \
  ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h \
- daisy_common.h
+ daisy_common.h fho.h multirate.h
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h:
@@ -471,3 +471,5 @@ build/helloTest.o: helloTest.cpp \
 ../../DaisyExamples/DaisySP//Source/Utility/samplehold.h:
 ../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h:
 daisy_common.h:
+fho.h:
+multirate.h:
