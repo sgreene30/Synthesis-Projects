@@ -1,11 +1,6 @@
 /*
 * This implements drivers for the Daisy Common Hardware Platform
 *
-*
-*
-*
-*
-*
 */
 
 #include "daisy_seed.h"
