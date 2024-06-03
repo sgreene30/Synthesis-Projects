@@ -1,0 +1,3368 @@
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"fho.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.rodata._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0.str1.4,"aMS",%progbits,1
+  17              		.align	2
+  18              	.LC0:
+  19 0000 3020213D 		.ascii	"0 != state_size_\000"
+  19      20737461 
+  19      74655F73 
+  19      697A655F 
+  19      00
+  20 0011 000000   		.align	2
+  21              	.LC1:
+  22 0014 766F6964 		.ascii	"void daisysp::FIRMemory<0, 0>::Reset()\000"
+  22      20646169 
+  22      73797370 
+  22      3A3A4649 
+  22      524D656D 
+  23 003b 00       		.align	2
+  24              	.LC2:
+  25 003c 2E2E2F2E 		.ascii	"../../../../DaisyExamples/DaisySP//Source/Filters/f"
+  25      2E2F2E2E 
+  25      2F2E2E2F 
+  25      44616973 
+  25      79457861 
+  26 006f 69722E68 		.ascii	"ir.h\000"
+  26      00
+  27              		.section	.text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0,"ax",%progbits
+  28              		.align	1
+  29              		.p2align 2,,3
+  30              		.arch armv7e-m
+  31              		.syntax unified
+  32              		.thumb
+  33              		.thumb_func
+  34              		.fpu fpv5-d16
+  36              	_ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:
+  37              	.LFB4078:
+  38              		.file 1 "../../../../DaisyExamples/DaisySP//Source/Filters/fir.h"
+   1:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** /*
+   2:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** Copyright (c) 2020 Electrosmith, Corp, Alexander Petrov-Savchenko
+   3:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+   4:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** Use of this source code is governed by an MIT-style
+   5:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** license that can be found in the LICENSE file or at
+   6:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** https://opensource.org/licenses/MIT.
+   7:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** */
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 2
+
+
+   8:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+   9:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #pragma once
+  10:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #ifndef DSY_FIRFILTER_H
+  11:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #define DSY_FIRFILTER_H
+  12:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  13:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #include <cstdint>
+  14:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #include <cstring> // for memset
+  15:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #include <cassert>
+  16:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #include <utility>
+  17:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  18:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #ifdef USE_ARM_DSP
+  19:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #include <arm_math.h> // required for platform-optimized version
+  20:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #endif
+  21:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  22:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** /**   @brief FIR Filter implementation, generic and ARM CMSIS DSP based
+  23:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  *    @author Alexander Petrov-Savchenko (axp@soft-amp.com)
+  24:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  *    @date February 2021
+  25:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  */
+  26:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  27:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** namespace daisysp
+  28:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** {
+  29:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** /* use this as a template parameter to indicate user-provided memory storage */
+  30:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** #define FIRFILTER_USER_MEMORY 0, 0
+  31:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  32:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** /** Helper class that defines the memory model - internal or user-provided 
+  33:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * \param max_size - maximal filter length
+  34:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * \param max_block - maximal length of the block processing
+  35:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * if both parameters are 0, does NOT allocate any memory and instead
+  36:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * requires user-provided memory blocks to be passed as parameters.
+  37:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  *
+  38:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * Not intended to be used directly, so constructor is not exposed
+  39:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  */
+  40:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** template <size_t max_size, size_t max_block>
+  41:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** struct FIRMemory
+  42:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** {
+  43:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Public part of the API to be passed through to the FIR users */
+  44:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   public:
+  45:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Reset the internal filter state (but not the coefficients) */
+  46:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     void Reset() { memset(state_, 0, state_size_ * sizeof(state_[0])); }
+  47:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  48:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  49:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   protected:
+  50:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     FIRMemory() : state_{0}, coefs_{0}, size_(0) {}
+  51:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  52:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Expression for the maximum block size */
+  53:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     static constexpr size_t MaxBlock() { return max_block; }
+  54:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  55:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /** Configure the filter coefficients
+  56:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param coefs - pointer to coefficients (tail-first order)
+  57:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param size - number of coefficients pointed by coefs (filter length)
+  58:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param reverse - flag to perform reversing of the filter
+  59:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \return true if all conditions are met and the filter is configured
+  60:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      */
+  61:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     bool SetCoefs(const float coefs[], size_t size, bool reverse)
+  62:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+  63:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* truncate silently */
+  64:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         size_ = DSY_MIN(size, max_size);
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 3
+
+
+  65:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  66:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         if(reverse)
+  67:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+  68:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /* reverse the IR */
+  69:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             for(size_t i = 0; i < size_; i++)
+  70:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             {
+  71:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****                 /* start from size, not size_! */
+  72:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****                 coefs_[i] = coefs[size - 1u - i];
+  73:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             }
+  74:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+  75:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         else
+  76:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+  77:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /* just copy as is */
+  78:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             memcpy(coefs_, coefs, size_ * sizeof(coefs[0]));
+  79:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+  80:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  81:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         return true;
+  82:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+  83:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  84:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     static constexpr size_t state_size_ = max_size + max_block - 1u;
+  85:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     float                   state_[state_size_]; /*< Internal state buffer */
+  86:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     float                   coefs_[max_size];    /*< Filter coefficients */
+  87:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t                  size_; /*< Active filter length (<= max_size) */
+  88:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** };
+  89:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+  90:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** /* Specialization for user-provided memory */
+  91:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** template <>
+  92:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** struct FIRMemory<FIRFILTER_USER_MEMORY>
+  93:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** {
+  94:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Public part of the API to be passed through to the FIRFilter user */
+  95:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   public:
+  96:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /** Set user-provided state buffer
+  97:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param state - pointer to the allocated memory block
+  98:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param length - length of the provided memory block (in elements)
+  99:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * The length should be determined as follows 
+ 100:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * length >= max_filter_size + max_processing_block - 1
+ 101:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      */
+ 102:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     void SetStateBuffer(float state[], size_t length)
+ 103:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 104:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_      = state;
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_size_ = length;
+ 106:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 107:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Reset the internal filter state (but not the coefficients) */
+ 108:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     void Reset()
+  39              		.loc 1 108 10 view -0
+  40              		.cfi_startproc
+  41              		@ Volatile: function does not return.
+  42              		@ args = 0, pretend = 0, frame = 0
+  43              		@ frame_needed = 0, uses_anonymous_args = 0
+  44              	.LVL0:
+  45              		.loc 1 108 10 is_stmt 0 view .LVU1
+  46 0000 08B5     		push	{r3, lr}
+  47              		.cfi_def_cfa_offset 8
+  48              		.cfi_offset 3, -8
+  49              		.cfi_offset 14, -4
+ 109:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 110:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != state_);
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 4
+
+
+ 111:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(0 != state_size_);
+  50              		.loc 1 111 9 view .LVU2
+  51 0002 034A     		ldr	r2, .L4
+  52 0004 6F21     		movs	r1, #111
+  53 0006 034B     		ldr	r3, .L4+4
+  54 0008 0348     		ldr	r0, .L4+8
+  55 000a FFF7FEFF 		bl	__assert_func
+  56              	.LVL1:
+  57              	.L5:
+  58 000e 00BF     		.align	2
+  59              	.L4:
+  60 0010 14000000 		.word	.LC1
+  61 0014 00000000 		.word	.LC0
+  62 0018 3C000000 		.word	.LC2
+  63              		.cfi_endproc
+  64              	.LFE4078:
+  66              		.section	.rodata._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0.str1.4,"aMS",%progbits,1
+  67              		.align	2
+  68              	.LC3:
+  69 0000 6E756C6C 		.ascii	"nullptr != coefs || 0 == size\000"
+  69      70747220 
+  69      213D2063 
+  69      6F656673 
+  69      207C7C20 
+  70 001e 0000     		.align	2
+  71              	.LC4:
+  72 0020 626F6F6C 		.ascii	"bool daisysp::FIRMemory<0, 0>::SetCoefs(const float"
+  72      20646169 
+  72      73797370 
+  72      3A3A4649 
+  72      524D656D 
+  73 0053 2A2C2073 		.ascii	"*, size_t, bool)\000"
+  73      697A655F 
+  73      742C2062 
+  73      6F6F6C29 
+  73      00
+  74              		.section	.text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0,"ax",%progbits
+  75              		.align	1
+  76              		.p2align 2,,3
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  80              		.fpu fpv5-d16
+  82              	_ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:
+  83              	.LFB4079:
+ 112:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         if(nullptr != state_)
+ 113:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             memset(state_, 0, state_size_ * sizeof(state_[0]));
+ 115:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 116:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 117:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 118:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   protected:
+ 119:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     FIRMemory() : state_(nullptr), coefs_(nullptr), size_(0), state_size_(0) {}
+ 120:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 121:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Expression for the maximum processing block size currently supported */
+ 122:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t MaxBlock() const
+ 123:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 5
+
+
+ 124:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         return state_size_ + 1u > size_ ? state_size_ + 1u - size_ : 0;
+ 125:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 126:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 127:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /** Configure the filter coefficients
+ 128:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param coefs - pointer to coefficients (tail-first order)
+ 129:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param size - number of coefficients pointed by coefs (filter length)
+ 130:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param reverse - flag to perform reversing of the filter
+ 131:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \return true if all conditions are met and the filter is configured
+ 132:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      */
+ 133:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     bool SetCoefs(const float coefs[], size_t size, bool reverse)
+  84              		.loc 1 133 10 is_stmt 1 view -0
+  85              		.cfi_startproc
+  86              		@ Volatile: function does not return.
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89              	.LVL2:
+  90              		.loc 1 133 10 is_stmt 0 view .LVU4
+  91 0000 08B5     		push	{r3, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 3, -8
+  94              		.cfi_offset 14, -4
+ 134:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 135:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* reversing of external IR is not supported*/
+ 136:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(false == reverse);
+ 137:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != coefs || 0 == size);
+  95              		.loc 1 137 9 view .LVU5
+  96 0002 034A     		ldr	r2, .L8
+  97 0004 8921     		movs	r1, #137
+  98 0006 034B     		ldr	r3, .L8+4
+  99 0008 0348     		ldr	r0, .L8+8
+ 100 000a FFF7FEFF 		bl	__assert_func
+ 101              	.LVL3:
+ 102              	.L9:
+ 103 000e 00BF     		.align	2
+ 104              	.L8:
+ 105 0010 20000000 		.word	.LC4
+ 106 0014 00000000 		.word	.LC3
+ 107 0018 3C000000 		.word	.LC2
+ 108              		.cfi_endproc
+ 109              	.LFE4079:
+ 111              		.section	.rodata._ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0.str1.4,"aMS",%progbi
+ 112              		.align	2
+ 113              	.LC5:
+ 114 0000 73697A65 		.ascii	"size_ > 0u\000"
+ 114      5F203E20 
+ 114      307500
+ 115 000b 00       		.align	2
+ 116              	.LC6:
+ 117 000c 666C6F61 		.ascii	"float daisysp::FIRFilterImplGeneric<max_size, max_b"
+ 117      74206461 
+ 117      69737973 
+ 117      703A3A46 
+ 117      49524669 
+ 118 003f 6C6F636B 		.ascii	"lock>::Process(float) [with unsigned int max_size ="
+ 118      3E3A3A50 
+ 118      726F6365 
+ 118      73732866 
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 6
+
+
+ 118      6C6F6174 
+ 119 0072 20303B20 		.ascii	" 0; unsigned int max_block = 0]\000"
+ 119      756E7369 
+ 119      676E6564 
+ 119      20696E74 
+ 119      206D6178 
+ 120              		.section	.text._ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0,"ax",%progbits
+ 121              		.align	1
+ 122              		.p2align 2,,3
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.fpu fpv5-d16
+ 128              	_ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0:
+ 129              	.LFB4080:
+ 138:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 139:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         if(false == reverse && (nullptr != coefs || 0 == size))
+ 140:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 141:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             coefs_ = coefs;
+ 142:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             size_  = size;
+ 143:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             return true;
+ 144:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 145:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 146:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         return false;
+ 147:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 148:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 149:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Internal member variables */
+ 150:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 151:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     float*       state_;      /*< Internal state buffer */
+ 152:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     const float* coefs_;      /*< Filter coefficients */
+ 153:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t       size_;       /*< number of filter coefficients */
+ 154:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t       state_size_; /*< length of the state buffer */
+ 155:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** };
+ 156:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 157:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 158:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** /** Generic FIR implementation is always available
+ 159:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * \param max_size - maximal filter length
+ 160:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * \param max_block - maximal block size for ProcessBlock()
+ 161:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * if both parameters are 0 (via FIRFILTER_USER_MEMORY macro)
+ 162:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * Assumes the user will provide own memory buffers
+ 163:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * via SetIR() and SetStateBuffer() functions
+ 164:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  * Otherwise statically allocates the necessary buffers itself
+ 165:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****  */
+ 166:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** template <size_t max_size, size_t max_block>
+ 167:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** class FIRFilterImplGeneric : public FIRMemory<max_size, max_block>
+ 168:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** {
+ 169:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   private:
+ 170:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     using FIRMem = FIRMemory<max_size, max_block>; // just a shorthand
+ 171:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 172:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   public:
+ 173:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Default constructor */
+ 174:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     FIRFilterImplGeneric() {}
+ 175:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 176:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Reset filter state (but not the coefficients) */
+ 177:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     using FIRMem::Reset;
+ 178:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 179:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* FIR Latency is always 0, but API is unified with FFT and fast convolution */
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 7
+
+
+ 180:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     static constexpr size_t GetLatency() { return 0; }
+ 181:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 182:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Process one sample at a time */
+ 183:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     float Process(float in)
+ 130              		.loc 1 183 11 is_stmt 1 view -0
+ 131              		.cfi_startproc
+ 132              		@ Volatile: function does not return.
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135              	.LVL4:
+ 136              		.loc 1 183 11 is_stmt 0 view .LVU7
+ 137 0000 08B5     		push	{r3, lr}
+ 138              		.cfi_def_cfa_offset 8
+ 139              		.cfi_offset 3, -8
+ 140              		.cfi_offset 14, -4
+ 184:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(size_ > 0u);
+ 141              		.loc 1 185 9 view .LVU8
+ 142 0002 034A     		ldr	r2, .L12
+ 143 0004 B921     		movs	r1, #185
+ 144 0006 034B     		ldr	r3, .L12+4
+ 145 0008 0348     		ldr	r0, .L12+8
+ 146 000a FFF7FEFF 		bl	__assert_func
+ 147              	.LVL5:
+ 148              	.L13:
+ 149 000e 00BF     		.align	2
+ 150              	.L12:
+ 151 0010 0C000000 		.word	.LC6
+ 152 0014 00000000 		.word	.LC5
+ 153 0018 3C000000 		.word	.LC2
+ 154              		.cfi_endproc
+ 155              	.LFE4080:
+ 157              		.section	.text._ZN3fho4InitEf,"ax",%progbits
+ 158              		.align	1
+ 159              		.p2align 2,,3
+ 160              		.global	_ZN3fho4InitEf
+ 161              		.syntax unified
+ 162              		.thumb
+ 163              		.thumb_func
+ 164              		.fpu fpv5-d16
+ 166              	_ZN3fho4InitEf:
+ 167              	.LVL6:
+ 168              	.LFB3515:
+ 169              		.file 2 "fho.cpp"
+   1:fho.cpp       **** #include "fho.h"
+   2:fho.cpp       **** #include <cmath>
+   3:fho.cpp       **** 
+   4:fho.cpp       **** void fho::Init(float sample_rate)
+   5:fho.cpp       **** {
+ 170              		.loc 2 5 1 is_stmt 1 view -0
+ 171              		.cfi_startproc
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+   6:fho.cpp       ****     tanh_gain = 0.0f;
+ 174              		.loc 2 6 5 view .LVU10
+   5:fho.cpp       ****     tanh_gain = 0.0f;
+ 175              		.loc 2 5 1 is_stmt 0 view .LVU11
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 8
+
+
+ 176 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 177              		.cfi_def_cfa_offset 24
+ 178              		.cfi_offset 3, -24
+ 179              		.cfi_offset 4, -20
+ 180              		.cfi_offset 5, -16
+ 181              		.cfi_offset 6, -12
+ 182              		.cfi_offset 7, -8
+ 183              		.cfi_offset 14, -4
+ 184              		.loc 2 6 15 view .LVU12
+ 185 0002 0025     		movs	r5, #0
+   5:fho.cpp       ****     tanh_gain = 0.0f;
+ 186              		.loc 2 5 1 view .LVU13
+ 187 0004 0446     		mov	r4, r0
+   7:fho.cpp       ****     folder.Init();
+   8:fho.cpp       ****     osc.Init(sample_rate);
+ 188              		.loc 2 8 13 view .LVU14
+ 189 0006 00F11006 		add	r6, r0, #16
+ 190              	.LBB164:
+ 191              	.LBB165:
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 192              		.loc 1 105 21 view .LVU15
+ 193 000a 1827     		movs	r7, #24
+ 194              	.LBE165:
+ 195              	.LBE164:
+   5:fho.cpp       ****     tanh_gain = 0.0f;
+ 196              		.loc 2 5 1 view .LVU16
+ 197 000c 2DED048B 		vpush.64	{d8, d9}
+ 198              		.cfi_def_cfa_offset 40
+ 199              		.cfi_offset 80, -40
+ 200              		.cfi_offset 81, -36
+ 201              		.cfi_offset 82, -32
+ 202              		.cfi_offset 83, -28
+   5:fho.cpp       ****     tanh_gain = 0.0f;
+ 203              		.loc 2 5 1 view .LVU17
+ 204 0010 F0EE408A 		vmov.f32	s17, s0
+   6:fho.cpp       ****     folder.Init();
+ 205              		.loc 2 6 15 view .LVU18
+ 206 0014 40F8085B 		str	r5, [r0], #8	@ float
+ 207              	.LVL7:
+   7:fho.cpp       ****     folder.Init();
+ 208              		.loc 2 7 5 is_stmt 1 view .LVU19
+ 209              	.LBB169:
+ 210              	.LBB170:
+ 211              		.file 3 "../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h"
+   1:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** /*
+   2:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** Copyright (c) 2020 Electrosmith, Corp
+   3:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+   4:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** Use of this source code is governed by an MIT-style
+   5:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** license that can be found in the LICENSE file or at
+   6:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** https://opensource.org/licenses/MIT.
+   7:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** */
+   8:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+   9:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** #pragma once
+  10:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** #ifndef DSY_OSCILLATOR_H
+  11:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** #define DSY_OSCILLATOR_H
+  12:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** #include <stdint.h>
+  13:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** #include "Utility/dsp.h"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 9
+
+
+  14:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** #ifdef __cplusplus
+  15:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  16:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** namespace daisysp
+  17:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** {
+  18:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** /** Synthesis of several waveforms, including polyBLEP bandlimited waveforms.
+  19:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** */
+  20:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** class Oscillator
+  21:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** {
+  22:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****   public:
+  23:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     Oscillator() {}
+  24:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     ~Oscillator() {}
+  25:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Choices for output waveforms, POLYBLEP are appropriately labeled. Others are naive forms.
+  26:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     */
+  27:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     enum
+  28:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+  29:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_SIN,
+  30:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_TRI,
+  31:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_SAW,
+  32:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_RAMP,
+  33:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_SQUARE,
+  34:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_POLYBLEP_TRI,
+  35:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_POLYBLEP_SAW,
+  36:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_POLYBLEP_SQUARE,
+  37:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_LAST,
+  38:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     };
+  39:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  40:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  41:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Initializes the Oscillator
+  42:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  43:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         \param sample_rate - sample rate of the audio engine being run, and the frequency that the 
+  44:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  45:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         Defaults:
+  46:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         - freq_ = 100 Hz
+  47:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         - amp_ = 0.5
+  48:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         - waveform_ = sine wave.
+  49:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     */
+  50:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     void Init(float sample_rate)
+  51:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+  52:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         sr_        = sample_rate;
+  53:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         sr_recip_  = 1.0f / sample_rate;
+ 212              		.loc 3 53 27 is_stmt 0 view .LVU20
+ 213 0018 B7EE009A 		vmov.f32	s18, #1.0e+0
+ 214              	.LBE170:
+ 215              	.LBE169:
+   7:fho.cpp       ****     osc.Init(sample_rate);
+ 216              		.loc 2 7 16 view .LVU21
+ 217 001c FFF7FEFF 		bl	_ZN7daisysp10Wavefolder4InitEv
+ 218              	.LVL8:
+ 219              		.loc 2 8 5 is_stmt 1 view .LVU22
+ 220              	.LBB174:
+ 221              	.LBI169:
+  50:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 222              		.loc 3 50 10 view .LVU23
+ 223              	.LBB171:
+  52:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         sr_recip_  = 1.0f / sample_rate;
+ 224              		.loc 3 52 9 view .LVU24
+  54:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         freq_      = 100.0f;
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 10
+
+
+ 225              		.loc 3 54 20 is_stmt 0 view .LVU25
+ 226 0020 9FED568A 		vldr.32	s16, .L16
+  55:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         amp_       = 0.5f;
+ 227              		.loc 3 55 20 view .LVU26
+ 228 0024 4FF07C53 		mov	r3, #1056964608
+  56:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         pw_        = 0.5f;
+  57:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_     = 0.0f;
+  58:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(freq_);
+ 229              		.loc 3 58 34 view .LVU27
+ 230 0028 3046     		mov	r0, r6
+  52:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         sr_recip_  = 1.0f / sample_rate;
+ 231              		.loc 3 52 20 view .LVU28
+ 232 002a C4ED088A 		vstr.32	s17, [r4, #32]
+  53:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         freq_      = 100.0f;
+ 233              		.loc 3 53 9 is_stmt 1 view .LVU29
+  53:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         freq_      = 100.0f;
+ 234              		.loc 3 53 27 is_stmt 0 view .LVU30
+ 235 002e C9EE287A 		vdiv.f32	s15, s18, s17
+  54:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         amp_       = 0.5f;
+ 236              		.loc 3 54 20 view .LVU31
+ 237 0032 84ED068A 		vstr.32	s16, [r4, #24]
+  57:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(freq_);
+ 238              		.loc 3 57 20 view .LVU32
+ 239 0036 A562     		str	r5, [r4, #40]	@ float
+  55:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         pw_        = 0.5f;
+ 240              		.loc 3 55 20 view .LVU33
+ 241 0038 6361     		str	r3, [r4, #20]	@ float
+  56:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_     = 0.0f;
+ 242              		.loc 3 56 20 view .LVU34
+ 243 003a E361     		str	r3, [r4, #28]	@ float
+ 244              		.loc 3 58 34 view .LVU35
+ 245 003c B0EE480A 		vmov.f32	s0, s16
+  53:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         freq_      = 100.0f;
+ 246              		.loc 3 53 20 view .LVU36
+ 247 0040 C4ED097A 		vstr.32	s15, [r4, #36]
+  54:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         amp_       = 0.5f;
+ 248              		.loc 3 54 9 is_stmt 1 view .LVU37
+  55:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         pw_        = 0.5f;
+ 249              		.loc 3 55 9 view .LVU38
+  56:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_     = 0.0f;
+ 250              		.loc 3 56 9 view .LVU39
+  57:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(freq_);
+ 251              		.loc 3 57 9 view .LVU40
+ 252              		.loc 3 58 9 view .LVU41
+ 253              		.loc 3 58 34 is_stmt 0 view .LVU42
+ 254 0044 FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 255              	.LVL9:
+ 256 0048 F0EE407A 		vmov.f32	s15, s0
+  59:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         waveform_  = WAVE_SIN;
+  60:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         eoc_       = true;
+  61:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         eor_       = true;
+ 257              		.loc 3 61 20 view .LVU43
+ 258 004c 40F20112 		movw	r2, #257
+ 259              	.LBE171:
+ 260              	.LBE174:
+ 261              	.LBB175:
+ 262              	.LBB176:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 11
+
+
+  62:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+  63:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  64:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  65:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Changes the frequency of the Oscillator, and recalculates phase increment.
+  66:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     */
+  67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     inline void SetFreq(const float f)
+  68:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         freq_      = f;
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+  71:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+  72:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  73:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
+  74:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the amplitude of the waveform.
+  75:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     */
+  76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     inline void SetAmp(const float a) { amp_ = a; }
+  77:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
+  78:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     */
+  79:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     inline void SetWaveform(const uint8_t wf)
+  80:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+  81:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         waveform_ = wf < WAVE_LAST ? wf : WAVE_SIN;
+ 263              		.loc 3 81 19 view .LVU44
+ 264 0050 0523     		movs	r3, #5
+ 265              	.LBE176:
+ 266              	.LBE175:
+ 267              	.LBB179:
+ 268              	.LBB180:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 269              		.loc 3 70 34 view .LVU45
+ 270 0052 3046     		mov	r0, r6
+ 271              	.LBE180:
+ 272              	.LBE179:
+ 273              	.LBB185:
+ 274              	.LBB186:
+  76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
+ 275              		.loc 3 76 46 view .LVU46
+ 276 0054 84ED059A 		vstr.32	s18, [r4, #20]
+ 277              	.LBE186:
+ 278              	.LBE185:
+ 279              	.LBB188:
+ 280              	.LBB172:
+  58:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         waveform_  = WAVE_SIN;
+ 281              		.loc 3 58 20 view .LVU47
+ 282 0058 C4ED0B7A 		vstr.32	s15, [r4, #44]
+  59:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         eoc_       = true;
+ 283              		.loc 3 59 9 is_stmt 1 view .LVU48
+  60:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         eor_       = true;
+ 284              		.loc 3 60 9 view .LVU49
+  61:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 285              		.loc 3 61 9 view .LVU50
+ 286              	.LBE172:
+ 287              	.LBE188:
+ 288              	.LBB189:
+ 289              	.LBB181:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 290              		.loc 3 70 34 is_stmt 0 view .LVU51
+ 291 005c B0EE480A 		vmov.f32	s0, s16
+ 292              	.LBE181:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 12
+
+
+ 293              	.LBE189:
+ 294              	.LBB190:
+ 295              	.LBB173:
+  61:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 296              		.loc 3 61 20 view .LVU52
+ 297 0060 2287     		strh	r2, [r4, #56]	@ movhi
+ 298              	.LVL10:
+  61:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 299              		.loc 3 61 20 view .LVU53
+ 300              	.LBE173:
+ 301              	.LBE190:
+   9:fho.cpp       **** 	osc.SetWaveform(osc.WAVE_POLYBLEP_TRI);
+ 302              		.loc 2 9 2 is_stmt 1 view .LVU54
+ 303              	.LBB191:
+ 304              	.LBI175:
+  79:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 305              		.loc 3 79 17 view .LVU55
+ 306              	.LBB177:
+ 307              		.loc 3 81 9 view .LVU56
+ 308              	.LBE177:
+ 309              	.LBE191:
+ 310              	.LBB192:
+ 311              	.LBB182:
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 312              		.loc 3 69 20 is_stmt 0 view .LVU57
+ 313 0062 84ED068A 		vstr.32	s16, [r4, #24]
+ 314              	.LBE182:
+ 315              	.LBE192:
+ 316              	.LBB193:
+ 317              	.LBB178:
+ 318              		.loc 3 81 19 view .LVU58
+ 319 0066 2374     		strb	r3, [r4, #16]
+ 320              	.LVL11:
+ 321              		.loc 3 81 19 view .LVU59
+ 322              	.LBE178:
+ 323              	.LBE193:
+  10:fho.cpp       **** 	osc.SetAmp(1.0f);
+ 324              		.loc 2 10 2 is_stmt 1 view .LVU60
+ 325              	.LBB194:
+ 326              	.LBI185:
+  76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
+ 327              		.loc 3 76 17 view .LVU61
+ 328              	.LBB187:
+  76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
+ 329              		.loc 3 76 41 view .LVU62
+  76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
+ 330              		.loc 3 76 41 is_stmt 0 view .LVU63
+ 331              	.LBE187:
+ 332              	.LBE194:
+  11:fho.cpp       **** 	osc.SetFreq(100.0f);
+ 333              		.loc 2 11 2 is_stmt 1 view .LVU64
+ 334              	.LBB195:
+ 335              	.LBI179:
+  67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 336              		.loc 3 67 17 view .LVU65
+ 337              	.LBB183:
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 13
+
+
+ 338              		.loc 3 69 9 view .LVU66
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 339              		.loc 3 70 9 view .LVU67
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 340              		.loc 3 70 34 is_stmt 0 view .LVU68
+ 341 0068 FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 342              	.LVL12:
+ 343              	.LBE183:
+ 344              	.LBE195:
+  12:fho.cpp       ****     /*for(size_t i = 0; i < filter_size; i++)
+  13:fho.cpp       ****     {
+  14:fho.cpp       ****         taps[i] = 0.0f;
+  15:fho.cpp       ****     }*/
+  16:fho.cpp       **** 
+  17:fho.cpp       ****     taps[1]  = 0.0f;
+  18:fho.cpp       ****     taps[3]  = 0.0f;
+  19:fho.cpp       ****     taps[5]  = 0.0f;
+  20:fho.cpp       ****     taps[7]  = 0.0f;
+  21:fho.cpp       ****     taps[9]  = 0.0f;
+  22:fho.cpp       ****     taps[13] = 0.0f;
+  23:fho.cpp       ****     taps[15] = 0.0f;
+  24:fho.cpp       ****     taps[17] = 0.0f;
+  25:fho.cpp       ****     taps[19] = 0.0f;
+  26:fho.cpp       ****     taps[21] = 0.0f;
+  27:fho.cpp       **** 
+  28:fho.cpp       ****     taps[0]  = -0.007193324475036675f;
+ 345              		.loc 2 28 14 view .LVU69
+ 346 006c 444B     		ldr	r3, .L16+4
+  29:fho.cpp       ****     taps[22] = -0.007193324475036675f;
+  30:fho.cpp       ****     taps[2]  = 0.013616925865793945f;
+ 347              		.loc 2 30 14 view .LVU70
+ 348 006e 4549     		ldr	r1, .L16+8
+  28:fho.cpp       ****     taps[22] = -0.007193324475036675f;
+ 349              		.loc 2 28 14 view .LVU71
+ 350 0070 C4F82031 		str	r3, [r4, #288]	@ float
+  29:fho.cpp       ****     taps[22] = -0.007193324475036675f;
+ 351              		.loc 2 29 14 view .LVU72
+ 352 0074 C4F87831 		str	r3, [r4, #376]	@ float
+  31:fho.cpp       ****     taps[20] = 0.013616925865793945f;
+  32:fho.cpp       ****     taps[4]  = -0.02628066406628572f;
+ 353              		.loc 2 32 14 view .LVU73
+ 354 0078 434B     		ldr	r3, .L16+12
+  33:fho.cpp       ****     taps[18] = -0.02628066406628572f;
+  34:fho.cpp       ****     taps[6]  = 0.04860759433245811f;
+ 355              		.loc 2 34 14 view .LVU74
+ 356 007a 444A     		ldr	r2, .L16+16
+  30:fho.cpp       ****     taps[20] = 0.013616925865793945f;
+ 357              		.loc 2 30 14 view .LVU75
+ 358 007c C4F82811 		str	r1, [r4, #296]	@ float
+  31:fho.cpp       ****     taps[20] = 0.013616925865793945f;
+ 359              		.loc 2 31 14 view .LVU76
+ 360 0080 C4F87011 		str	r1, [r4, #368]	@ float
+  32:fho.cpp       ****     taps[18] = -0.02628066406628572f;
+ 361              		.loc 2 32 14 view .LVU77
+ 362 0084 C4F83031 		str	r3, [r4, #304]	@ float
+  35:fho.cpp       ****     taps[16] = 0.04860759433245811f;
+  36:fho.cpp       ****     taps[8]  = -0.09646258355192097f;
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 14
+
+
+  37:fho.cpp       ****     taps[14] = -0.09646258355192097f;
+  38:fho.cpp       ****     taps[10] = 0.31500529607952577f;
+ 363              		.loc 2 38 14 view .LVU78
+ 364 0088 4149     		ldr	r1, .L16+20
+  33:fho.cpp       ****     taps[6]  = 0.04860759433245811f;
+ 365              		.loc 2 33 14 view .LVU79
+ 366 008a C4F86831 		str	r3, [r4, #360]	@ float
+  39:fho.cpp       ****     taps[12] = 0.31500529607952577f;
+  40:fho.cpp       ****     taps[11] = 0.5000099882993633f;
+ 367              		.loc 2 40 14 view .LVU80
+ 368 008e 4148     		ldr	r0, .L16+24
+  36:fho.cpp       ****     taps[14] = -0.09646258355192097f;
+ 369              		.loc 2 36 14 view .LVU81
+ 370 0090 414B     		ldr	r3, .L16+28
+  41:fho.cpp       **** 
+  42:fho.cpp       ****     taps_2[0] = taps[0] * 2.0f;
+  43:fho.cpp       ****     taps_2[1] = taps[1] * 2.0f;
+  44:fho.cpp       ****     taps_2[2] = taps[2] * 2.0f;
+  45:fho.cpp       ****     taps_2[3] = taps[3] * 2.0f;
+  46:fho.cpp       ****     taps_2[4] = taps[4] * 2.0f;
+  47:fho.cpp       ****     taps_2[5] = taps[5] * 2.0f;
+  48:fho.cpp       ****     taps_2[6] = taps[6] * 2.0f;
+  49:fho.cpp       ****     taps_2[7] = taps[7] * 2.0f;
+  50:fho.cpp       ****     taps_2[8] = taps[8] * 2.0f;
+ 371              		.loc 2 50 15 view .LVU82
+ 372 0092 424E     		ldr	r6, .L16+32
+ 373              	.LVL13:
+  34:fho.cpp       ****     taps[16] = 0.04860759433245811f;
+ 374              		.loc 2 34 14 view .LVU83
+ 375 0094 C4F83821 		str	r2, [r4, #312]	@ float
+  35:fho.cpp       ****     taps[8]  = -0.09646258355192097f;
+ 376              		.loc 2 35 14 view .LVU84
+ 377 0098 C4F86021 		str	r2, [r4, #352]	@ float
+  36:fho.cpp       ****     taps[14] = -0.09646258355192097f;
+ 378              		.loc 2 36 14 view .LVU85
+ 379 009c C4F84031 		str	r3, [r4, #320]	@ float
+  44:fho.cpp       ****     taps_2[3] = taps[3] * 2.0f;
+ 380              		.loc 2 44 15 view .LVU86
+ 381 00a0 3F4A     		ldr	r2, .L16+36
+  37:fho.cpp       ****     taps[10] = 0.31500529607952577f;
+ 382              		.loc 2 37 14 view .LVU87
+ 383 00a2 C4F85831 		str	r3, [r4, #344]	@ float
+  40:fho.cpp       **** 
+ 384              		.loc 2 40 14 view .LVU88
+ 385 00a6 C4F84C01 		str	r0, [r4, #332]	@ float
+  42:fho.cpp       ****     taps_2[1] = taps[1] * 2.0f;
+ 386              		.loc 2 42 15 view .LVU89
+ 387 00aa 3E4B     		ldr	r3, .L16+40
+  48:fho.cpp       ****     taps_2[7] = taps[7] * 2.0f;
+ 388              		.loc 2 48 15 view .LVU90
+ 389 00ac 3E48     		ldr	r0, .L16+44
+  38:fho.cpp       ****     taps[12] = 0.31500529607952577f;
+ 390              		.loc 2 38 14 view .LVU91
+ 391 00ae C4F84811 		str	r1, [r4, #328]	@ float
+  39:fho.cpp       ****     taps[11] = 0.5000099882993633f;
+ 392              		.loc 2 39 14 view .LVU92
+ 393 00b2 C4F85011 		str	r1, [r4, #336]	@ float
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 15
+
+
+  46:fho.cpp       ****     taps_2[5] = taps[5] * 2.0f;
+ 394              		.loc 2 46 15 view .LVU93
+ 395 00b6 3D49     		ldr	r1, .L16+48
+ 396              	.LBB196:
+ 397              	.LBB184:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 398              		.loc 3 70 20 view .LVU94
+ 399 00b8 84ED0B0A 		vstr.32	s0, [r4, #44]
+ 400              	.LVL14:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 401              		.loc 3 70 20 view .LVU95
+ 402              	.LBE184:
+ 403              	.LBE196:
+  17:fho.cpp       ****     taps[3]  = 0.0f;
+ 404              		.loc 2 17 5 is_stmt 1 view .LVU96
+  17:fho.cpp       ****     taps[3]  = 0.0f;
+ 405              		.loc 2 17 14 is_stmt 0 view .LVU97
+ 406 00bc C4F82451 		str	r5, [r4, #292]	@ float
+  18:fho.cpp       ****     taps[5]  = 0.0f;
+ 407              		.loc 2 18 5 is_stmt 1 view .LVU98
+  42:fho.cpp       ****     taps_2[1] = taps[1] * 2.0f;
+ 408              		.loc 2 42 15 is_stmt 0 view .LVU99
+ 409 00c0 C4F87C31 		str	r3, [r4, #380]	@ float
+  44:fho.cpp       ****     taps_2[3] = taps[3] * 2.0f;
+ 410              		.loc 2 44 15 view .LVU100
+ 411 00c4 C4F88421 		str	r2, [r4, #388]	@ float
+  18:fho.cpp       ****     taps[5]  = 0.0f;
+ 412              		.loc 2 18 14 view .LVU101
+ 413 00c8 C4F82C51 		str	r5, [r4, #300]	@ float
+  19:fho.cpp       ****     taps[7]  = 0.0f;
+ 414              		.loc 2 19 5 is_stmt 1 view .LVU102
+  19:fho.cpp       ****     taps[7]  = 0.0f;
+ 415              		.loc 2 19 14 is_stmt 0 view .LVU103
+ 416 00cc C4F83451 		str	r5, [r4, #308]	@ float
+  20:fho.cpp       ****     taps[9]  = 0.0f;
+ 417              		.loc 2 20 5 is_stmt 1 view .LVU104
+  20:fho.cpp       ****     taps[9]  = 0.0f;
+ 418              		.loc 2 20 14 is_stmt 0 view .LVU105
+ 419 00d0 C4F83C51 		str	r5, [r4, #316]	@ float
+  21:fho.cpp       ****     taps[13] = 0.0f;
+ 420              		.loc 2 21 5 is_stmt 1 view .LVU106
+  21:fho.cpp       ****     taps[13] = 0.0f;
+ 421              		.loc 2 21 14 is_stmt 0 view .LVU107
+ 422 00d4 C4F84451 		str	r5, [r4, #324]	@ float
+  22:fho.cpp       ****     taps[15] = 0.0f;
+ 423              		.loc 2 22 5 is_stmt 1 view .LVU108
+  22:fho.cpp       ****     taps[15] = 0.0f;
+ 424              		.loc 2 22 14 is_stmt 0 view .LVU109
+ 425 00d8 C4F85451 		str	r5, [r4, #340]	@ float
+  23:fho.cpp       ****     taps[17] = 0.0f;
+ 426              		.loc 2 23 5 is_stmt 1 view .LVU110
+  23:fho.cpp       ****     taps[17] = 0.0f;
+ 427              		.loc 2 23 14 is_stmt 0 view .LVU111
+ 428 00dc C4F85C51 		str	r5, [r4, #348]	@ float
+  24:fho.cpp       ****     taps[19] = 0.0f;
+ 429              		.loc 2 24 5 is_stmt 1 view .LVU112
+  24:fho.cpp       ****     taps[19] = 0.0f;
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 16
+
+
+ 430              		.loc 2 24 14 is_stmt 0 view .LVU113
+ 431 00e0 C4F86451 		str	r5, [r4, #356]	@ float
+  25:fho.cpp       ****     taps[21] = 0.0f;
+ 432              		.loc 2 25 5 is_stmt 1 view .LVU114
+  25:fho.cpp       ****     taps[21] = 0.0f;
+ 433              		.loc 2 25 14 is_stmt 0 view .LVU115
+ 434 00e4 C4F86C51 		str	r5, [r4, #364]	@ float
+  26:fho.cpp       **** 
+ 435              		.loc 2 26 5 is_stmt 1 view .LVU116
+  26:fho.cpp       **** 
+ 436              		.loc 2 26 14 is_stmt 0 view .LVU117
+ 437 00e8 C4F87451 		str	r5, [r4, #372]	@ float
+  28:fho.cpp       ****     taps[22] = -0.007193324475036675f;
+ 438              		.loc 2 28 5 is_stmt 1 view .LVU118
+  29:fho.cpp       ****     taps[2]  = 0.013616925865793945f;
+ 439              		.loc 2 29 5 view .LVU119
+  30:fho.cpp       ****     taps[20] = 0.013616925865793945f;
+ 440              		.loc 2 30 5 view .LVU120
+  31:fho.cpp       ****     taps[4]  = -0.02628066406628572f;
+ 441              		.loc 2 31 5 view .LVU121
+  32:fho.cpp       ****     taps[18] = -0.02628066406628572f;
+ 442              		.loc 2 32 5 view .LVU122
+  33:fho.cpp       ****     taps[6]  = 0.04860759433245811f;
+ 443              		.loc 2 33 5 view .LVU123
+  34:fho.cpp       ****     taps[16] = 0.04860759433245811f;
+ 444              		.loc 2 34 5 view .LVU124
+  35:fho.cpp       ****     taps[8]  = -0.09646258355192097f;
+ 445              		.loc 2 35 5 view .LVU125
+  36:fho.cpp       ****     taps[14] = -0.09646258355192097f;
+ 446              		.loc 2 36 5 view .LVU126
+  37:fho.cpp       ****     taps[10] = 0.31500529607952577f;
+ 447              		.loc 2 37 5 view .LVU127
+  38:fho.cpp       ****     taps[12] = 0.31500529607952577f;
+ 448              		.loc 2 38 5 view .LVU128
+  39:fho.cpp       ****     taps[11] = 0.5000099882993633f;
+ 449              		.loc 2 39 5 view .LVU129
+  40:fho.cpp       **** 
+ 450              		.loc 2 40 5 view .LVU130
+  42:fho.cpp       ****     taps_2[1] = taps[1] * 2.0f;
+ 451              		.loc 2 42 5 view .LVU131
+  43:fho.cpp       ****     taps_2[2] = taps[2] * 2.0f;
+ 452              		.loc 2 43 5 view .LVU132
+  43:fho.cpp       ****     taps_2[2] = taps[2] * 2.0f;
+ 453              		.loc 2 43 15 is_stmt 0 view .LVU133
+ 454 00ec C4F88051 		str	r5, [r4, #384]	@ float
+  44:fho.cpp       ****     taps_2[3] = taps[3] * 2.0f;
+ 455              		.loc 2 44 5 is_stmt 1 view .LVU134
+  45:fho.cpp       ****     taps_2[4] = taps[4] * 2.0f;
+ 456              		.loc 2 45 5 view .LVU135
+  45:fho.cpp       ****     taps_2[4] = taps[4] * 2.0f;
+ 457              		.loc 2 45 15 is_stmt 0 view .LVU136
+ 458 00f0 C4F88851 		str	r5, [r4, #392]	@ float
+  46:fho.cpp       ****     taps_2[5] = taps[5] * 2.0f;
+ 459              		.loc 2 46 5 is_stmt 1 view .LVU137
+  47:fho.cpp       ****     taps_2[6] = taps[6] * 2.0f;
+ 460              		.loc 2 47 15 is_stmt 0 view .LVU138
+ 461 00f4 C4F89051 		str	r5, [r4, #400]	@ float
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 17
+
+
+  49:fho.cpp       ****     taps_2[8] = taps[8] * 2.0f;
+ 462              		.loc 2 49 15 view .LVU139
+ 463 00f8 C4F89851 		str	r5, [r4, #408]	@ float
+  46:fho.cpp       ****     taps_2[5] = taps[5] * 2.0f;
+ 464              		.loc 2 46 15 view .LVU140
+ 465 00fc C4F88C11 		str	r1, [r4, #396]	@ float
+  47:fho.cpp       ****     taps_2[6] = taps[6] * 2.0f;
+ 466              		.loc 2 47 5 is_stmt 1 view .LVU141
+  48:fho.cpp       ****     taps_2[7] = taps[7] * 2.0f;
+ 467              		.loc 2 48 5 view .LVU142
+  48:fho.cpp       ****     taps_2[7] = taps[7] * 2.0f;
+ 468              		.loc 2 48 15 is_stmt 0 view .LVU143
+ 469 0100 C4F89401 		str	r0, [r4, #404]	@ float
+  49:fho.cpp       ****     taps_2[8] = taps[8] * 2.0f;
+ 470              		.loc 2 49 5 is_stmt 1 view .LVU144
+ 471              		.loc 2 50 5 view .LVU145
+ 472              		.loc 2 50 15 is_stmt 0 view .LVU146
+ 473 0104 C4F89C61 		str	r6, [r4, #412]	@ float
+  51:fho.cpp       ****     taps_2[9] = taps[9] * 2.0f;
+ 474              		.loc 2 51 5 is_stmt 1 view .LVU147
+  52:fho.cpp       ****     taps_2[10] = taps[10] * 2.0f;
+  53:fho.cpp       ****     taps_2[11] = taps[11] * 2.0f;
+  54:fho.cpp       ****     taps_2[12] = taps[12] * 2.0f;
+  55:fho.cpp       ****     taps_2[13] = taps[13] * 2.0f;
+  56:fho.cpp       ****     taps_2[14] = taps[14] * 2.0f;
+  57:fho.cpp       ****     taps_2[15] = taps[15] * 2.0f;
+  58:fho.cpp       ****     taps_2[16] = taps[16] * 2.0f;
+  59:fho.cpp       ****     taps_2[17] = taps[17] * 2.0f;
+  60:fho.cpp       ****     taps_2[18] = taps[18] * 2.0f;
+  61:fho.cpp       ****     taps_2[19] = taps[19] * 2.0f;
+  62:fho.cpp       ****     taps_2[20] = taps[20] * 2.0f;
+  63:fho.cpp       ****     taps_2[21] = taps[21] * 2.0f;
+  64:fho.cpp       ****     taps_2[22] = taps[22] * 2.0f;
+ 475              		.loc 2 64 16 is_stmt 0 view .LVU148
+ 476 0108 C4F8D431 		str	r3, [r4, #468]	@ float
+  52:fho.cpp       ****     taps_2[10] = taps[10] * 2.0f;
+ 477              		.loc 2 52 16 view .LVU149
+ 478 010c 284B     		ldr	r3, .L16+52
+  56:fho.cpp       ****     taps_2[15] = taps[15] * 2.0f;
+ 479              		.loc 2 56 16 view .LVU150
+ 480 010e C4F8B461 		str	r6, [r4, #436]	@ float
+  65:fho.cpp       **** 
+  66:fho.cpp       ****    
+  67:fho.cpp       ****     
+  68:fho.cpp       ****     filter.SetStateBuffer(filter_state, DSY_COUNTOF(filter_state));
+  69:fho.cpp       ****     filter.Init(taps, filter_size, false);
+ 481              		.loc 2 69 17 view .LVU151
+ 482 0112 04F59076 		add	r6, r4, #288
+  58:fho.cpp       ****     taps_2[17] = taps[17] * 2.0f;
+ 483              		.loc 2 58 16 view .LVU152
+ 484 0116 C4F8BC01 		str	r0, [r4, #444]	@ float
+  68:fho.cpp       ****     filter.Init(taps, filter_size, false);
+ 485              		.loc 2 68 27 view .LVU153
+ 486 011a 04F16000 		add	r0, r4, #96
+  51:fho.cpp       ****     taps_2[10] = taps[10] * 2.0f;
+ 487              		.loc 2 51 15 view .LVU154
+ 488 011e C4F8A051 		str	r5, [r4, #416]	@ float
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 18
+
+
+  52:fho.cpp       ****     taps_2[11] = taps[11] * 2.0f;
+ 489              		.loc 2 52 5 is_stmt 1 view .LVU155
+  55:fho.cpp       ****     taps_2[14] = taps[14] * 2.0f;
+ 490              		.loc 2 55 16 is_stmt 0 view .LVU156
+ 491 0122 C4F8B051 		str	r5, [r4, #432]	@ float
+  57:fho.cpp       ****     taps_2[16] = taps[16] * 2.0f;
+ 492              		.loc 2 57 16 view .LVU157
+ 493 0126 C4F8B851 		str	r5, [r4, #440]	@ float
+  59:fho.cpp       ****     taps_2[18] = taps[18] * 2.0f;
+ 494              		.loc 2 59 16 view .LVU158
+ 495 012a C4F8C051 		str	r5, [r4, #448]	@ float
+  61:fho.cpp       ****     taps_2[20] = taps[20] * 2.0f;
+ 496              		.loc 2 61 16 view .LVU159
+ 497 012e C4F8C851 		str	r5, [r4, #456]	@ float
+  63:fho.cpp       ****     taps_2[22] = taps[22] * 2.0f;
+ 498              		.loc 2 63 16 view .LVU160
+ 499 0132 C4F8D051 		str	r5, [r4, #464]	@ float
+  52:fho.cpp       ****     taps_2[11] = taps[11] * 2.0f;
+ 500              		.loc 2 52 16 view .LVU161
+ 501 0136 C4F8A431 		str	r3, [r4, #420]	@ float
+ 502 013a E56D     		ldr	r5, [r4, #92]
+  54:fho.cpp       ****     taps_2[13] = taps[13] * 2.0f;
+ 503              		.loc 2 54 16 view .LVU162
+ 504 013c C4F8AC31 		str	r3, [r4, #428]	@ float
+  53:fho.cpp       ****     taps_2[12] = taps[12] * 2.0f;
+ 505              		.loc 2 53 16 view .LVU163
+ 506 0140 1C4B     		ldr	r3, .L16+56
+  60:fho.cpp       ****     taps_2[19] = taps[19] * 2.0f;
+ 507              		.loc 2 60 16 view .LVU164
+ 508 0142 C4F8C411 		str	r1, [r4, #452]	@ float
+ 509              	.LBB197:
+ 510              	.LBB198:
+ 511              	.LBB199:
+ 512              	.LBB200:
+ 513              	.LBB201:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 514              		.loc 1 114 19 view .LVU165
+ 515 0146 0021     		movs	r1, #0
+ 516              	.LBE201:
+ 517              	.LBE200:
+ 518              	.LBE199:
+ 519              	.LBE198:
+ 520              	.LBE197:
+  62:fho.cpp       ****     taps_2[21] = taps[21] * 2.0f;
+ 521              		.loc 2 62 16 view .LVU166
+ 522 0148 C4F8CC21 		str	r2, [r4, #460]	@ float
+ 523              	.LBB216:
+ 524              	.LBB214:
+ 525              	.LBB212:
+ 526              	.LBB205:
+ 527              	.LBB202:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 528              		.loc 1 114 19 view .LVU167
+ 529 014c 6022     		movs	r2, #96
+ 530              	.LBE202:
+ 531              	.LBE205:
+ 532              	.LBE212:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 19
+
+
+ 533              	.LBE214:
+ 534              	.LBE216:
+ 535              	.LBB217:
+ 536              	.LBB166:
+ 104:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_size_ = length;
+ 537              		.loc 1 104 21 view .LVU168
+ 538 014e E063     		str	r0, [r4, #60]
+ 539              	.LBE166:
+ 540              	.LBE217:
+  53:fho.cpp       ****     taps_2[12] = taps[12] * 2.0f;
+ 541              		.loc 2 53 5 is_stmt 1 view .LVU169
+ 542              	.LBB218:
+ 543              	.LBB167:
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 544              		.loc 1 105 21 is_stmt 0 view .LVU170
+ 545 0150 A764     		str	r7, [r4, #72]
+ 546              	.LBE167:
+ 547              	.LBE218:
+  53:fho.cpp       ****     taps_2[12] = taps[12] * 2.0f;
+ 548              		.loc 2 53 16 view .LVU171
+ 549 0152 C4F8A831 		str	r3, [r4, #424]	@ float
+  54:fho.cpp       ****     taps_2[13] = taps[13] * 2.0f;
+ 550              		.loc 2 54 5 is_stmt 1 view .LVU172
+  55:fho.cpp       ****     taps_2[14] = taps[14] * 2.0f;
+ 551              		.loc 2 55 5 view .LVU173
+  56:fho.cpp       ****     taps_2[15] = taps[15] * 2.0f;
+ 552              		.loc 2 56 5 view .LVU174
+  57:fho.cpp       ****     taps_2[16] = taps[16] * 2.0f;
+ 553              		.loc 2 57 5 view .LVU175
+  58:fho.cpp       ****     taps_2[17] = taps[17] * 2.0f;
+ 554              		.loc 2 58 5 view .LVU176
+  59:fho.cpp       ****     taps_2[18] = taps[18] * 2.0f;
+ 555              		.loc 2 59 5 view .LVU177
+  60:fho.cpp       ****     taps_2[19] = taps[19] * 2.0f;
+ 556              		.loc 2 60 5 view .LVU178
+  61:fho.cpp       ****     taps_2[20] = taps[20] * 2.0f;
+ 557              		.loc 2 61 5 view .LVU179
+  62:fho.cpp       ****     taps_2[21] = taps[21] * 2.0f;
+ 558              		.loc 2 62 5 view .LVU180
+  63:fho.cpp       ****     taps_2[22] = taps[22] * 2.0f;
+ 559              		.loc 2 63 5 view .LVU181
+  64:fho.cpp       **** 
+ 560              		.loc 2 64 5 view .LVU182
+  68:fho.cpp       ****     filter.Init(taps, filter_size, false);
+ 561              		.loc 2 68 5 view .LVU183
+ 562              	.LVL15:
+ 563              	.LBB219:
+ 564              	.LBI164:
+ 102:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 565              		.loc 1 102 10 view .LVU184
+ 566              	.LBB168:
+ 104:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_size_ = length;
+ 567              		.loc 1 104 9 view .LVU185
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 568              		.loc 1 105 9 view .LVU186
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 569              		.loc 1 105 9 is_stmt 0 view .LVU187
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 20
+
+
+ 570              	.LBE168:
+ 571              	.LBE219:
+ 572              		.loc 2 69 5 is_stmt 1 view .LVU188
+ 573              	.LBB220:
+ 574              	.LBI197:
+ 186:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_[size_ - 1u] = in;
+ 188:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 189:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Convolution loop */
+ 190:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         float acc(0);
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         for(size_t i = 0; i < size_ - 1; i++)
+ 192:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             acc += state_[i] * coefs_[i];
+ 194:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 195:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****              * (note: better solutions are available) 
+ 196:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****              */
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             state_[i] = state_[1 + i];
+ 198:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         acc += in * coefs_[size_ - 1u];
+ 200:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 201:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         return acc;
+ 202:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 203:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 204:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Process a block of data */
+ 205:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     void ProcessBlock(const float* pSrc, float* pDst, size_t block)
+ 206:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 207:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* be sure to run debug version from time to time */
+ 208:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(block <= FIRMem::MaxBlock());
+ 209:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(size_ > 0u);
+ 210:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != pSrc);
+ 211:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != pDst);
+ 212:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 213:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Process the block of data */
+ 214:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         for(size_t j = 0; j < block; j++)
+ 215:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 216:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /* Feed data into the buffer */
+ 217:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             state_[size_ - 1u + j] = pSrc[j];
+ 218:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 219:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /* Convolution loop */
+ 220:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             float acc = 0.0f;
+ 221:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             for(size_t i = 0; i < size_; i++)
+ 222:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             {
+ 223:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****                 acc += state_[j + i] * coefs_[i];
+ 224:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             }
+ 225:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 226:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /* Write output */
+ 227:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             pDst[j] = acc;
+ 228:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 229:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 230:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Copy data tail for the next block */
+ 231:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         for(size_t i = 0; i < size_ - 1u; i++)
+ 232:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 233:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             state_[i] = state_[block + i];
+ 234:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 235:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 236:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 237:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /** Set filter coefficients (aka Impulse Response)
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 21
+
+
+ 238:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * Coefficients need to be in reversed order (tail-first)
+ 239:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * If internal storage is used, makes a local copy
+ 240:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * and allows reversing the impulse response
+ 241:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      */
+ 242:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     bool SetIR(const float* ir, size_t len, bool reverse)
+ 243:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 244:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Function order is important */
+ 245:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         const bool result = FIRMem::SetCoefs(ir, len, reverse);
+ 246:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         Reset();
+ 247:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         return result;
+ 248:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 249:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 250:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Create an alias to comply with DaisySP API conventions */
+ 251:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     template <typename... Args>
+ 252:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     inline auto Init(Args&&... args)
+ 575              		.loc 1 252 17 view .LVU189
+ 576              	.LBB215:
+ 577              	.LBI198:
+ 242:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 578              		.loc 1 242 10 view .LVU190
+ 579              	.LBB213:
+ 580              	.LBB206:
+ 581              	.LBI206:
+ 133:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 582              		.loc 1 133 10 view .LVU191
+ 583              	.LBB207:
+ 136:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != coefs || 0 == size);
+ 584              		.loc 1 136 9 view .LVU192
+ 137:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 585              		.loc 1 137 9 view .LVU193
+ 139:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 586              		.loc 1 139 9 view .LVU194
+ 141:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             size_  = size;
+ 587              		.loc 1 141 13 view .LVU195
+ 142:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             return true;
+ 588              		.loc 1 142 13 view .LVU196
+ 143:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 589              		.loc 1 143 13 view .LVU197
+ 143:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 590              		.loc 1 143 13 is_stmt 0 view .LVU198
+ 591              	.LBE207:
+ 592              	.LBE206:
+ 593              	.LBB209:
+ 594              	.LBI200:
+ 108:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 595              		.loc 1 108 10 is_stmt 1 view .LVU199
+ 596              	.LBB203:
+ 110:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(0 != state_size_);
+ 597              		.loc 1 110 9 view .LVU200
+ 111:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         if(nullptr != state_)
+ 598              		.loc 1 111 9 view .LVU201
+ 112:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 599              		.loc 1 112 9 view .LVU202
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 600              		.loc 1 114 13 view .LVU203
+ 601              	.LBE203:
+ 602              	.LBE209:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 22
+
+
+ 603              	.LBB210:
+ 604              	.LBB208:
+ 142:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             return true;
+ 605              		.loc 1 142 20 is_stmt 0 view .LVU204
+ 606 0156 C4E91065 		strd	r6, r5, [r4, #64]
+ 607              	.LBE208:
+ 608              	.LBE210:
+ 609              	.LBB211:
+ 610              	.LBB204:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 611              		.loc 1 114 19 view .LVU205
+ 612 015a FFF7FEFF 		bl	memset
+ 613              	.LVL16:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 614              		.loc 1 114 19 view .LVU206
+ 615              	.LBE204:
+ 616              	.LBE211:
+ 617              	.LBE213:
+ 618              	.LBE215:
+ 619              	.LBE220:
+  70:fho.cpp       **** 
+  71:fho.cpp       ****     filter_2.SetStateBuffer(filter_2_state, DSY_COUNTOF(filter_state));
+ 620              		.loc 2 71 5 is_stmt 1 view .LVU207
+ 621              		.loc 2 71 29 is_stmt 0 view .LVU208
+ 622 015e 04F1C000 		add	r0, r4, #192
+ 623              	.LBB221:
+ 624              	.LBB222:
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 625              		.loc 1 105 21 view .LVU209
+ 626 0162 A765     		str	r7, [r4, #88]
+ 627              	.LBE222:
+ 628              	.LBE221:
+ 629              	.LBB225:
+ 630              	.LBB226:
+ 631              	.LBB227:
+ 632              	.LBB228:
+ 633              	.LBB229:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 634              		.loc 1 114 19 view .LVU210
+ 635 0164 6022     		movs	r2, #96
+ 636              	.LBE229:
+ 637              	.LBE228:
+ 638              	.LBE227:
+ 639              	.LBE226:
+ 640              	.LBE225:
+ 641              	.LBB248:
+ 642              	.LBB223:
+ 104:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_size_ = length;
+ 643              		.loc 1 104 21 view .LVU211
+ 644 0166 E064     		str	r0, [r4, #76]
+ 645              	.LBE223:
+ 646              	.LBE248:
+ 647              	.LBB249:
+ 648              	.LBB244:
+ 649              	.LBB240:
+ 650              	.LBB233:
+ 651              	.LBB230:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 23
+
+
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 652              		.loc 1 114 19 view .LVU212
+ 653 0168 0021     		movs	r1, #0
+ 654              	.LVL17:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 655              		.loc 1 114 19 view .LVU213
+ 656              	.LBE230:
+ 657              	.LBE233:
+ 658              	.LBE240:
+ 659              	.LBE244:
+ 660              	.LBE249:
+ 661              	.LBB250:
+ 662              	.LBI221:
+ 102:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 663              		.loc 1 102 10 is_stmt 1 view .LVU214
+ 664              	.LBB224:
+ 104:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         state_size_ = length;
+ 665              		.loc 1 104 9 view .LVU215
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 666              		.loc 1 105 9 view .LVU216
+ 105:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     }
+ 667              		.loc 1 105 9 is_stmt 0 view .LVU217
+ 668              	.LBE224:
+ 669              	.LBE250:
+  72:fho.cpp       ****     filter_2.Init(taps, filter_size, false);   
+ 670              		.loc 2 72 5 is_stmt 1 view .LVU218
+ 671              	.LBB251:
+ 672              	.LBI225:
+ 673              		.loc 1 252 17 view .LVU219
+ 674              	.LBB245:
+ 675              	.LBI226:
+ 242:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 676              		.loc 1 242 10 view .LVU220
+ 677              	.LBB241:
+ 678              	.LBB234:
+ 679              	.LBI234:
+ 133:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 680              		.loc 1 133 10 view .LVU221
+ 681              	.LBB235:
+ 136:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != coefs || 0 == size);
+ 682              		.loc 1 136 9 view .LVU222
+ 137:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 683              		.loc 1 137 9 view .LVU223
+ 139:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 684              		.loc 1 139 9 view .LVU224
+ 141:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             size_  = size;
+ 685              		.loc 1 141 13 view .LVU225
+ 142:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             return true;
+ 686              		.loc 1 142 13 view .LVU226
+ 143:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 687              		.loc 1 143 13 view .LVU227
+ 143:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 688              		.loc 1 143 13 is_stmt 0 view .LVU228
+ 689              	.LBE235:
+ 690              	.LBE234:
+ 691              	.LBB237:
+ 692              	.LBI228:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 24
+
+
+ 108:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 693              		.loc 1 108 10 is_stmt 1 view .LVU229
+ 694              	.LBB231:
+ 110:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(0 != state_size_);
+ 695              		.loc 1 110 9 view .LVU230
+ 111:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         if(nullptr != state_)
+ 696              		.loc 1 111 9 view .LVU231
+ 112:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 697              		.loc 1 112 9 view .LVU232
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 698              		.loc 1 114 13 view .LVU233
+ 699              	.LBE231:
+ 700              	.LBE237:
+ 701              	.LBE241:
+ 702              	.LBE245:
+ 703              	.LBE251:
+  73:fho.cpp       **** }
+ 704              		.loc 2 73 1 is_stmt 0 view .LVU234
+ 705 016a BDEC048B 		vldm	sp!, {d8-d9}
+ 706              		.cfi_restore 82
+ 707              		.cfi_restore 83
+ 708              		.cfi_restore 80
+ 709              		.cfi_restore 81
+ 710              		.cfi_def_cfa_offset 24
+ 711              	.LBB252:
+ 712              	.LBB246:
+ 713              	.LBB242:
+ 714              	.LBB238:
+ 715              	.LBB236:
+ 142:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             return true;
+ 716              		.loc 1 142 20 view .LVU235
+ 717 016e C4E91465 		strd	r6, r5, [r4, #80]
+ 718              	.LBE236:
+ 719              	.LBE238:
+ 720              	.LBE242:
+ 721              	.LBE246:
+ 722              	.LBE252:
+ 723              		.loc 2 73 1 view .LVU236
+ 724 0172 BDE8F840 		pop	{r3, r4, r5, r6, r7, lr}
+ 725              		.cfi_restore 14
+ 726              		.cfi_restore 7
+ 727              		.cfi_restore 6
+ 728              		.cfi_restore 5
+ 729              		.cfi_restore 4
+ 730              		.cfi_restore 3
+ 731              		.cfi_def_cfa_offset 0
+ 732              	.LVL18:
+ 733              	.LBB253:
+ 734              	.LBB247:
+ 735              	.LBB243:
+ 736              	.LBB239:
+ 737              	.LBB232:
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 738              		.loc 1 114 19 view .LVU237
+ 739 0176 FFF7FEBF 		b	memset
+ 740              	.LVL19:
+ 741              	.L17:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 25
+
+
+ 114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 742              		.loc 1 114 19 view .LVU238
+ 743 017a 00BF     		.align	2
+ 744              	.L16:
+ 745 017c 0000C842 		.word	1120403456
+ 746 0180 FBB5EBBB 		.word	-1142180357
+ 747 0184 87195F3C 		.word	1012865415
+ 748 0188 8C4AD7BC 		.word	-1126741364
+ 749 018c C218473D 		.word	1028069570
+ 750 0190 6048A13E 		.word	1050757216
+ 751 0194 A800003F 		.word	1056964776
+ 752 0198 2D8EC5BD 		.word	-1111126483
+ 753 019c 2D8E45BE 		.word	-1102737875
+ 754 01a0 8719DF3C 		.word	1021254023
+ 755 01a4 FBB56BBC 		.word	-1133791749
+ 756 01a8 C218C73D 		.word	1036458178
+ 757 01ac 8C4A57BD 		.word	-1118352756
+ 758 01b0 6048213F 		.word	1059145824
+ 759 01b4 A800803F 		.word	1065353384
+ 760              	.LBE232:
+ 761              	.LBE239:
+ 762              	.LBE243:
+ 763              	.LBE247:
+ 764              	.LBE253:
+ 765              		.cfi_endproc
+ 766              	.LFE3515:
+ 768              		.section	.text._ZN3fho8set_freqEf,"ax",%progbits
+ 769              		.align	1
+ 770              		.p2align 2,,3
+ 771              		.global	_ZN3fho8set_freqEf
+ 772              		.syntax unified
+ 773              		.thumb
+ 774              		.thumb_func
+ 775              		.fpu fpv5-d16
+ 777              	_ZN3fho8set_freqEf:
+ 778              	.LVL20:
+ 779              	.LFB3519:
+  74:fho.cpp       **** 
+  75:fho.cpp       **** void fho::set_freq(float freq)
+  76:fho.cpp       **** {
+ 780              		.loc 2 76 1 is_stmt 1 view -0
+ 781              		.cfi_startproc
+ 782              		@ args = 0, pretend = 0, frame = 0
+ 783              		@ frame_needed = 0, uses_anonymous_args = 0
+  77:fho.cpp       ****     osc.SetFreq(freq);
+ 784              		.loc 2 77 5 view .LVU240
+  76:fho.cpp       ****     osc.SetFreq(freq);
+ 785              		.loc 2 76 1 is_stmt 0 view .LVU241
+ 786 0000 10B5     		push	{r4, lr}
+ 787              		.cfi_def_cfa_offset 8
+ 788              		.cfi_offset 4, -8
+ 789              		.cfi_offset 14, -4
+ 790 0002 0446     		mov	r4, r0
+ 791              	.LVL21:
+ 792              	.LBB254:
+ 793              	.LBB255:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 26
+
+
+ 794              		.loc 3 70 34 view .LVU242
+ 795 0004 1030     		adds	r0, r0, #16
+ 796              	.LVL22:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 797              		.loc 3 70 34 view .LVU243
+ 798              	.LBE255:
+ 799              	.LBE254:
+  76:fho.cpp       ****     osc.SetFreq(freq);
+ 800              		.loc 2 76 1 view .LVU244
+ 801 0006 2DED028B 		vpush.64	{d8}
+ 802              		.cfi_def_cfa_offset 16
+ 803              		.cfi_offset 80, -16
+ 804              		.cfi_offset 81, -12
+  76:fho.cpp       ****     osc.SetFreq(freq);
+ 805              		.loc 2 76 1 view .LVU245
+ 806 000a B0EE408A 		vmov.f32	s16, s0
+ 807              	.LVL23:
+ 808              	.LBB257:
+ 809              	.LBI254:
+  67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 810              		.loc 3 67 17 is_stmt 1 view .LVU246
+ 811              	.LBB256:
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 812              		.loc 3 69 9 view .LVU247
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 813              		.loc 3 69 20 is_stmt 0 view .LVU248
+ 814 000e 84ED060A 		vstr.32	s0, [r4, #24]
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 815              		.loc 3 70 9 is_stmt 1 view .LVU249
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 816              		.loc 3 70 34 is_stmt 0 view .LVU250
+ 817 0012 FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 818              	.LVL24:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 819              		.loc 3 70 20 view .LVU251
+ 820 0016 84ED0B0A 		vstr.32	s0, [r4, #44]
+ 821              	.LVL25:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 822              		.loc 3 70 20 view .LVU252
+ 823              	.LBE256:
+ 824              	.LBE257:
+  78:fho.cpp       ****     frequency = freq;
+ 825              		.loc 2 78 5 is_stmt 1 view .LVU253
+ 826              		.loc 2 78 15 is_stmt 0 view .LVU254
+ 827 001a 84ED018A 		vstr.32	s16, [r4, #4]
+  79:fho.cpp       **** }
+ 828              		.loc 2 79 1 view .LVU255
+ 829 001e BDEC028B 		vldm	sp!, {d8}
+ 830              		.cfi_restore 80
+ 831              		.cfi_restore 81
+ 832              		.cfi_def_cfa_offset 8
+ 833              	.LVL26:
+ 834              		.loc 2 79 1 view .LVU256
+ 835 0022 10BD     		pop	{r4, pc}
+ 836              		.loc 2 79 1 view .LVU257
+ 837              		.cfi_endproc
+ 838              	.LFE3519:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 27
+
+
+ 840              		.section	.text._ZN3fho13set_freq_voctEf,"ax",%progbits
+ 841              		.align	1
+ 842              		.p2align 2,,3
+ 843              		.global	_ZN3fho13set_freq_voctEf
+ 844              		.syntax unified
+ 845              		.thumb
+ 846              		.thumb_func
+ 847              		.fpu fpv5-d16
+ 849              	_ZN3fho13set_freq_voctEf:
+ 850              	.LVL27:
+ 851              	.LFB3520:
+  80:fho.cpp       **** 
+  81:fho.cpp       **** void fho::set_freq_voct(float freq)
+  82:fho.cpp       **** {
+ 852              		.loc 2 82 1 is_stmt 1 view -0
+ 853              		.cfi_startproc
+ 854              		@ args = 0, pretend = 0, frame = 0
+ 855              		@ frame_needed = 0, uses_anonymous_args = 0
+  83:fho.cpp       ****     freq = mtof(freq*120);
+ 856              		.loc 2 83 5 view .LVU259
+  82:fho.cpp       ****     freq = mtof(freq*120);
+ 857              		.loc 2 82 1 is_stmt 0 view .LVU260
+ 858 0000 F0EE406A 		vmov.f32	s13, s0
+ 859              	.LVL28:
+ 860              	.LBB262:
+ 861              	.LBI262:
+ 862              		.file 4 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h"
+   1:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /*
+   2:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** Copyright (c) 2020 Electrosmith, Corp, Emilie Gillet
+   3:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+   4:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** Use of this source code is governed by an MIT-style
+   5:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** license that can be found in the LICENSE file or at
+   6:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** https://opensource.org/licenses/MIT.
+   7:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+   8:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+   9:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** Helpful defines, functions, and other utilities for use in/with daisysp modules.
+  10:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+  11:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #pragma once
+  12:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifndef DSY_CORE_DSP
+  13:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_CORE_DSP
+  14:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <cassert>
+  15:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <cstdint>
+  16:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <random>
+  17:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <cmath>
+  18:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  19:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** PIs
+  20:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+  21:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define PI_F 3.1415927410125732421875f
+  22:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define TWOPI_F (2.0f * PI_F)
+  23:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define HALFPI_F (PI_F * 0.5f)
+  24:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_MIN(in, mn) (in < mn ? in : mn)
+  25:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_MAX(in, mx) (in > mx ? in : mx)
+  26:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_CLAMP(in, mn, mx) (DSY_MIN(DSY_MAX(in, mn), mx))
+  27:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_COUNTOF(_arr) (sizeof(_arr) / sizeof(_arr[0]))
+  28:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  29:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** namespace daisysp
+  30:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 28
+
+
+  31:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** //Avoids division for random floats. e.g. rand() * kRandFrac
+  32:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** static constexpr float kRandFrac = 1.f / (float)RAND_MAX;
+  33:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  34:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** //Convert from semitones to other units. e.g. 2 ^ (kOneTwelfth * x)
+  35:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** static constexpr float kOneTwelfth = 1.f / 12.f;
+  36:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  37:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** efficient floating point min/max
+  38:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** c/o stephen mccaul
+  39:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+  40:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fmax(float a, float b)
+  41:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+  42:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     float r;
+  43:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+  44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     asm("vmaxnm.f32 %[d], %[n], %[m]" : [d] "=t"(r) : [n] "t"(a), [m] "t"(b) :);
+  45:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+  46:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     r = (a > b) ? a : b;
+  47:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #endif // __arm__
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return r;
+  49:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+  50:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  51:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fmin(float a, float b)
+  52:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+  53:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     float r;
+  54:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     asm("vminnm.f32 %[d], %[n], %[m]" : [d] "=t"(r) : [n] "t"(a), [m] "t"(b) :);
+  56:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+  57:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     r = (a < b) ? a : b;
+  58:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #endif // __arm__
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return r;
+  60:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+  61:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  62:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** quick fp clamp
+  63:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+  64:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fclamp(float in, float min, float max)
+  65:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+  66:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return fmin(fmax(in, min), max);
+  67:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+  68:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  69:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** From Musicdsp.org "Fast power and root estimates for 32bit floats)
+  70:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** Original code by Stefan Stenzel
+  71:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** These are approximations
+  72:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+  73:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fastpower(float f, int n)
+  74:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+  75:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     long *lp, l;
+  76:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     lp = (long *)(&f);
+  77:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l  = *lp;
+  78:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l -= 0x3F800000;
+  79:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l <<= (n - 1);
+  80:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l += 0x3F800000;
+  81:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     *lp = l;
+  82:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return f;
+  83:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+  84:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  85:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fastroot(float f, int n)
+  86:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+  87:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     long *lp, l;
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 29
+
+
+  88:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     lp = (long *)(&f);
+  89:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l  = *lp;
+  90:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l -= 0x3F800000;
+  91:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l >>= (n - 1);
+  92:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     l += 0x3F800000;
+  93:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     *lp = l;
+  94:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return f;
+  95:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+  96:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+  97:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** Significantly more efficient than fmodf(x, 1.0f) for calculating
+  98:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  the decimal part of a floating point value.
+  99:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  */
+ 100:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fastmod1f(float x)
+ 101:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 102:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return x - static_cast<int>(x);
+ 103:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 104:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 105:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** From http://openaudio.blogspot.com/2017/02/faster-log10-and-pow.html
+ 106:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** No approximation, pow10f(x) gives a 90% speed increase over powf(10.f, x)
+ 107:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+ 108:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float pow10f(float f)
+ 109:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return expf(2.302585092994046f * f);
+ 111:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 112:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 113:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /* Original code for fastlog2f by Dr. Paul Beckmann from the ARM community forum, adapted from the 
+ 114:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** About 25% performance increase over std::log10f
+ 115:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+ 116:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fastlog2f(float f)
+ 117:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 118:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     float frac;
+ 119:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     int   exp;
+ 120:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     frac = frexpf(fabsf(f), &exp);
+ 121:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f    = 1.23149591368684f;
+ 122:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f *= frac;
+ 123:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f += -4.11852516267426f;
+ 124:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f *= frac;
+ 125:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f += 6.02197014179219f;
+ 126:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f *= frac;
+ 127:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f += -3.13396450166353f;
+ 128:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     f += exp;
+ 129:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return (f);
+ 130:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 131:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 132:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fastlog10f(float f)
+ 133:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 134:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return fastlog2f(f) * 0.3010299956639812f;
+ 135:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 136:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 137:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** Midi to frequency helper
+ 138:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+ 139:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float mtof(float m)
+ 863              		.loc 4 139 14 is_stmt 1 view .LVU261
+ 864              	.LBB263:
+ 140:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 141:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return powf(2, (m - 69.0f) / 12.0f) * 440.0f;
+ 865              		.loc 4 141 5 view .LVU262
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 30
+
+
+ 866              		.loc 4 141 23 is_stmt 0 view .LVU263
+ 867 0004 9FED127A 		vldr.32	s14, .L22
+ 868 0008 DFED127A 		vldr.32	s15, .L22+4
+ 869              		.loc 4 141 16 view .LVU264
+ 870 000c F2EE080A 		vmov.f32	s1, #1.2e+1
+ 871 0010 B0EE000A 		vmov.f32	s0, #2.0e+0
+ 872              	.LVL29:
+ 873              		.loc 4 141 23 view .LVU265
+ 874 0014 E6EE877A 		vfma.f32	s15, s13, s14
+ 875              	.LBE263:
+ 876              	.LBE262:
+  82:fho.cpp       ****     freq = mtof(freq*120);
+ 877              		.loc 2 82 1 view .LVU266
+ 878 0018 10B5     		push	{r4, lr}
+ 879              		.cfi_def_cfa_offset 8
+ 880              		.cfi_offset 4, -8
+ 881              		.cfi_offset 14, -4
+ 882 001a 2DED028B 		vpush.64	{d8}
+ 883              		.cfi_def_cfa_offset 16
+ 884              		.cfi_offset 80, -16
+ 885              		.cfi_offset 81, -12
+ 886              	.LBB267:
+ 887              	.LBB264:
+ 888              		.loc 4 141 43 view .LVU267
+ 889 001e 9FED0E8A 		vldr.32	s16, .L22+8
+ 890              	.LBE264:
+ 891              	.LBE267:
+  82:fho.cpp       ****     freq = mtof(freq*120);
+ 892              		.loc 2 82 1 view .LVU268
+ 893 0022 0446     		mov	r4, r0
+ 894              	.LBB268:
+ 895              	.LBB265:
+ 896              		.loc 4 141 16 view .LVU269
+ 897 0024 C7EEA00A 		vdiv.f32	s1, s15, s1
+ 898 0028 FFF7FEFF 		bl	powf
+ 899              	.LVL30:
+ 900              		.loc 4 141 16 view .LVU270
+ 901              	.LBE265:
+ 902              	.LBE268:
+ 903              	.LBB269:
+ 904              	.LBB270:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 905              		.loc 3 70 34 view .LVU271
+ 906 002c 04F11000 		add	r0, r4, #16
+ 907              	.LBE270:
+ 908              	.LBE269:
+ 909              	.LBB273:
+ 910              	.LBB266:
+ 911              		.loc 4 141 43 view .LVU272
+ 912 0030 20EE088A 		vmul.f32	s16, s0, s16
+ 913              	.LVL31:
+ 914              		.loc 4 141 43 view .LVU273
+ 915              	.LBE266:
+ 916              	.LBE273:
+  84:fho.cpp       ****     osc.SetFreq(freq);
+ 917              		.loc 2 84 5 is_stmt 1 view .LVU274
+ 918              	.LBB274:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 31
+
+
+ 919              	.LBI269:
+  67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 920              		.loc 3 67 17 view .LVU275
+ 921              	.LBB271:
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 922              		.loc 3 69 9 view .LVU276
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 923              		.loc 3 70 34 is_stmt 0 view .LVU277
+ 924 0034 B0EE480A 		vmov.f32	s0, s16
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 925              		.loc 3 69 20 view .LVU278
+ 926 0038 84ED068A 		vstr.32	s16, [r4, #24]
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 927              		.loc 3 70 9 is_stmt 1 view .LVU279
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 928              		.loc 3 70 34 is_stmt 0 view .LVU280
+ 929 003c FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 930              	.LVL32:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 931              		.loc 3 70 34 view .LVU281
+ 932              	.LBE271:
+ 933              	.LBE274:
+  85:fho.cpp       ****     frequency = freq;
+ 934              		.loc 2 85 15 view .LVU282
+ 935 0040 84ED018A 		vstr.32	s16, [r4, #4]
+ 936              	.LBB275:
+ 937              	.LBB272:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 938              		.loc 3 70 20 view .LVU283
+ 939 0044 84ED0B0A 		vstr.32	s0, [r4, #44]
+ 940              	.LVL33:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 941              		.loc 3 70 20 view .LVU284
+ 942              	.LBE272:
+ 943              	.LBE275:
+ 944              		.loc 2 85 5 is_stmt 1 view .LVU285
+  86:fho.cpp       **** }
+ 945              		.loc 2 86 1 is_stmt 0 view .LVU286
+ 946 0048 BDEC028B 		vldm	sp!, {d8}
+ 947              		.cfi_restore 80
+ 948              		.cfi_restore 81
+ 949              		.cfi_def_cfa_offset 8
+ 950              	.LVL34:
+ 951              		.loc 2 86 1 view .LVU287
+ 952 004c 10BD     		pop	{r4, pc}
+ 953              	.LVL35:
+ 954              	.L23:
+ 955              		.loc 2 86 1 view .LVU288
+ 956 004e 00BF     		.align	2
+ 957              	.L22:
+ 958 0050 0000F042 		.word	1123024896
+ 959 0054 00008AC2 		.word	-1031143424
+ 960 0058 0000DC43 		.word	1138491392
+ 961              		.cfi_endproc
+ 962              	.LFE3520:
+ 964              		.section	.text._ZN3fho12set_freq_linEf,"ax",%progbits
+ 965              		.align	1
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 32
+
+
+ 966              		.p2align 2,,3
+ 967              		.global	_ZN3fho12set_freq_linEf
+ 968              		.syntax unified
+ 969              		.thumb
+ 970              		.thumb_func
+ 971              		.fpu fpv5-d16
+ 973              	_ZN3fho12set_freq_linEf:
+ 974              	.LVL36:
+ 975              	.LFB3521:
+  87:fho.cpp       **** 
+  88:fho.cpp       **** void fho::set_freq_lin(float freq)
+  89:fho.cpp       **** {
+ 976              		.loc 2 89 1 is_stmt 1 view -0
+ 977              		.cfi_startproc
+ 978              		@ args = 0, pretend = 0, frame = 0
+ 979              		@ frame_needed = 0, uses_anonymous_args = 0
+  90:fho.cpp       ****     freq = fmap(freq, 50.0, 5000.0f);
+ 980              		.loc 2 90 5 view .LVU290
+ 981              	.LBB276:
+ 982              	.LBI276:
+ 142:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 143:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 144:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 145:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** one pole lpf
+ 146:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** out is passed by reference, and must be retained between
+ 147:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** calls to properly filter the signal
+ 148:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** coeff can be calculated:
+ 149:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** coeff = 1.0 / (time * sample_rate) ; where time is in seconds
+ 150:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+ 151:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline void fonepole(float &out, float in, float coeff)
+ 152:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 153:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     out += coeff * (in - out);
+ 154:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 155:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 156:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** Curves to use with the fmap function */
+ 157:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** enum class Mapping
+ 158:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 159:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     LINEAR,
+ 160:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     EXP,
+ 161:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     LOG,
+ 162:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** };
+ 163:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
+ 164:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** Maps a float between a specified range, using a specified curve.
+ 165:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *
+ 166:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  \param in a value between 0 to 1 that will be mapped to the new range.
+ 167:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  \param min the new minimum value
+ 168:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  \param max the new maxmimum value
+ 169:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  \param curve a Mapping Value to adjust the response curve of the transformation
+ 170:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *               defaults to Linear. @see Mapping
+ 171:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *
+ 172:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  When using the log curve min and max, must be greater than zero.
+ 173:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *
+ 174:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****  *  \retval returns the transformed float within the new range.
+ 175:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
+ 176:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float
+ 177:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** fmap(float in, float min, float max, Mapping curve = Mapping::LINEAR)
+ 983              		.loc 4 177 1 view .LVU291
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 33
+
+
+ 984              	.LBE276:
+ 178:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 179:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     switch(curve)
+ 985              		.loc 4 179 5 view .LVU292
+ 986              	.LBB291:
+ 987              	.LBB277:
+ 180:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     {
+ 181:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         case Mapping::EXP:
+ 182:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****             return fclamp(min + (in * in) * (max - min), min, max);
+ 183:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         case Mapping::LOG:
+ 184:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         {
+ 185:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****             const float a = 1.f / log10f(max / min);
+ 186:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****             return fclamp(min * powf(10, in / a), min, max);
+ 187:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         }
+ 188:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         case Mapping::LINEAR:
+ 988              		.loc 4 188 9 view .LVU293
+ 189:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
+ 989              		.loc 4 189 9 view .LVU294
+ 990              		.loc 4 189 18 view .LVU295
+ 991              	.LBE277:
+ 992              	.LBE291:
+  89:fho.cpp       ****     freq = fmap(freq, 50.0, 5000.0f);
+ 993              		.loc 2 89 1 is_stmt 0 view .LVU296
+ 994 0000 10B5     		push	{r4, lr}
+ 995              		.cfi_def_cfa_offset 8
+ 996              		.cfi_offset 4, -8
+ 997              		.cfi_offset 14, -4
+ 998 0002 2DED028B 		vpush.64	{d8}
+ 999              		.cfi_def_cfa_offset 16
+ 1000              		.cfi_offset 80, -16
+ 1001              		.cfi_offset 81, -12
+ 1002              	.LBB292:
+ 1003              	.LBB287:
+ 1004              		.loc 4 189 31 view .LVU297
+ 1005 0006 9FED0E8A 		vldr.32	s16, .L26
+ 1006              	.LBE287:
+ 1007              	.LBE292:
+  89:fho.cpp       ****     freq = fmap(freq, 50.0, 5000.0f);
+ 1008              		.loc 2 89 1 view .LVU298
+ 1009 000a 0446     		mov	r4, r0
+ 1010              	.LBB293:
+ 1011              	.LBB288:
+ 1012              		.loc 4 189 31 view .LVU299
+ 1013 000c DFED0D6A 		vldr.32	s13, .L26+4
+ 1014              	.LBE288:
+ 1015              	.LBE293:
+ 1016              	.LBB294:
+ 1017              	.LBB295:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1018              		.loc 3 70 34 view .LVU300
+ 1019 0010 1030     		adds	r0, r0, #16
+ 1020              	.LVL37:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1021              		.loc 3 70 34 view .LVU301
+ 1022              	.LBE295:
+ 1023              	.LBE294:
+ 1024              	.LBB298:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 34
+
+
+ 1025              	.LBB289:
+ 1026              		.loc 4 189 31 view .LVU302
+ 1027 0012 F0EE487A 		vmov.f32	s15, s16
+ 1028              	.LBB278:
+ 1029              	.LBB279:
+ 1030              	.LBB280:
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1031              		.loc 4 55 5 view .LVU303
+ 1032 0016 9FED0C7A 		vldr.32	s14, .L26+8
+ 1033              	.LBE280:
+ 1034              	.LBE279:
+ 1035              	.LBE278:
+ 1036              		.loc 4 189 31 view .LVU304
+ 1037 001a E0EE267A 		vfma.f32	s15, s0, s13
+ 1038              	.LVL38:
+ 1039              	.LBB285:
+ 1040              	.LBI278:
+  64:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1041              		.loc 4 64 14 is_stmt 1 view .LVU305
+ 1042              	.LBE285:
+ 1043              	.LBE289:
+ 1044              	.LBE298:
+  66:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1045              		.loc 4 66 5 view .LVU306
+ 1046              	.LBB299:
+ 1047              	.LBB290:
+ 1048              	.LBB286:
+ 1049              	.LBB282:
+ 1050              	.LBI282:
+  40:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1051              		.loc 4 40 14 view .LVU307
+ 1052              	.LBB283:
+  42:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1053              		.loc 4 42 5 view .LVU308
+  44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1054              		.loc 4 44 5 view .LVU309
+ 1055              		.syntax unified
+ 1056              	@ 44 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1057 001e C7FE887A 		vmaxnm.f32 s15, s15, s16
+ 1058              	@ 0 "" 2
+ 1059              	.LVL39:
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1060              		.loc 4 48 5 view .LVU310
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1061              		.loc 4 48 5 is_stmt 0 view .LVU311
+ 1062              		.thumb
+ 1063              		.syntax unified
+ 1064              	.LBE283:
+ 1065              	.LBE282:
+ 1066              	.LBB284:
+ 1067              	.LBI279:
+  51:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1068              		.loc 4 51 14 is_stmt 1 view .LVU312
+ 1069              	.LBB281:
+  53:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1070              		.loc 4 53 5 view .LVU313
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 35
+
+
+ 1071              		.loc 4 55 5 view .LVU314
+ 1072              		.syntax unified
+ 1073              	@ 55 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1074 0022 87FEC78A 		vminnm.f32 s16, s15, s14
+ 1075              	@ 0 "" 2
+ 1076              	.LVL40:
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1077              		.loc 4 59 5 view .LVU315
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1078              		.loc 4 59 5 is_stmt 0 view .LVU316
+ 1079              		.thumb
+ 1080              		.syntax unified
+ 1081              	.LBE281:
+ 1082              	.LBE284:
+ 1083              	.LBE286:
+ 1084              	.LBE290:
+ 1085              	.LBE299:
+  91:fho.cpp       ****     osc.SetFreq(freq);
+ 1086              		.loc 2 91 5 is_stmt 1 view .LVU317
+ 1087              	.LBB300:
+ 1088              	.LBI294:
+  67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 1089              		.loc 3 67 17 view .LVU318
+ 1090              	.LBB296:
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 1091              		.loc 3 69 9 view .LVU319
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1092              		.loc 3 70 34 is_stmt 0 view .LVU320
+ 1093 0026 B0EE480A 		vmov.f32	s0, s16
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 1094              		.loc 3 69 20 view .LVU321
+ 1095 002a 84ED068A 		vstr.32	s16, [r4, #24]
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1096              		.loc 3 70 9 is_stmt 1 view .LVU322
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1097              		.loc 3 70 34 is_stmt 0 view .LVU323
+ 1098 002e FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 1099              	.LVL41:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1100              		.loc 3 70 34 view .LVU324
+ 1101              	.LBE296:
+ 1102              	.LBE300:
+  92:fho.cpp       ****     frequency = freq;
+ 1103              		.loc 2 92 15 view .LVU325
+ 1104 0032 84ED018A 		vstr.32	s16, [r4, #4]
+ 1105              	.LBB301:
+ 1106              	.LBB297:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1107              		.loc 3 70 20 view .LVU326
+ 1108 0036 84ED0B0A 		vstr.32	s0, [r4, #44]
+ 1109              	.LVL42:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1110              		.loc 3 70 20 view .LVU327
+ 1111              	.LBE297:
+ 1112              	.LBE301:
+ 1113              		.loc 2 92 5 is_stmt 1 view .LVU328
+  93:fho.cpp       **** }
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 36
+
+
+ 1114              		.loc 2 93 1 is_stmt 0 view .LVU329
+ 1115 003a BDEC028B 		vldm	sp!, {d8}
+ 1116              		.cfi_restore 80
+ 1117              		.cfi_restore 81
+ 1118              		.cfi_def_cfa_offset 8
+ 1119              	.LVL43:
+ 1120              		.loc 2 93 1 view .LVU330
+ 1121 003e 10BD     		pop	{r4, pc}
+ 1122              	.LVL44:
+ 1123              	.L27:
+ 1124              		.loc 2 93 1 view .LVU331
+ 1125              		.align	2
+ 1126              	.L26:
+ 1127 0040 00004842 		.word	1112014848
+ 1128 0044 00B09A45 		.word	1167765504
+ 1129 0048 00409C45 		.word	1167867904
+ 1130              		.cfi_endproc
+ 1131              	.LFE3521:
+ 1133              		.section	.text._ZN3fho12set_freq_lfoEf,"ax",%progbits
+ 1134              		.align	1
+ 1135              		.p2align 2,,3
+ 1136              		.global	_ZN3fho12set_freq_lfoEf
+ 1137              		.syntax unified
+ 1138              		.thumb
+ 1139              		.thumb_func
+ 1140              		.fpu fpv5-d16
+ 1142              	_ZN3fho12set_freq_lfoEf:
+ 1143              	.LVL45:
+ 1144              	.LFB3522:
+  94:fho.cpp       **** 
+  95:fho.cpp       **** void fho::set_freq_lfo(float freq)
+  96:fho.cpp       **** {
+ 1145              		.loc 2 96 1 is_stmt 1 view -0
+ 1146              		.cfi_startproc
+ 1147              		@ args = 0, pretend = 0, frame = 0
+ 1148              		@ frame_needed = 0, uses_anonymous_args = 0
+  97:fho.cpp       ****     freq = fmap(freq, 0.05f, 30.0f);
+ 1149              		.loc 2 97 5 view .LVU333
+ 1150              	.LBB302:
+ 1151              	.LBI302:
+ 177:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1152              		.loc 4 177 1 view .LVU334
+ 1153              	.LBE302:
+ 179:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     {
+ 1154              		.loc 4 179 5 view .LVU335
+ 1155              	.LBB317:
+ 1156              	.LBB303:
+ 188:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
+ 1157              		.loc 4 188 9 view .LVU336
+ 1158              		.loc 4 189 9 view .LVU337
+ 1159              		.loc 4 189 18 view .LVU338
+ 1160              	.LBE303:
+ 1161              	.LBE317:
+  96:fho.cpp       ****     freq = fmap(freq, 0.05f, 30.0f);
+ 1162              		.loc 2 96 1 is_stmt 0 view .LVU339
+ 1163 0000 10B5     		push	{r4, lr}
+ 1164              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 37
+
+
+ 1165              		.cfi_offset 4, -8
+ 1166              		.cfi_offset 14, -4
+ 1167 0002 2DED028B 		vpush.64	{d8}
+ 1168              		.cfi_def_cfa_offset 16
+ 1169              		.cfi_offset 80, -16
+ 1170              		.cfi_offset 81, -12
+ 1171              	.LBB318:
+ 1172              	.LBB313:
+ 1173              		.loc 4 189 31 view .LVU340
+ 1174 0006 9FED0E8A 		vldr.32	s16, .L30
+ 1175              	.LBE313:
+ 1176              	.LBE318:
+  96:fho.cpp       ****     freq = fmap(freq, 0.05f, 30.0f);
+ 1177              		.loc 2 96 1 view .LVU341
+ 1178 000a 0446     		mov	r4, r0
+ 1179              	.LBB319:
+ 1180              	.LBB314:
+ 1181              		.loc 4 189 31 view .LVU342
+ 1182 000c DFED0D6A 		vldr.32	s13, .L30+4
+ 1183              	.LBB304:
+ 1184              	.LBB305:
+ 1185              	.LBB306:
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1186              		.loc 4 55 5 view .LVU343
+ 1187 0010 B3EE0E7A 		vmov.f32	s14, #3.0e+1
+ 1188              	.LBE306:
+ 1189              	.LBE305:
+ 1190              	.LBE304:
+ 1191              		.loc 4 189 31 view .LVU344
+ 1192 0014 F0EE487A 		vmov.f32	s15, s16
+ 1193              	.LBE314:
+ 1194              	.LBE319:
+ 1195              	.LBB320:
+ 1196              	.LBB321:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1197              		.loc 3 70 34 view .LVU345
+ 1198 0018 1030     		adds	r0, r0, #16
+ 1199              	.LVL46:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1200              		.loc 3 70 34 view .LVU346
+ 1201              	.LBE321:
+ 1202              	.LBE320:
+ 1203              	.LBB324:
+ 1204              	.LBB315:
+ 1205              		.loc 4 189 31 view .LVU347
+ 1206 001a E0EE267A 		vfma.f32	s15, s0, s13
+ 1207              	.LVL47:
+ 1208              	.LBB311:
+ 1209              	.LBI304:
+  64:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1210              		.loc 4 64 14 is_stmt 1 view .LVU348
+ 1211              	.LBE311:
+ 1212              	.LBE315:
+ 1213              	.LBE324:
+  66:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1214              		.loc 4 66 5 view .LVU349
+ 1215              	.LBB325:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 38
+
+
+ 1216              	.LBB316:
+ 1217              	.LBB312:
+ 1218              	.LBB308:
+ 1219              	.LBI308:
+  40:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1220              		.loc 4 40 14 view .LVU350
+ 1221              	.LBB309:
+  42:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1222              		.loc 4 42 5 view .LVU351
+  44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1223              		.loc 4 44 5 view .LVU352
+ 1224              		.syntax unified
+ 1225              	@ 44 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1226 001e C7FE887A 		vmaxnm.f32 s15, s15, s16
+ 1227              	@ 0 "" 2
+ 1228              	.LVL48:
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1229              		.loc 4 48 5 view .LVU353
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1230              		.loc 4 48 5 is_stmt 0 view .LVU354
+ 1231              		.thumb
+ 1232              		.syntax unified
+ 1233              	.LBE309:
+ 1234              	.LBE308:
+ 1235              	.LBB310:
+ 1236              	.LBI305:
+  51:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1237              		.loc 4 51 14 is_stmt 1 view .LVU355
+ 1238              	.LBB307:
+  53:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1239              		.loc 4 53 5 view .LVU356
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1240              		.loc 4 55 5 view .LVU357
+ 1241              		.syntax unified
+ 1242              	@ 55 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1243 0022 87FEC78A 		vminnm.f32 s16, s15, s14
+ 1244              	@ 0 "" 2
+ 1245              	.LVL49:
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1246              		.loc 4 59 5 view .LVU358
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1247              		.loc 4 59 5 is_stmt 0 view .LVU359
+ 1248              		.thumb
+ 1249              		.syntax unified
+ 1250              	.LBE307:
+ 1251              	.LBE310:
+ 1252              	.LBE312:
+ 1253              	.LBE316:
+ 1254              	.LBE325:
+  98:fho.cpp       ****     osc.SetFreq(freq);
+ 1255              		.loc 2 98 5 is_stmt 1 view .LVU360
+ 1256              	.LBB326:
+ 1257              	.LBI320:
+  67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
+ 1258              		.loc 3 67 17 view .LVU361
+ 1259              	.LBB322:
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 39
+
+
+ 1260              		.loc 3 69 9 view .LVU362
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1261              		.loc 3 70 34 is_stmt 0 view .LVU363
+ 1262 0026 B0EE480A 		vmov.f32	s0, s16
+  69:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         phase_inc_ = CalcPhaseInc(f);
+ 1263              		.loc 3 69 20 view .LVU364
+ 1264 002a 84ED068A 		vstr.32	s16, [r4, #24]
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1265              		.loc 3 70 9 is_stmt 1 view .LVU365
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1266              		.loc 3 70 34 is_stmt 0 view .LVU366
+ 1267 002e FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
+ 1268              	.LVL50:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1269              		.loc 3 70 34 view .LVU367
+ 1270              	.LBE322:
+ 1271              	.LBE326:
+  99:fho.cpp       ****     frequency = freq;
+ 1272              		.loc 2 99 15 view .LVU368
+ 1273 0032 84ED018A 		vstr.32	s16, [r4, #4]
+ 1274              	.LBB327:
+ 1275              	.LBB323:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1276              		.loc 3 70 20 view .LVU369
+ 1277 0036 84ED0B0A 		vstr.32	s0, [r4, #44]
+ 1278              	.LVL51:
+  70:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
+ 1279              		.loc 3 70 20 view .LVU370
+ 1280              	.LBE323:
+ 1281              	.LBE327:
+ 1282              		.loc 2 99 5 is_stmt 1 view .LVU371
+ 100:fho.cpp       **** }
+ 1283              		.loc 2 100 1 is_stmt 0 view .LVU372
+ 1284 003a BDEC028B 		vldm	sp!, {d8}
+ 1285              		.cfi_restore 80
+ 1286              		.cfi_restore 81
+ 1287              		.cfi_def_cfa_offset 8
+ 1288              	.LVL52:
+ 1289              		.loc 2 100 1 view .LVU373
+ 1290 003e 10BD     		pop	{r4, pc}
+ 1291              	.LVL53:
+ 1292              	.L31:
+ 1293              		.loc 2 100 1 view .LVU374
+ 1294              		.align	2
+ 1295              	.L30:
+ 1296 0040 CDCC4C3D 		.word	1028443341
+ 1297 0044 9A99EF41 		.word	1106221466
+ 1298              		.cfi_endproc
+ 1299              	.LFE3522:
+ 1301              		.section	.text._ZN3fho13set_fold_gainEf,"ax",%progbits
+ 1302              		.align	1
+ 1303              		.p2align 2,,3
+ 1304              		.global	_ZN3fho13set_fold_gainEf
+ 1305              		.syntax unified
+ 1306              		.thumb
+ 1307              		.thumb_func
+ 1308              		.fpu fpv5-d16
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 40
+
+
+ 1310              	_ZN3fho13set_fold_gainEf:
+ 1311              	.LVL54:
+ 1312              	.LFB3523:
+ 101:fho.cpp       **** 
+ 102:fho.cpp       **** void fho::set_fold_gain(float gain)
+ 103:fho.cpp       **** {
+ 1313              		.loc 2 103 1 is_stmt 1 view -0
+ 1314              		.cfi_startproc
+ 1315              		@ args = 0, pretend = 0, frame = 0
+ 1316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1317              		@ link register save eliminated.
+ 104:fho.cpp       ****     folder.SetGain(fmap(gain, 1.0f, 11.0f));
+ 1318              		.loc 2 104 5 view .LVU376
+ 1319              	.LBB328:
+ 1320              	.LBB329:
+ 1321              		.loc 4 189 31 is_stmt 0 view .LVU377
+ 1322 0000 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 1323 0004 B2EE046A 		vmov.f32	s12, #1.0e+1
+ 1324              	.LVL55:
+ 1325              		.loc 4 189 31 view .LVU378
+ 1326              	.LBE329:
+ 1327              	.LBI328:
+ 177:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1328              		.loc 4 177 1 is_stmt 1 view .LVU379
+ 1329              	.LBE328:
+ 179:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     {
+ 1330              		.loc 4 179 5 view .LVU380
+ 1331              	.LBB341:
+ 1332              	.LBB339:
+ 188:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
+ 1333              		.loc 4 188 9 view .LVU381
+ 1334              		.loc 4 189 9 view .LVU382
+ 1335              		.loc 4 189 18 view .LVU383
+ 1336              	.LBB330:
+ 1337              	.LBB331:
+ 1338              	.LBB332:
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1339              		.loc 4 55 5 is_stmt 0 view .LVU384
+ 1340 0008 F2EE066A 		vmov.f32	s13, #1.1e+1
+ 1341              	.LBE332:
+ 1342              	.LBE331:
+ 1343              	.LBE330:
+ 1344              		.loc 4 189 31 view .LVU385
+ 1345 000c F0EE477A 		vmov.f32	s15, s14
+ 1346 0010 E0EE067A 		vfma.f32	s15, s0, s12
+ 1347              	.LVL56:
+ 1348              	.LBB337:
+ 1349              	.LBI330:
+  64:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1350              		.loc 4 64 14 is_stmt 1 view .LVU386
+ 1351              	.LBE337:
+ 1352              	.LBE339:
+ 1353              	.LBE341:
+  66:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1354              		.loc 4 66 5 view .LVU387
+ 1355              	.LBB342:
+ 1356              	.LBB340:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 41
+
+
+ 1357              	.LBB338:
+ 1358              	.LBB334:
+ 1359              	.LBI334:
+  40:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1360              		.loc 4 40 14 view .LVU388
+ 1361              	.LBB335:
+  42:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1362              		.loc 4 42 5 view .LVU389
+  44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1363              		.loc 4 44 5 view .LVU390
+ 1364              		.syntax unified
+ 1365              	@ 44 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1366 0014 C7FE877A 		vmaxnm.f32 s15, s15, s14
+ 1367              	@ 0 "" 2
+ 1368              	.LVL57:
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1369              		.loc 4 48 5 view .LVU391
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1370              		.loc 4 48 5 is_stmt 0 view .LVU392
+ 1371              		.thumb
+ 1372              		.syntax unified
+ 1373              	.LBE335:
+ 1374              	.LBE334:
+ 1375              	.LBB336:
+ 1376              	.LBI331:
+  51:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1377              		.loc 4 51 14 is_stmt 1 view .LVU393
+ 1378              	.LBB333:
+  53:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1379              		.loc 4 53 5 view .LVU394
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1380              		.loc 4 55 5 view .LVU395
+ 1381              		.syntax unified
+ 1382              	@ 55 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1383 0018 C7FEE67A 		vminnm.f32 s15, s15, s13
+ 1384              	@ 0 "" 2
+ 1385              	.LVL58:
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1386              		.loc 4 59 5 view .LVU396
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1387              		.loc 4 59 5 is_stmt 0 view .LVU397
+ 1388              		.thumb
+ 1389              		.syntax unified
+ 1390              	.LBE333:
+ 1391              	.LBE336:
+ 1392              	.LBE338:
+ 1393              	.LBE340:
+ 1394              	.LBE342:
+ 1395              	.LBB343:
+ 1396              	.LBI343:
+ 1397              		.file 5 "../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h"
+   1:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** /*
+   2:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** Copyright (c) 2020 Electrosmith, Corp, Nick Donaldson
+   3:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** 
+   4:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** Use of this source code is governed by an MIT-style
+   5:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** license that can be found in the LICENSE file or at
+   6:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** https://opensource.org/licenses/MIT.
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 42
+
+
+   7:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** */
+   8:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** 
+   9:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** #pragma once
+  10:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** #ifndef DSY_WAVEFOFOLDER_H
+  11:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** #define DSY_WAVEFOFOLDER_H
+  12:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** 
+  13:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** #include <stdint.h>
+  14:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** #include "Utility/dcblock.h"
+  15:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** #ifdef __cplusplus
+  16:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** 
+  17:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** namespace daisysp
+  18:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** {
+  19:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** /** Basic wavefolder module.
+  20:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** 
+  21:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** Amplitude of input determines level of folding.
+  22:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** Amplitudes of magnitude > 1.0 will start to fold.
+  23:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** 
+  24:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** Original author(s) : Nick Donaldson
+  25:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** Year : 2022
+  26:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** */
+  27:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** class Wavefolder
+  28:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h **** {
+  29:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****   public:
+  30:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     Wavefolder() {}
+  31:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     ~Wavefolder() {}
+  32:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     /** Initializes the wavefolder module.
+  33:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     */
+  34:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     void Init();
+  35:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     /** applies wavefolding to input 
+  36:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     */
+  37:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     float Process(float in);
+  38:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     /** 
+  39:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****         \param gain Set input gain.
+  40:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****         Supports negative values for thru-zero
+  41:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     */
+  42:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     inline void SetGain(float gain) { gain_ = gain; }
+ 1398              		.loc 5 42 17 is_stmt 1 view .LVU398
+ 1399              	.LBB344:
+ 1400              		.loc 5 42 39 view .LVU399
+ 1401              		.loc 5 42 45 is_stmt 0 view .LVU400
+ 1402 001c C0ED027A 		vstr.32	s15, [r0, #8]
+ 1403              	.LVL59:
+ 1404              		.loc 5 42 45 view .LVU401
+ 1405              	.LBE344:
+ 1406              	.LBE343:
+ 105:fho.cpp       ****     
+ 106:fho.cpp       **** }
+ 1407              		.loc 2 106 1 view .LVU402
+ 1408 0020 7047     		bx	lr
+ 1409              		.cfi_endproc
+ 1410              	.LFE3523:
+ 1412 0022 00BF     		.section	.text._ZN3fho12set_fold_offEf,"ax",%progbits
+ 1413              		.align	1
+ 1414              		.p2align 2,,3
+ 1415              		.global	_ZN3fho12set_fold_offEf
+ 1416              		.syntax unified
+ 1417              		.thumb
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 43
+
+
+ 1418              		.thumb_func
+ 1419              		.fpu fpv5-d16
+ 1421              	_ZN3fho12set_fold_offEf:
+ 1422              	.LVL60:
+ 1423              	.LFB3524:
+ 107:fho.cpp       **** 
+ 108:fho.cpp       **** void fho::set_fold_off(float offset)
+ 109:fho.cpp       **** {
+ 1424              		.loc 2 109 1 is_stmt 1 view -0
+ 1425              		.cfi_startproc
+ 1426              		@ args = 0, pretend = 0, frame = 0
+ 1427              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1428              		@ link register save eliminated.
+ 110:fho.cpp       ****     folder.SetOffset(fmap(offset, -1.0f, 1.0f));
+ 1429              		.loc 2 110 5 view .LVU404
+ 1430              	.LBB345:
+ 1431              	.LBB346:
+ 1432              		.loc 4 189 31 is_stmt 0 view .LVU405
+ 1433 0000 BFEE007A 		vmov.f32	s14, #-1.0e+0
+ 1434 0004 B0EE006A 		vmov.f32	s12, #2.0e+0
+ 1435              	.LVL61:
+ 1436              		.loc 4 189 31 view .LVU406
+ 1437              	.LBE346:
+ 1438              	.LBI345:
+ 177:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1439              		.loc 4 177 1 is_stmt 1 view .LVU407
+ 1440              	.LBE345:
+ 179:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     {
+ 1441              		.loc 4 179 5 view .LVU408
+ 1442              	.LBB358:
+ 1443              	.LBB356:
+ 188:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
+ 1444              		.loc 4 188 9 view .LVU409
+ 1445              		.loc 4 189 9 view .LVU410
+ 1446              		.loc 4 189 18 view .LVU411
+ 1447              	.LBB347:
+ 1448              	.LBB348:
+ 1449              	.LBB349:
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1450              		.loc 4 55 5 is_stmt 0 view .LVU412
+ 1451 0008 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 1452              	.LBE349:
+ 1453              	.LBE348:
+ 1454              	.LBE347:
+ 1455              		.loc 4 189 31 view .LVU413
+ 1456 000c F0EE477A 		vmov.f32	s15, s14
+ 1457 0010 E0EE067A 		vfma.f32	s15, s0, s12
+ 1458              	.LVL62:
+ 1459              	.LBB354:
+ 1460              	.LBI347:
+  64:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1461              		.loc 4 64 14 is_stmt 1 view .LVU414
+ 1462              	.LBE354:
+ 1463              	.LBE356:
+ 1464              	.LBE358:
+  66:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1465              		.loc 4 66 5 view .LVU415
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 44
+
+
+ 1466              	.LBB359:
+ 1467              	.LBB357:
+ 1468              	.LBB355:
+ 1469              	.LBB351:
+ 1470              	.LBI351:
+  40:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1471              		.loc 4 40 14 view .LVU416
+ 1472              	.LBB352:
+  42:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1473              		.loc 4 42 5 view .LVU417
+  44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1474              		.loc 4 44 5 view .LVU418
+ 1475              		.syntax unified
+ 1476              	@ 44 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1477 0014 C7FE877A 		vmaxnm.f32 s15, s15, s14
+ 1478              	@ 0 "" 2
+ 1479              	.LVL63:
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1480              		.loc 4 48 5 view .LVU419
+  48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1481              		.loc 4 48 5 is_stmt 0 view .LVU420
+ 1482              		.thumb
+ 1483              		.syntax unified
+ 1484              	.LBE352:
+ 1485              	.LBE351:
+ 1486              	.LBB353:
+ 1487              	.LBI348:
+  51:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1488              		.loc 4 51 14 is_stmt 1 view .LVU421
+ 1489              	.LBB350:
+  53:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1490              		.loc 4 53 5 view .LVU422
+  55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1491              		.loc 4 55 5 view .LVU423
+ 1492              		.syntax unified
+ 1493              	@ 55 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1494 0018 C7FEE67A 		vminnm.f32 s15, s15, s13
+ 1495              	@ 0 "" 2
+ 1496              	.LVL64:
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1497              		.loc 4 59 5 view .LVU424
+  59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1498              		.loc 4 59 5 is_stmt 0 view .LVU425
+ 1499              		.thumb
+ 1500              		.syntax unified
+ 1501              	.LBE350:
+ 1502              	.LBE353:
+ 1503              	.LBE355:
+ 1504              	.LBE357:
+ 1505              	.LBE359:
+ 1506              	.LBB360:
+ 1507              	.LBI360:
+  43:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     /** 
+  44:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****         \param offset Offset odded to input (pre-gain) for asymmetrical folding.
+  45:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     */
+  46:../../../../DaisyExamples/DaisySP//Source/Effects/wavefolder.h ****     inline void SetOffset(float offset) { offset_ = offset; }
+ 1508              		.loc 5 46 17 is_stmt 1 view .LVU426
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 45
+
+
+ 1509              	.LBB361:
+ 1510              		.loc 5 46 43 view .LVU427
+ 1511              		.loc 5 46 51 is_stmt 0 view .LVU428
+ 1512 001c C0ED037A 		vstr.32	s15, [r0, #12]
+ 1513              	.LVL65:
+ 1514              		.loc 5 46 51 view .LVU429
+ 1515              	.LBE361:
+ 1516              	.LBE360:
+ 111:fho.cpp       **** }
+ 1517              		.loc 2 111 1 view .LVU430
+ 1518 0020 7047     		bx	lr
+ 1519              		.cfi_endproc
+ 1520              	.LFE3524:
+ 1522 0022 00BF     		.section	.text._ZN3fho13set_tanh_gainEf,"ax",%progbits
+ 1523              		.align	1
+ 1524              		.p2align 2,,3
+ 1525              		.global	_ZN3fho13set_tanh_gainEf
+ 1526              		.syntax unified
+ 1527              		.thumb
+ 1528              		.thumb_func
+ 1529              		.fpu fpv5-d16
+ 1531              	_ZN3fho13set_tanh_gainEf:
+ 1532              	.LVL66:
+ 1533              	.LFB3525:
+ 112:fho.cpp       **** 
+ 113:fho.cpp       **** void fho::set_tanh_gain(float gain)
+ 114:fho.cpp       **** {
+ 1534              		.loc 2 114 1 is_stmt 1 view -0
+ 1535              		.cfi_startproc
+ 1536              		@ args = 0, pretend = 0, frame = 0
+ 1537              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115:fho.cpp       ****     //gain = gain*(-0.00015*frequency)+1;
+ 116:fho.cpp       ****     tanh_gain = pow10f(2*gain) - 1.0f;
+ 1538              		.loc 2 116 5 view .LVU432
+ 1539              	.LBB362:
+ 1540              	.LBI362:
+ 108:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1541              		.loc 4 108 14 view .LVU433
+ 1542              	.LBB363:
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1543              		.loc 4 110 5 view .LVU434
+ 1544              	.LBE363:
+ 1545              	.LBE362:
+ 1546              		.loc 2 116 23 is_stmt 0 view .LVU435
+ 1547 0000 30EE000A 		vadd.f32	s0, s0, s0
+ 1548              	.LVL67:
+ 1549              	.LBB367:
+ 1550              	.LBB364:
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1551              		.loc 4 110 16 view .LVU436
+ 1552 0004 DFED077A 		vldr.32	s15, .L36
+ 1553              	.LBE364:
+ 1554              	.LBE367:
+ 114:fho.cpp       ****     //gain = gain*(-0.00015*frequency)+1;
+ 1555              		.loc 2 114 1 view .LVU437
+ 1556 0008 10B5     		push	{r4, lr}
+ 1557              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 46
+
+
+ 1558              		.cfi_offset 4, -8
+ 1559              		.cfi_offset 14, -4
+ 1560              	.LBB368:
+ 1561              	.LBB365:
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1562              		.loc 4 110 16 view .LVU438
+ 1563 000a 20EE270A 		vmul.f32	s0, s0, s15
+ 1564              	.LVL68:
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1565              		.loc 4 110 16 view .LVU439
+ 1566              	.LBE365:
+ 1567              	.LBE368:
+ 114:fho.cpp       ****     //gain = gain*(-0.00015*frequency)+1;
+ 1568              		.loc 2 114 1 view .LVU440
+ 1569 000e 0446     		mov	r4, r0
+ 1570              	.LBB369:
+ 1571              	.LBB366:
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1572              		.loc 4 110 16 view .LVU441
+ 1573 0010 FFF7FEFF 		bl	expf
+ 1574              	.LVL69:
+ 110:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1575              		.loc 4 110 16 view .LVU442
+ 1576              	.LBE366:
+ 1577              	.LBE369:
+ 1578              		.loc 2 116 32 view .LVU443
+ 1579 0014 F7EE007A 		vmov.f32	s15, #1.0e+0
+ 1580 0018 30EE670A 		vsub.f32	s0, s0, s15
+ 1581              		.loc 2 116 15 view .LVU444
+ 1582 001c 84ED000A 		vstr.32	s0, [r4]
+ 117:fho.cpp       **** }
+ 1583              		.loc 2 117 1 view .LVU445
+ 1584 0020 10BD     		pop	{r4, pc}
+ 1585              	.LVL70:
+ 1586              	.L37:
+ 1587              		.loc 2 117 1 view .LVU446
+ 1588 0022 00BF     		.align	2
+ 1589              	.L36:
+ 1590 0024 8E5D1340 		.word	1075010958
+ 1591              		.cfi_endproc
+ 1592              	.LFE3525:
+ 1594              		.section	.text._ZN3fho7ProcessEv,"ax",%progbits
+ 1595              		.align	1
+ 1596              		.p2align 2,,3
+ 1597              		.global	_ZN3fho7ProcessEv
+ 1598              		.syntax unified
+ 1599              		.thumb
+ 1600              		.thumb_func
+ 1601              		.fpu fpv5-d16
+ 1603              	_ZN3fho7ProcessEv:
+ 1604              	.LVL71:
+ 1605              	.LFB3526:
+ 118:fho.cpp       **** 
+ 119:fho.cpp       **** float fho::Process()
+ 120:fho.cpp       **** {
+ 1606              		.loc 2 120 1 is_stmt 1 view -0
+ 1607              		.cfi_startproc
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 47
+
+
+ 1608              		@ args = 0, pretend = 0, frame = 8
+ 1609              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121:fho.cpp       ****     float upsample[2];
+ 1610              		.loc 2 121 5 view .LVU448
+ 122:fho.cpp       ****     upsample[0] = osc.Process();
+ 1611              		.loc 2 122 5 view .LVU449
+ 120:fho.cpp       ****     float upsample[2];
+ 1612              		.loc 2 120 1 is_stmt 0 view .LVU450
+ 1613 0000 70B5     		push	{r4, r5, r6, lr}
+ 1614              		.cfi_def_cfa_offset 16
+ 1615              		.cfi_offset 4, -16
+ 1616              		.cfi_offset 5, -12
+ 1617              		.cfi_offset 6, -8
+ 1618              		.cfi_offset 14, -4
+ 1619 0002 0446     		mov	r4, r0
+ 1620              		.loc 2 122 30 view .LVU451
+ 1621 0004 1030     		adds	r0, r0, #16
+ 1622              	.LVL72:
+ 120:fho.cpp       ****     float upsample[2];
+ 1623              		.loc 2 120 1 view .LVU452
+ 1624 0006 2DED048B 		vpush.64	{d8, d9}
+ 1625              		.cfi_def_cfa_offset 32
+ 1626              		.cfi_offset 80, -32
+ 1627              		.cfi_offset 81, -28
+ 1628              		.cfi_offset 82, -24
+ 1629              		.cfi_offset 83, -20
+ 1630 000a 82B0     		sub	sp, sp, #8
+ 1631              		.cfi_def_cfa_offset 40
+ 1632              		.loc 2 122 30 view .LVU453
+ 1633 000c FFF7FEFF 		bl	_ZN7daisysp10Oscillator7ProcessEv
+ 1634              	.LVL73:
+ 1635              	.LBB382:
+ 1636              	.LBB383:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1637              		.loc 1 185 9 view .LVU454
+ 1638 0010 616D     		ldr	r1, [r4, #84]
+ 1639              	.LVL74:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1640              		.loc 1 185 9 view .LVU455
+ 1641              	.LBE383:
+ 1642              	.LBE382:
+ 123:fho.cpp       ****     upsample[0] = filter_2.Process(upsample[0]);
+ 1643              		.loc 2 123 5 is_stmt 1 view .LVU456
+ 1644              	.LBB389:
+ 1645              	.LBI382:
+ 183:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 1646              		.loc 1 183 11 view .LVU457
+ 1647              	.LBB386:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1648              		.loc 1 185 9 is_stmt 0 view .LVU458
+ 1649 0012 0029     		cmp	r1, #0
+ 1650 0014 00F0AF80 		beq	.L43
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1651              		.loc 1 187 15 view .LVU459
+ 1652 0018 6FF04042 		mvn	r2, #-1073741824
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1653              		.loc 1 187 9 view .LVU460
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 48
+
+
+ 1654 001c E36C     		ldr	r3, [r4, #76]
+ 1655              	.LBB384:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1656              		.loc 1 191 29 view .LVU461
+ 1657 001e 0129     		cmp	r1, #1
+ 1658              	.LBE384:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1659              		.loc 1 199 21 view .LVU462
+ 1660 0020 256D     		ldr	r5, [r4, #80]
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1661              		.loc 1 187 15 view .LVU463
+ 1662 0022 0A44     		add	r2, r2, r1
+ 190:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         for(size_t i = 0; i < size_ - 1; i++)
+ 1663              		.loc 1 190 15 view .LVU464
+ 1664 0024 DFED557A 		vldr.32	s15, .L65
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1665              		.loc 1 187 15 view .LVU465
+ 1666 0028 4FEA8206 		lsl	r6, r2, #2
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1667              		.loc 1 187 28 view .LVU466
+ 1668 002c 03EB8202 		add	r2, r3, r2, lsl #2
+ 1669 0030 82ED000A 		vstr.32	s0, [r2]
+ 1670              	.LVL75:
+ 1671              	.LBB385:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1672              		.loc 1 191 29 is_stmt 1 view .LVU467
+ 1673 0034 0FD0     		beq	.L41
+ 1674 0036 2946     		mov	r1, r5
+ 1675 0038 1A1D     		adds	r2, r3, #4
+ 1676 003a 03EB060C 		add	ip, r3, r6
+ 1677              	.LVL76:
+ 1678              	.L42:
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1679              		.loc 1 197 31 is_stmt 0 view .LVU468
+ 1680 003e 52F8040B 		ldr	r0, [r2], #4	@ float
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1681              		.loc 1 193 26 view .LVU469
+ 1682 0042 D3ED006A 		vldr.32	s13, [r3]
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1683              		.loc 1 193 38 view .LVU470
+ 1684 0046 B1EC017A 		vldmia.32	r1!, {s14}
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1685              		.loc 1 197 23 view .LVU471
+ 1686 004a 43F8040B 		str	r0, [r3], #4	@ float
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1687              		.loc 1 191 29 view .LVU472
+ 1688 004e 9C45     		cmp	ip, r3
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1689              		.loc 1 193 17 view .LVU473
+ 1690 0050 E6EE877A 		vfma.f32	s15, s13, s14
+ 1691              	.LVL77:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1692              		.loc 1 191 9 is_stmt 1 view .LVU474
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1693              		.loc 1 191 29 view .LVU475
+ 1694 0054 F3D1     		bne	.L42
+ 1695              	.LVL78:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 49
+
+
+ 1696              	.L41:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1697              		.loc 1 191 29 is_stmt 0 view .LVU476
+ 1698              	.LBE385:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1699              		.loc 1 199 27 view .LVU477
+ 1700 0056 3544     		add	r5, r5, r6
+ 1701              	.LBE386:
+ 1702              	.LBE389:
+ 124:fho.cpp       ****     upsample[0] = folder.Process(upsample[0]);
+ 1703              		.loc 2 124 33 view .LVU478
+ 1704 0058 04F10800 		add	r0, r4, #8
+ 1705              	.LBB390:
+ 1706              	.LBB387:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1707              		.loc 1 199 13 view .LVU479
+ 1708 005c 95ED007A 		vldr.32	s14, [r5]
+ 1709              	.LVL79:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1710              		.loc 1 199 13 view .LVU480
+ 1711              	.LBE387:
+ 1712              	.LBE390:
+ 1713              		.loc 2 124 5 is_stmt 1 view .LVU481
+ 1714              		.loc 2 124 33 is_stmt 0 view .LVU482
+ 1715 0060 0190     		str	r0, [sp, #4]
+ 1716 0062 E0EE077A 		vfma.f32	s15, s0, s14
+ 1717              	.LVL80:
+ 1718              		.loc 2 124 33 view .LVU483
+ 1719 0066 B0EE670A 		vmov.f32	s0, s15
+ 1720 006a FFF7FEFF 		bl	_ZN7daisysp10Wavefolder7ProcessEf
+ 1721              	.LVL81:
+ 125:fho.cpp       ****     upsample[0] = tanhf(upsample[0]*tanh_gain) / tanhf(tanh_gain);
+ 1722              		.loc 2 125 5 is_stmt 1 view .LVU484
+ 1723              		.loc 2 125 37 is_stmt 0 view .LVU485
+ 1724 006e D4ED008A 		vldr.32	s17, [r4]
+ 1725              		.loc 2 125 24 view .LVU486
+ 1726 0072 20EE280A 		vmul.f32	s0, s0, s17
+ 1727              	.LVL82:
+ 1728              		.loc 2 125 24 view .LVU487
+ 1729 0076 FFF7FEFF 		bl	tanhf
+ 1730              	.LVL83:
+ 1731 007a B0EE408A 		vmov.f32	s16, s0
+ 1732              		.loc 2 125 55 view .LVU488
+ 1733 007e B0EE680A 		vmov.f32	s0, s17
+ 1734 0082 FFF7FEFF 		bl	tanhf
+ 1735              	.LVL84:
+ 1736              	.LBB391:
+ 1737              	.LBB392:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1738              		.loc 1 185 9 view .LVU489
+ 1739 0086 616C     		ldr	r1, [r4, #68]
+ 1740              	.LBE392:
+ 1741              	.LBE391:
+ 1742              		.loc 2 125 48 view .LVU490
+ 1743 0088 C8EE006A 		vdiv.f32	s13, s16, s0
+ 1744              	.LVL85:
+ 126:fho.cpp       ****     upsample[0] = filter.Process(upsample[0]);
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 50
+
+
+ 1745              		.loc 2 126 5 is_stmt 1 view .LVU491
+ 1746              	.LBB399:
+ 1747              	.LBI391:
+ 183:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 1748              		.loc 1 183 11 view .LVU492
+ 1749              	.LBB397:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1750              		.loc 1 185 9 is_stmt 0 view .LVU493
+ 1751 008c 0029     		cmp	r1, #0
+ 1752 008e 72D0     		beq	.L43
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1753              		.loc 1 187 15 view .LVU494
+ 1754 0090 6FF04042 		mvn	r2, #-1073741824
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1755              		.loc 1 187 9 view .LVU495
+ 1756 0094 E36B     		ldr	r3, [r4, #60]
+ 1757              	.LBB393:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1758              		.loc 1 191 29 view .LVU496
+ 1759 0096 0129     		cmp	r1, #1
+ 1760              	.LBE393:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1761              		.loc 1 199 21 view .LVU497
+ 1762 0098 266C     		ldr	r6, [r4, #64]
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1763              		.loc 1 187 15 view .LVU498
+ 1764 009a 0A44     		add	r2, r2, r1
+ 190:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         for(size_t i = 0; i < size_ - 1; i++)
+ 1765              		.loc 1 190 15 view .LVU499
+ 1766 009c 9FED370A 		vldr.32	s0, .L65
+ 1767              	.LBB394:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1768              		.loc 1 191 29 view .LVU500
+ 1769 00a0 0198     		ldr	r0, [sp, #4]
+ 1770              	.LBE394:
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1771              		.loc 1 187 28 view .LVU501
+ 1772 00a2 03EB8205 		add	r5, r3, r2, lsl #2
+ 1773 00a6 C5ED006A 		vstr.32	s13, [r5]
+ 1774              	.LVL86:
+ 1775              	.LBB395:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1776              		.loc 1 191 29 is_stmt 1 view .LVU502
+ 1777              	.LBE395:
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1778              		.loc 1 187 15 is_stmt 0 view .LVU503
+ 1779 00aa 4FEA8205 		lsl	r5, r2, #2
+ 1780              	.LBB396:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1781              		.loc 1 191 29 view .LVU504
+ 1782 00ae 0FD0     		beq	.L45
+ 1783 00b0 3146     		mov	r1, r6
+ 1784 00b2 1A1D     		adds	r2, r3, #4
+ 1785 00b4 05EB030E 		add	lr, r5, r3
+ 1786              	.LVL87:
+ 1787              	.L46:
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 51
+
+
+ 1788              		.loc 1 197 31 view .LVU505
+ 1789 00b8 52F804CB 		ldr	ip, [r2], #4	@ float
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1790              		.loc 1 193 26 view .LVU506
+ 1791 00bc 93ED007A 		vldr.32	s14, [r3]
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1792              		.loc 1 193 38 view .LVU507
+ 1793 00c0 F1EC017A 		vldmia.32	r1!, {s15}
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1794              		.loc 1 197 23 view .LVU508
+ 1795 00c4 43F804CB 		str	ip, [r3], #4	@ float
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1796              		.loc 1 191 29 view .LVU509
+ 1797 00c8 9E45     		cmp	lr, r3
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1798              		.loc 1 193 17 view .LVU510
+ 1799 00ca A7EE270A 		vfma.f32	s0, s14, s15
+ 1800              	.LVL88:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1801              		.loc 1 191 9 is_stmt 1 view .LVU511
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1802              		.loc 1 191 29 view .LVU512
+ 1803 00ce F3D1     		bne	.L46
+ 1804              	.LVL89:
+ 1805              	.L45:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1806              		.loc 1 191 29 is_stmt 0 view .LVU513
+ 1807              	.LBE396:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1808              		.loc 1 199 27 view .LVU514
+ 1809 00d0 7219     		adds	r2, r6, r5
+ 1810              	.LBE397:
+ 1811              	.LBE399:
+ 1812              	.LBB400:
+ 1813              	.LBB401:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1814              		.loc 1 185 9 view .LVU515
+ 1815 00d2 616D     		ldr	r1, [r4, #84]
+ 1816              	.LBE401:
+ 1817              	.LBE400:
+ 1818              	.LBB406:
+ 1819              	.LBB398:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1820              		.loc 1 199 13 view .LVU516
+ 1821 00d4 D2ED007A 		vldr.32	s15, [r2]
+ 1822 00d8 A6EEA70A 		vfma.f32	s0, s13, s15
+ 1823 00dc B0EE408A 		vmov.f32	s16, s0
+ 1824              	.LVL90:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1825              		.loc 1 199 13 view .LVU517
+ 1826              	.LBE398:
+ 1827              	.LBE406:
+ 127:fho.cpp       **** 
+ 128:fho.cpp       ****     upsample[1] = 0.0f;
+ 1828              		.loc 2 128 5 is_stmt 1 view .LVU518
+ 129:fho.cpp       ****     upsample[1] = filter_2.Process(upsample[1]);
+ 1829              		.loc 2 129 5 view .LVU519
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 52
+
+
+ 1830              	.LBB407:
+ 1831              	.LBI400:
+ 183:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 1832              		.loc 1 183 11 view .LVU520
+ 1833              	.LBB405:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1834              		.loc 1 185 9 is_stmt 0 view .LVU521
+ 1835 00e0 0029     		cmp	r1, #0
+ 1836 00e2 48D0     		beq	.L43
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1837              		.loc 1 187 15 view .LVU522
+ 1838 00e4 6FF04042 		mvn	r2, #-1073741824
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1839              		.loc 1 187 9 view .LVU523
+ 1840 00e8 E36C     		ldr	r3, [r4, #76]
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1841              		.loc 1 187 28 view .LVU524
+ 1842 00ea 9FED240A 		vldr.32	s0, .L65
+ 1843              	.LVL91:
+ 1844              	.LBB402:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1845              		.loc 1 191 29 view .LVU525
+ 1846 00ee 0129     		cmp	r1, #1
+ 1847              	.LBE402:
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1848              		.loc 1 187 15 view .LVU526
+ 1849 00f0 0A44     		add	r2, r2, r1
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1850              		.loc 1 199 21 view .LVU527
+ 1851 00f2 266D     		ldr	r6, [r4, #80]
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1852              		.loc 1 187 28 view .LVU528
+ 1853 00f4 03EB8205 		add	r5, r3, r2, lsl #2
+ 1854 00f8 85ED000A 		vstr.32	s0, [r5]
+ 1855              	.LVL92:
+ 1856              	.LBB403:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1857              		.loc 1 191 29 is_stmt 1 view .LVU529
+ 1858              	.LBE403:
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1859              		.loc 1 187 15 is_stmt 0 view .LVU530
+ 1860 00fc 4FEA8205 		lsl	r5, r2, #2
+ 1861              	.LBB404:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1862              		.loc 1 191 29 view .LVU531
+ 1863 0100 0FD0     		beq	.L48
+ 1864 0102 3146     		mov	r1, r6
+ 1865 0104 1A1D     		adds	r2, r3, #4
+ 1866 0106 03EB050E 		add	lr, r3, r5
+ 1867              	.LVL93:
+ 1868              	.L49:
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1869              		.loc 1 197 31 view .LVU532
+ 1870 010a 52F804CB 		ldr	ip, [r2], #4	@ float
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1871              		.loc 1 193 26 view .LVU533
+ 1872 010e 93ED007A 		vldr.32	s14, [r3]
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 53
+
+
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1873              		.loc 1 193 38 view .LVU534
+ 1874 0112 F1EC017A 		vldmia.32	r1!, {s15}
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1875              		.loc 1 197 23 view .LVU535
+ 1876 0116 43F804CB 		str	ip, [r3], #4	@ float
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1877              		.loc 1 191 29 view .LVU536
+ 1878 011a 7345     		cmp	r3, lr
+ 193:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             /** Shift the state simulatenously 
+ 1879              		.loc 1 193 17 view .LVU537
+ 1880 011c A7EE270A 		vfma.f32	s0, s14, s15
+ 1881              	.LVL94:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1882              		.loc 1 191 9 is_stmt 1 view .LVU538
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1883              		.loc 1 191 29 view .LVU539
+ 1884 0120 F3D1     		bne	.L49
+ 1885              	.LVL95:
+ 1886              	.L48:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1887              		.loc 1 191 29 is_stmt 0 view .LVU540
+ 1888              	.LBE404:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1889              		.loc 1 199 27 view .LVU541
+ 1890 0122 7219     		adds	r2, r6, r5
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1891              		.loc 1 199 13 view .LVU542
+ 1892 0124 DFED157A 		vldr.32	s15, .L65
+ 1893 0128 92ED007A 		vldr.32	s14, [r2]
+ 1894              	.LVL96:
+ 199:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1895              		.loc 1 199 13 view .LVU543
+ 1896              	.LBE405:
+ 1897              	.LBE407:
+ 130:fho.cpp       ****     upsample[1] = folder.Process(upsample[1]);
+ 1898              		.loc 2 130 5 is_stmt 1 view .LVU544
+ 1899              		.loc 2 130 33 is_stmt 0 view .LVU545
+ 1900 012c A7EE270A 		vfma.f32	s0, s14, s15
+ 1901              	.LVL97:
+ 1902              		.loc 2 130 33 view .LVU546
+ 1903 0130 FFF7FEFF 		bl	_ZN7daisysp10Wavefolder7ProcessEf
+ 1904              	.LVL98:
+ 131:fho.cpp       ****     upsample[1] = tanhf(upsample[1]*tanh_gain) / tanhf(tanh_gain);
+ 1905              		.loc 2 131 5 is_stmt 1 view .LVU547
+ 1906              		.loc 2 131 37 is_stmt 0 view .LVU548
+ 1907 0134 94ED009A 		vldr.32	s18, [r4]
+ 1908              		.loc 2 131 24 view .LVU549
+ 1909 0138 20EE090A 		vmul.f32	s0, s0, s18
+ 1910              	.LVL99:
+ 1911              		.loc 2 131 24 view .LVU550
+ 1912 013c FFF7FEFF 		bl	tanhf
+ 1913              	.LVL100:
+ 1914 0140 F0EE408A 		vmov.f32	s17, s0
+ 1915              		.loc 2 131 55 view .LVU551
+ 1916 0144 B0EE490A 		vmov.f32	s0, s18
+ 1917 0148 FFF7FEFF 		bl	tanhf
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 54
+
+
+ 1918              	.LVL101:
+ 1919              	.LBB408:
+ 1920              	.LBB409:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1921              		.loc 1 185 9 view .LVU552
+ 1922 014c 626C     		ldr	r2, [r4, #68]
+ 1923              	.LBE409:
+ 1924              	.LBE408:
+ 1925              		.loc 2 131 48 view .LVU553
+ 1926 014e C8EE807A 		vdiv.f32	s15, s17, s0
+ 1927              	.LVL102:
+ 132:fho.cpp       ****     upsample[1] = filter.Process(upsample[1]);
+ 1928              		.loc 2 132 5 is_stmt 1 view .LVU554
+ 1929              	.LBB413:
+ 1930              	.LBI408:
+ 183:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
+ 1931              		.loc 1 183 11 view .LVU555
+ 1932              	.LBB412:
+ 185:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Feed data into the buffer */
+ 1933              		.loc 1 185 9 is_stmt 0 view .LVU556
+ 1934 0152 82B1     		cbz	r2, .L43
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1935              		.loc 1 187 9 view .LVU557
+ 1936 0154 E06B     		ldr	r0, [r4, #60]
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1937              		.loc 1 187 28 view .LVU558
+ 1938 0156 00EB8203 		add	r3, r0, r2, lsl #2
+ 1939              	.LBB410:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1940              		.loc 1 191 29 view .LVU559
+ 1941 015a 013A     		subs	r2, r2, #1
+ 1942              	.LBE410:
+ 187:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
+ 1943              		.loc 1 187 28 view .LVU560
+ 1944 015c 43ED017A 		vstr.32	s15, [r3, #-4]
+ 1945              	.LVL103:
+ 1946              	.LBB411:
+ 191:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
+ 1947              		.loc 1 191 29 is_stmt 1 view .LVU561
+ 1948 0160 03D0     		beq	.L38
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1949              		.loc 1 197 23 is_stmt 0 view .LVU562
+ 1950 0162 9200     		lsls	r2, r2, #2
+ 1951 0164 011D     		adds	r1, r0, #4
+ 1952 0166 FFF7FEFF 		bl	memmove
+ 1953              	.LVL104:
+ 1954              	.L38:
+ 197:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         }
+ 1955              		.loc 1 197 23 view .LVU563
+ 1956              	.LBE411:
+ 1957              	.LBE412:
+ 1958              	.LBE413:
+ 133:fho.cpp       **** 
+ 134:fho.cpp       ****     return upsample[0];
+ 135:fho.cpp       **** }...
+ 1959              		.loc 2 135 1 view .LVU564
+ 1960 016a B0EE480A 		vmov.f32	s0, s16
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 55
+
+
+ 1961 016e 02B0     		add	sp, sp, #8
+ 1962              		.cfi_remember_state
+ 1963              		.cfi_def_cfa_offset 32
+ 1964              		@ sp needed
+ 1965 0170 BDEC048B 		vldm	sp!, {d8-d9}
+ 1966              		.cfi_restore 82
+ 1967              		.cfi_restore 83
+ 1968              		.cfi_restore 80
+ 1969              		.cfi_restore 81
+ 1970              		.cfi_def_cfa_offset 16
+ 1971              	.LVL105:
+ 1972              		.loc 2 135 1 view .LVU565
+ 1973 0174 70BD     		pop	{r4, r5, r6, pc}
+ 1974              	.LVL106:
+ 1975              	.L43:
+ 1976              		.cfi_restore_state
+ 1977              	.LBB414:
+ 1978              	.LBB388:
+ 1979              		.loc 2 135 1 view .LVU566
+ 1980 0176 FFF7FEFF 		bl	_ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0
+ 1981              	.LVL107:
+ 1982              	.L66:
+ 1983 017a 00BF     		.align	2
+ 1984              	.L65:
+ 1985 017c 00000000 		.word	0
+ 1986              	.LBE388:
+ 1987              	.LBE414:
+ 1988              		.cfi_endproc
+ 1989              	.LFE3526:
+ 1991              		.text
+ 1992              	.Letext0:
+ 1993              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1994              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1995              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 1996              		.file 9 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 1997              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 1998              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 1999              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 2000              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 2001              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ 2002              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 2003              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
+ 2004              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 2005              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 2006              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ 2007              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
+ 2008              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 2009              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
+ 2010              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\charconv.h
+ 2011              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 2012              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 2013              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\move.h"
+ 2014              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 2015              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 2016              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ 2017              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 2018              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 56
+
+
+ 2019              		.file 32 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 2020              		.file 33 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 2021              		.file 34 "../../../../DaisyExamples/DaisySP//Source/Control/adenv.h"
+ 2022              		.file 35 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 2023              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
+ 2024              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
+ 2025              		.file 38 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 2026              		.file 39 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 2027              		.file 40 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 2028              		.file 41 "fho.h"
+ 2029              		.file 42 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\assert.h"
+ 2030              		.file 43 "<built-in>"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cc1rYb19.s 			page 57
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 fho.cpp
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:17     .rodata._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0.str1.4:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:28     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:36     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000000 _ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:60     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000010 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:67     .rodata._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0.str1.4:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:75     .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:82     .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000000 _ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:105    .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000010 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:112    .rodata._ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0.str1.4:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:121    .text._ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:128    .text._ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0:00000000 _ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:151    .text._ZN7daisysp20FIRFilterImplGenericILj0ELj0EE7ProcessEf.part.0:00000010 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:158    .text._ZN3fho4InitEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:166    .text._ZN3fho4InitEf:00000000 _ZN3fho4InitEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:745    .text._ZN3fho4InitEf:0000017c $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:769    .text._ZN3fho8set_freqEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:777    .text._ZN3fho8set_freqEf:00000000 _ZN3fho8set_freqEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:841    .text._ZN3fho13set_freq_voctEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:849    .text._ZN3fho13set_freq_voctEf:00000000 _ZN3fho13set_freq_voctEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:958    .text._ZN3fho13set_freq_voctEf:00000050 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:965    .text._ZN3fho12set_freq_linEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:973    .text._ZN3fho12set_freq_linEf:00000000 _ZN3fho12set_freq_linEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1127   .text._ZN3fho12set_freq_linEf:00000040 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1134   .text._ZN3fho12set_freq_lfoEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1142   .text._ZN3fho12set_freq_lfoEf:00000000 _ZN3fho12set_freq_lfoEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1296   .text._ZN3fho12set_freq_lfoEf:00000040 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1302   .text._ZN3fho13set_fold_gainEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1310   .text._ZN3fho13set_fold_gainEf:00000000 _ZN3fho13set_fold_gainEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1413   .text._ZN3fho12set_fold_offEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1421   .text._ZN3fho12set_fold_offEf:00000000 _ZN3fho12set_fold_offEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1523   .text._ZN3fho13set_tanh_gainEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1531   .text._ZN3fho13set_tanh_gainEf:00000000 _ZN3fho13set_tanh_gainEf
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1590   .text._ZN3fho13set_tanh_gainEf:00000024 $d
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1595   .text._ZN3fho7ProcessEv:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1603   .text._ZN3fho7ProcessEv:00000000 _ZN3fho7ProcessEv
+C:\Users\samue\AppData\Local\Temp\cc1rYb19.s:1985   .text._ZN3fho7ProcessEv:0000017c $d
+
+UNDEFINED SYMBOLS
+__assert_func
+_ZN7daisysp10Wavefolder4InitEv
+_ZN7daisysp10Oscillator12CalcPhaseIncEf
+memset
+powf
+expf
+_ZN7daisysp10Oscillator7ProcessEv
+_ZN7daisysp10Wavefolder7ProcessEf
+tanhf
+memmove
