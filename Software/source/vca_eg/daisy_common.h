@@ -62,6 +62,9 @@ class daisyCommon
 	GPIO IN_4_EN;
 	GPIO IN_8_EN;
 
+    GPIO LED_LEFT;
+    GPIO LED_RIGHT;
+
     GPIO GATE_1_IN_4;
     GPIO GATE_2_IN_8;
 
@@ -90,7 +93,8 @@ class daisyCommon
     DaisySeed seed;
 
     private:
-    void InitGPIO_MUX();
+    void InitMux();
+    void InitGPIO();
     void InitToggle();
     void InitADC();
     void InitButton();

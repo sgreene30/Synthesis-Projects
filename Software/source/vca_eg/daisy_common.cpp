@@ -27,6 +27,9 @@ constexpr Pin IN_3_GPIO_PIN = seed::D24;
 constexpr Pin IN_5_GPIO_PIN = seed::D16;
 constexpr Pin IN_6_GPIO_PIN = seed::D20;
 constexpr Pin IN_7_GPIO_PIN = seed::D17;
+constexpr Pin LED_LEFT_PIN = seed::D11;
+constexpr Pin LED_RIGHT_PIN = seed::D12;
+
 
 void daisyCommon::add_dual_control(int user_name, int jack_num, int knob_num)
 {
@@ -274,8 +277,9 @@ void daisyCommon::Init(bool boost)
     //seed.Configure();
     seed.Init(boost);
     //seed.StartLog(true);
+    InitGPIO();
     InitDAC();
-    InitGPIO_MUX();
+    InitMux();
     InitToggle();
     InitButton();
     InitADC();
@@ -332,7 +336,7 @@ void daisyCommon::InitDAC()
     seed.dac.Init(dac_cfg);
 }
 
-void daisyCommon::InitGPIO_MUX()
+void daisyCommon::InitGPIO()
 {
     OUT_1_AUDIO_EN.Init(D3, GPIO::Mode::OUTPUT);
 	OUT_2_AUDIO_EN.Init(D5, GPIO::Mode::OUTPUT);
@@ -343,6 +347,14 @@ void daisyCommon::InitGPIO_MUX()
 	GATE_2_EN.Init(D30, GPIO::Mode::OUTPUT);
 	IN_4_EN.Init(D26, GPIO::Mode::OUTPUT);
 	IN_8_EN.Init(D29, GPIO::Mode::OUTPUT);
+
+    LED_LEFT.Init(LED_LEFT_PIN, GPIO::Mode::OUTPUT);
+    LED_RIGHT.Init(LED_RIGHT_PIN, GPIO::Mode::OUTPUT);
+}
+
+void daisyCommon::InitMux()
+{
+
 
     if(out_1_mode == audio_enable)
     {
