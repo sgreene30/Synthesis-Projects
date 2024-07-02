@@ -2159,8 +2159,8 @@
     (uuid ffd1487f-84f3-4731-a107-5c616f6b3ec4)
   )
 
-  (text "ECO: Flip POT polarity, redraw for organization, \nadd courtyard and silkscreen for power, change \nswitches to minitaure"
-    (at 209.55 46.99 0)
+  (text "ECO: Flip POT polarity, redraw for organization, \nadd courtyard and silkscreen for power, change \nswitches to minitaure, space smd parts away from TH \nfor manufacturability, increase hole size of daisy socket,\nnew nomenclature for software alignment, make new switch,\nreposition LED, toggles, and button for UI"
+    (at 209.55 50.8 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 19c5a3a7-def2-4ba6-b51a-2999895f0927)
   )
