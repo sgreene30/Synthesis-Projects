@@ -1,0 +1,14 @@
+Panel Size
+Dimensions for the panel shall be 5.125" in height. The width will be an integer multiple of 0.2"
+
+PCB size
+The PCB size shall be 4.25" height. The width shall be 80mils less than the width of the panel with 40mil space on each side.
+The top of the pcb shall be 0.435" from the top of the panel
+
+Knob spacing
+Knobs shall be have minimum 1" spacing between each other as measured from the center of each knob. The knobs shall be spaced 0.5" from the panel edge.
+
+Panel text shall be KICAD FONT
+	KNOB text shall be 70MILx70MIL 10MIL thickness
+	THONKICONN text shall be 50MILx50MIL 8MIL thickness
+	MOUNTING HOLES ARE 130mil FROM BOARD EDGE

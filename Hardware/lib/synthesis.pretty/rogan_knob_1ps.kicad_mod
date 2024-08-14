@@ -1,7 +1,7 @@
 (footprint "rogan_knob_1ps" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
   (attr through_hole)
-  (fp_text reference "REF**" (at 0 -0.5 unlocked) (layer "F.SilkS")
+  (fp_text reference "REF**" (at 9.25 -1.23 unlocked) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.1)))
     (tstamp 12619894-3b7c-4390-9cad-71be5110feba)
   )
