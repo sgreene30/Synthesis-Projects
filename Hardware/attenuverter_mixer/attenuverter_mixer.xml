@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\samue\OneDrive\Documents\synth_projects\Hardware\attenuverter_mixer\attenuverter_mixer.kicad_sch</source>
-    <date>8/6/2024 9:38:55 PM</date>
+    <date>8/15/2024 7:56:54 PM</date>
     <tool>Eeschema 7.0.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -22,237 +22,1102 @@
         <comment number="9" value=""/>
       </title_block>
     </sheet>
+    <sheet number="2" name="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Attenuverters.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Mixer.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Power.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
   </design>
   <components>
     <comp ref="C1">
-      <value>10uF</value>
-      <footprint>Capacitor_SMD:CP_Elec_5x5.3</footprint>
+      <value>47pF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
-        <field name="MFR">WURTH</field>
-        <field name="MPN">865250442003</field>
+        <field name="LCSC">C105622</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_10UF_POL_SMD" description="CAP ALUM 10UF 20% 25V SMD"/>
-      <property name="MFR" value="WURTH"/>
-      <property name="MPN" value="865250442003"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP ALUM 10UF 20% 25V SMD"/>
+      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="CC0603JRNPO9BN470"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>fe20a1cb-92c4-4ca0-b486-2120504ab162</tstamps>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>9fe61a53-11ee-475a-b76a-97fc54bf8103</tstamps>
     </comp>
     <comp ref="C2">
-      <value>10uF</value>
-      <footprint>Capacitor_SMD:CP_Elec_5x5.3</footprint>
+      <value>47pF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
-        <field name="MFR">WURTH</field>
-        <field name="MPN">865250442003</field>
+        <field name="LCSC">C105622</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_10UF_POL_SMD" description="CAP ALUM 10UF 20% 25V SMD"/>
-      <property name="MFR" value="WURTH"/>
-      <property name="MPN" value="865250442003"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP ALUM 10UF 20% 25V SMD"/>
+      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="CC0603JRNPO9BN470"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>21651da2-a81c-4ee1-85e9-6a58206eec6f</tstamps>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>b93bac47-42ab-465d-8429-e78a7be5ad6b</tstamps>
     </comp>
     <comp ref="C3">
-      <value>100nF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <value>47pF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C105622</field>
         <field name="MFR">YAGEO</field>
-        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
+      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="CC0603KRX7R9BB104"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
+      <property name="MPN" value="CC0603JRNPO9BN470"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>2fa07d47-c497-4150-a2bb-555c55a57e08</tstamps>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>ef080f40-e9d7-49fb-93b4-0049a68b2fec</tstamps>
     </comp>
     <comp ref="C4">
-      <value>100nF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <value>47pF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C105622</field>
         <field name="MFR">YAGEO</field>
-        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
+      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="CC0603KRX7R9BB104"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
+      <property name="MPN" value="CC0603JRNPO9BN470"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7ef0dee4-dde8-4edf-8a26-a61b715da0b4</tstamps>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>97963b57-8b66-4ea3-8a0c-de163960e394</tstamps>
     </comp>
     <comp ref="C5">
       <value>47pF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C105622</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
       <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="MFR" value="YAGEO"/>
       <property name="MPN" value="CC0603JRNPO9BN470"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
       <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>4d327f4a-1a1c-4669-b08d-e3f8a988b0f5</tstamps>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>4809b2dc-688a-4f9c-af6a-8c6c680f0bef</tstamps>
     </comp>
     <comp ref="C6">
       <value>47pF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C105622</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
       <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="MFR" value="YAGEO"/>
       <property name="MPN" value="CC0603JRNPO9BN470"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
       <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ddbf323-85ba-417d-83b6-53d7eb824613</tstamps>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>8581c2d1-450a-4b50-b875-06a8324f6af0</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>thonkiconn</value>
+      <footprint>synthesis:thonkiconn</footprint>
+      <fields>
+        <field name="MFR">QINGPU</field>
+        <field name="MPN">WQP518MA</field>
+      </fields>
+      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
+      <property name="MFR" value="QINGPU"/>
+      <property name="MPN" value="WQP518MA"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="thonkiconn"/>
+      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>82063e02-a4c3-4feb-994a-54c6d68d8e99</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>thonkiconn</value>
+      <footprint>synthesis:thonkiconn</footprint>
+      <fields>
+        <field name="MFR">QINGPU</field>
+        <field name="MPN">WQP518MA</field>
+      </fields>
+      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
+      <property name="MFR" value="QINGPU"/>
+      <property name="MPN" value="WQP518MA"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="thonkiconn"/>
+      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>4ee56721-77f8-4b45-b813-9918e9450d62</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>thonkiconn</value>
+      <footprint>synthesis:thonkiconn</footprint>
+      <fields>
+        <field name="MFR">QINGPU</field>
+        <field name="MPN">WQP518MA</field>
+      </fields>
+      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
+      <property name="MFR" value="QINGPU"/>
+      <property name="MPN" value="WQP518MA"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="thonkiconn"/>
+      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>75558ca7-a020-46d3-8cf6-47fb29818218</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>thonkiconn</value>
+      <footprint>synthesis:thonkiconn</footprint>
+      <fields>
+        <field name="MFR">QINGPU</field>
+        <field name="MPN">WQP518MA</field>
+      </fields>
+      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
+      <property name="MFR" value="QINGPU"/>
+      <property name="MPN" value="WQP518MA"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="thonkiconn"/>
+      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>12990d75-5808-4b35-b65a-be8d4cccc27e</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>thonkiconn</value>
+      <footprint>synthesis:thonkiconn</footprint>
+      <fields>
+        <field name="MFR">QINGPU</field>
+        <field name="MPN">WQP518MA</field>
+      </fields>
+      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
+      <property name="MFR" value="QINGPU"/>
+      <property name="MPN" value="WQP518MA"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="thonkiconn"/>
+      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>72658564-4d52-40ad-ac16-ee71bde49ace</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>3dfec83e-5fdc-4195-9c6d-2d6e052ba380</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>7eb116d9-bb9b-4d32-a62c-6500757a8a0d</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>3d1543f4-0d65-4b6c-bc5e-2ed43ec2c9b7</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>310728fc-04b2-4a7a-aaf8-f06e7413c1ba</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>3e5128be-f624-45de-a6c9-e3eff9c8b76b</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>8de97131-fecd-4a28-b158-f8f9de10d4cc</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C98220</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0710KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>093ed138-5463-47c4-a8b1-52d98a11b445</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C98220</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0710KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>6d7010ad-8116-4935-b883-c87edc7c6661</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C98220</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0710KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>e56f5693-f339-418f-80d9-4ca3c0f67cae</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>24k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC"> C137760</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0724KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0724KL"/>
+      <property name="LCSC" value=" C137760"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>1b39a77e-89bd-40e9-b383-6dd364320199</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>24k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC"> C137760</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0724KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0724KL"/>
+      <property name="LCSC" value=" C137760"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>05a3381a-e87d-4403-8f3e-8cb561cf59cf</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>24k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC"> C137760</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0724KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0724KL"/>
+      <property name="LCSC" value=" C137760"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>6b9ab335-2a8c-4b47-b8ba-5886b6aaba01</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C98220</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0710KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>874459f5-e37e-4765-945f-5ee88e9b338a</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C98220</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0710KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>39fb8e80-daf9-46ac-991a-e1caa114a692</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C98220</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0710KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="LCSC" value="C98220"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>1d273dc8-ef7c-4c95-8401-63417d0187f5</tstamps>
+    </comp>
+    <comp ref="R16">
+      <value>1k 0.5W</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <fields>
+        <field name="LCSC">C83144</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC1210FR-071KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_1K_1210" description="RES 1K OHM 1% 1/2W 1210"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC1210FR-071KL"/>
+      <property name="LCSC" value="C83144"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 1K OHM 1% 1/2W 1210"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>b718c091-1b3b-42b8-9eda-17394eab8007</tstamps>
+    </comp>
+    <comp ref="R17">
+      <value>1k 0.5W</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <fields>
+        <field name="LCSC">C83144</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC1210FR-071KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_1K_1210" description="RES 1K OHM 1% 1/2W 1210"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC1210FR-071KL"/>
+      <property name="LCSC" value="C83144"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="RES 1K OHM 1% 1/2W 1210"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>786c18ef-a070-4946-9a60-d918387c6ec5</tstamps>
+    </comp>
+    <comp ref="RV1">
+      <value>10k</value>
+      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
+      <fields>
+        <field name="MFR">ALPHA</field>
+        <field name="MPN">RD901F-40-00D</field>
+      </fields>
+      <libsource lib="synthesis" part="ALPHAPOT_10K" description="10k ALPHA POT"/>
+      <property name="MFR" value="ALPHA"/>
+      <property name="MPN" value="RD901F-40-00D"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="10k ALPHA POT"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>f9982f4d-69d6-475c-bd81-465165e3f8f0</tstamps>
+    </comp>
+    <comp ref="RV2">
+      <value>10k</value>
+      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
+      <fields>
+        <field name="MFR">ALPHA</field>
+        <field name="MPN">RD901F-40-00D</field>
+      </fields>
+      <libsource lib="synthesis" part="ALPHAPOT_10K" description="10k ALPHA POT"/>
+      <property name="MFR" value="ALPHA"/>
+      <property name="MPN" value="RD901F-40-00D"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="10k ALPHA POT"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>e43fda15-0cf6-4267-9888-c79980341053</tstamps>
+    </comp>
+    <comp ref="RV3">
+      <value>10k</value>
+      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
+      <fields>
+        <field name="MFR">ALPHA</field>
+        <field name="MPN">RD901F-40-00D</field>
+      </fields>
+      <libsource lib="synthesis" part="ALPHAPOT_10K" description="10k ALPHA POT"/>
+      <property name="MFR" value="ALPHA"/>
+      <property name="MPN" value="RD901F-40-00D"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="10k ALPHA POT"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>8e23c799-fc3a-427b-9f3b-d904d5d473cf</tstamps>
+    </comp>
+    <comp ref="RV4">
+      <value>10k</value>
+      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
+      <fields>
+        <field name="MFR">ALPHA</field>
+        <field name="MPN">RD901F-40-00D</field>
+      </fields>
+      <libsource lib="synthesis" part="ALPHAPOT_10K" description="10k ALPHA POT"/>
+      <property name="MFR" value="ALPHA"/>
+      <property name="MPN" value="RD901F-40-00D"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="10k ALPHA POT"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>edc338b1-4d89-460e-9a78-81f948e9c78c</tstamps>
+    </comp>
+    <comp ref="RV5">
+      <value>10k</value>
+      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
+      <fields>
+        <field name="MFR">ALPHA</field>
+        <field name="MPN">RD901F-40-00D</field>
+      </fields>
+      <libsource lib="synthesis" part="ALPHAPOT_10K" description="10k ALPHA POT"/>
+      <property name="MFR" value="ALPHA"/>
+      <property name="MPN" value="RD901F-40-00D"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="10k ALPHA POT"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>3d4585e4-dd2d-4590-84af-bb31305a4ecc</tstamps>
+    </comp>
+    <comp ref="RV6">
+      <value>10k</value>
+      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
+      <fields>
+        <field name="MFR">ALPHA</field>
+        <field name="MPN">RD901F-40-00D</field>
+      </fields>
+      <libsource lib="synthesis" part="ALPHAPOT_10K" description="10k ALPHA POT"/>
+      <property name="MFR" value="ALPHA"/>
+      <property name="MPN" value="RD901F-40-00D"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="10k ALPHA POT"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>c0b34df8-0c95-40ac-9af6-60eda5344b09</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>TL074</value>
+      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C96507</field>
+        <field name="MFR">TI</field>
+        <field name="MPN">TL074CPWR</field>
+      </fields>
+      <libsource lib="synthesis" part="TL074" description="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
+      <property name="MFR" value="TI"/>
+      <property name="MPN" value="TL074CPWR"/>
+      <property name="LCSC" value="C96507"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
+      <property name="ki_keywords" value="quad opamp"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>ea70fd26-2816-4df0-9ba8-f635e6078739 b9db68f1-bb71-4ee6-b378-5e01191177a3 81c59750-9c79-494a-8af2-963f10f3d963 6df83012-8270-4408-a192-96e800dd9dc9</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>TL074</value>
+      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C96507</field>
+        <field name="MFR">TI</field>
+        <field name="MPN">TL074CPWR</field>
+      </fields>
+      <libsource lib="synthesis" part="TL074" description="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
+      <property name="MFR" value="TI"/>
+      <property name="MPN" value="TL074CPWR"/>
+      <property name="LCSC" value="C96507"/>
+      <property name="Sheetname" value="Attenuverters"/>
+      <property name="Sheetfile" value="Attenuverters.kicad_sch"/>
+      <property name="ki_description" value="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
+      <property name="ki_keywords" value="quad opamp"/>
+      <sheetpath names="/Attenuverters/" tstamps="/ef943e2b-3b2d-47f6-87cc-42fcec7692a4/"/>
+      <tstamps>7dc07ceb-98e9-4544-89cf-74fe44aaf972 5417ec22-915d-4c88-91f6-51cebc89ce10</tstamps>
     </comp>
     <comp ref="C7">
       <value>47pF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C105622</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
       <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="MFR" value="YAGEO"/>
       <property name="MPN" value="CC0603JRNPO9BN470"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
       <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d68671aa-9acb-4ac7-b15e-9ea89753ee11</tstamps>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>d2346ae2-b384-4680-b199-a6d4d7dcbf9f</tstamps>
     </comp>
     <comp ref="C8">
-      <value>47pF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:CP_Elec_5x5.3</footprint>
       <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">CC0603JRNPO9BN470</field>
+        <field name="MFR">WURTH</field>
+        <field name="MPN">865250442003</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="CC0603JRNPO9BN470"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <libsource lib="synthesis" part="CAP_10UF_NONPOL" description="CAP ALUM 10UF 20% 25V SMD"/>
+      <property name="MFR" value="WURTH"/>
+      <property name="MPN" value="865250442003"/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="CAP ALUM 10UF 20% 25V SMD"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7551f10d-197e-41dc-aa38-118cb3091494</tstamps>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>392c6ef3-5924-42ef-b995-f33f2bd7ab5f</tstamps>
     </comp>
     <comp ref="C9">
-      <value>100nF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <value>47pF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C105622</field>
         <field name="MFR">YAGEO</field>
-        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="MPN">CC0603JRNPO9BN470</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
+      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="CC0603KRX7R9BB104"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
+      <property name="MPN" value="CC0603JRNPO9BN470"/>
+      <property name="LCSC" value="C105622"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>81a531af-ebec-4b0f-a914-8e75c291f473</tstamps>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>29e8c91a-11e3-48e2-bc6f-7df0f3b47340</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>thonkiconn</value>
+      <footprint>synthesis:thonkiconn</footprint>
+      <fields>
+        <field name="MFR">QINGPU</field>
+        <field name="MPN">WQP518MA</field>
+      </fields>
+      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
+      <property name="MFR" value="QINGPU"/>
+      <property name="MPN" value="WQP518MA"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="thonkiconn"/>
+      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>99c382d5-40cb-42de-821c-f236d5bdd232</tstamps>
+    </comp>
+    <comp ref="R18">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>bd07743e-cd1d-4717-9cce-99fa63d908b9</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>e4ee66e3-a6ee-4c76-838c-72d42f5aaba0</tstamps>
+    </comp>
+    <comp ref="R20">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>37440156-9576-40f6-b6c1-14e70ce21d60</tstamps>
+    </comp>
+    <comp ref="R21">
+      <value>24k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC"> C137760</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0724KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0724KL"/>
+      <property name="LCSC" value=" C137760"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>49a8a0b0-0aab-4c73-aa95-efe8d4024177</tstamps>
+    </comp>
+    <comp ref="R22">
+      <value>24k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC"> C137760</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC0603FR-0724KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC0603FR-0724KL"/>
+      <property name="LCSC" value=" C137760"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>fd807595-8460-41c3-b05e-cc34b4ba8d22</tstamps>
+    </comp>
+    <comp ref="R23">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14675</field>
+        <field name="MFR">RC0603FR-07100KL</field>
+        <field name="MPN">RC0603FR-07100KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="MFR" value="RC0603FR-07100KL"/>
+      <property name="MPN" value="RC0603FR-07100KL"/>
+      <property name="LCSC" value="C14675"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>d930045a-c6ef-44d7-90ee-141aef74376f</tstamps>
+    </comp>
+    <comp ref="R24">
+      <value>1k 0.5W</value>
+      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
+      <fields>
+        <field name="LCSC">C83144</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">RC1210FR-071KL</field>
+      </fields>
+      <libsource lib="synthesis" part="RES_1K_1210" description="RES 1K OHM 1% 1/2W 1210"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="RC1210FR-071KL"/>
+      <property name="LCSC" value="C83144"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="RES 1K OHM 1% 1/2W 1210"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>b676636d-25d4-4141-9094-4c941603a1ec</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_ON_ON_SPDT_MINI</value>
+      <footprint>synthesis:Mini_sw</footprint>
+      <fields>
+        <field name="MFR">DAILYWELL</field>
+        <field name="MPN">DWB1</field>
+      </fields>
+      <libsource lib="synthesis" part="SW_ON_ON_SPDT_MINI" description="Switch, single pole double throw"/>
+      <property name="MFR" value="DAILYWELL"/>
+      <property name="MPN" value="DWB1"/>
+      <property name="Sheetname" value="Mixer"/>
+      <property name="Sheetfile" value="Mixer.kicad_sch"/>
+      <property name="ki_description" value="Switch, single pole double throw"/>
+      <property name="ki_keywords" value="switch single-pole double-throw spdt ON-ON"/>
+      <sheetpath names="/Mixer/" tstamps="/71c8d109-3ad4-4529-b4c7-3c204baf3b8f/"/>
+      <tstamps>a14d1083-7c04-40ee-9942-c875449b5e4b</tstamps>
     </comp>
     <comp ref="C10">
-      <value>100nF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:CP_Elec_5x5.3</footprint>
       <fields>
+        <field name="MFR">WURTH</field>
+        <field name="MPN">865250442003</field>
+      </fields>
+      <libsource lib="synthesis" part="CAP_10UF_NONPOL" description="CAP ALUM 10UF 20% 25V SMD"/>
+      <property name="MFR" value="WURTH"/>
+      <property name="MPN" value="865250442003"/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="CAP ALUM 10UF 20% 25V SMD"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>6d45a59e-5037-44f9-9693-4da187bfa1b7</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:CP_Elec_5x5.3</footprint>
+      <fields>
+        <field name="MFR">WURTH</field>
+        <field name="MPN">865250442003</field>
+      </fields>
+      <libsource lib="synthesis" part="CAP_10UF_NONPOL" description="CAP ALUM 10UF 20% 25V SMD"/>
+      <property name="MFR" value="WURTH"/>
+      <property name="MPN" value="865250442003"/>
+      <property name="LCSC" value=""/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="CAP ALUM 10UF 20% 25V SMD"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>413b7799-ac1b-4bce-9c7b-6c900e44f00f</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">CC0603KRX7R9BB104</field>
       </fields>
       <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
       <property name="MFR" value="YAGEO"/>
       <property name="MPN" value="CC0603KRX7R9BB104"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>b07286c3-17a1-4a3e-a17a-99a3777133f6</tstamps>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>2fe41f51-6b9a-435a-a48e-18e2fc7dc028</tstamps>
     </comp>
-    <comp ref="C11">
-      <value>47pF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+    <comp ref="C13">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C14663</field>
         <field name="MFR">YAGEO</field>
-        <field name="MPN">CC0603JRNPO9BN470</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
       <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="CC0603JRNPO9BN470"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>df1dd037-e047-4aef-8044-48e70e306187</tstamps>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>7204d1be-4c74-442d-a65d-7113535ea4c4</tstamps>
     </comp>
-    <comp ref="C12">
-      <value>47pF</value>
-      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
+        <field name="LCSC">C14663</field>
         <field name="MFR">YAGEO</field>
-        <field name="MPN">CC0603JRNPO9BN470</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
       </fields>
-      <libsource lib="synthesis" part="CAP_47PF_0603_COG" description="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
       <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="CC0603JRNPO9BN470"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="CAP CER 47PF 50V C0G/NPO 0603"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
       <property name="ki_keywords" value="cap capacitor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>b7246f28-dd35-4748-a5e2-2a5544fe92cb</tstamps>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>7a3de873-de7d-4b2f-a2cd-0af4bee710d0</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+        <field name="MFR">YAGEO</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+      </fields>
+      <libsource lib="synthesis" part="CAP_100NF_0603_X7R" description="CAP CER 0.1UF 50V X7R 0603"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MPN" value="CC0603KRX7R9BB104"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="CAP CER 0.1UF 50V X7R 0603"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>b92179ce-ba1f-445e-9293-ac452769ed3d</tstamps>
     </comp>
     <comp ref="D1">
       <value>MBR0530</value>
       <footprint>Diode_SMD:D_SOD-123</footprint>
-      <datasheet>http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf</datasheet>
-      <libsource lib="Diode" part="MBR0530" description="30V 0.5A Schottky Power Rectifier Diode, SOD-123"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="30V 0.5A Schottky Power Rectifier Diode, SOD-123"/>
+      <datasheet>www.st.com/resource/en/datasheet/1n6263.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82046</field>
+        <field name="MFR">ONSEMI</field>
+        <field name="MPN">MBR0530T1G</field>
+      </fields>
+      <libsource lib="synthesis" part="DIODE_SCHOTTKY" description="DIODE SCHOTTKY 30V 500MA SOD123"/>
+      <property name="MFR" value="ONSEMI"/>
+      <property name="MPN" value="MBR0530T1G"/>
+      <property name="LCSC" value="C82046"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="DIODE SCHOTTKY 30V 500MA SOD123"/>
       <property name="ki_keywords" value="diode Schottky"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>981b4c93-0018-46d1-a06b-1d17fb4a4e8e</tstamps>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>35cda476-2568-448b-b857-263cfef37fb7</tstamps>
     </comp>
     <comp ref="D2">
       <value>MBR0530</value>
       <footprint>Diode_SMD:D_SOD-123</footprint>
-      <datasheet>http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf</datasheet>
-      <libsource lib="Diode" part="MBR0530" description="30V 0.5A Schottky Power Rectifier Diode, SOD-123"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="30V 0.5A Schottky Power Rectifier Diode, SOD-123"/>
+      <datasheet>www.st.com/resource/en/datasheet/1n6263.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82046</field>
+        <field name="MFR">ONSEMI</field>
+        <field name="MPN">MBR0530T1G</field>
+      </fields>
+      <libsource lib="synthesis" part="DIODE_SCHOTTKY" description="DIODE SCHOTTKY 30V 500MA SOD123"/>
+      <property name="MFR" value="ONSEMI"/>
+      <property name="MPN" value="MBR0530T1G"/>
+      <property name="LCSC" value="C82046"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
+      <property name="ki_description" value="DIODE SCHOTTKY 30V 500MA SOD123"/>
       <property name="ki_keywords" value="diode Schottky"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>043026f2-1b92-4840-af13-14e52b2af0be</tstamps>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>073e424c-b9d5-4ea6-a5c6-5546e514eee6</tstamps>
     </comp>
-    <comp ref="J1">
+    <comp ref="J7">
       <value>euro_power_10</value>
       <footprint>synthesis:eurorack_10</footprint>
       <fields>
@@ -262,680 +1127,15 @@
       <libsource lib="synthesis" part="euro_power_10" description="CONN HEADER VERT 10POS 2.54MM"/>
       <property name="MFR" value="On Shore Technologies"/>
       <property name="MPN" value="302-S101"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
+      <property name="Sheetname" value="Power"/>
+      <property name="Sheetfile" value="Power.kicad_sch"/>
       <property name="ki_description" value="CONN HEADER VERT 10POS 2.54MM"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>a8c325e5-d9a3-4b9c-aca5-8f00b83066d6</tstamps>
-    </comp>
-    <comp ref="J2">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>1bb69407-859c-4f39-829d-e18f9dc26ffd</tstamps>
-    </comp>
-    <comp ref="J3">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>70325592-119c-482a-817f-cd94b80a4448</tstamps>
-    </comp>
-    <comp ref="J4">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8b76ff95-c1f7-4bff-bbc9-58aac9878d35</tstamps>
-    </comp>
-    <comp ref="J5">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e634e167-7cfb-4c05-a284-219ac2ac9d96</tstamps>
-    </comp>
-    <comp ref="J6">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0e8f68d8-971e-4fe4-8738-79e48ffee805</tstamps>
-    </comp>
-    <comp ref="J7">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ac737ce1-0318-4038-93d3-4f69d495cc59</tstamps>
-    </comp>
-    <comp ref="J8">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>234bd022-e12f-4607-a3cc-0d46e124d0a4</tstamps>
-    </comp>
-    <comp ref="J9">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7ae28809-6616-415c-862f-53fdb60cf64c</tstamps>
-    </comp>
-    <comp ref="J10">
-      <value>thonkiconn</value>
-      <footprint>Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</footprint>
-      <fields>
-        <field name="MFR">QINGPU</field>
-        <field name="MPN">WQP518MA</field>
-      </fields>
-      <libsource lib="synthesis" part="thonkiconn" description="thonkiconn"/>
-      <property name="MFR" value="QINGPU"/>
-      <property name="MPN" value="WQP518MA"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="thonkiconn"/>
-      <property name="ki_keywords" value="audio jack receptacle mono headphones phone TS connector"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>84055976-37e7-4738-8447-9c69cd00108e</tstamps>
-    </comp>
-    <comp ref="R1">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ff7b30bb-f563-4ad0-9e2b-b782a8fdbab7</tstamps>
-    </comp>
-    <comp ref="R2">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3d22204a-b8f9-4a72-9ec4-0fa089194660</tstamps>
-    </comp>
-    <comp ref="R3">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>83aef3e8-5beb-4cce-9957-e5374e2029b2</tstamps>
-    </comp>
-    <comp ref="R4">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>1fce0eeb-db45-41b7-a6bf-6731dd8e8d1c</tstamps>
-    </comp>
-    <comp ref="R5">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>eb09a11b-29dd-41cb-9b74-8408a2bda86a</tstamps>
-    </comp>
-    <comp ref="R6">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>54171940-a98a-491d-8cfe-8c3e3faf3568</tstamps>
-    </comp>
-    <comp ref="R7">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>14d15a69-a432-48e2-9ea0-eb91cc9ba6a8</tstamps>
-    </comp>
-    <comp ref="R8">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>9d6ba5bc-afdb-43a7-801a-d06027811bf4</tstamps>
-    </comp>
-    <comp ref="R9">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0710KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0710KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>17cb4aeb-abce-4f13-bfd3-8f1de924a2bb</tstamps>
-    </comp>
-    <comp ref="R10">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0710KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0710KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>bd5b01cc-1fb3-4654-a1fa-89369ce16273</tstamps>
-    </comp>
-    <comp ref="R11">
-      <value>1k 0.5W</value>
-      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC1210FR-071KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_1K_1210" description="RES 1K OHM 1% 1/2W 1210"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC1210FR-071KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 1K OHM 1% 1/2W 1210"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c83eb883-d971-4e4f-b173-b908a51be987</tstamps>
-    </comp>
-    <comp ref="R12">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0710KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0710KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>bf5db472-fc0c-4190-ac02-6deb00b14e17</tstamps>
-    </comp>
-    <comp ref="R13">
-      <value>24k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0724KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0724KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c6b726a2-3cfb-4d1c-9b84-60b0712a0ef1</tstamps>
-    </comp>
-    <comp ref="R14">
-      <value>1k 0.5W</value>
-      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC1210FR-071KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_1K_1210" description="RES 1K OHM 1% 1/2W 1210"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC1210FR-071KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 1K OHM 1% 1/2W 1210"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>08e674b3-f882-44f0-aeeb-d86720069e90</tstamps>
-    </comp>
-    <comp ref="R15">
-      <value>47k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0747KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_47K_0603" description="RES 47K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0747KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 47K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8f31bd1b-9aec-40af-95c3-5a4474feb459</tstamps>
-    </comp>
-    <comp ref="R16">
-      <value>47k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0747KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_47K_0603" description="RES 47K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0747KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 47K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>2d5c5ca3-8164-4b83-933f-a8380f4226b8</tstamps>
-    </comp>
-    <comp ref="R17">
-      <value>24k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0724KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_24K_0603" description="RES 24K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0724KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 24K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>df4a9e35-7886-43cb-9383-0ac0991ac5a5</tstamps>
-    </comp>
-    <comp ref="R18">
-      <value>1k 0.5W</value>
-      <footprint>Resistor_SMD:R_1210_3225Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC1210FR-071KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_1K_1210" description="RES 1K OHM 1% 1/2W 1210"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC1210FR-071KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 1K OHM 1% 1/2W 1210"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3ada3e43-5368-4b91-97ff-3f38ebbfc96e</tstamps>
-    </comp>
-    <comp ref="R19">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0710KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_10K_0603" description="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="YAGEO"/>
-      <property name="MPN" value="RC0603FR-0710KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 10K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>a86eb66c-3e5a-4243-8d5f-135397c01735</tstamps>
-    </comp>
-    <comp ref="R21">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="MFR">RC0603FR-07100KL</field>
-        <field name="MPN">RC0603FR-07100KL</field>
-      </fields>
-      <libsource lib="synthesis" part="RES_100k_0603" description="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="MFR" value="RC0603FR-07100KL"/>
-      <property name="MPN" value="RC0603FR-07100KL"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="RES 100K OHM 1% 1/10W 0603"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>5d41a69d-18bb-4ab1-9cc8-e625db6db85a</tstamps>
-    </comp>
-    <comp ref="RV1">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c5a301fd-d5b7-4c91-a996-f5a3741d4146</tstamps>
-    </comp>
-    <comp ref="RV2">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0b311974-6ad3-4e96-a0da-0cd0effadd03</tstamps>
-    </comp>
-    <comp ref="RV3">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6a9d1310-ed8b-4873-becb-50b4b6e3b1c7</tstamps>
-    </comp>
-    <comp ref="RV4">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>16633887-3629-4938-9c42-0a8739622c6c</tstamps>
-    </comp>
-    <comp ref="RV5">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>98f59440-5fd2-431b-afa7-aa1bf8057439</tstamps>
-    </comp>
-    <comp ref="RV6">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>65c747fd-17d7-4f74-8c16-974ae788f1b0</tstamps>
-    </comp>
-    <comp ref="RV7">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>dcfbd11c-3a36-41de-8bf7-be6c689a2b1a</tstamps>
-    </comp>
-    <comp ref="RV8">
-      <value>10k</value>
-      <footprint>Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical</footprint>
-      <fields>
-        <field name="MFR">ALPHA</field>
-        <field name="MPN">RD901F-40-00D</field>
-      </fields>
-      <libsource lib="" part="ALPHAPOT_10K_1" description="10k ALPHA POT"/>
-      <property name="MFR" value="ALPHA"/>
-      <property name="MPN" value="RD901F-40-00D"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="10k ALPHA POT"/>
-      <property name="ki_keywords" value="resistor variable"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7a54b04a-e9ad-495f-8a18-975be0b5cf4f</tstamps>
-    </comp>
-    <comp ref="U1">
-      <value>TL074</value>
-      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
-      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
-      <fields>
-        <field name="MFR">TI</field>
-        <field name="MPN">TL074CPWR</field>
-      </fields>
-      <libsource lib="synthesis" part="TL074" description="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
-      <property name="MFR" value="TI"/>
-      <property name="MPN" value="TL074CPWR"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
-      <property name="ki_keywords" value="quad opamp"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>675924dd-8188-439f-9c67-20c41c8528e4 bc966a83-85c0-4398-8e54-99d83d6dff63 d61487e8-fe5d-4e3a-b701-427f50204514 d297b0c1-1e19-4feb-af6e-99920c372c9e 442ee01c-dd7c-4175-8123-41e36e571d16</tstamps>
-    </comp>
-    <comp ref="U2">
-      <value>TL074</value>
-      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
-      <datasheet>http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</datasheet>
-      <fields>
-        <field name="MFR">TI</field>
-        <field name="MPN">TL074CPWR</field>
-      </fields>
-      <libsource lib="synthesis" part="TL074" description="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
-      <property name="MFR" value="TI"/>
-      <property name="MPN" value="TL074CPWR"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="attenuverter_mixer.kicad_sch"/>
-      <property name="ki_description" value="IC OPAMP JFET 4 CIRCUIT 14TSSOP"/>
-      <property name="ki_keywords" value="quad opamp"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>887032b8-6a71-49b4-9d65-587e9109abc4 bd11c30c-1e5f-43d0-a31d-8f4cfcc004ef db58f7cb-5aec-4499-8428-6ff02b2e6281 ba59e904-6e38-4fdf-8c8d-2a0464bbced4 25bb1664-deb1-412d-a62a-1cade94be114</tstamps>
+      <sheetpath names="/Power/" tstamps="/95c75bca-0ff8-4489-bf0f-60c179868158/"/>
+      <tstamps>27b7523b-f690-427d-8210-99fb4d69978a</tstamps>
     </comp>
   </components>
   <libparts>
-    <libpart lib="" part="ALPHAPOT_10K_1">
+    <libpart lib="synthesis" part="ALPHAPOT_10K">
       <description>10k ALPHA POT</description>
       <docs>~</docs>
       <footprints>
@@ -955,23 +1155,6 @@
         <pin num="3" name="3" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Diode" part="MBR0530">
-      <description>30V 0.5A Schottky Power Rectifier Diode, SOD-123</description>
-      <docs>http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf</docs>
-      <footprints>
-        <fp>D*SOD?123*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">MBR0530</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Datasheet">http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf</field>
-      </fields>
-      <pins>
-        <pin num="1" name="K" type="passive"/>
-        <pin num="2" name="A" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="synthesis" part="CAP_100NF_0603_X7R">
       <description>CAP CER 0.1UF 50V X7R 0603</description>
       <docs>~</docs>
@@ -981,21 +1164,22 @@
       <fields>
         <field name="Reference">C</field>
         <field name="Value">100nF</field>
-        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
         <field name="Datasheet">~</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="LCSC">C14663</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="synthesis" part="CAP_10UF_POL_SMD">
+    <libpart lib="synthesis" part="CAP_10UF_NONPOL">
       <description>CAP ALUM 10UF 20% 25V SMD</description>
       <docs>~</docs>
       <footprints>
-        <fp>CP_*</fp>
+        <fp>C_*</fp>
       </footprints>
       <fields>
         <field name="Reference">C</field>
@@ -1019,14 +1203,33 @@
       <fields>
         <field name="Reference">C</field>
         <field name="Value">47pF</field>
-        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
         <field name="Datasheet">~</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">CC0603JRNPO9BN470</field>
+        <field name="LCSC">C105622</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
         <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="synthesis" part="DIODE_SCHOTTKY">
+      <description>DIODE SCHOTTKY 30V 500MA SOD123</description>
+      <footprints>
+        <fp>D*DO?35*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">MBR0530</field>
+        <field name="Footprint">Diode_SMD:D_SOD-123</field>
+        <field name="MFR">ONSEMI</field>
+        <field name="MPN">MBR0530T1G</field>
+        <field name="LCSC">C82046</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="synthesis" part="RES_100k_0603">
@@ -1040,6 +1243,7 @@
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
         <field name="MFR">RC0603FR-07100KL</field>
         <field name="MPN">RC0603FR-07100KL</field>
+        <field name="LCSC">C14675</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -1057,6 +1261,7 @@
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">RC0603FR-0710KL</field>
+        <field name="LCSC">C98220</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -1074,6 +1279,7 @@
         <field name="Footprint">Resistor_SMD:R_1210_3225Metric</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">RC1210FR-071KL</field>
+        <field name="LCSC">C83144</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -1091,27 +1297,28 @@
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
         <field name="MFR">YAGEO</field>
         <field name="MPN">RC0603FR-0724KL</field>
+        <field name="LCSC"> C137760</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="synthesis" part="RES_47K_0603">
-      <description>RES 47K OHM 1% 1/10W 0603</description>
-      <footprints>
-        <fp>R_*</fp>
-      </footprints>
+    <libpart lib="synthesis" part="SW_ON_ON_SPDT_MINI">
+      <description>Switch, single pole double throw</description>
+      <docs>~</docs>
       <fields>
-        <field name="Reference">R</field>
-        <field name="Value">47k</field>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="MFR">YAGEO</field>
-        <field name="MPN">RC0603FR-0747KL</field>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_ON_ON_SPDT_MINI</field>
+        <field name="Footprint">synthesis:Mini_sw</field>
+        <field name="Datasheet">~</field>
+        <field name="MFR">DAILYWELL</field>
+        <field name="MPN">DWB1</field>
       </fields>
       <pins>
-        <pin num="1" name="" type="passive"/>
-        <pin num="2" name="" type="passive"/>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="synthesis" part="TL074">
@@ -1131,6 +1338,7 @@
         <field name="Datasheet">http://www.ti.com/lit/ds/symlink/lm2902-n.pdf</field>
         <field name="MFR">TI</field>
         <field name="MPN">TL074CPWR</field>
+        <field name="LCSC">C96507</field>
       </fields>
       <pins>
         <pin num="1" name="" type="output"/>
@@ -1180,7 +1388,7 @@
       <fields>
         <field name="Reference">J</field>
         <field name="Value">thonkiconn</field>
-        <field name="Footprint">Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398SM_Vertical_CircularHoles</field>
+        <field name="Footprint">synthesis:thonkiconn</field>
         <field name="Datasheet">~</field>
         <field name="MFR">QINGPU</field>
         <field name="MPN">WQP518MA</field>
@@ -1193,260 +1401,251 @@
     </libpart>
   </libparts>
   <libraries>
-    <library logical="Diode">
-      <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Diode.kicad_sym</uri>
-    </library>
     <library logical="synthesis">
-      <uri>C:\Users\samue\OneDrive\Documents\synth_projects\Hardware\lib\synthesis.kicad_sym</uri>
+      <uri>C:/Users/samue/OneDrive/Documents/synth_projects/Hardware/lib/synthesis.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
     <net code="1" name="+12V">
-      <node ref="C1" pin="1" pintype="passive"/>
-      <node ref="C3" pin="1" pintype="passive"/>
-      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
       <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="RV2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="RV4" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="RV5" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="RV6" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="4" pinfunction="V+" pintype="power_in"/>
       <node ref="U2" pin="4" pinfunction="V+" pintype="power_in"/>
     </net>
     <net code="2" name="-12V">
-      <node ref="C10" pin="2" pintype="passive"/>
-      <node ref="C2" pin="2" pintype="passive"/>
-      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
       <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="RV2" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="RV4" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="RV5" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="RV6" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U1" pin="11" pinfunction="V-" pintype="power_in"/>
       <node ref="U2" pin="11" pinfunction="V-" pintype="power_in"/>
     </net>
-    <net code="3" name="GND">
-      <node ref="C1" pin="2" pintype="passive"/>
-      <node ref="C10" pin="1" pintype="passive"/>
-      <node ref="C2" pin="1" pintype="passive"/>
-      <node ref="C3" pin="2" pintype="passive"/>
-      <node ref="C4" pin="1" pintype="passive"/>
-      <node ref="C9" pin="2" pintype="passive"/>
-      <node ref="J1" pin="3" pinfunction="gnd" pintype="power_in"/>
-      <node ref="J1" pin="4" pinfunction="gnd" pintype="power_in"/>
-      <node ref="J1" pin="5" pinfunction="gnd" pintype="power_in"/>
-      <node ref="J1" pin="6" pinfunction="gnd" pintype="power_in"/>
-      <node ref="J1" pin="7" pinfunction="gnd" pintype="power_in"/>
-      <node ref="J1" pin="8" pinfunction="gnd" pintype="power_in"/>
-      <node ref="J10" pin="S" pintype="passive"/>
+    <net code="3" name="/Power/V+_IN">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J7" pin="10" pinfunction="+12V" pintype="power_in"/>
+      <node ref="J7" pin="9" pinfunction="+12V" pintype="power_in"/>
+    </net>
+    <net code="4" name="/Power/V-_IN">
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="-12V" pintype="power_in"/>
+      <node ref="J7" pin="2" pinfunction="-12V" pintype="power_in"/>
+    </net>
+    <net code="5" name="GND">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="J1" pin="S" pintype="passive"/>
       <node ref="J2" pin="S" pintype="passive"/>
       <node ref="J3" pin="S" pintype="passive"/>
       <node ref="J4" pin="S" pintype="passive"/>
       <node ref="J5" pin="S" pintype="passive"/>
       <node ref="J6" pin="S" pintype="passive"/>
-      <node ref="J7" pin="S" pintype="passive"/>
-      <node ref="J8" pin="S" pintype="passive"/>
-      <node ref="J9" pin="S" pintype="passive"/>
+      <node ref="J7" pin="3" pinfunction="gnd" pintype="power_in"/>
+      <node ref="J7" pin="4" pinfunction="gnd" pintype="power_in"/>
+      <node ref="J7" pin="5" pinfunction="gnd" pintype="power_in"/>
+      <node ref="J7" pin="6" pinfunction="gnd" pintype="power_in"/>
+      <node ref="J7" pin="7" pinfunction="gnd" pintype="power_in"/>
+      <node ref="J7" pin="8" pinfunction="gnd" pintype="power_in"/>
       <node ref="RV1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="RV2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="RV3" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV5" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV6" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV7" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV8" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U1" pin="12" pinfunction="+" pintype="input"/>
-      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
-      <node ref="U2" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="10" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
       <node ref="U2" pin="12" pinfunction="+" pintype="input"/>
       <node ref="U2" pin="3" pinfunction="+" pintype="input"/>
       <node ref="U2" pin="5" pinfunction="+" pintype="input"/>
     </net>
-    <net code="4" name="Net-(C5-Pad2)">
-      <node ref="C5" pin="2" pintype="passive"/>
-      <node ref="R2" pin="2" pintype="passive"/>
-      <node ref="R9" pin="1" pintype="passive"/>
-      <node ref="U1" pin="1" pintype="output"/>
-    </net>
-    <net code="5" name="Net-(C6-Pad2)">
-      <node ref="C6" pin="2" pintype="passive"/>
-      <node ref="R19" pin="1" pintype="passive"/>
-      <node ref="R6" pin="2" pintype="passive"/>
-      <node ref="U1" pin="8" pintype="output"/>
-    </net>
-    <net code="6" name="Net-(C7-Pad2)">
-      <node ref="C7" pin="2" pintype="passive"/>
-      <node ref="R15" pin="2" pintype="passive"/>
-      <node ref="R16" pin="1" pintype="passive"/>
-      <node ref="U2" pin="1" pintype="output"/>
-    </net>
-    <net code="7" name="Net-(C8-Pad2)">
-      <node ref="C8" pin="2" pintype="passive"/>
-      <node ref="R18" pin="1" pintype="passive"/>
-      <node ref="R21" pin="2" pintype="passive"/>
-      <node ref="U2" pin="7" pintype="output"/>
-    </net>
-    <net code="8" name="Net-(C11-Pad2)">
-      <node ref="C11" pin="2" pintype="passive"/>
-      <node ref="R12" pin="2" pintype="passive"/>
-      <node ref="R14" pin="1" pintype="passive"/>
-      <node ref="U1" pin="14" pintype="output"/>
-    </net>
-    <net code="9" name="Net-(C12-Pad2)">
-      <node ref="C12" pin="2" pintype="passive"/>
-      <node ref="R10" pin="2" pintype="passive"/>
-      <node ref="R11" pin="1" pintype="passive"/>
+    <net code="6" name="Net-(C1-Pad2)">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
       <node ref="U1" pin="7" pintype="output"/>
     </net>
-    <net code="10" name="Net-(D1-A)">
-      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="J1" pin="10" pinfunction="+12V" pintype="power_in"/>
-      <node ref="J1" pin="9" pinfunction="+12V" pintype="power_in"/>
+    <net code="7" name="Net-(C2-Pad2)">
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U1" pin="14" pintype="output"/>
     </net>
-    <net code="11" name="Net-(D2-K)">
-      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="J1" pin="1" pinfunction="-12V" pintype="power_in"/>
-      <node ref="J1" pin="2" pinfunction="-12V" pintype="power_in"/>
+    <net code="8" name="Net-(C3-Pad2)">
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U2" pin="8" pintype="output"/>
     </net>
-    <net code="12" name="Net-(J2-PadT)">
-      <node ref="J2" pin="T" pintype="passive"/>
+    <net code="9" name="Net-(C4-Pad2)">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="U1" pin="1" pintype="output"/>
+    </net>
+    <net code="10" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U1" pin="8" pintype="output"/>
+    </net>
+    <net code="11" name="Net-(C9-Pad2)">
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="R23" pin="2" pintype="passive"/>
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="U2" pin="7" pintype="output"/>
+    </net>
+    <net code="12" name="Net-(J1-PadT)">
+      <node ref="J1" pin="T" pintype="passive"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="RV1" pin="3" pinfunction="3" pintype="passive"/>
     </net>
-    <net code="13" name="Net-(J3-PadT)">
+    <net code="13" name="Net-(J2-PadT)">
+      <node ref="J2" pin="T" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="RV2" pin="3" pinfunction="3" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(J3-PadT)">
       <node ref="J3" pin="T" pintype="passive"/>
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="RV3" pin="3" pinfunction="3" pintype="passive"/>
     </net>
-    <net code="14" name="Net-(J4-PadT)">
+    <net code="15" name="Net-(J4-PadT)">
       <node ref="J4" pin="T" pintype="passive"/>
-      <node ref="RV5" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
     </net>
-    <net code="15" name="Net-(J5-PadT)">
+    <net code="16" name="Net-(J5-PadT)">
       <node ref="J5" pin="T" pintype="passive"/>
-      <node ref="RV6" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="R17" pin="2" pintype="passive"/>
     </net>
-    <net code="16" name="Net-(J6-PadT)">
+    <net code="17" name="Net-(J6-PadT)">
       <node ref="J6" pin="T" pintype="passive"/>
-      <node ref="RV7" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="R24" pin="2" pintype="passive"/>
     </net>
-    <net code="17" name="Net-(J7-PadT)">
-      <node ref="J7" pin="T" pintype="passive"/>
-      <node ref="RV8" pin="3" pinfunction="3" pintype="passive"/>
+    <net code="18" name="Net-(SW1-A)">
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="R21" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="U2" pin="1" pintype="output"/>
     </net>
-    <net code="18" name="Net-(J8-PadT)">
-      <node ref="J8" pin="T" pintype="passive"/>
-      <node ref="R18" pin="2" pintype="passive"/>
+    <net code="19" name="Net-(SW1-B)">
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="B" pintype="passive"/>
     </net>
-    <net code="19" name="Net-(J9-PadT)">
-      <node ref="J9" pin="T" pintype="passive"/>
-      <node ref="R14" pin="2" pintype="passive"/>
+    <net code="20" name="Net-(SW1-C)">
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="3" pinfunction="C" pintype="passive"/>
     </net>
-    <net code="20" name="Net-(J10-PadT)">
-      <node ref="J10" pin="T" pintype="passive"/>
+    <net code="21" name="Net-(U1A--)">
+      <node ref="C4" pin="1" pintype="passive"/>
       <node ref="R11" pin="2" pintype="passive"/>
-    </net>
-    <net code="21" name="Net-(R4-Pad1)">
-      <node ref="R4" pin="1" pintype="passive"/>
-      <node ref="RV5" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="22" name="Net-(R5-Pad1)">
-      <node ref="R5" pin="1" pintype="passive"/>
-      <node ref="RV6" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="23" name="Net-(R7-Pad1)">
-      <node ref="R7" pin="1" pintype="passive"/>
-      <node ref="RV7" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="24" name="Net-(R8-Pad1)">
-      <node ref="R8" pin="1" pintype="passive"/>
-      <node ref="RV8" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="25" name="Net-(U1A-+)">
-      <node ref="RV1" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="U1" pin="3" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="26" name="Net-(U1A--)">
-      <node ref="C5" pin="1" pintype="passive"/>
-      <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="-" pintype="input"/>
     </net>
-    <net code="27" name="Net-(U1B--)">
-      <node ref="C12" pin="1" pintype="passive"/>
-      <node ref="R10" pin="1" pintype="passive"/>
-      <node ref="R13" pin="2" pintype="passive"/>
-      <node ref="R9" pin="2" pintype="passive"/>
+    <net code="22" name="Net-(U1B-+)">
+      <node ref="RV1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="23" name="Net-(U1B--)">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
       <node ref="U1" pin="6" pinfunction="-" pintype="input"/>
     </net>
-    <net code="28" name="Net-(U1C-+)">
-      <node ref="RV3" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="U1" pin="10" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="29" name="Net-(U1C--)">
-      <node ref="C6" pin="1" pintype="passive"/>
-      <node ref="R3" pin="2" pintype="passive"/>
-      <node ref="R6" pin="1" pintype="passive"/>
+    <net code="24" name="Net-(U1C--)">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
       <node ref="U1" pin="9" pinfunction="-" pintype="input"/>
     </net>
-    <net code="30" name="Net-(U1D--)">
-      <node ref="C11" pin="1" pintype="passive"/>
-      <node ref="R12" pin="1" pintype="passive"/>
-      <node ref="R17" pin="2" pintype="passive"/>
-      <node ref="R19" pin="2" pintype="passive"/>
+    <net code="25" name="Net-(U1D-+)">
+      <node ref="RV2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="26" name="Net-(U1D--)">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
       <node ref="U1" pin="13" pinfunction="-" pintype="input"/>
     </net>
-    <net code="31" name="Net-(U2A--)">
+    <net code="27" name="Net-(U2A--)">
       <node ref="C7" pin="1" pintype="passive"/>
-      <node ref="R15" pin="1" pintype="passive"/>
-      <node ref="R4" pin="2" pintype="passive"/>
-      <node ref="R5" pin="2" pintype="passive"/>
-      <node ref="R7" pin="2" pintype="passive"/>
-      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="R21" pin="1" pintype="passive"/>
       <node ref="U2" pin="2" pinfunction="-" pintype="input"/>
     </net>
-    <net code="32" name="Net-(U2B--)">
-      <node ref="C8" pin="1" pintype="passive"/>
-      <node ref="R16" pin="2" pintype="passive"/>
-      <node ref="R21" pin="1" pintype="passive"/>
+    <net code="28" name="Net-(U2B--)">
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="R23" pin="1" pintype="passive"/>
       <node ref="U2" pin="6" pinfunction="-" pintype="input"/>
     </net>
-    <net code="33" name="Net-(U2C--)">
-      <node ref="U2" pin="8" pintype="output"/>
+    <net code="29" name="Net-(U2C-+)">
+      <node ref="RV3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="30" name="Net-(U2C--)">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
       <node ref="U2" pin="9" pinfunction="-" pintype="input"/>
     </net>
-    <net code="34" name="Net-(U2D--)">
+    <net code="31" name="Net-(U2D--)">
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
       <node ref="U2" pin="13" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="32" name="att_1_out">
+      <node ref="J4" pin="TN" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+    </net>
+    <net code="33" name="att_2_out">
+      <node ref="J5" pin="TN" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+    </net>
+    <net code="34" name="att_3_out">
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
       <node ref="U2" pin="14" pintype="output"/>
     </net>
     <net code="35" name="offset_1">
-      <node ref="R13" pin="1" pintype="passive"/>
-      <node ref="RV2" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="36" name="offset_2">
-      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
       <node ref="RV4" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="37" name="unconnected-(J2-PadTN)">
+    <net code="36" name="offset_2">
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="RV5" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="37" name="offset_3">
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="RV6" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="38" name="unconnected-(J1-PadTN)">
+      <node ref="J1" pin="TN" pintype="passive"/>
+    </net>
+    <net code="39" name="unconnected-(J2-PadTN)">
       <node ref="J2" pin="TN" pintype="passive"/>
     </net>
-    <net code="38" name="unconnected-(J3-PadTN)">
+    <net code="40" name="unconnected-(J3-PadTN)">
       <node ref="J3" pin="TN" pintype="passive"/>
-    </net>
-    <net code="39" name="unconnected-(J4-PadTN)">
-      <node ref="J4" pin="TN" pintype="passive"/>
-    </net>
-    <net code="40" name="unconnected-(J5-PadTN)">
-      <node ref="J5" pin="TN" pintype="passive"/>
     </net>
     <net code="41" name="unconnected-(J6-PadTN)">
       <node ref="J6" pin="TN" pintype="passive"/>
-    </net>
-    <net code="42" name="unconnected-(J7-PadTN)">
-      <node ref="J7" pin="TN" pintype="passive"/>
-    </net>
-    <net code="43" name="unconnected-(J8-PadTN)">
-      <node ref="J8" pin="TN" pintype="passive"/>
-    </net>
-    <net code="44" name="unconnected-(J9-PadTN)">
-      <node ref="J9" pin="TN" pintype="passive"/>
-    </net>
-    <net code="45" name="unconnected-(J10-PadTN)">
-      <node ref="J10" pin="TN" pintype="passive"/>
     </net>
   </nets>
 </export>
