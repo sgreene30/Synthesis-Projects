@@ -48,7 +48,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -105,7 +111,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.15239999999999998,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.0,
         "min_hole_clearance": 0.25,
@@ -116,8 +122,8 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_through_hole_diameter": 0.30479999999999996,
+        "min_track_width": 0.15239999999999998,
         "min_via_annular_width": 0.09999999999999999,
         "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
@@ -165,8 +171,15 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -471,6 +484,22 @@
     [
       "26c86dd5-dfd7-41c7-bbd1-9e9608670d1f",
       ""
+    ],
+    [
+      "0eef6a00-688b-4bfd-882f-f201b61df626",
+      "IO"
+    ],
+    [
+      "38191612-adf4-49f4-81f4-d8d2041520a6",
+      "panning_mixer"
+    ],
+    [
+      "5953196a-8b09-41fb-a29d-6d5fae78b82c",
+      "level_indicator"
+    ],
+    [
+      "03af083c-fc95-41ff-b0c3-b3f41d6b92e7",
+      "power"
     ]
   ],
   "text_variables": {}
