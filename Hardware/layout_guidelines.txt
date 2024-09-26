@@ -8,7 +8,15 @@ The top of the pcb shall be 0.435" from the top of the panel
 Knob spacing
 Knobs shall be have minimum 1" spacing between each other as measured from the center of each knob. The knobs shall be spaced 0.5" from the panel edge.
 
-Panel text shall be KICAD FONT
+Panel text shall be KICAD FONT ALL CAPS
+	text shall be center justified both vertical and horizontally and placed in center of rectangle on user drawing for below
+	
 	KNOB text shall be 70MILx70MIL 10MIL thickness
 	THONKICONN text shall be 50MILx50MIL 8MIL thickness
 	MOUNTING HOLES ARE 130mil FROM BOARD EDGE
+
+	IN and OUT shall be used instead of input and output
+	Title shall be placed at the bottom of the PCB Spaced
+
+Panel Mounting holes
+	shall be 340 mils from horizontal edge and 120 mils from vertical edge

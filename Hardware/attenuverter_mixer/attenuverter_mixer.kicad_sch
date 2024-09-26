@@ -1,65 +1,127 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid 3cea67a5-3d63-46b9-9b54-3aa8fec2c236)
-
-  (paper "A4")
-
-  (lib_symbols
-  )
-
-
-  (sheet (at 148.59 27.94) (size 27.94 16.51) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 71c8d109-3ad4-4529-b4c7-3c204baf3b8f)
-    (property "Sheetname" "Mixer" (at 148.59 27.2284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Mixer.kicad_sch" (at 148.59 45.0346 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "attenuverter_mixer"
-        (path "/3cea67a5-3d63-46b9-9b54-3aa8fec2c236" (page "3"))
-      )
-    )
-  )
-
-  (sheet (at 111.76 27.94) (size 27.94 16.51) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 95c75bca-0ff8-4489-bf0f-60c179868158)
-    (property "Sheetname" "Power" (at 111.76 27.2284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Power.kicad_sch" (at 111.76 45.0346 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "attenuverter_mixer"
-        (path "/3cea67a5-3d63-46b9-9b54-3aa8fec2c236" (page "4"))
-      )
-    )
-  )
-
-  (sheet (at 187.96 27.94) (size 25.4 16.51) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid ef943e2b-3b2d-47f6-87cc-42fcec7692a4)
-    (property "Sheetname" "Attenuverters" (at 187.96 27.2284 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Attenuverters.kicad_sch" (at 187.96 45.0346 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "attenuverter_mixer"
-        (path "/3cea67a5-3d63-46b9-9b54-3aa8fec2c236" (page "2"))
-      )
-    )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "3cea67a5-3d63-46b9-9b54-3aa8fec2c236")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 148.59 27.94)
+		(size 27.94 16.51)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "71c8d109-3ad4-4529-b4c7-3c204baf3b8f")
+		(property "Sheetname" "Mixer"
+			(at 148.59 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Mixer.kicad_sch"
+			(at 148.59 45.0346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "attenuverter_mixer"
+				(path "/3cea67a5-3d63-46b9-9b54-3aa8fec2c236"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 111.76 27.94)
+		(size 27.94 16.51)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "95c75bca-0ff8-4489-bf0f-60c179868158")
+		(property "Sheetname" "Power"
+			(at 111.76 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 111.76 45.0346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "attenuverter_mixer"
+				(path "/3cea67a5-3d63-46b9-9b54-3aa8fec2c236"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 187.96 27.94)
+		(size 25.4 16.51)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ef943e2b-3b2d-47f6-87cc-42fcec7692a4")
+		(property "Sheetname" "Attenuverters"
+			(at 187.96 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Attenuverters.kicad_sch"
+			(at 187.96 45.0346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "attenuverter_mixer"
+				(path "/3cea67a5-3d63-46b9-9b54-3aa8fec2c236"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
 )

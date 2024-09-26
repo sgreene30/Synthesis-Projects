@@ -67,6 +67,12 @@
     "visible_layers": "ffcffff_fffffff9",
     "zone_display_mode": 0
   },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
+  },
   "meta": {
     "filename": "daisy_euro.kicad_prl",
     "version": 3
