@@ -6087,7 +6087,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "2.2uF"
 			(at 0.635 -2.54 0)
 			(effects
 				(font
@@ -6096,7 +6096,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
 			(at 0.9652 -3.81 0)
 			(effects
 				(font

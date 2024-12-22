@@ -1,4 +1,4 @@
-23865388972888438
+23867121244037142
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -96747,12 +96747,12 @@ synthesis
 1
 0
 synthesis
-Mini_sw
-
-
+C_Rect_L7.8mm_W7.8mm_P5.00mm
+C_Rect_L7.8mm_W7.8mm_P5.00mm
+C_Rect_L7.8mm_W7.8mm_P5.00mm
 0
-3
-3
+2
+2
 synthesis
 PANEL_JACK_0.25''
 
@@ -96781,6 +96781,13 @@ PANEL_MOUNTING_HOLE
 0
 1
 0
+synthesis
+SW_MINI_DWB1
+
+
+0
+3
+3
 synthesis
 WQP-PJ612A-A
 

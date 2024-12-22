@@ -6096,7 +6096,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
+		(property "Footprint" "synthesis:C_Rect_L7.8mm_W7.8mm_P5.00mm"
 			(at 0.9652 -3.81 0)
 			(effects
 				(font

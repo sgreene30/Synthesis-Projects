@@ -1,0 +1,125 @@
+(footprint "SW_MINI_DWB1"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0.01 -7 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "768458d8-d2a2-4414-a046-20c49ad2f40c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "SW_MINI_DWB1"
+		(at 0 8 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "2e56b6fe-7d86-4336-bb60-c08a04cc9109")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "29f5a3cd-c1cd-43f6-bbe1-344024a563c3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9ea043a4-7966-49a2-a3c7-6767f9850e6e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0058ac9a-0d8f-44b3-a710-0df2a2d6d1e5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -3.4 -6.3)
+		(end 3.4 6.3)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "091239da-bd24-42d5-a39d-9ade930e5b78")
+	)
+	(fp_rect
+		(start -3.39 -6.3)
+		(end 3.41 6.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "470e1942-9d01-4dde-a785-64b63d2f91eb")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 9.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "25b6d234-96c0-4f0f-a02b-a934e0c463c8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole oval
+		(at 0 4.7)
+		(size 3.4 2.1)
+		(drill oval 2.4 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "86d6a1bd-c782-4bc0-a588-2b9453af8107")
+	)
+	(pad "2" thru_hole oval
+		(at 0 0)
+		(size 3.4 2.1)
+		(drill oval 2.4 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e4582a9b-8142-4063-9a78-fd30d6963b2e")
+	)
+	(pad "3" thru_hole oval
+		(at 0 -4.7)
+		(size 3.4 2.1)
+		(drill oval 2.4 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "7685f9b2-63eb-4d90-be7e-0c67cbbf79e0")
+	)
+)

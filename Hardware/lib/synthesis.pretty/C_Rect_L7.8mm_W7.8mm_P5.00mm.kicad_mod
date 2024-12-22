@@ -1,0 +1,141 @@
+(footprint "C_Rect_L7.8mm_W7.8mm_P5.00mm"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "C_Rect_L7.8mm_W7.8mm_P5.00mm")
+	(tags "C_Rect_L7.8mm_W7.8mm_P5.00mm")
+	(property "Reference" "REF**"
+		(at 2.5 -4.6 0)
+		(layer "F.SilkS")
+		(uuid "72d09209-7e9c-4b32-b759-8049842b359c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "C_Rect_L7.8mm_W7.8mm_P5.00mm"
+		(at 2.65 4.75 0)
+		(layer "F.Fab")
+		(uuid "55a7ef9b-515a-4217-becf-9c5ec1e4e2e6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b2b7d476-edf0-4e7d-989e-0eb589543595")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "96cb9bc5-522b-41fa-9256-a946b81c82af")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e40e63de-477c-44ec-aee1-64ebd0dfc60d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -1.4 -3.9)
+		(end 6.4 3.9)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "e9e556e8-89d1-4964-a1d8-c928e3323d01")
+	)
+	(fp_rect
+		(start -1.4 -3.9)
+		(end 6.4 3.9)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "Margin")
+		(uuid "58c4a50f-fc2a-46e0-9d4e-94812d376506")
+	)
+	(fp_rect
+		(start -1.4 -3.9)
+		(end 6.4 3.9)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "1858bd78-4dcb-4bc6-b0be-f743caf12cfa")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 2.5 0 0)
+		(layer "F.Fab")
+		(uuid "345f4d09-e3e5-4783-84df-d98401fefd7e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4069b3f1-a65e-4642-ba50-72eeff3ac70b")
+	)
+	(pad "2" thru_hole circle
+		(at 5 0)
+		(size 1.6 1.6)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f9161825-ff24-4a07-9762-f9dab01963bf")
+	)
+	(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
