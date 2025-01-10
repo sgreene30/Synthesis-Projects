@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 50,
+    "active_layer": 0,
     "active_layer_preset": "All Layers",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -74,7 +74,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "Front Panel.kicad_prl",
+    "filename": "common_faceplate.kicad_prl",
     "version": 3
   },
   "project": {

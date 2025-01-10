@@ -7,6 +7,9 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(rev "2")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(31 "B.Cu" signal)
@@ -74,9 +77,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "rev 2/")
 		)
 	)
 	(net 0 "")
@@ -383,7 +386,7 @@
 	(footprint "synthesis:PANEL_MOUNTING_HOLE"
 		(layer "F.Cu")
 		(uuid "25cf11c6-d623-4a82-a482-d883b783f579")
-		(at 132.461 160.274)
+		(at 132.588 158.5976)
 		(property "Reference" "REF**"
 			(at 0 -0.5 0)
 			(unlocked yes)
@@ -856,7 +859,7 @@
 	(footprint "synthesis:PANEL_MOUNTING_HOLE"
 		(layer "F.Cu")
 		(uuid "64f176bc-0056-4cea-bc7d-15a03e9dbbd9")
-		(at 98.933 160.274)
+		(at 99.06 158.623)
 		(property "Reference" "REF**"
 			(at 0 -0.5 0)
 			(unlocked yes)
@@ -2246,14 +2249,14 @@
 	)
 	(gr_rect
 		(start 90.424 33.147)
-		(end 141.224 163.322)
+		(end 141.224 161.671)
 		(stroke
 			(width 0.05)
 			(type default)
 		)
 		(fill none)
 		(layer "Edge.Cuts")
-		(uuid "f7839e51-8eb3-4ba4-b0c9-c15fe7e9e046")
+		(uuid "f52f4eb4-98cc-45e5-9e54-6820504f71dd")
 	)
 	(gr_text "IN 1"
 		(at 98.933 153.67 0)
@@ -2278,7 +2281,7 @@
 		)
 	)
 	(gr_text "OUTPUT\nMODULE"
-		(at 115.697 159.512 0)
+		(at 115.7224 158.2166 0)
 		(layer "F.Mask")
 		(uuid "287acd33-79f7-4d80-9142-1ff0425fa655")
 		(effects
@@ -2453,6 +2456,18 @@
 			)
 		)
 	)
+	(gr_text "Revision History\nRev 1: Initial Proto Order\nRev 2: Corrected Panel Height"
+		(at 229.6922 131.9276 0)
+		(layer "User.1")
+		(uuid "e2cbd691-b1b4-4452-a9e8-db1289c13171")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
 	(zone
 		(net 1)
 		(net_name "GND")
@@ -2473,15 +2488,15 @@
 		)
 		(polygon
 			(pts
-				(xy 90.424 33.274) (xy 140.97 33.274) (xy 140.97 163.322) (xy 90.424 163.322)
+				(xy 90.424 33.274) (xy 140.97 33.274) (xy 141.224 161.671) (xy 90.424 161.671)
 			)
 		)
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 140.666539 33.667185) (xy 140.712294 33.719989) (xy 140.7235 33.7715) (xy 140.7235 162.6975)
-				(xy 140.703815 162.764539) (xy 140.651011 162.810294) (xy 140.5995 162.8215) (xy 91.0485 162.8215)
-				(xy 90.981461 162.801815) (xy 90.935706 162.749011) (xy 90.9245 162.6975) (xy 90.9245 33.7715) (xy 90.944185 33.704461)
+				(xy 140.666539 33.667185) (xy 140.712294 33.719989) (xy 140.7235 33.7715) (xy 140.7235 161.0465)
+				(xy 140.703815 161.113539) (xy 140.651011 161.159294) (xy 140.5995 161.1705) (xy 91.0485 161.1705)
+				(xy 90.981461 161.150815) (xy 90.935706 161.098011) (xy 90.9245 161.0465) (xy 90.9245 33.7715) (xy 90.944185 33.704461)
 				(xy 90.996989 33.658706) (xy 91.0485 33.6475) (xy 140.5995 33.6475)
 			)
 		)

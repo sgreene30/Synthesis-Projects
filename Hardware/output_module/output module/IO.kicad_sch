@@ -10,6 +10,169 @@
 		(company "SVG Synthesis")
 	)
 	(lib_symbols
+		(symbol "CAP_2.2UF_FILM_1"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "2.2uF"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "synthesis:C_Rect_L7.8mm_W7.8mm_P5.00mm"
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MFR" "EPCOS TDK"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MPN" "B32529D0225K000"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C3780718"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CAP_2.2UF_FILM_1_0_1"
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CAP_2.2UF_FILM_1_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:+5V"
 			(power)
 			(pin_names
@@ -1018,169 +1181,6 @@
 				)
 			)
 			(symbol "CAP_1UF_0603_X7R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "synthesis:CAP_2.2UF_FILM"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "2.2uF"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
-				(at 0.9652 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MFR" "EPCOS TDK"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MPN" "B32529D0225K000"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C3780718"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "CAP_2.2UF_FILM_0_1"
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "CAP_2.2UF_FILM_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 2.794)
@@ -3446,6 +3446,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 158.75) (xy 63.5 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "215a59ae-c1f4-42b9-bb04-33ae3aea3fb3")
+	)
+	(wire
+		(pts
 			(xy 76.2 148.59) (xy 76.2 158.75)
 		)
 		(stroke
@@ -3513,16 +3523,6 @@
 			(type default)
 		)
 		(uuid "2d14f251-6e06-4ef0-8f27-bac512354b1c")
-	)
-	(wire
-		(pts
-			(xy 36.83 149.86) (xy 48.26 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d8e9a3c-8c78-4da2-82a3-44c2572f97ce")
 	)
 	(wire
 		(pts
@@ -3776,16 +3776,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 105.41) (xy 49.53 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "59805d4e-f76a-4b2e-bb55-aa953f17a2e3")
-	)
-	(wire
-		(pts
 			(xy 92.71 93.98) (xy 101.6 93.98)
 		)
 		(stroke
@@ -3793,6 +3783,16 @@
 			(type default)
 		)
 		(uuid "5a5b5d46-61b8-459e-a3d7-24574e2f8cff")
+	)
+	(wire
+		(pts
+			(xy 50.8 105.41) (xy 50.8 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ac75702-7f62-4268-8f45-2ea01c97535f")
 	)
 	(wire
 		(pts
@@ -3836,7 +3836,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 162.56) (xy 48.26 165.1)
+			(xy 50.8 118.11) (xy 50.8 120.65)
 		)
 		(stroke
 			(width 0)
@@ -3856,16 +3856,6 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 105.41) (xy 49.53 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "782bed37-2757-43b5-b27b-301ae0cf9e9b")
-	)
-	(wire
-		(pts
 			(xy 99.06 49.53) (xy 99.06 59.69)
 		)
 		(stroke
@@ -3873,6 +3863,16 @@
 			(type default)
 		)
 		(uuid "799d2324-fe99-4563-b50f-062fcdf90797")
+	)
+	(wire
+		(pts
+			(xy 35.56 105.41) (xy 50.8 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a2a4a2b-fe58-47eb-91a1-cbb66ac4c570")
 	)
 	(wire
 		(pts
@@ -3893,6 +3893,16 @@
 			(type default)
 		)
 		(uuid "7e6afd1d-659c-4513-b567-e1aed52a221a")
+	)
+	(wire
+		(pts
+			(xy 50.8 148.59) (xy 50.8 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81451dec-8664-4d27-9597-21c43c0c28be")
 	)
 	(wire
 		(pts
@@ -3946,7 +3956,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 152.4) (xy 38.1 153.67)
+			(xy 38.1 151.13) (xy 38.1 153.67)
 		)
 		(stroke
 			(width 0)
@@ -4196,16 +4206,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 152.4) (xy 38.1 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c71f8090-5121-40bd-a01c-d1498e104cd3")
-	)
-	(wire
-		(pts
 			(xy 35.56 60.96) (xy 46.99 60.96)
 		)
 		(stroke
@@ -4276,16 +4276,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 114.3) (xy 64.77 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d7772148-b78b-4336-82a1-88a387caff27")
-	)
-	(wire
-		(pts
 			(xy 50.8 69.85) (xy 62.23 69.85)
 		)
 		(stroke
@@ -4316,13 +4306,33 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 118.11) (xy 49.53 120.65)
+			(xy 34.29 148.59) (xy 50.8 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db9e6d07-93b0-40ac-8111-408f8027e18c")
+	)
+	(wire
+		(pts
+			(xy 50.8 162.56) (xy 50.8 165.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ddecf03b-80a5-40f0-98f4-b8adf999d48e")
+	)
+	(wire
+		(pts
+			(xy 35.56 107.95) (xy 39.37 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0567103-198d-4281-95b0-db09f1d407d7")
 	)
 	(wire
 		(pts
@@ -4376,23 +4386,13 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 149.86) (xy 48.26 154.94)
+			(xy 34.29 151.13) (xy 38.1 151.13)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e6058e02-aaa3-4264-a61b-b41ca2f5b5c9")
-	)
-	(wire
-		(pts
-			(xy 38.1 107.95) (xy 39.37 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea3c3e2d-b649-4a34-a94a-10a609197cc2")
+		(uuid "ebb7b8e8-dd90-40ea-b73e-4a3e4c9e739b")
 	)
 	(wire
 		(pts
@@ -4423,6 +4423,16 @@
 			(type default)
 		)
 		(uuid "ecb81946-fa45-40ef-a3e3-1ab57dde2cf1")
+	)
+	(wire
+		(pts
+			(xy 54.61 114.3) (xy 64.77 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed38e5f4-a48f-40a5-9b6e-907f9c6875cb")
 	)
 	(wire
 		(pts
@@ -4493,16 +4503,6 @@
 			(type default)
 		)
 		(uuid "f9473bb0-b396-4aa8-b407-e4a19aa1cb93")
-	)
-	(wire
-		(pts
-			(xy 52.07 158.75) (xy 63.5 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fbd9fac3-0bbb-43bc-8161-09c2e4aab4e9")
 	)
 	(wire
 		(pts
@@ -4764,7 +4764,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "019fe63b-99f0-46c3-bbe6-62e2c8dba2b4")
 		(property "Reference" "RV4"
 			(at 135.89 71.755 0)
@@ -5285,17 +5285,17 @@
 	)
 	(symbol
 		(lib_id "synthesis:thonkiconn")
-		(at 33.02 105.41 0)
+		(at 29.21 148.59 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "19365242-3f16-40a1-a70a-dde9b4edd87a")
 		(property "Reference" "J3"
-			(at 27.94 104.14 0)
+			(at 24.13 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5304,7 +5304,7 @@
 			)
 		)
 		(property "Value" "thonkiconn"
-			(at 27.94 106.68 0)
+			(at 24.13 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5313,7 +5313,7 @@
 			)
 		)
 		(property "Footprint" "synthesis:thonkiconn"
-			(at 33.02 105.41 0)
+			(at 29.21 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5322,7 +5322,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 33.02 105.41 0)
+			(at 29.21 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5331,7 +5331,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 33.02 105.41 0)
+			(at 29.21 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5340,7 +5340,7 @@
 			)
 		)
 		(property "MFR" "QINGPU"
-			(at 33.02 105.41 0)
+			(at 29.21 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5349,7 +5349,7 @@
 			)
 		)
 		(property "MPN" "WQP518MA"
-			(at 33.02 105.41 0)
+			(at 29.21 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5732,6 +5732,102 @@
 		)
 	)
 	(symbol
+		(lib_name "CAP_2.2UF_FILM_1")
+		(lib_id "synthesis:CAP_2.2UF_FILM")
+		(at 157.48 102.87 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ec58c07-4b70-471f-83ad-f4f622d8aebd")
+		(property "Reference" "C7"
+			(at 157.48 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2uF"
+			(at 157.48 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "synthesis:C_Rect_L7.8mm_W7.8mm_P5.00mm"
+			(at 161.29 101.9048 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 157.48 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
+			(at 157.48 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "EPCOS TDK"
+			(at 157.48 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B32529D0225K000"
+			(at 157.48 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3780718"
+			(at 157.48 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ab8609b1-9b5f-4725-b0ad-8de1cb996b6d")
+		)
+		(pin "2"
+			(uuid "74a87297-8315-487f-9443-bb697d8399dd")
+		)
+		(instances
+			(project "output module"
+				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "synthesis:RES_100k_0603")
 		(at 66.04 69.85 90)
 		(unit 1)
@@ -5828,17 +5924,17 @@
 	)
 	(symbol
 		(lib_id "synthesis:thonkiconn")
-		(at 31.75 149.86 0)
+		(at 30.48 105.41 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "365b1850-bc91-4b52-96de-974de2397dd0")
 		(property "Reference" "J2"
-			(at 26.67 148.59 0)
+			(at 25.4 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5847,7 +5943,7 @@
 			)
 		)
 		(property "Value" "thonkiconn"
-			(at 26.67 151.13 0)
+			(at 25.4 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5856,7 +5952,7 @@
 			)
 		)
 		(property "Footprint" "synthesis:thonkiconn"
-			(at 31.75 149.86 0)
+			(at 30.48 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5865,7 +5961,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 31.75 149.86 0)
+			(at 30.48 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5874,7 +5970,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 31.75 149.86 0)
+			(at 30.48 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5883,7 +5979,7 @@
 			)
 		)
 		(property "MFR" "QINGPU"
-			(at 31.75 149.86 0)
+			(at 30.48 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5892,7 +5988,7 @@
 			)
 		)
 		(property "MPN" "WQP518MA"
-			(at 31.75 149.86 0)
+			(at 30.48 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5920,7 +6016,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 48.26 165.1 0)
+		(at 50.8 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5928,7 +6024,7 @@
 		(dnp no)
 		(uuid "3902e059-8620-4667-b045-6302e4f21767")
 		(property "Reference" "#PWR05"
-			(at 48.26 171.45 0)
+			(at 50.8 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5937,7 +6033,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 48.26 168.91 0)
+			(at 50.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5945,7 +6041,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 48.26 165.1 0)
+			(at 50.8 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5954,7 +6050,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 165.1 0)
+			(at 50.8 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5963,7 +6059,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 48.26 165.1 0)
+			(at 50.8 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5991,7 +6087,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "3f9f5953-5471-49db-bcca-d7cf31e1e812")
 		(property "Reference" "RV1"
 			(at 52.07 73.66 0)
@@ -6528,6 +6624,102 @@
 		)
 	)
 	(symbol
+		(lib_name "CAP_2.2UF_FILM_1")
+		(lib_id "synthesis:CAP_2.2UF_FILM")
+		(at 157.48 72.39 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "59bae8e1-ad57-4973-9c60-c7f5d7d35a6a")
+		(property "Reference" "C4"
+			(at 157.48 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2uF"
+			(at 157.48 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "synthesis:C_Rect_L7.8mm_W7.8mm_P5.00mm"
+			(at 161.29 71.4248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 157.48 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
+			(at 157.48 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "EPCOS TDK"
+			(at 157.48 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B32529D0225K000"
+			(at 157.48 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3780718"
+			(at 157.48 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "806ef769-f685-420e-95b4-e043a4dcbe7e")
+		)
+		(pin "2"
+			(uuid "0383e40f-5800-4834-8c7a-6d34d218b1af")
+		)
+		(instances
+			(project "output module"
+				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "synthesis:thonkiconn")
 		(at 30.48 60.96 0)
 		(mirror x)
@@ -6535,7 +6727,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59cd18f1-755c-4994-a50b-80502a88d03c")
 		(property "Reference" "J1"
@@ -6783,7 +6975,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 49.53 120.65 0)
+		(at 50.8 165.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6791,7 +6983,7 @@
 		(dnp no)
 		(uuid "6e154bab-2e2a-45d4-8f63-45017d531948")
 		(property "Reference" "#PWR06"
-			(at 49.53 127 0)
+			(at 50.8 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6800,7 +6992,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 49.53 124.46 0)
+			(at 50.8 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6808,7 +7000,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 49.53 120.65 0)
+			(at 50.8 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6817,7 +7009,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 49.53 120.65 0)
+			(at 50.8 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6826,7 +7018,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 49.53 120.65 0)
+			(at 50.8 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7007,35 +7199,34 @@
 		)
 	)
 	(symbol
-		(lib_id "synthesis:ALPHAPOT_100K_LOG")
-		(at 49.53 114.3 0)
-		(mirror x)
+		(lib_name "CAP_2.2UF_FILM_1")
+		(lib_id "synthesis:CAP_2.2UF_FILM")
+		(at 157.48 82.55 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
-		(uuid "8079ee52-5958-4b85-8548-cf239913bd4f")
-		(property "Reference" "RV3"
-			(at 54.61 118.11 0)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75541fc4-5e95-49b8-b1c2-ab75ccba859c")
+		(property "Reference" "C5"
+			(at 157.48 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "A100k"
-			(at 57.15 111.76 0)
+		(property "Value" "2.2uF"
+			(at 157.48 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
-			(at 49.53 114.3 0)
+		(property "Footprint" "synthesis:C_Rect_L7.8mm_W7.8mm_P5.00mm"
+			(at 161.29 81.5848 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7044,7 +7235,104 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 49.53 114.3 0)
+			(at 157.48 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
+			(at 157.48 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "EPCOS TDK"
+			(at 157.48 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B32529D0225K000"
+			(at 157.48 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3780718"
+			(at 157.48 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9638e3ab-217a-452f-ba94-34d7c71c857a")
+		)
+		(pin "2"
+			(uuid "79663d78-e635-4db2-8849-7a34d00259af")
+		)
+		(instances
+			(project "output module"
+				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "synthesis:ALPHAPOT_100K_LOG")
+		(at 50.8 158.75 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8079ee52-5958-4b85-8548-cf239913bd4f")
+		(property "Reference" "RV3"
+			(at 55.88 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "A100k"
+			(at 58.42 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
+			(at 50.8 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7053,7 +7341,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 49.53 114.3 0)
+			(at 50.8 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7062,7 +7350,7 @@
 			)
 		)
 		(property "MFR" "ALPHA"
-			(at 49.53 114.3 0)
+			(at 50.8 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7071,7 +7359,7 @@
 			)
 		)
 		(property "MPN" "A100K"
-			(at 49.53 114.3 0)
+			(at 50.8 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7359,101 +7647,6 @@
 		)
 	)
 	(symbol
-		(lib_id "synthesis:CAP_2.2UF_FILM")
-		(at 157.48 72.39 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "9d287266-2fd8-49b5-ab10-54eff22cbff1")
-		(property "Reference" "C4"
-			(at 157.48 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2uF"
-			(at 157.48 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
-			(at 161.29 71.4248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 157.48 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
-			(at 157.48 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" "EPCOS TDK"
-			(at 157.48 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "B32529D0225K000"
-			(at 157.48 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C3780718"
-			(at 157.48 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5e251de7-c3e4-4a7f-be4c-dfe0a85c6a84")
-		)
-		(pin "2"
-			(uuid "1dd0a754-6fbc-419e-a6af-363f488adf4c")
-		)
-		(instances
-			(project ""
-				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
-					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 138.43 88.9 0)
 		(unit 1)
@@ -7525,7 +7718,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a251db2c-2494-46f8-a6f0-90655faca769")
 		(property "Reference" "U2"
@@ -8176,6 +8369,102 @@
 		)
 	)
 	(symbol
+		(lib_name "CAP_2.2UF_FILM_1")
+		(lib_id "synthesis:CAP_2.2UF_FILM")
+		(at 157.48 92.71 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cfac996e-2c1d-4f38-81a3-bfafe388b224")
+		(property "Reference" "C6"
+			(at 157.48 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2uF"
+			(at 157.48 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "synthesis:C_Rect_L7.8mm_W7.8mm_P5.00mm"
+			(at 161.29 91.7448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" "EPCOS TDK"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "B32529D0225K000"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3780718"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "785ca83d-3534-4f6d-b55d-fb74a64d5539")
+		)
+		(pin "2"
+			(uuid "483a4e51-b29c-4158-abf0-54626278ffc5")
+		)
+		(instances
+			(project "output module"
+				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "synthesis:CAP_100NF_0603_X7R")
 		(at 229.87 93.98 0)
 		(unit 1)
@@ -8272,101 +8561,6 @@
 		)
 	)
 	(symbol
-		(lib_id "synthesis:CAP_2.2UF_FILM")
-		(at 157.48 82.55 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "d0200fb8-39fc-49e6-95d7-ef3be33618ff")
-		(property "Reference" "C5"
-			(at 157.48 74.93 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2uF"
-			(at 157.48 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
-			(at 161.29 81.5848 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 157.48 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
-			(at 157.48 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" "EPCOS TDK"
-			(at 157.48 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "B32529D0225K000"
-			(at 157.48 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C3780718"
-			(at 157.48 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2f000fb1-0e3a-40ae-9276-ee8d4d3e3a1b")
-		)
-		(pin "2"
-			(uuid "a1fdcd46-11cb-4255-af71-9c944954a12e")
-		)
-		(instances
-			(project "output module"
-				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 138.43 76.2 0)
 		(unit 1)
@@ -8426,101 +8620,6 @@
 			(project "output module"
 				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
 					(reference "#PWR010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "synthesis:CAP_2.2UF_FILM")
-		(at 157.48 92.71 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "d1c6db5b-dd38-4da0-9eae-82277cc2d624")
-		(property "Reference" "C6"
-			(at 157.48 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2uF"
-			(at 157.48 87.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
-			(at 161.29 91.7448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 157.48 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
-			(at 157.48 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" "EPCOS TDK"
-			(at 157.48 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "B32529D0225K000"
-			(at 157.48 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C3780718"
-			(at 157.48 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9b956c68-4d86-49d2-9ff7-a7690d9f511b")
-		)
-		(pin "2"
-			(uuid "013d5f0f-fe80-48d9-8981-f3c4f8e6f2bf")
-		)
-		(instances
-			(project "output module"
-				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
-					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -8599,7 +8698,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "d6c60f90-7508-4775-8eee-92aa471d274d")
 		(property "Reference" "RV4"
 			(at 135.89 85.725 0)
@@ -9117,112 +9216,17 @@
 		)
 	)
 	(symbol
-		(lib_id "synthesis:CAP_2.2UF_FILM")
-		(at 157.48 102.87 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "f95912fa-da7a-4d8f-a852-ee76e63b7144")
-		(property "Reference" "C7"
-			(at 157.48 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.2uF"
-			(at 157.48 97.79 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:C_Rect_L7.2mm_W4.5mm_P5.00mm_FKS2_FKP2_MKS2_MKP2"
-			(at 161.29 101.9048 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 157.48 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "CAP FILM 2.2UF 10% 63VDC RADIAL"
-			(at 157.48 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" "EPCOS TDK"
-			(at 157.48 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "B32529D0225K000"
-			(at 157.48 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C3780718"
-			(at 157.48 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c5e59c54-819d-426a-a78e-62b16ed24960")
-		)
-		(pin "2"
-			(uuid "40017350-3e66-4eea-8dd8-ae2259ec5653")
-		)
-		(instances
-			(project "output module"
-				(path "/26c86dd5-dfd7-41c7-bbd1-9e9608670d1f/0eef6a00-688b-4bfd-882f-f201b61df626"
-					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "synthesis:ALPHAPOT_100K_LOG")
-		(at 48.26 158.75 0)
+		(at 50.8 114.3 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "fc0ee79b-2362-408c-97db-f725092ad940")
 		(property "Reference" "RV2"
-			(at 53.34 162.56 0)
+			(at 55.88 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9231,7 +9235,7 @@
 			)
 		)
 		(property "Value" "A100k"
-			(at 55.88 156.21 0)
+			(at 58.42 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9240,7 +9244,7 @@
 			)
 		)
 		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
-			(at 48.26 158.75 0)
+			(at 50.8 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9249,7 +9253,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 48.26 158.75 0)
+			(at 50.8 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9258,7 +9262,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 48.26 158.75 0)
+			(at 50.8 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9267,7 +9271,7 @@
 			)
 		)
 		(property "MFR" "ALPHA"
-			(at 48.26 158.75 0)
+			(at 50.8 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9276,7 +9280,7 @@
 			)
 		)
 		(property "MPN" "A100K"
-			(at 48.26 158.75 0)
+			(at 50.8 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)

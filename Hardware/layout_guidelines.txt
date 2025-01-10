@@ -1,5 +1,5 @@
 Panel Size
-Dimensions for the panel shall be 5.120" in height. The width will be an integer multiple of 0.2"
+Dimensions for the panel shall be 5.060" in height. The width will be an integer multiple of 0.2"
 
 PCB size
 The PCB size shall be 4.25" height. The width shall be 80mils less than the width of the panel with 40mil space on each side.

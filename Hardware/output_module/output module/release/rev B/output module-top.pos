@@ -1,0 +1,22 @@
+### Footprint positions - created on 2025-01-10T16:03:47-0500 ###
+### Printed by KiCad version 8.0.7
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val         Package                                                 PosX       PosY       Rot  Side
+D5        GREEN       LED_D3.0mm                                          103.5050  -124.7140   90.0000  top
+D6        YELLOW      LED_D3.0mm                                          109.4740  -124.7140   90.0000  top
+D7        RED         LED_D3.0mm                                          115.4430  -124.7140   90.0000  top
+D12       GREEN       LED_D3.0mm                                           90.0430  -124.7140   90.0000  top
+D13       YELLOW      LED_D3.0mm                                           84.0740  -124.7140   90.0000  top
+D14       RED         LED_D3.0mm                                           78.1050  -124.7140   90.0000  top
+J1        thonkiconn  thonkiconn                                           80.1040  -155.1940   90.0000  top
+J2        thonkiconn  thonkiconn                                           96.7740  -155.1940  -90.0000  top
+J3        thonkiconn  thonkiconn                                          113.5710  -155.1940  -90.0000  top
+RV1       A100k       Potentiometer_Alpha_RD901F-40-00D_Single_Vertical    81.5740   -65.0240   90.0000  top
+RV2       A100k       Potentiometer_Alpha_RD901F-40-00D_Single_Vertical    81.5740   -90.4240   90.0000  top
+RV3       A100k       Potentiometer_Alpha_RD901F-40-00D_Single_Vertical    81.5740  -115.8240   90.0000  top
+RV4       A10K        Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical      81.5740  -141.2240   90.0000  top
+RV5       10k         Potentiometer_Alpha_RD901F-40-00D_Single_Vertical   106.9740   -65.0240   90.0000  top
+RV6       10k         Potentiometer_Alpha_RD901F-40-00D_Single_Vertical   106.9740   -90.4240   90.0000  top
+RV7       10k         Potentiometer_Alpha_RD901F-40-00D_Single_Vertical   106.9740  -115.8240   90.0000  top
+## End
