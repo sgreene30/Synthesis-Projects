@@ -10,16 +10,16 @@ daisyCommon board;
 int blocksize = 32;
 float fs = 96000;
 voice osc_1, osc_2;
-bool mix = true; 
+bool mix = false; 
 
 enum
 {
-	freq_1, freq_2, fine_1, fine_2, shape_1, shape_2
+	freq_1, freq_2, fine_1, fine_2, shape_1, shape_2, morph_1, morph_2
 };
 
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
-	if(mix)
+	if(!mix)
 	{
 		for (size_t i = 0; i < size; i++)
 		{
@@ -46,6 +46,8 @@ int main(void)
 	board.add_dual_control(fine_2, board.in_6, board.knob_7);
 	board.add_dual_control(shape_1, board.in_3, board.knob_3);
 	board.add_dual_control(shape_2, board.in_7, board.knob_8);
+	board.add_dual_control(morph_1, board.gate_1_in_4, board.knob_4);
+	board.add_dual_control(morph_2, board.gate_2_in_8, board.knob_5);
 
 
 	board.Init();
@@ -64,13 +66,24 @@ int main(void)
 		bool slow_blink = (System::GetNow() & 1023) < 511;
 		board.seed.SetLed(slow_blink);
 		
-
-		osc_1.set_freq(board.get_dual_control(freq_1));
-		osc_2.set_freq(board.get_dual_control(freq_2));
+		if(mix)
+		{
+			osc_1.set_freq(board.get_dual_control(freq_1));
+			osc_2.set_freq(board.get_dual_control(freq_1));
+		}
+		else
+		{
+			osc_1.set_freq(board.get_dual_control(freq_1));
+			osc_2.set_freq(board.get_dual_control(freq_2));
+		}
+		
+		
 		osc_1.set_fine(board.get_dual_control(fine_1));
 		osc_2.set_fine(board.get_dual_control(fine_2));
 		osc_1.set_shape(board.get_dual_control(shape_1));
 		osc_2.set_shape(board.get_dual_control(shape_2));
+		
+
 
 		/*board.seed.DelayMs(200);
 		board.seed.PrintLine("shape: %f", board.get_dual_control(shape_1));
@@ -112,7 +125,7 @@ int main(void)
 		{
 			mix = !mix;
 		}
-		board.LED_LEFT.Write(mix);
-		board.LED_RIGHT.Write(!mix);
+		board.LED_LEFT.Write(!mix);
+		board.LED_RIGHT.Write(mix);
 	}
 }

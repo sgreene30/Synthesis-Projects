@@ -16,14 +16,34 @@ void voice::Init(float fs)
 
     osc_square_.Init(fs);
     osc_square_.SetAmp(1.0f);
-    osc_square_.SetWaveform(osc_square_.WAVE_POLYBLEP_SQUARE);   
+    osc_square_.SetWaveform(osc_square_.WAVE_POLYBLEP_SQUARE);
+
+    filter_up_.SetStateBuffer(filter_state_up_, DSY_COUNTOF(filter_state_up_));
+    filter_up_.Init(taps_up_, ntaps_, false);
+
+    filter_down_.SetStateBuffer(filter_state_down_, DSY_COUNTOF(filter_state_down_));
+    filter_down_.Init(taps_down_, ntaps_, false);   
 }
 
 void voice::set_freq(float freq)
 {
-    osc_midi_ = freq*120.0f;
-    freq = mtof(osc_midi_);
-    osc_freq_ = freq;
+    float osc_midi;
+    if(freq_curve_ == voct)
+    {
+        osc_midi = freq*120.0f;
+        freq = mtof(osc_midi);
+        osc_freq_ = freq;
+    }
+    else if (freq_curve_ == linear)
+    {
+        osc_freq_ = fmap(freq, 30, 16000, daisysp::Mapping::LINEAR);
+    }
+    else if (freq_curve_ == lfo)
+    {
+        osc_freq_ = fmap(freq, 0.01f, 30.0f, daisysp::Mapping::EXP);
+    }
+    
+    
 }
 
 void voice::set_fine(float fine)
@@ -70,9 +90,18 @@ void voice::set_shape(float shape)
     
 }
 
+void voice::set_morph(float morph)
+{
+    morph_ = morph;
+    fold_gain_ = fmap(morph_, 0.4f, 7.0f);
+}
+
 float voice::Process()
 {
-    float ret = 0.0f;
+    float sample[2];
+    sample[0] = 0.0f;
+    osc_square_.SetPw(morph_/2.0f + 0.5f);
+
     osc_sin_.SetFreq(osc_freq_);
     osc_saw_.SetFreq(osc_freq_);
     osc_tri_.SetFreq(osc_freq_);
@@ -83,11 +112,26 @@ float voice::Process()
     osc_tri_.SetAmp(tri_amp_);
     osc_square_.SetAmp(square_amp_);
 
-    ret += osc_sin_.Process();
-    ret += osc_saw_.Process();
-    ret += osc_tri_.Process();
-    ret += osc_square_.Process();
+    sample[0] += osc_sin_.Process();
+    sample[0] += osc_saw_.Process();
+    sample[0] += osc_tri_.Process();
+    //sample[0] = filter_up_.Process(sample[0]);
 
-    return ret;
+    //fold
+    sample[0] = (tanhf(sample[0]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[0]))/1.8f;
+
+    /*sample[0] = filter_down_.Process(sample[0]);
+
+    sample[1] = 0.0f;
+    sample[1] = filter_up_.Process(sample[1]);
+
+    //fold
+    sample[1] = (tanhf(sample[1]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[1]))/1.8f;
+
+    sample[1] = filter_down_.Process(sample[1]);*/
+
+    sample[0] += osc_square_.Process();
+
+    return sample[0];
 }
 
