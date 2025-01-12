@@ -8,6 +8,7 @@
 	)
 	(paper "A4")
 	(title_block
+		(rev "B")
 		(comment 4 "AISLER Project ID: RYDYGNWG")
 	)
 	(layers
@@ -476,7 +477,7 @@
 	(footprint "synthesis:eurorack_mounting_hole"
 		(layer "F.Cu")
 		(uuid "3ad4b839-c198-4649-86c4-63e3e4ce320c")
-		(at 131.064 177.8)
+		(at 131.064 176.149)
 		(property "Reference" "REF**"
 			(at 0 -0.5 0)
 			(unlocked yes)
@@ -1195,7 +1196,7 @@
 	(footprint "synthesis:eurorack_mounting_hole"
 		(layer "F.Cu")
 		(uuid "9fc251dc-e5a3-469a-afcb-0d097df169b7")
-		(at 97.536 177.8)
+		(at 97.536 176.149)
 		(property "Reference" "REF**"
 			(at 0 -0.5 0)
 			(unlocked yes)
@@ -2459,17 +2460,6 @@
 		(layer "Dwgs.User")
 		(uuid "232d03c7-51b6-4534-9f38-aeefe20f1604")
 	)
-	(gr_rect
-		(start 88.9 50.673)
-		(end 139.7 180.848)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(fill none)
-		(layer "Dwgs.User")
-		(uuid "77e02f15-5bf5-48ab-bc4f-4193c3d72fc4")
-	)
 	(gr_line
 		(start 88.9 67.183)
 		(end 139.7 67.183)
@@ -2489,16 +2479,6 @@
 		)
 		(layer "Dwgs.User")
 		(uuid "a3fbabaa-41bb-42a1-8f78-ce81752cd7df")
-	)
-	(gr_line
-		(start 114.3 50.673)
-		(end 114.3 180.848)
-		(stroke
-			(width 0.15)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "b9f5ab71-41b6-4c4f-bc34-ad8aefec914d")
 	)
 	(gr_line
 		(start 88.9 117.983)
@@ -2572,14 +2552,14 @@
 	)
 	(gr_rect
 		(start 88.9 50.673)
-		(end 139.7 180.848)
+		(end 139.7 179.197)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(fill none)
 		(layer "Edge.Cuts")
-		(uuid "856b1c1f-6c41-4c18-be7d-a13f98190346")
+		(uuid "51d1acf8-2dee-43cb-b2be-250998f6325d")
 	)
 	(gr_text "DC"
 		(at 105.41 137.414 0)
@@ -2615,7 +2595,7 @@
 		)
 	)
 	(gr_text "ATTENUVERTER\nMIXER"
-		(at 114.3 176.784 0)
+		(at 114.3 175.26 0)
 		(layer "F.Mask")
 		(uuid "23a55480-8c2c-4cf9-b1a2-86615d7563de")
 		(effects
@@ -2889,6 +2869,18 @@
 			)
 		)
 	)
+	(gr_text "Revision History\nRev A: Original Proto Order\nRev B: Correct Board Height"
+		(at 217.043 147.701 0)
+		(layer "User.1")
+		(uuid "c2138cf9-635a-42cf-9580-3a034e693976")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
 	(zone
 		(net 1)
 		(net_name "GND")
@@ -2908,16 +2900,16 @@
 		)
 		(polygon
 			(pts
-				(xy 88.9 50.673) (xy 139.7 50.673) (xy 139.7 180.848) (xy 88.9 180.848)
+				(xy 88.9 50.673) (xy 139.7 50.673) (xy 139.7 179.197) (xy 88.9 179.197)
 			)
 		)
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 139.6375 50.690113) (xy 139.682887 50.7355) (xy 139.6995 50.7975) (xy 139.6995 180.7235) (xy 139.682887 180.7855)
-				(xy 139.6375 180.830887) (xy 139.5755 180.8475) (xy 89.0245 180.8475) (xy 88.9625 180.830887) (xy 88.917113 180.7855)
-				(xy 88.9005 180.7235) (xy 88.9005 50.7975) (xy 88.917113 50.7355) (xy 88.9625 50.690113) (xy 89.0245 50.6735)
-				(xy 139.5755 50.6735)
+				(xy 139.643039 50.692685) (xy 139.688794 50.745489) (xy 139.7 50.797) (xy 139.7 179.073) (xy 139.680315 179.140039)
+				(xy 139.627511 179.185794) (xy 139.576 179.197) (xy 89.024 179.197) (xy 88.956961 179.177315) (xy 88.911206 179.124511)
+				(xy 88.9 179.073) (xy 88.9 50.797) (xy 88.919685 50.729961) (xy 88.972489 50.684206) (xy 89.024 50.673)
+				(xy 139.576 50.673)
 			)
 		)
 	)
@@ -2941,16 +2933,16 @@
 		)
 		(polygon
 			(pts
-				(xy 88.9 50.673) (xy 139.7 50.673) (xy 139.7 180.848) (xy 88.9 180.848)
+				(xy 88.9 50.673) (xy 139.7 50.673) (xy 139.7 179.197) (xy 88.9 179.197)
 			)
 		)
 		(filled_polygon
 			(layer "B.Cu")
 			(pts
-				(xy 139.6375 50.690113) (xy 139.682887 50.7355) (xy 139.6995 50.7975) (xy 139.6995 180.7235) (xy 139.682887 180.7855)
-				(xy 139.6375 180.830887) (xy 139.5755 180.8475) (xy 89.0245 180.8475) (xy 88.9625 180.830887) (xy 88.917113 180.7855)
-				(xy 88.9005 180.7235) (xy 88.9005 50.7975) (xy 88.917113 50.7355) (xy 88.9625 50.690113) (xy 89.0245 50.6735)
-				(xy 139.5755 50.6735)
+				(xy 139.643039 50.692685) (xy 139.688794 50.745489) (xy 139.7 50.797) (xy 139.7 179.073) (xy 139.680315 179.140039)
+				(xy 139.627511 179.185794) (xy 139.576 179.197) (xy 89.024 179.197) (xy 88.956961 179.177315) (xy 88.911206 179.124511)
+				(xy 88.9 179.073) (xy 88.9 50.797) (xy 88.919685 50.729961) (xy 88.972489 50.684206) (xy 89.024 50.673)
+				(xy 139.576 50.673)
 			)
 		)
 	)
