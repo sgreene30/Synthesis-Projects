@@ -1,0 +1,132 @@
+(footprint "PANEL_SW_MINI_TOGGLE_DWB1"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "97d1a0e4-a177-449e-88a2-07ae5dff4286")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "PANEL_SW_MINI_TOGGLE_DWB1"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "32c6a927-3d0e-4ec8-9568-3265a20e3c5e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4e1e8a16-f59d-4f2e-946f-a67faa35c0ad")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "824043c5-2ad2-4007-813e-9fec16b639df")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a21f6778-d6f9-4e68-b1f4-86b694bb1801")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -13.97 -1.524)
+		(end -6.35 1.016)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "Dwgs.User")
+		(uuid "0ca424d9-40cf-483d-b94e-10dd9381d135")
+	)
+	(fp_rect
+		(start -3.81 -8.89)
+		(end 3.81 -6.35)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "Dwgs.User")
+		(uuid "1a1fb687-bb8e-4ead-830a-1f15222aa3af")
+	)
+	(fp_rect
+		(start -3.81 6.35)
+		(end 3.81 8.89)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "Dwgs.User")
+		(uuid "66420b2d-a3d9-4462-9e0d-4f5cc84b09ec")
+	)
+	(fp_rect
+		(start 6.35 -1.27)
+		(end 13.97 1.27)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "Dwgs.User")
+		(uuid "5a0c1ec5-3a74-44ae-b37d-291ef1bdc508")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "575fe606-7fb5-4639-adf0-fa965b01c1c9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" thru_hole circle
+		(at 0 0)
+		(size 10.16 10.16)
+		(drill 6.35)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(zone_connect 2)
+		(uuid "d4482142-86ed-49bf-8c33-554957996870")
+	)
+)

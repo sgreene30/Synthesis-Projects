@@ -1,0 +1,188 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "74acaca0-79fd-4b91-90c4-143fa6f82a9e")
+	(paper "A4")
+	(title_block
+		(title "200 Series Synthesis Platform")
+		(date "2025-01-18")
+		(rev "A0")
+		(company "SVG Synthesis")
+	)
+	(lib_symbols)
+	(sheet
+		(at 81.28 25.4)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "29f1b18a-6032-4a1d-ae64-8a60aa88f83e")
+		(property "Sheetname" "Controls"
+			(at 81.28 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "controls.kicad_sch"
+			(at 81.28 38.6846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "200_Plattform"
+				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 114.3 50.8)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "937b8c18-e741-4e04-8253-e5ee8bc90418")
+		(property "Sheetname" "DAISY PATCH"
+			(at 114.3 50.0884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "daisy_patch.kicad_sch"
+			(at 114.3 64.0846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "200_Plattform"
+				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 83.185 50.8)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "daac6ba8-31c2-4c89-83c6-b6162dfbf0ed")
+		(property "Sheetname" "Jacks"
+			(at 83.185 50.0884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "jacks.kicad_sch"
+			(at 83.185 64.0846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "200_Plattform"
+				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 114.3 25.4)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fec114e0-b300-40eb-92b3-4d2d9c20b00a")
+		(property "Sheetname" "Analog Outputs"
+			(at 114.3 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "analog_outputs.kicad_sch"
+			(at 114.3 38.6846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "200_Plattform"
+				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
