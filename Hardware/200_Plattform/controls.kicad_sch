@@ -4648,7 +4648,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62c0fac3-5b96-4cfb-94ce-edd93bcb9939")
-		(property "Reference" "RV2"
+		(property "Reference" "RV5"
 			(at 39.37 88.8999 0)
 			(effects
 				(font
@@ -4732,7 +4732,7 @@
 		(instances
 			(project "200_Plattform"
 				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e/29f1b18a-6032-4a1d-ae64-8a60aa88f83e"
-					(reference "RV2")
+					(reference "RV5")
 					(unit 1)
 				)
 			)
@@ -4749,7 +4749,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6474cfad-7991-422b-9d2a-0253e7c7c90d")
-		(property "Reference" "RV6"
+		(property "Reference" "RV7"
 			(at 115.57 88.8999 0)
 			(effects
 				(font
@@ -4833,7 +4833,7 @@
 		(instances
 			(project "200_Plattform"
 				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e/29f1b18a-6032-4a1d-ae64-8a60aa88f83e"
-					(reference "RV6")
+					(reference "RV7")
 					(unit 1)
 				)
 			)
@@ -4982,7 +4982,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6da12442-ecd7-417d-b601-e5763707dcbe")
-		(property "Reference" "RV3"
+		(property "Reference" "RV2"
 			(at 77.47 57.1499 0)
 			(effects
 				(font
@@ -5066,7 +5066,7 @@
 		(instances
 			(project "200_Plattform"
 				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e/29f1b18a-6032-4a1d-ae64-8a60aa88f83e"
-					(reference "RV3")
+					(reference "RV2")
 					(unit 1)
 				)
 			)
@@ -5281,7 +5281,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82744392-afdf-44f5-9971-b1006b290af6")
-		(property "Reference" "RV5"
+		(property "Reference" "RV3"
 			(at 115.57 57.1499 0)
 			(effects
 				(font
@@ -5365,7 +5365,7 @@
 		(instances
 			(project "200_Plattform"
 				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e/29f1b18a-6032-4a1d-ae64-8a60aa88f83e"
-					(reference "RV5")
+					(reference "RV3")
 					(unit 1)
 				)
 			)
@@ -5821,7 +5821,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d23ee0fc-f75f-4b03-aaae-a41b6fcaa1ef")
-		(property "Reference" "RV7"
+		(property "Reference" "RV4"
 			(at 153.67 57.1499 0)
 			(effects
 				(font
@@ -5905,7 +5905,7 @@
 		(instances
 			(project "200_Plattform"
 				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e/29f1b18a-6032-4a1d-ae64-8a60aa88f83e"
-					(reference "RV7")
+					(reference "RV4")
 					(unit 1)
 				)
 			)
@@ -5922,7 +5922,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d6ffb124-93b3-4242-b71f-0b96b9318965")
-		(property "Reference" "RV4"
+		(property "Reference" "RV6"
 			(at 77.47 88.8999 0)
 			(effects
 				(font
@@ -6006,7 +6006,7 @@
 		(instances
 			(project "200_Plattform"
 				(path "/74acaca0-79fd-4b91-90c4-143fa6f82a9e/29f1b18a-6032-4a1d-ae64-8a60aa88f83e"
-					(reference "RV4")
+					(reference "RV6")
 					(unit 1)
 				)
 			)

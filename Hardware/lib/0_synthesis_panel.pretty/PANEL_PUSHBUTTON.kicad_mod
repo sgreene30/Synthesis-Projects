@@ -1,12 +1,13 @@
 (footprint "PANEL_PUSHBUTTON"
-	(version 20240108)
+	(version 20241229)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
 		(at 0 -0.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
+		(hide yes)
 		(uuid "18401ae4-52ed-4b3f-8b6f-8c0fc2e0ba54")
 		(effects
 			(font
@@ -24,18 +25,6 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "fe4b9cc3-1122-49f0-bdc4-f5842826657c")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -86,4 +75,5 @@
 		(remove_unused_layers no)
 		(uuid "09396942-ec5b-4836-9c40-98afb0d12eb2")
 	)
+	(embedded_fonts no)
 )
