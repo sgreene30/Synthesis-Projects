@@ -1,7 +1,0 @@
-### Footprint positions - created on 2025-03-16T21:47:04-0400 ###
-### Printed by KiCad version 9.0.0
-## Unit = mm, Angle = deg.
-## Side : bottom
-# Ref     Val             Package                      PosX       PosY       Rot  Side
-M1        DAISY_PATCH_SM  DAISY_PATCH_SM_OUTLINE    96.6330   -49.1330  -90.0000  bottom
-## End

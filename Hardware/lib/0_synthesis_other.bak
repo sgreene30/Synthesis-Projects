@@ -2339,7 +2339,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN2" "966210-2000-AR-PR"
+		(property "MPN ALTERNATE" "966210-2000-AR-PR"
 			(at 0 0 0)
 			(effects
 				(font
@@ -2348,7 +2348,7 @@
 				(hide yes)
 			)
 		)
-		(property "MFR2" "3M"
+		(property "MFR ALTERNATE" "3M"
 			(at 0 0 0)
 			(effects
 				(font

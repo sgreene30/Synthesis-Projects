@@ -485,7 +485,7 @@
       "id": "30a59718-4356-485c-8878-fd57a3451e9f",
       "only": [],
       "settings": {
-        "output_path": "C:\\Users\\z003tf7t\\Documents\\projects\\Hardware\\200_Plattform\\Documentation\\"
+        "output_path": ".\\Documentation\\"
       },
       "type": "folder"
     }
