@@ -2200,6 +2200,26 @@
 		)
 		(uuid "6264c74b-2361-4d9a-ac44-af1d3e791cac")
 	)
+	(text "LEFT"
+		(exclude_from_sim no)
+		(at 103.886 156.718 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+			)
+		)
+		(uuid "8365343b-c702-4f41-b309-d5cbef892667")
+	)
+	(text "RIGHT"
+		(exclude_from_sim no)
+		(at 104.14 181.864 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+			)
+		)
+		(uuid "a6258f76-39f4-45b7-8107-6d46df0d3078")
+	)
 	(text "SWITCHES"
 		(exclude_from_sim no)
 		(at 85.344 131.572 0)
@@ -2286,7 +2306,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 163.83) (xy 93.98 163.83)
+			(xy 90.17 173.99) (xy 93.98 173.99)
 		)
 		(stroke
 			(width 0)
@@ -2716,7 +2736,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 166.37) (xy 107.95 166.37)
+			(xy 104.14 176.53) (xy 107.95 176.53)
 		)
 		(stroke
 			(width 0)
@@ -2746,7 +2766,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 165.1) (xy 90.17 163.83)
+			(xy 90.17 175.26) (xy 90.17 173.99)
 		)
 		(stroke
 			(width 0)
@@ -2836,7 +2856,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 161.29) (xy 107.95 161.29)
+			(xy 104.14 171.45) (xy 107.95 171.45)
 		)
 		(stroke
 			(width 0)
@@ -2888,7 +2908,7 @@
 	)
 	(global_label "TOGGLE2_3"
 		(shape input)
-		(at 107.95 166.37 0)
+		(at 107.95 176.53 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2898,7 +2918,7 @@
 		)
 		(uuid "4a572973-a6e2-46be-ae6e-26e336be70f6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.337 166.37 0)
+			(at 121.337 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3328,7 +3348,7 @@
 	)
 	(global_label "TOGGLE2_1"
 		(shape input)
-		(at 107.95 161.29 0)
+		(at 107.95 171.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3338,7 +3358,7 @@
 		)
 		(uuid "d971f910-bf4f-4d3d-b687-7616a884e87a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 121.337 161.29 0)
+			(at 121.337 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3513,7 +3533,7 @@
 	)
 	(symbol
 		(lib_id "0_synthesis_other:SW_SPDT_ON_OFF_ON_SUBMINI")
-		(at 99.06 163.83 0)
+		(at 99.06 173.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3522,7 +3542,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ba6c28c-8921-4557-adb1-f329e4d84d33")
 		(property "Reference" "SW3"
-			(at 99.06 157.48 0)
+			(at 99.06 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3530,7 +3550,7 @@
 			)
 		)
 		(property "Value" "SW_SPDT_ON_OFF_ON_SUBMINI"
-			(at 99.06 168.91 0)
+			(at 99.06 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3539,7 +3559,7 @@
 			)
 		)
 		(property "Footprint" "0_synthesis_tht:SW_TOGGLE_2MS3T1B3M2QES"
-			(at 99.06 163.83 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3548,7 +3568,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 99.06 171.45 0)
+			(at 99.06 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3557,7 +3577,7 @@
 			)
 		)
 		(property "Description" "SUBMINIATURE TOGGLE SWITCH ON OFF ON PC PIN"
-			(at 99.06 163.83 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3566,7 +3586,7 @@
 			)
 		)
 		(property "MFR" "DAILYWELL"
-			(at 99.06 163.83 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3575,7 +3595,7 @@
 			)
 		)
 		(property "MPN" "2MS3T1B1M2QES"
-			(at 99.06 163.83 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3584,7 +3604,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 99.06 163.83 0)
+			(at 99.06 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4208,7 +4228,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 90.17 165.1 0)
+		(at 90.17 175.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4217,7 +4237,7 @@
 		(fields_autoplaced yes)
 		(uuid "2ef1378a-e9a0-4525-a7a2-2b59ba600508")
 		(property "Reference" "#PWR065"
-			(at 90.17 171.45 0)
+			(at 90.17 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4226,7 +4246,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 90.17 170.18 0)
+			(at 90.17 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4234,7 +4254,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 90.17 165.1 0)
+			(at 90.17 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4243,7 +4263,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90.17 165.1 0)
+			(at 90.17 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4252,7 +4272,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 165.1 0)
+			(at 90.17 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
