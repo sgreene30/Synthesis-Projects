@@ -1,0 +1,4 @@
+../Core/Src/bsp.c:29:6:BSP_LED_On	16	static
+../Core/Src/bsp.c:43:6:BSP_LED_Off	16	static
+../Core/Src/bsp.c:57:6:BSP_LED_Toggle	16	static
+../Core/Src/bsp.c:62:9:BSP_AUDIO_OUT_Play	16	static
