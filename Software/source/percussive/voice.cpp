@@ -5,8 +5,11 @@ void voice::Init(float fs)
     osc_.Init(fs);
     osc_.SetWaveform(osc_.WAVE_TRI);
     amp_env_.Init(fs);
+    amp_env_.SetTime(ADENV_SEG_ATTACK, 0.002f);
     freq_env_.Init(fs);
     freq_env_.SetMin(1.0f);
+    freq_env_.SetTime(ADENV_SEG_ATTACK, 0.002f);
+    
 
     filter_up_.SetStateBuffer(filter_state_up_, DSY_COUNTOF(filter_state_up_));
     filter_up_.Init(taps_up_, ntaps_, false);
@@ -160,16 +163,10 @@ void voice::set_noise_effect_2(float value)
     mod_ind_ = value;
 }
 
-void voice::set_amp_env_attack(float time)
-{
-    time = fmap(time, 0.002f, 0.5f, Mapping::LINEAR);
-    set_freq_env_attack(time);
-    amp_env_.SetTime(ADENV_SEG_ATTACK, time);
-}
 void voice::set_amp_env_decay(float time)
 {
     time = fmap(time, 0.002f, 2.0f, Mapping::LINEAR);
-    set_freq_env_decay(time);
+    amp_decay_time_ = time;
     amp_env_.SetTime(ADENV_SEG_DECAY, time);
 }
 
@@ -184,14 +181,9 @@ void voice::set_effect_mode(uint8_t mode)
     effect_ = mode;
 }
 
-void voice::set_freq_env_attack(float time)
-{
-    freq_env_.SetTime(ADENV_SEG_ATTACK, time);
-}
-
 void voice::set_freq_env_decay(float time)
 {
-    time = time / 5.0f;
+    time = time * amp_decay_time_;
     freq_env_.SetTime(ADENV_SEG_DECAY, time);
 }
 

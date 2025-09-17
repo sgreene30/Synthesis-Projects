@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   36              	.LBI225:
   37              		.file 2 "../../../../DaisyExamples/libDaisy//src/daisy_seed.h"
    1:../../../../DaisyExamples/libDaisy//src/daisy_seed.h **** #pragma once
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 2
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 2
 
 
    2:../../../../DaisyExamples/libDaisy//src/daisy_seed.h **** #ifndef DSY_SEED_H
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   30:../../../../DaisyExamples/libDaisy//src/sys/system.h **** 
   31:../../../../DaisyExamples/libDaisy//src/sys/system.h ****         /** Method to call on the struct to set to defaults
   32:../../../../DaisyExamples/libDaisy//src/sys/system.h ****          ** CPU Freq set to 400MHz
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 3
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 3
 
 
   33:../../../../DaisyExamples/libDaisy//src/sys/system.h ****          ** Cache Enabled
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   87:../../../../DaisyExamples/libDaisy//src/sys/system.h ****         {
   88:../../../../DaisyExamples/libDaisy//src/sys/system.h ****             LT_v6_0 = 0, // Less than v6.0
   89:../../../../DaisyExamples/libDaisy//src/sys/system.h ****             NONE,        // No bootloader present
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 4
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 4
 
 
   90:../../../../DaisyExamples/libDaisy//src/sys/system.h ****             v6_0,        // v6.0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   41:../../../../DaisyExamples/libDaisy//src/hid/usb.h **** 
   42:../../../../DaisyExamples/libDaisy//src/hid/usb.h ****     ~UsbHandle() {}
   48              		.loc 4 42 5 is_stmt 1 view .LVU4
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 5
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 5
 
 
   49              		.loc 4 42 5 is_stmt 0 view .LVU5
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   50:../../../../DaisyExamples/libDaisy//src/per/adc.h ****         SPEED_64CYCLES_5,
   51:../../../../DaisyExamples/libDaisy//src/per/adc.h ****         SPEED_387CYCLES_5,
   52:../../../../DaisyExamples/libDaisy//src/per/adc.h ****         SPEED_810CYCLES_5,
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 6
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 6
 
 
   53:../../../../DaisyExamples/libDaisy//src/per/adc.h ****     };
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  107:../../../../DaisyExamples/libDaisy//src/per/adc.h ****     };
  108:../../../../DaisyExamples/libDaisy//src/per/adc.h **** 
  109:../../../../DaisyExamples/libDaisy//src/per/adc.h ****     AdcHandle() {}
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 7
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 7
 
 
  110:../../../../DaisyExamples/libDaisy//src/per/adc.h ****     ~AdcHandle() {}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   48:../../../../DaisyExamples/libDaisy//src/hid/audio.h ****           output_compensation(1.f)
   49:../../../../DaisyExamples/libDaisy//src/hid/audio.h ****         {
   50:../../../../DaisyExamples/libDaisy//src/hid/audio.h ****         }
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 8
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 8
 
 
   51:../../../../DaisyExamples/libDaisy//src/hid/audio.h ****     };
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
    2:../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #ifndef DSY_SWITCH_H
    3:../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #define DSY_SWITCH_H
    4:../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #include "daisy_core.h"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 9
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 9
 
 
    5:../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #include "per/gpio.h"
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   11:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****     {
   12:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         POS_CENTER = 0,
   13:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         POS_LEFT   = 1,
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 10
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 10
 
 
   14:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         POS_UP     = 1,
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
    5:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** license that can be found in the LICENSE file or at
    6:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** https://opensource.org/licenses/MIT.
    7:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** */
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 11
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 11
 
 
    8:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
    2:VCO.cpp       **** #include "daisysp.h"
    3:VCO.cpp       **** #include "daisy_common.h"
    4:VCO.cpp       **** #include "voice.h"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 12
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 12
 
 
    5:VCO.cpp       **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  180              		.loc 11 22 2 view .LVU34
  181 0010 C4B9     		cbnz	r4, .L5
  182              	.LVL3:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 13
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 13
 
 
  183              	.LBB246:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  226              	.LBE248:
   28:VCO.cpp       **** 		}
   29:VCO.cpp       **** 	}
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 14
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 14
 
 
   30:VCO.cpp       **** 	else
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   35:VCO.cpp       **** 		}
  262              		.loc 11 35 12 view .LVU63
  263 0060 D5E90013 		ldrd	r1, r3, [r5]
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 15
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 15
 
 
   34:VCO.cpp       **** 			out[1][i] = osc_2.Process();
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  306              	.LFE4693:
  308              		.section	.text._ZN5voiceC2Ev,"axG",%progbits,_ZN5voiceC5Ev,comdat
  309              		.align	1
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 16
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 16
 
 
  310              		.p2align 2,,3
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  354              	.LBE255:
  355              	.LBB256:
  356              	.LBI256:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 17
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 17
 
 
  357              		.file 12 "../../../../DaisyExamples/DaisySP//Source/Filters/fir.h"
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   54:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
   55:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /** Configure the filter coefficients
   56:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param coefs - pointer to coefficients (tail-first order)
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 18
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 18
 
 
   57:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****      * \param size - number of coefficients pointed by coefs (filter length)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  111:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(0 != state_size_);
  112:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         if(nullptr != state_)
  113:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 19
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 19
 
 
  114:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             memset(state_, 0, state_size_ * sizeof(state_[0]));
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  168:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** {
  169:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****   private:
  170:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     using FIRMem = FIRMemory<max_size, max_block>; // just a shorthand
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 20
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 20
 
 
  171:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  399              		.loc 12 119 76 view .LVU99
  400              	.LBE264:
  401              	.LBE263:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 21
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 21
 
 
  402              	.LBE262:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  450              		.cfi_offset 6, -8
  451              		.cfi_offset 14, -4
  452 0006 0546     		mov	r5, r0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 22
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 22
 
 
  453              		.loc 11 43 24 view .LVU107
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  482 0030 0522     		movs	r2, #5
  483 0032 0321     		movs	r1, #3
  484 0034 FFF7FEFF 		bl	_ZN5daisy11daisyCommon16add_dual_controlEiii
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 23
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 23
 
 
  485              	.LVL29:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  527 0074 0421     		movs	r1, #4
  528 0076 FFF7FEFF 		bl	_ZN5daisy9DaisySeed17SetAudioBlockSizeEj
  529              	.LVL35:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 24
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 24
 
 
   55:VCO.cpp       **** 	board.seed.StartAudio(AudioCallback);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   37:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****     {
   38:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         if(!dsy_gpio_read(&pina_gpio_))
   39:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****             return POS_UP;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 25
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 25
 
 
   40:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         if(!dsy_gpio_read(&pinb_gpio_))
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  101:VCO.cpp       **** 			case Switch3::POS_CENTER:
  102:VCO.cpp       **** 				osc_1.set_freq_curve(osc_1.linear);
  103:VCO.cpp       **** 				break;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 26
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 26
 
 
  104:VCO.cpp       **** 			case Switch3::POS_DOWN:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   59:../../../../DaisyExamples/libDaisy//src/hid/switch.h ****     */
   60:../../../../DaisyExamples/libDaisy//src/hid/switch.h ****     void Init(dsy_gpio_pin pin, float update_rate = 0.f);
   61:../../../../DaisyExamples/libDaisy//src/hid/switch.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 27
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 27
 
 
   62:../../../../DaisyExamples/libDaisy//src/hid/switch.h ****     /** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  635              	.LBE276:
   64:VCO.cpp       **** 	{
  636              		.loc 11 64 2 is_stmt 1 view .LVU162
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 28
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 28
 
 
  637              	.L35:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  679 011a 2D48     		ldr	r0, .L39+20
  680 011c FFF7FEFF 		bl	_ZN5voice8set_freqEf
  681              	.LVL56:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 29
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 29
 
 
  682              	.L25:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   38:../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****             return POS_UP;
  725              		.loc 8 38 26 is_stmt 0 view .LVU186
  726 0158 2348     		ldr	r0, .L39+44
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 30
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 30
 
 
  727 015a FFF7FEFF 		bl	dsy_gpio_read
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  766 0174 1648     		ldr	r0, .L39+20
  767 0176 FFF7FEFF 		bl	_ZN5voice14set_freq_curveEh
  768              	.LVL70:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 31
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 31
 
 
  113:VCO.cpp       **** 			case Switch3::POS_CENTER:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  101:VCO.cpp       **** 				osc_1.set_freq_curve(osc_1.linear);
  816              		.loc 11 101 4 is_stmt 1 view .LVU213
  102:VCO.cpp       **** 				break;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 32
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 32
 
 
  817              		.loc 11 102 5 view .LVU214
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  864              	.LFE4694:
  866              		.section	.text.startup._GLOBAL__sub_I_board,"ax",%progbits
  867              		.align	1
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 33
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 33
 
 
  868              		.p2align 2,,3
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   28:../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         OUTPUT,    /**< Output w/ push-pull configuration */
   29:../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         OUTPUT_OD, /**< Output w/ open-drain configuration */
   30:../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         ANALOG,    /**< Analog for connection to ADC or DAC peripheral */
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 34
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 34
 
 
   31:../../../../DaisyExamples/libDaisy//src/per/gpio.h ****     };
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  902              		.file 14 "../../../../DaisyExamples/libDaisy//src/daisy_core.h"
    1:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** #pragma once
    2:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** #ifndef DSY_CORE_HW_H
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 35
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 35
 
 
    3:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** #define DSY_CORE_HW_H /**< & */
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   57:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved input buffer named in */
   58:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** #define IN_L in[0]
   59:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 36
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 36
 
 
   60:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  114:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** 
  115:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** /** 
  116:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     Converts Signed 16-bit to float
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 37
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 37
 
 
  117:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     \param x Number to be scaled.
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  171:../../../../DaisyExamples/libDaisy//src/daisy_core.h **** /** Enums and a simple struct for defining a hardware pin on the MCU
  172:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  These correlate with the stm32 datasheet, and are used to configure
  173:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  the hardware.
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 38
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 38
 
 
  174:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  * 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  228:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  The dsy_gpio_pin struct should no longer be used, and is only available for
  229:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  backwards compatability.
  230:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  * 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 39
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 39
 
 
  231:../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  Please use Pin struct instead.
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  915              	.LBB445:
  916              	.LBI445:
   68:../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         : pin(), mode(Mode::INPUT), pull(Pull::NOPULL), speed(Speed::LOW)
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 40
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 40
 
 
  917              		.loc 13 68 9 view .LVU231
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  969              	.LBI485:
  970              		.loc 13 74 5 is_stmt 1 view .LVU242
  971              	.LBB486:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 41
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 41
 
 
  972              	.LBB487:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1023              	.LBE514:
  1024              	.LBE513:
  1025              	.LBB527:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 42
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 42
 
 
  1026              	.LBI527:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1076              	.LBB655:
  1077              	.LBB652:
  1078              	.LBB649:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 43
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 43
 
 
  1079              	.LBB645:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1131              	.LBB511:
  1132              	.LBB509:
  1133              	.LBB507:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 44
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 44
 
 
  1134              	.LBB505:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1188              	.LBB466:
  1189              	.LBB464:
  1190 0038 C0E90D33 		strd	r3, r3, [r0, #52]
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 45
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 45
 
 
  1191              	.LBE464:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1245 004c C0E92633 		strd	r3, r3, [r0, #152]
  1246              	.LVL82:
   69:../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         {
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 46
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 46
 
 
  1247              		.loc 13 69 73 view .LVU264
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1298              	.LBB588:
  1299              	.LBB589:
  1300              	.LBB590:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 47
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 47
 
 
  1301              	.LBI590:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
    7:../../../../DaisyExamples/libDaisy//src/per/dac.h **** namespace daisy
    8:../../../../DaisyExamples/libDaisy//src/per/dac.h **** {
    9:../../../../DaisyExamples/libDaisy//src/per/dac.h **** /** @brief DAC handle for Built-in DAC Peripheral 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 48
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 48
 
 
   10:../../../../DaisyExamples/libDaisy//src/per/dac.h ****  *  @ingroup per_analog
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   64:../../../../DaisyExamples/libDaisy//src/per/dac.h ****     {
   65:../../../../DaisyExamples/libDaisy//src/per/dac.h ****         ENABLED,
   66:../../../../DaisyExamples/libDaisy//src/per/dac.h ****         DISABLED,
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 49
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 49
 
 
   67:../../../../DaisyExamples/libDaisy//src/per/dac.h ****     };
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1381 0066 C0E93323 		strd	r2, r3, [r0, #204]
  1382              	.LBE591:
  1383              	.LBE593:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 50
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 50
 
 
  1384              	.LBE595:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1436              	.LBB612:
  1437              	.LBB610:
  1438              	.LBB608:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 51
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 51
 
 
  1439              	.LBB606:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   18:../../../../DaisyExamples/libDaisy//src/per/qspi.h **** 
   19:../../../../DaisyExamples/libDaisy//src/per/qspi.h **** namespace daisy
   20:../../../../DaisyExamples/libDaisy//src/per/qspi.h **** {
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 52
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 52
 
 
   21:../../../../DaisyExamples/libDaisy//src/per/qspi.h **** /** @addtogroup serial
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   75:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         {
   76:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****             MEMORY_MAPPED,    /**< & */
   77:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****             INDIRECT_POLLING, /**< & */
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 53
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 53
 
 
   78:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****             MODE_LAST,
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  132:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****     Result Write(uint32_t address, uint32_t size, uint8_t* buffer);
  133:../../../../DaisyExamples/libDaisy//src/per/qspi.h **** 
  134:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****     /** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 54
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 54
 
 
  135:../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         Erases the area specified on the chip.
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1487              	.LBI618:
  1488              		.loc 15 84 5 is_stmt 1 view .LVU300
  1489              		.loc 15 84 5 is_stmt 0 view .LVU301
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 55
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 55
 
 
  1490              	.LBE626:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   37:../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  SaiHandle sai;
   38:../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  sai.Init(sai_config);
   39:../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  // Now you can use it:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 56
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 56
 
 
   40:../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  sai.StartDma(. . .);
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
   94:../../../../DaisyExamples/libDaisy//src/per/sai.h ****         } pin_config;
   95:../../../../DaisyExamples/libDaisy//src/per/sai.h ****         SampleRate sr;
   96:../../../../DaisyExamples/libDaisy//src/per/sai.h ****         BitDepth   bit_depth;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 57
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 57
 
 
   97:../../../../DaisyExamples/libDaisy//src/per/sai.h ****         Sync       a_sync, b_sync;
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1541              	.LBB654:
  1542              	.LBB651:
  1543              	.LBB648:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 58
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 58
 
 
   19:daisy_common.h ****     ~daisyCommon() {}
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1591 010c 00000000 		.word	__dso_handle
  1592 0110 00000000 		.word	_ZN5daisy11daisyCommonD1Ev
  1593 0114 00000000 		.word	.LANCHOR2
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 59
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 59
 
 
  1594 0118 00000000 		.word	_ZN5voiceD1Ev
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1649 008c 15C4B53B 		.word	1001767957
  1650 0090 3DCEC6BB 		.word	-1144598979
  1651 0094 D0ECCDBC 		.word	-1127355184
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 60
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 60
 
 
  1652 0098 D85212BD 		.word	-1122872616
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1704 0000 20000000 		.word	32
  1705              		.section	.data.fs,"aw"
  1706              		.align	2
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 61
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 61
 
 
  1707              		.set	.LANCHOR5,. + 0
@@ -3649,44 +3649,44 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 1
  1754              		.file 58 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
  1755              		.file 59 "<built-in>"
  1756              		.file 60 "../../../../DaisyExamples/libDaisy//src/dev/sr_595.h"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 62
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 62
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 VCO.cpp
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:17     .text._ZN5daisy11daisyCommonD2Ev:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD2Ev
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD1Ev
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:89     .text._ZN5voiceD2Ev:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD2Ev
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD1Ev
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:135    .text._Z13AudioCallbackPKPKfPPfj:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:143    .text._Z13AudioCallbackPKPKfPPfj:00000000 _Z13AudioCallbackPKPKfPPfj
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:302    .text._Z13AudioCallbackPKPKfPPfj:00000090 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:309    .text._ZN5voiceC2Ev:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:317    .text._ZN5voiceC2Ev:00000000 _ZN5voiceC2Ev
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:420    .text._ZN5voiceC2Ev:0000003c $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:317    .text._ZN5voiceC2Ev:00000000 _ZN5voiceC1Ev
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:427    .text.startup.main:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:435    .text.startup.main:00000000 main
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:848    .text.startup.main:000001bc $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:867    .text.startup._GLOBAL__sub_I_board:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:874    .text.startup._GLOBAL__sub_I_board:00000000 _GLOBAL__sub_I_board
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1589   .text.startup._GLOBAL__sub_I_board:00000104 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1601   .init_array:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1683   .bss.mix:00000000 mix
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1697   .bss.osc_2:00000000 osc_2
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1690   .bss.osc_1:00000000 osc_1
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1710   .data.fs:00000000 fs
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1703   .data.blocksize:00000000 blocksize
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1677   .bss.board:00000000 board
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1610   .rodata:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1673   .bss.board:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1684   .bss.mix:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1686   .bss.osc_1:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1693   .bss.osc_2:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1700   .data.blocksize:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s:1706   .data.fs:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:17     .text._ZN5daisy11daisyCommonD2Ev:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD2Ev
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD1Ev
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:89     .text._ZN5voiceD2Ev:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD2Ev
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD1Ev
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:135    .text._Z13AudioCallbackPKPKfPPfj:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:143    .text._Z13AudioCallbackPKPKfPPfj:00000000 _Z13AudioCallbackPKPKfPPfj
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:302    .text._Z13AudioCallbackPKPKfPPfj:00000090 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:309    .text._ZN5voiceC2Ev:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:317    .text._ZN5voiceC2Ev:00000000 _ZN5voiceC2Ev
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:420    .text._ZN5voiceC2Ev:0000003c $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:317    .text._ZN5voiceC2Ev:00000000 _ZN5voiceC1Ev
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:427    .text.startup.main:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:435    .text.startup.main:00000000 main
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:848    .text.startup.main:000001bc $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:867    .text.startup._GLOBAL__sub_I_board:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:874    .text.startup._GLOBAL__sub_I_board:00000000 _GLOBAL__sub_I_board
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1589   .text.startup._GLOBAL__sub_I_board:00000104 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1601   .init_array:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1683   .bss.mix:00000000 mix
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1697   .bss.osc_2:00000000 osc_2
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1690   .bss.osc_1:00000000 osc_1
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1710   .data.fs:00000000 fs
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1703   .data.blocksize:00000000 blocksize
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1677   .bss.board:00000000 board
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1610   .rodata:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1673   .bss.board:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1684   .bss.mix:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1686   .bss.osc_1:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1693   .bss.osc_2:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1700   .data.blocksize:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s:1706   .data.fs:00000000 $d
                            .group:00000000 _ZN5daisy11daisyCommonD5Ev
                            .group:00000000 _ZN5voiceD5Ev
                            .group:00000000 _ZN5voiceC5Ev
@@ -3709,7 +3709,7 @@ _ZN5daisy9DaisySeed6SetLedEb
 _ZN5daisy11daisyCommon16get_dual_controlEi
 _ZN5voice8set_freqEf
 _ZN5voice8set_fineEf
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccs0RIWQ.s 			page 63
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccNaRZl9.s 			page 63
 
 
 _ZN5voice9set_shapeEf

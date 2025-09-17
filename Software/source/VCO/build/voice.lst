@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
    5:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** license that can be found in the LICENSE file or at
    6:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** https://opensource.org/licenses/MIT.
    7:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** */
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 2
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 2
 
 
    8:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   62:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
   63:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* truncate silently */
   64:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         size_ = DSY_MIN(size, max_size);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 3
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 3
 
 
   65:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   49              		.cfi_offset 14, -4
  109:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
  110:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != state_);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 4
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 4
 
 
  111:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(0 != state_size_);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  121:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     /* Expression for the maximum processing block size currently supported */
  122:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t MaxBlock() const
  123:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     {
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 5
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 5
 
 
  124:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         return state_size_ + 1u > size_ ? state_size_ + 1u - size_ : 0;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
    3:voice.cpp     **** void voice::Init(float fs)
    4:voice.cpp     **** {
  124              		.loc 2 4 1 is_stmt 1 view -0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 6
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 6
 
 
  125              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   31:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_SAW,
   32:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_RAMP,
   33:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_SQUARE,
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 7
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 7
 
 
   34:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         WAVE_POLYBLEP_TRI,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
    4:voice.cpp     ****     osc_tri_.Init(fs);
  171              		.loc 2 4 1 view .LVU18
  172 0028 0446     		mov	r4, r0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 8
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 8
 
 
  173              	.LVL5:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   58:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         waveform_  = WAVE_SIN;
  209              		.loc 3 58 34 view .LVU34
  210 0042 F0EE407A 		vmov.f32	s15, s0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 9
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 9
 
 
  211              	.LBE292:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   59:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         eoc_       = true;
  241              		.loc 3 59 9 is_stmt 1 view .LVU40
   60:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****         eor_       = true;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 10
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 10
 
 
  242              		.loc 3 60 9 view .LVU41
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  284              	.LBI310:
   50:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
  285              		.loc 3 50 10 view .LVU56
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 11
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 11
 
 
  286              	.LBB314:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   61:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
  325              		.loc 3 61 20 view .LVU73
  326 007c A4F85460 		strh	r6, [r4, #84]	@ movhi
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 12
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 12
 
 
  327              	.LBE315:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  368              	.LBB329:
  369              		.loc 3 81 9 view .LVU88
  370              		.loc 3 81 9 is_stmt 0 view .LVU89
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 13
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 13
 
 
  371              	.LBE329:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  407              	.LBE340:
  408              	.LBE339:
  409              	.LBB346:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 14
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 14
 
 
  410              	.LBB302:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  452              		.loc 3 60 9 is_stmt 1 view .LVU118
   61:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
  453              		.loc 3 61 9 view .LVU119
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 15
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 15
 
 
  454              	.LVL15:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  489              	.LBB356:
  490              	.LBB357:
  491              		.loc 3 81 19 view .LVU139
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 16
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 16
 
 
  492 00de 0723     		movs	r3, #7
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  537              	.LBB384:
  538              	.LBB381:
  539              	.LBB373:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 17
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 17
 
 
  540              	.LBB374:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  578              	.LBB359:
  579              		.loc 3 81 9 view .LVU160
  580              		.loc 3 81 9 is_stmt 0 view .LVU161
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 18
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 18
 
 
  581              	.LBE359:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  153:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t       size_;       /*< number of filter coefficients */
  154:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****     size_t       state_size_; /*< length of the state buffer */
  155:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** };
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 19
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 19
 
 
  156:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  210:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != pSrc);
  211:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         assert(nullptr != pDst);
  212:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 20
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 20
 
 
  213:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         /* Process the block of data */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  627              		.loc 1 137 9 view .LVU175
  139:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
  628              		.loc 1 139 9 view .LVU176
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 21
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 21
 
 
  141:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****             size_  = size;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  666              	.LBE402:
  667              	.LBE401:
  668              	.LBE400:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 22
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 22
 
 
  669              	.LBE399:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  713              		.loc 1 136 9 view .LVU204
  137:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h **** 
  714              		.loc 1 137 9 view .LVU205
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 23
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 23
 
 
  139:../../../../DaisyExamples/DaisySP//Source/Filters/fir.h ****         {
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  757              		.cfi_restore 8
  758              		.cfi_restore 7
  759              		.cfi_restore 6
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 24
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 24
 
 
  760              		.cfi_restore 5
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  808 0008 022B     		cmp	r3, #2
   29:voice.cpp     ****     float osc_midi;
  809              		.loc 2 29 1 view .LVU227
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 25
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 25
 
 
  810 000a 10B5     		push	{r4, lr}
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   24:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_MIN(in, mn) (in < mn ? in : mn)
   25:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_MAX(in, mx) (in > mx ? in : mx)
   26:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_CLAMP(in, mn, mx) (DSY_MIN(DSY_MAX(in, mn), mx))
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 26
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 26
 
 
   27:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_COUNTOF(_arr) (sizeof(_arr) / sizeof(_arr[0]))
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   81:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     *lp = l;
   82:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return f;
   83:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 27
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 27
 
 
   84:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  138:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
  139:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float mtof(float m)
  140:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 28
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 28
 
 
  141:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return powf(2, (m - 69.0f) / 12.0f) * 440.0f;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  840              		.loc 4 182 26 view .LVU239
  841 001e 9FED1B6A 		vldr.32	s12, .L21+4
  842              	.LBB447:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 29
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 29
 
 
  843              	.LBB448:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  887              		.loc 4 53 5 view .LVU251
   55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
  888              		.loc 4 55 5 view .LVU252
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 30
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 30
 
 
  889              		.syntax unified
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   55:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
  927              		.loc 4 55 5 view .LVU264
  928 0044 9FED136A 		vldr.32	s12, .L21+12
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 31
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 31
 
 
  929              	.LBE463:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  973              	.LVL34:
   59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
  974              		.loc 4 59 5 view .LVU276
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 32
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 32
 
 
   59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1015              	.LBB476:
  1016              	.LBB475:
  141:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 33
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 33
 
 
  1017              		.loc 4 141 43 is_stmt 0 view .LVU292
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   52:voice.cpp     ****     osc_freq_ += fine;
  1067              		.loc 2 52 15 view .LVU300
  1068 0004 90ED2C7A 		vldr.32	s14, [r0, #176]
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 34
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 34
 
 
  1069              	.LBB491:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1114              	@ 44 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
  1115 0018 C7FEA67A 		vmaxnm.f32 s15, s15, s13
  1116              	@ 0 "" 2
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 35
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 35
 
 
  1117              	.LVL43:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1165              	.LVL46:
  1166              	.LFB3521:
   54:voice.cpp     **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 36
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 36
 
 
   55:voice.cpp     **** void voice::set_freq_curve(u_int8_t curve)
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  188:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
  1211              		.loc 4 188 9 view .LVU335
  1212              		.loc 4 189 9 view .LVU336
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 37
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 37
 
 
  1213              		.loc 4 189 18 view .LVU337
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1258              	.LVL50:
   48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
  1259              		.loc 4 48 5 view .LVU349
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 38
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 38
 
 
   48:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1300              		.loc 4 188 9 view .LVU363
  1301              		.loc 4 189 9 view .LVU364
  1302              		.loc 4 189 18 view .LVU365
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 39
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 39
 
 
  1303              	.LBB517:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1342 004a B4EEC70A 		vcmpe.f32	s0, s14
  1343 004e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  1344 0052 1CD8     		bhi	.L29
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 40
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 40
 
 
   70:voice.cpp     ****     {
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1389              	.LBB537:
  1390              	.LBB532:
  1391              		.loc 4 189 31 view .LVU396
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 41
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 41
 
 
  1392 0070 E0EE067A 		vfma.f32	s15, s0, s12
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1434              		.thumb
  1435              		.syntax unified
  1436              	.LBE524:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 42
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 42
 
 
  1437              	.LBE527:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1476              	.LBE542:
  1477              	.LBE541:
  1478              	.LBB543:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 43
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 43
 
 
  1479              	.LBI543:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1521 00a8 B0EE086A 		vmov.f32	s12, #3.0e+0
  1522              	.LBE559:
  1523              	.LBE563:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 44
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 44
 
 
   78:voice.cpp     ****         tri_amp_ = 0.0f;
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1567              	@ 44 "../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
  1568 00bc 87FE267A 		vmaxnm.f32 s14, s14, s13
  1569              	@ 0 "" 2
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 45
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 45
 
 
  1570              	.LVL63:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  188:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****         default: return fclamp(min + in * (max - min), min, max);
  1612              		.loc 4 188 9 view .LVU469
  1613              		.loc 4 189 9 view .LVU470
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 46
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 46
 
 
  1614              		.loc 4 189 18 view .LVU471
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   86:voice.cpp     ****         tri_amp_ = 0.0f;
   87:voice.cpp     ****         square_amp_ = 0.0f;
   88:voice.cpp     ****         saw_amp_ = 1.0f;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 47
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 47
 
 
  1652              		.loc 2 88 18 view .LVU486
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1696              		.loc 4 189 31 is_stmt 0 view .LVU497
  1697 0000 9FED097A 		vldr.32	s14, .L43
  1698              	.LBB579:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 48
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 48
 
 
  1699              	.LBB580:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   42:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
  1745              		.loc 4 42 5 view .LVU511
   44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 49
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 49
 
 
  1746              		.loc 4 44 5 view .LVU512
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1793              		.global	_ZN5voice7ProcessEv
  1794              		.syntax unified
  1795              		.thumb
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 50
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 50
 
 
  1796              		.thumb_func
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1840              	.LVL72:
  1841              	.LBB616:
  1842              	.LBI595:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 51
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 51
 
 
   82:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     }
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1882              		.cfi_def_cfa_offset 40
  1883              		.cfi_offset 80, -40
  1884              		.cfi_offset 81, -36
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 52
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 52
 
 
  1885              		.cfi_offset 82, -32
@@ -3070,7 +3070,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1891              	.LBB603:
   44:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
  1892              		.loc 4 44 5 view .LVU544
- 1893 002a DFED419A 		vldr.32	s19, .L47+16
+ 1893 002a DFED2A9A 		vldr.32	s19, .L47
  1894              	.LBE603:
  1895              	.LBE605:
  1896              	.LBE610:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1931              	@ 0 "" 2
  1932              	.LVL76:
   59:../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 53
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 53
 
 
  1933              		.loc 4 59 5 view .LVU552
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  1975              		.loc 2 106 5 is_stmt 1 view .LVU566
  1976              	.LBB632:
  1977              	.LBI627:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 54
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 54
 
 
   67:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     {
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  2016              		.loc 3 70 34 is_stmt 0 view .LVU582
  2017 0066 B0EE670A 		vmov.f32	s0, s15
  2018 006a FFF7FEFF 		bl	_ZN7daisysp10Oscillator12CalcPhaseIncEf
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 55
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 55
 
 
  2019              	.LVL82:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  110:voice.cpp     ****     osc_sin_.SetAmp(sin_amp_);
  111:voice.cpp     ****     osc_saw_.SetAmp(saw_amp_);
  112:voice.cpp     ****     osc_tri_.SetAmp(tri_amp_);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 56
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 56
 
 
  113:voice.cpp     ****     osc_square_.SetAmp(square_amp_);
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
   76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
  2099              		.loc 3 76 17 view .LVU610
  2100              	.LBB653:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 57
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 57
 
 
   76:../../../../DaisyExamples/DaisySP//Source/Synthesis/oscillator.h ****     /** Sets the waveform to be synthesized by the Process() function.
@@ -3411,193 +3411,142 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 1
  2137              	.LVL93:
  116:voice.cpp     ****     sample[0] += osc_saw_.Process();
  2138              		.loc 2 116 15 view .LVU625
- 2139 00b8 39EE008A 		vadd.f32	s16, s18, s0
+ 2139 00b8 79EE008A 		vadd.f32	s17, s18, s0
  2140              	.LVL94:
  2141              		.loc 2 117 5 is_stmt 1 view .LVU626
  2142              		.loc 2 117 34 is_stmt 0 view .LVU627
  2143 00bc FFF7FEFF 		bl	_ZN7daisysp10Oscillator7ProcessEv
  2144              	.LVL95:
- 118:voice.cpp     ****     //sample[0] = filter_up_.Process(sample[0]);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 58
+ 118:voice.cpp     ****     sample[0] += osc_square_.Process();
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 58
 
 
- 119:voice.cpp     **** 
- 120:voice.cpp     ****     //fold
- 121:voice.cpp     ****     sample[0] = (tanhf(sample[0]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[0])
- 2145              		.loc 2 121 34 view .LVU628
- 2146 00c0 94ED329A 		vldr.32	s18, [r4, #200]
- 117:voice.cpp     ****     //sample[0] = filter_up_.Process(sample[0]);
+ 2145              		.loc 2 118 37 view .LVU628
+ 2146 00c0 2846     		mov	r0, r5
+ 117:voice.cpp     ****     sample[0] += osc_tri_.Process();
  2147              		.loc 2 117 15 view .LVU629
- 2148 00c4 38EE008A 		vadd.f32	s16, s16, s0
+ 2148 00c2 78EE808A 		vadd.f32	s17, s17, s0
  2149              	.LVL96:
- 2150              		.loc 2 121 5 is_stmt 1 view .LVU630
- 2151              		.loc 2 121 23 is_stmt 0 view .LVU631
- 2152 00c8 28EE090A 		vmul.f32	s0, s16, s18
- 2153 00cc FFF7FEFF 		bl	tanhf
- 2154              	.LVL97:
- 2155 00d0 F0EE409A 		vmov.f32	s19, s0
- 2156              		.loc 2 121 53 view .LVU632
- 2157 00d4 B0EE490A 		vmov.f32	s0, s18
- 2158 00d8 FFF7FEFF 		bl	tanhf
- 2159              	.LVL98:
- 2160              		.loc 2 121 78 view .LVU633
- 2161 00dc 39EE099A 		vadd.f32	s18, s18, s18
- 2162              		.loc 2 121 53 view .LVU634
- 2163 00e0 F0EE408A 		vmov.f32	s17, s0
- 2164              		.loc 2 121 76 view .LVU635
- 2165 00e4 29EE080A 		vmul.f32	s0, s18, s16
- 2166              		.loc 2 121 46 view .LVU636
- 2167 00e8 89EEA88A 		vdiv.f32	s16, s19, s17
- 2168              	.LVL99:
- 2169              		.loc 2 121 76 view .LVU637
- 2170 00ec FFF7FEFF 		bl	sinf
- 2171              	.LVL100:
- 122:voice.cpp     **** 
- 123:voice.cpp     ****     /*sample[0] = filter_down_.Process(sample[0]);
+ 2150              		.loc 2 118 5 is_stmt 1 view .LVU630
+ 2151              		.loc 2 118 37 is_stmt 0 view .LVU631
+ 2152 00c6 FFF7FEFF 		bl	_ZN7daisysp10Oscillator7ProcessEv
+ 2153              	.LVL97:
+ 119:voice.cpp     ****     
+ 120:voice.cpp     ****     //sample[0] = filter_up_.Process(sample[0]);
+ 121:voice.cpp     **** 
+ 122:voice.cpp     ****     //fold
+ 123:voice.cpp     ****     //sample[0] = (tanhf(sample[0]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[0
  124:voice.cpp     **** 
- 125:voice.cpp     ****     sample[1] = 0.0f;
- 126:voice.cpp     ****     sample[1] = filter_up_.Process(sample[1]);
- 127:voice.cpp     **** 
- 128:voice.cpp     ****     //fold
- 129:voice.cpp     ****     sample[1] = (tanhf(sample[1]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[1])
- 130:voice.cpp     **** 
- 131:voice.cpp     ****     sample[1] = filter_down_.Process(sample[1]);*/
+ 125:voice.cpp     ****     /*sample[0] = filter_down_.Process(sample[0]);
+ 126:voice.cpp     **** 
+ 127:voice.cpp     ****     sample[1] = 0.0f;
+ 128:voice.cpp     ****     sample[1] = filter_up_.Process(sample[1]);
+ 129:voice.cpp     **** 
+ 130:voice.cpp     ****     //fold
+ 131:voice.cpp     ****     sample[1] = (tanhf(sample[1]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[1])
  132:voice.cpp     **** 
- 133:voice.cpp     ****     sample[0] += osc_square_.Process();
- 2172              		.loc 2 133 37 view .LVU638
- 2173 00f0 2846     		mov	r0, r5
- 121:voice.cpp     **** 
- 2174              		.loc 2 121 76 view .LVU639
- 2175 00f2 B7EEC00A 		vcvt.f64.f32	d0, s0
- 121:voice.cpp     **** 
- 2176              		.loc 2 121 66 view .LVU640
- 2177 00f6 9FED0A7B 		vldr.64	d7, .L47
- 121:voice.cpp     **** 
- 2178              		.loc 2 121 46 view .LVU641
- 2179 00fa B7EEC88A 		vcvt.f64.f32	d8, s16
- 121:voice.cpp     **** 
- 2180              		.loc 2 121 66 view .LVU642
- 2181 00fe A0EE078B 		vfma.f64	d8, d0, d7
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 59
-
-
- 2182              	.LVL101:
- 2183              		.loc 2 133 5 is_stmt 1 view .LVU643
- 2184              		.loc 2 133 37 is_stmt 0 view .LVU644
- 2185 0102 FFF7FEFF 		bl	_ZN7daisysp10Oscillator7ProcessEv
- 2186              	.LVL102:
+ 133:voice.cpp     ****     sample[1] = filter_down_.Process(sample[1]);*/
  134:voice.cpp     **** 
- 135:voice.cpp     ****     return sample[0];
- 2187              		.loc 2 135 5 is_stmt 1 view .LVU645
- 121:voice.cpp     **** 
- 2188              		.loc 2 121 101 is_stmt 0 view .LVU646
- 2189 0106 9FED086B 		vldr.64	d6, .L47+8
- 2190 010a 88EE067B 		vdiv.f64	d7, d8, d6
- 136:voice.cpp     **** }
- 2191              		.loc 2 136 1 view .LVU647
- 2192 010e BDEC048B 		vldm	sp!, {d8-d9}
- 2193              		.cfi_restore 82
- 2194              		.cfi_restore 83
- 2195              		.cfi_restore 80
- 2196              		.cfi_restore 81
- 2197              		.cfi_def_cfa_offset 24
- 2198              	.LVL103:
- 121:voice.cpp     **** 
- 2199              		.loc 2 121 101 view .LVU648
- 2200 0112 B7EEC77B 		vcvt.f32.f64	s14, d7
- 2201              		.loc 2 136 1 view .LVU649
- 2202 0116 37EE000A 		vadd.f32	s0, s14, s0
- 2203              	.LVL104:
- 2204              		.loc 2 136 1 view .LVU650
- 2205 011a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 2206              	.LVL105:
- 2207              	.L48:
- 2208              		.loc 2 136 1 view .LVU651
- 2209 011c AFF30080 		.align	3
- 2210              	.L47:
- 2211 0120 9A999999 		.word	-1717986918
- 2212 0124 9999E93F 		.word	1072273817
- 2213 0128 000000C0 		.word	-1073741824
- 2214 012c CCCCFC3F 		.word	1073532108
- 2215 0130 00000000 		.word	0
- 2216              		.cfi_endproc
- 2217              	.LFE3524:
- 2219              		.text
- 2220              	.Letext0:
- 2221              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
- 2222              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
- 2223              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
- 2224              		.file 8 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
- 2225              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
- 2226              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
- 2227              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
- 2228              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
- 2229              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
- 2230              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
- 2231              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
- 2232              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
- 2233              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
- 2234              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 60
+ 135:voice.cpp     ****     
+ 136:voice.cpp     **** 
+ 137:voice.cpp     ****     return sample[0];
+ 2154              		.loc 2 137 5 is_stmt 1 view .LVU632
+ 138:voice.cpp     **** }
+ 2155              		.loc 2 138 1 is_stmt 0 view .LVU633
+ 2156 00ca 38EE800A 		vadd.f32	s0, s17, s0
+ 2157              	.LVL98:
+ 2158              		.loc 2 138 1 view .LVU634
+ 2159 00ce BDEC048B 		vldm	sp!, {d8-d9}
+ 2160              		.cfi_restore 82
+ 2161              		.cfi_restore 83
+ 2162              		.cfi_restore 80
+ 2163              		.cfi_restore 81
+ 2164              		.cfi_def_cfa_offset 24
+ 2165 00d2 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 2166              	.LVL99:
+ 2167              	.L48:
+ 2168              		.loc 2 138 1 view .LVU635
+ 2169              		.align	2
+ 2170              	.L47:
+ 2171 00d4 00000000 		.word	0
+ 2172              		.cfi_endproc
+ 2173              	.LFE3524:
+ 2175              		.text
+ 2176              	.Letext0:
+ 2177              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 2178              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 2179              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 2180              		.file 8 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 2181              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 59
 
 
- 2235              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
- 2236              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
- 2237              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
- 2238              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\charconv.h
- 2239              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
- 2240              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
- 2241              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\move.h"
- 2242              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
- 2243              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
- 2244              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
- 2245              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
- 2246              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
- 2247              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
- 2248              		.file 32 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
- 2249              		.file 33 "../../../../DaisyExamples/DaisySP//Source/Control/adenv.h"
- 2250              		.file 34 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
- 2251              		.file 35 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
- 2252              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
- 2253              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\types.h"
- 2254              		.file 38 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
- 2255              		.file 39 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
- 2256              		.file 40 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
- 2257              		.file 41 "voice.h"
- 2258              		.file 42 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\assert.h"
- 2259              		.file 43 "<built-in>"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccF10giq.s 			page 61
+ 2182              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 2183              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 2184              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 2185              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ 2186              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 2187              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
+ 2188              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 2189              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 2190              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ 2191              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
+ 2192              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 2193              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
+ 2194              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\charconv.h
+ 2195              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 2196              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 2197              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\move.h"
+ 2198              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 2199              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 2200              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ 2201              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 2202              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 2203              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 2204              		.file 32 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 2205              		.file 33 "../../../../DaisyExamples/DaisySP//Source/Control/adenv.h"
+ 2206              		.file 34 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 2207              		.file 35 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
+ 2208              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
+ 2209              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\types.h"
+ 2210              		.file 38 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 2211              		.file 39 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 2212              		.file 40 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 2213              		.file 41 "voice.h"
+ 2214              		.file 42 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\assert.h"
+ 2215              		.file 43 "<built-in>"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccg9npc6.s 			page 60
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 voice.cpp
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:17     .rodata._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0.str1.4:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:28     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:36     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000000 _ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:60     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000010 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:67     .rodata._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0.str1.4:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:75     .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:82     .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000000 _ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:105    .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000010 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:112    .text._ZN5voice4InitEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:120    .text._ZN5voice4InitEf:00000000 _ZN5voice4InitEf
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:776    .text._ZN5voice4InitEf:0000013c $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:786    .text._ZN5voice8set_freqEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:794    .text._ZN5voice8set_freqEf:00000000 _ZN5voice8set_freqEf
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1033   .text._ZN5voice8set_freqEf:00000088 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1044   .text._ZN5voice8set_fineEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1052   .text._ZN5voice8set_fineEf:00000000 _ZN5voice8set_fineEf
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1156   .text._ZN5voice14set_freq_curveEh:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1164   .text._ZN5voice14set_freq_curveEh:00000000 _ZN5voice14set_freq_curveEh
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1181   .text._ZN5voice9set_shapeEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1189   .text._ZN5voice9set_shapeEf:00000000 _ZN5voice9set_shapeEf
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1670   .text._ZN5voice9set_shapeEf:000000f0 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1677   .text._ZN5voice9set_morphEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1685   .text._ZN5voice9set_morphEf:00000000 _ZN5voice9set_morphEf
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1785   .text._ZN5voice9set_morphEf:00000028 $d
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1791   .text._ZN5voice7ProcessEv:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:1799   .text._ZN5voice7ProcessEv:00000000 _ZN5voice7ProcessEv
-C:\Users\samue\AppData\Local\Temp\ccF10giq.s:2211   .text._ZN5voice7ProcessEv:00000120 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:17     .rodata._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0.str1.4:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:28     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:36     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000000 _ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:60     .text._ZN7daisysp9FIRMemoryILj0ELj0EE5ResetEv.part.0:00000010 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:67     .rodata._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0.str1.4:00000000 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:75     .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:82     .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000000 _ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:105    .text._ZN7daisysp9FIRMemoryILj0ELj0EE8SetCoefsEPKfjb.part.0:00000010 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:112    .text._ZN5voice4InitEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:120    .text._ZN5voice4InitEf:00000000 _ZN5voice4InitEf
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:776    .text._ZN5voice4InitEf:0000013c $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:786    .text._ZN5voice8set_freqEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:794    .text._ZN5voice8set_freqEf:00000000 _ZN5voice8set_freqEf
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1033   .text._ZN5voice8set_freqEf:00000088 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1044   .text._ZN5voice8set_fineEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1052   .text._ZN5voice8set_fineEf:00000000 _ZN5voice8set_fineEf
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1156   .text._ZN5voice14set_freq_curveEh:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1164   .text._ZN5voice14set_freq_curveEh:00000000 _ZN5voice14set_freq_curveEh
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1181   .text._ZN5voice9set_shapeEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1189   .text._ZN5voice9set_shapeEf:00000000 _ZN5voice9set_shapeEf
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1670   .text._ZN5voice9set_shapeEf:000000f0 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1677   .text._ZN5voice9set_morphEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1685   .text._ZN5voice9set_morphEf:00000000 _ZN5voice9set_morphEf
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1785   .text._ZN5voice9set_morphEf:00000028 $d
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1791   .text._ZN5voice7ProcessEv:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:1799   .text._ZN5voice7ProcessEv:00000000 _ZN5voice7ProcessEv
+C:\Users\samue\AppData\Local\Temp\ccg9npc6.s:2171   .text._ZN5voice7ProcessEv:000000d4 $d
 
 UNDEFINED SYMBOLS
 __assert_func
@@ -3605,5 +3554,3 @@ _ZN7daisysp10Oscillator12CalcPhaseIncEf
 memset
 powf
 _ZN7daisysp10Oscillator7ProcessEv
-tanhf
-sinf

@@ -115,10 +115,12 @@ float voice::Process()
     sample[0] += osc_sin_.Process();
     sample[0] += osc_saw_.Process();
     sample[0] += osc_tri_.Process();
+    sample[0] += osc_square_.Process();
+    
     //sample[0] = filter_up_.Process(sample[0]);
 
     //fold
-    sample[0] = (tanhf(sample[0]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[0]))/1.8f;
+    //sample[0] = (tanhf(sample[0]*fold_gain_) / tanhf(fold_gain_) + 0.8*sinf(2*fold_gain_*sample[0]))/1.8f;
 
     /*sample[0] = filter_down_.Process(sample[0]);
 
@@ -130,7 +132,7 @@ float voice::Process()
 
     sample[1] = filter_down_.Process(sample[1]);*/
 
-    sample[0] += osc_square_.Process();
+    
 
     return sample[0];
 }

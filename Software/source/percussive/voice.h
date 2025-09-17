@@ -23,7 +23,7 @@ class voice
     void set_freq(float freq); //0-1.0f input which is gets to V/Oct
     void set_wave_shape(uint8_t shape); //0-1.0f input which maps from saw/tri/square
     float Process();
-    void set_amp_env_attack(float time);
+    void set_freq_env_decay(float time);
     void set_amp_env_decay(float time);
     void env_trigger();
     void set_impact(float impact); //0-1.0f sets the frequency envelope max height
@@ -41,11 +41,9 @@ class voice
     WhiteNoise noise_;
     OnePole noise_lpf_, noise_hpf_;
     bool gate_ = false;
-    float osc_freq_, distortion_gain_, fold_gain_, noise_mix_, noise_color_, fm_carrier_, mod_ind_;
+    float osc_freq_, distortion_gain_, fold_gain_, noise_mix_, noise_color_, fm_carrier_, mod_ind_, amp_decay_time_;
     uint8_t effect_, noise_mode_;
     void set_carrier(float freq);
-    void set_freq_env_attack(float time);
-    void set_freq_env_decay(float time);
     void set_distortion(float gain);
     void set_fold(float gain);
     float process_drum(float amplitude);
