@@ -21,7 +21,7 @@ class daisyCommon
 
     enum jacks
     {
-	    in_1 = 0, in_2, in_3, gate_1_in_4, in_5, in_6, in_7, gate_2_in_8
+	    in_1 = 0, in_2, in_3, gate_1_in_4, in_5, in_6, in_7, gate_2_in_8, out_1, out_2
     };
     enum mux
     {
@@ -45,7 +45,7 @@ class daisyCommon
     };
     enum jack_config
     {
-        audio_enable = 0, dac_enable, gate_enable, gpio_enable, adc_enable, disable
+        audio_enable = 0, dac_enable, gate_in_enable, gate_out_enable, gpio_enable, adc_enable, disable
     };
 
     struct input_configs
@@ -62,19 +62,18 @@ class daisyCommon
 	GPIO IN_4_EN;
 	GPIO IN_8_EN;
 
-    GPIO IN_1;
-    GPIO IN_2;
-    GPIO IN_3;
+    GPIO LED_LEFT;
+    GPIO LED_RIGHT;
+
     GPIO GATE_1_IN_4;
-    GPIO IN_5;
-    GPIO IN_6;
-    GPIO IN_7;
     GPIO GATE_2_IN_8;
 
     Switch3 toggle_left;
     Switch3 toggle_right;
     Switch button;
     knobs knob;
+    DacHandle::Channel out_1_dac = DacHandle::Channel::TWO;
+    DacHandle::Channel out_2_dac = DacHandle::Channel::ONE;
 
     void Init(bool boost = false);
     void add_knob(int user_name, int knob_num); //adds a potentiometer control knob_num identified by user_name 
@@ -84,15 +83,22 @@ class daisyCommon
     float get_cv(int user_name); //returns jack value associated with a user name
     void add_dual_control(int user_name, int jack_num, int knob_num); //create dual cv + potentiometer control
     float get_dual_control(int user_name);//return dual control
+    void add_gate_in(int user_name, int jack_num);//create gate input
+    bool get_gate_in(int user_name);
+    void dac_enable_mux(int user_name);
+    void audio_enable_mux(int user_name);
+    void write_dac(float value, int user_name);
 
     //void add_dac(int user_name, int jack);
     DaisySeed seed;
 
     private:
-    void InitGPIO_MUX();
+    void InitMux();
+    void InitGPIO();
     void InitToggle();
     void InitADC();
     void InitButton();
+    void InitDAC();
     Pin getCVPin(int jack);
     Pin getGPIOPin(int jack);
     GPIO getGPIO(int jack);
@@ -111,7 +117,9 @@ class daisyCommon
         jack_5_user_name = -1,
         jack_6_user_name = -1,
         jack_7_user_name = -1,
-        jack_8_user_name = -1;
+        jack_8_user_name = -1,
+        out_1_user_name = -1,
+        out_2_user_name = -1;
     int out_1_mode = audio_enable;
     int out_2_mode = audio_enable;
     int gate_1_in_4_mode = disable;

@@ -147,7 +147,26 @@ build/voice.o: voice.cpp \
  ../../../../../DaisyExamples/DaisySP//Source/Utility/maytrig.h \
  ../../../../../DaisyExamples/DaisySP//Source/Utility/metro.h \
  ../../../../../DaisyExamples/DaisySP//Source/Utility/samplehold.h \
- ../../../../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h
+ ../../../../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/daisysp-lgpl.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Control/line.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Dynamics/balance.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Dynamics/compressor.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/bitcrush.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/fold.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/allpass.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/atone.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/biquad.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/comb.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/mode.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/moogladder.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/nlfilt.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/tone.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/PhysicalModeling/pluck.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Synthesis/blosc.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Utility/jitter.h \
+ ../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Utility/port.h
 ../../../../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../../../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 ../../../../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h:
@@ -298,3 +317,22 @@ voice.h:
 ../../../../../DaisyExamples/DaisySP//Source/Utility/metro.h:
 ../../../../../DaisyExamples/DaisySP//Source/Utility/samplehold.h:
 ../../../../../DaisyExamples/DaisySP//Source/Utility/smooth_random.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/daisysp-lgpl.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Control/line.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Dynamics/balance.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Dynamics/compressor.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/bitcrush.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/fold.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/allpass.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/atone.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/biquad.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/comb.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/mode.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/moogladder.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/nlfilt.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Filters/tone.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/PhysicalModeling/pluck.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Synthesis/blosc.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Utility/jitter.h:
+../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Utility/port.h:

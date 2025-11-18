@@ -27,6 +27,9 @@ constexpr Pin IN_3_GPIO_PIN = seed::D24;
 constexpr Pin IN_5_GPIO_PIN = seed::D16;
 constexpr Pin IN_6_GPIO_PIN = seed::D20;
 constexpr Pin IN_7_GPIO_PIN = seed::D17;
+constexpr Pin LED_LEFT_PIN = seed::D11;
+constexpr Pin LED_RIGHT_PIN = seed::D12;
+
 
 void daisyCommon::add_dual_control(int user_name, int jack_num, int knob_num)
 {
@@ -68,50 +71,119 @@ void daisyCommon::add_cv(int user_name, int jack_num)
         jack_1_user_name = user_name;
         in_1_adc_chan = adc_channel_count;
         in_1_mode = adc_enable;
+        adc_channel_count++;
     } 
     if(jack_num == in_2)
     {
         jack_2_user_name = user_name;
         in_2_adc_chan = adc_channel_count;
-        in_2_mode = adc_enable; 
+        in_2_mode = adc_enable;
+        adc_channel_count++; 
     } 
     if(jack_num == in_3)
     {
         jack_3_user_name = user_name;
         in_3_adc_chan = adc_channel_count;
         in_3_mode = adc_enable;
+        adc_channel_count++;
     } 
     if(jack_num == gate_1_in_4)
     {
         jack_4_user_name = user_name;
         in_4_adc_chan = adc_channel_count;
         gate_1_in_4_mode = adc_enable;
+        adc_channel_count++;
     } 
     if(jack_num == in_5)
     {
         jack_5_user_name = user_name;
         in_5_adc_chan = adc_channel_count;
         in_5_mode = adc_enable;
+        adc_channel_count++;
     } 
     if(jack_num == in_6)
     {
         jack_6_user_name = user_name;
         in_6_adc_chan = adc_channel_count;
         in_6_mode = adc_enable;
+        adc_channel_count++;
     } 
     if(jack_num == in_7)
     {
         jack_7_user_name = user_name;
         in_7_adc_chan = adc_channel_count;
         in_7_mode = adc_enable;
+        adc_channel_count++;
     } 
     if(jack_num == gate_2_in_8)
     {
         jack_8_user_name = user_name;
         in_8_adc_chan = adc_channel_count;
         gate_2_in_8_mode = adc_enable;
+        adc_channel_count++;
     } 
-    adc_channel_count++;
+    if(jack_num == out_1)
+    {
+        out_1_user_name = user_name;
+        out_1_mode = dac_enable;
+    }
+    if(jack_num == out_2)
+    {
+        out_2_user_name = user_name;
+        out_2_mode = dac_enable;
+    }
+}
+
+void daisyCommon::add_gate_in(int user_name, int jack_num)
+{
+    if(jack_num == in_1)
+    {
+        jack_1_user_name = user_name;
+        in_1_mode = adc_enable;
+        add_cv(user_name, in_1);
+    } 
+    if(jack_num == in_2)
+    {
+        jack_2_user_name = user_name;
+        in_2_mode = adc_enable;
+        add_cv(user_name, in_2); 
+    } 
+    if(jack_num == in_3)
+    {
+        jack_3_user_name = user_name;
+        in_3_mode = adc_enable;
+        add_cv(user_name, in_3);
+    } 
+    if(jack_num == gate_1_in_4)
+    {
+        jack_4_user_name = user_name;
+        gate_1_in_4_mode = adc_enable;
+        add_cv(user_name, gate_1_in_4);
+    } 
+    if(jack_num == in_5)
+    {
+        jack_5_user_name = user_name;
+        in_5_mode = adc_enable;
+        add_cv(user_name, in_5);
+    } 
+    if(jack_num == in_6)
+    {
+        jack_6_user_name = user_name;
+        in_6_mode = adc_enable;
+        add_cv(user_name, in_6);
+    } 
+    if(jack_num == in_7)
+    {
+        jack_7_user_name = user_name;
+        in_7_mode = adc_enable;
+        add_cv(user_name, in_7);
+    } 
+    if(jack_num == gate_2_in_8)
+    {
+        jack_8_user_name = user_name;
+        gate_2_in_8_mode = adc_enable;
+        add_cv(user_name, gate_2_in_8);
+    } 
 }
 
 void daisyCommon::print_knob()
@@ -166,19 +238,105 @@ int daisyCommon::get_knob_adc_chan(int knob_user_name)
     return -1;
 }
 
+bool daisyCommon::get_gate_in(int user_name)
+{
+    float cv = get_cv(user_name);
+    if(cv > 0.75)
+    {
+        return true;
+    }
+    return false;
+}
+
+void daisyCommon::write_dac(float value, int user_name)
+{
+    value = -1.0f*value + 1.0f;
+    daisysp::fclamp(value, 0.0f, 1.0f);
+    value = static_cast<int>(value*4096);
+    if(value > 4095)
+    {
+        value = 4095;
+    }else if (value < 0)
+    {
+        value = 0;
+    }
+    
+
+    if(user_name == out_1_user_name)
+    {
+        seed.dac.WriteValue(out_1_dac, value);
+    }
+    if(user_name == out_2_user_name)
+    {
+        seed.dac.WriteValue(out_2_dac, value);
+    }
+}
+
 void daisyCommon::Init(bool boost)
 {
     //seed.Configure();
     seed.Init(boost);
     //seed.StartLog(true);
-    InitGPIO_MUX();
+    InitGPIO();
+    InitDAC();
+    InitMux();
     InitToggle();
     InitButton();
     InitADC();
     seed.SetLed(false);
 }
 
-void daisyCommon::InitGPIO_MUX()
+/*
+*channels are
+*DacHandle::Channel::ONE
+*DacHandle::Channel::TWO
+*DacHandle::Channel::BOTH
+*/
+void daisyCommon::dac_enable_mux(int user_name)
+{
+    if(user_name == out_1_user_name)
+    {
+        OUT_1_AUDIO_EN.Write(false);
+        OUT_1_DAC_EN.Write(true);
+        out_1_mode = dac_enable;
+    }   
+
+    if(user_name == out_2_user_name)
+    {
+        OUT_2_AUDIO_EN.Write(false);
+        OUT_2_DAC_EN.Write(true);
+        out_2_mode = dac_enable;
+    }
+}
+
+void daisyCommon::audio_enable_mux(int user_name)
+{
+    if(user_name == out_1_user_name)
+    {
+        OUT_1_AUDIO_EN.Write(true);
+        OUT_1_DAC_EN.Write(false);
+        out_1_mode = audio_enable;
+    }   
+
+    if(user_name == out_2_user_name)
+    {
+        OUT_2_AUDIO_EN.Write(true);
+        OUT_2_DAC_EN.Write(false);
+        out_2_mode = audio_enable;
+    }
+}
+
+void daisyCommon::InitDAC()
+{
+    DacHandle::Config dac_cfg;
+	dac_cfg.bitdepth = DacHandle::BitDepth::BITS_12;
+    dac_cfg.buff_state = DacHandle::BufferState::ENABLED;
+    dac_cfg.mode       = DacHandle::Mode::POLLING;
+    dac_cfg.chn        = DacHandle::Channel::BOTH;
+    seed.dac.Init(dac_cfg);
+}
+
+void daisyCommon::InitGPIO()
 {
     OUT_1_AUDIO_EN.Init(D3, GPIO::Mode::OUTPUT);
 	OUT_2_AUDIO_EN.Init(D5, GPIO::Mode::OUTPUT);
@@ -189,6 +347,14 @@ void daisyCommon::InitGPIO_MUX()
 	GATE_2_EN.Init(D30, GPIO::Mode::OUTPUT);
 	IN_4_EN.Init(D26, GPIO::Mode::OUTPUT);
 	IN_8_EN.Init(D29, GPIO::Mode::OUTPUT);
+
+    LED_LEFT.Init(LED_LEFT_PIN, GPIO::Mode::OUTPUT);
+    LED_RIGHT.Init(LED_RIGHT_PIN, GPIO::Mode::OUTPUT);
+}
+
+void daisyCommon::InitMux()
+{
+
 
     if(out_1_mode == audio_enable)
     {
@@ -217,7 +383,7 @@ void daisyCommon::InitGPIO_MUX()
         IN_4_EN.Write(true);
         GATE_1_EN.Write(false);
     }
-    else if(gate_1_in_4_mode == gate_enable)
+    else if(gate_1_in_4_mode == gate_out_enable)
     {
         IN_4_EN.Write(false);
         GATE_1_EN.Write(true);       
@@ -228,7 +394,7 @@ void daisyCommon::InitGPIO_MUX()
         IN_8_EN.Write(true);
         GATE_2_EN.Write(false);
     }
-    else if(gate_2_in_8_mode == gate_enable)
+    else if(gate_2_in_8_mode == gate_out_enable)
     {
         IN_8_EN.Write(false);
         GATE_2_EN.Write(true);       

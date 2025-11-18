@@ -87,7 +87,7 @@ float voice::process_drum(float amplitude)
 {
     float sample[2];
     osc_.SetFreq(osc_freq_ * freq_env_.Process());
-    osc_.SetAmp(amplitude*(1-noise_mix_));
+    //osc_.SetAmp(amplitude*(1-noise_mix_));
 
     sample[0] = osc_.Process();
     sample[0] = filter_up_.Process(sample[0]);
@@ -108,7 +108,7 @@ float voice::process_drum(float amplitude)
 
     sample[1] = filter_down_.Process(sample[1]);
     
-    return sample[0];
+    return sample[0]*amplitude*(1-noise_mix_);
 }
 
 float voice::process_noise(float amplitude)

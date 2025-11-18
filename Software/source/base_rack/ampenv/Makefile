@@ -1,6 +1,8 @@
 # Project Name
 TARGET = ampenv
 
+#LDFLAGS += -u _printf_float
+USE_DAISYSP_LGPL=1
 # Sources
 CPP_SOURCES = ampenv.cpp daisy_common.cpp voice.cpp
 

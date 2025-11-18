@@ -8,13 +8,13 @@ using namespace daisysp;
 
 daisyCommon board;
 int blocksize = 32;
-float fs = 96000;
+float fs = 48000;
 
 voice ampenv;
 
 enum
 {
-	volume, env_amount, attack, decay, sustain, release, gate, env_out, lpf_freq, lpf_amount
+	volume, env_amount, attack, decay, sustain, release, gate, env_out, feedback, dampening_filter
 };
 
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
@@ -29,20 +29,27 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 int main(void)
 {
 	board.add_dual_control(volume, board.in_2, board.knob_1);
-	board.add_dual_control(env_amount, board.in_3, board.knob_2);
-	board.add_knob(attack, board.knob_6);
-	board.add_knob(decay, board.knob_7);
+	board.add_dual_control(env_amount, board.in_3, board.knob_8);
+	board.add_knob(attack, board.knob_4);
+	board.add_knob(decay, board.knob_6);
 	board.add_knob(sustain, board.knob_5);
-	board.add_knob(release, board.knob_8);
+	board.add_knob(release, board.knob_7);
+	board.add_dual_control(feedback, board.in_6, board.knob_2);
+	board.add_dual_control(dampening_filter, board.in_7, board.knob_3);
 
 	board.add_gate_in(gate, board.in_5);
 	board.add_cv(env_out, board.out_2);
 
 	board.Init();
+
+	//board.seed.StartLog();
+
 	board.seed.SetAudioBlockSize(blocksize); // number of samples handled per callback
 	board.seed.SetAudioSampleRate(SaiHandle::Config::SampleRate::SAI_48KHZ);
 	board.seed.StartAudio(AudioCallback);
 	
+	ampenv.Init(fs);
+
 	while(1) 
 	{	
 		bool slow_blink = (System::GetNow() & 1023) < 511;
@@ -54,12 +61,23 @@ int main(void)
 		ampenv.set_decay(board.get_knob(decay));
 		ampenv.set_sustain(board.get_knob(sustain));
 		ampenv.set_release(board.get_knob(release));
+		ampenv.set_feedback(board.get_dual_control(feedback));
+		ampenv.set_dampening_filter(board.get_dual_control(dampening_filter));
 
 		//search for gate input
 		ampenv.set_gate(board.get_gate_in(gate));
 		board.LED_LEFT.Write(ampenv.get_gate());
 
 		board.write_dac(ampenv.get_env_value(), env_out);
+
+		/*board.seed.DelayMs(500);
+		board.seed.PrintLine("Volume: %f", board.get_dual_control(volume));
+		board.seed.PrintLine("Env Amt: %f", board.get_dual_control(env_amount));
+		board.seed.PrintLine("Attack: %f", board.get_knob(attack));	
+		board.seed.PrintLine("Decay: %f", board.get_knob(decay));
+		board.seed.PrintLine("Sustain: %f", board.get_knob(sustain));
+		board.seed.PrintLine("Release: %f", board.get_knob(release));
+		board.seed.PrintLine("Gate: %d", board.get_gate_in(gate));*/
 
 	}
 }

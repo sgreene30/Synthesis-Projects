@@ -1,4 +1,5 @@
 #include "daisysp.h"
+
 using namespace daisysp;
 
 #define SEGMENT_MAX 10.0f
@@ -22,12 +23,12 @@ class voice
     bool get_gate();
     void set_env_amount(float amount);
     float get_env_value();
-    void set_lpf_freq(float freq);
-    void set_lpf_amount(float amount);
+    void set_feedback(float feedback);
+    void set_dampening_filter(float dampening);
 
     private:
     float env_value_, env_amount_, volume_, fs_, lpf_amount_, lpf_freq_;
     bool gate_;
-    OnePole lpf_;
     Adsr env_;
+    ReverbSc reverb_;
 };
