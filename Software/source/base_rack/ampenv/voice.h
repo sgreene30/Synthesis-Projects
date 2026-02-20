@@ -6,6 +6,7 @@ using namespace daisysp;
 #define SEGMENT_MIN 0.002f
 #define LPF_FREQ_MIN 20.0f
 #define LPF_FREQ_MAX 20000.0f
+#define MAX_DELAY static_cast<size_t>(48000 * 0.5f)
 
 class voice
 {
@@ -25,10 +26,13 @@ class voice
     float get_env_value();
     void set_feedback(float feedback);
     void set_dampening_filter(float dampening);
+    void set_delay_time(float time);
+    void set_delay_mix(float mix);
 
     private:
-    float env_value_, env_amount_, volume_, fs_, lpf_amount_, lpf_freq_;
+    float env_value_, env_amount_, volume_, fs_, lpf_amount_, lpf_freq_, feedback_, delay_mix_, delay_time_;
     bool gate_;
     Adsr env_;
     ReverbSc reverb_;
+    DelayLine<float, MAX_DELAY> delay_line_;
 };

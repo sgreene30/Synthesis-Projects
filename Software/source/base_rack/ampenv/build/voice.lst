@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -51,14 +51,14 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
    6:voice.cpp     ****     env_.Init(fs_);
   42              		.loc 1 6 14 view .LVU4
   43 0004 0121     		movs	r1, #1
-  44 0006 1C30     		adds	r0, r0, #28
+  44 0006 2830     		adds	r0, r0, #40
   45              	.LVL1:
    5:voice.cpp     ****     fs_ = fs;
   46              		.loc 1 5 9 view .LVU5
   47 0008 84ED030A 		vstr.32	s0, [r4, #12]
   48              		.loc 1 6 5 is_stmt 1 view .LVU6
   49              		.loc 1 6 14 is_stmt 0 view .LVU7
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 2
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 2
 
 
   50 000c FFF7FEFF 		bl	_ZN7daisysp4Adsr4InitEfi
@@ -67,148 +67,461 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   52              		.loc 1 7 5 is_stmt 1 view .LVU8
   53              		.loc 1 7 17 is_stmt 0 view .LVU9
   54 0010 94ED030A 		vldr.32	s0, [r4, #12]
-  55 0014 04F14C00 		add	r0, r4, #76
-   8:voice.cpp     **** }
-  56              		.loc 1 8 1 view .LVU10
-  57 0018 BDE81040 		pop	{r4, lr}
-  58              		.cfi_restore 14
-  59              		.cfi_restore 4
-  60              		.cfi_def_cfa_offset 0
-  61              	.LVL3:
-   7:voice.cpp     ****     reverb_.Init(fs_);
-  62              		.loc 1 7 17 view .LVU11
-  63 001c FFF7FEBF 		b	_ZN7daisysp8ReverbSc4InitEf
-  64              	.LVL4:
-   7:voice.cpp     ****     reverb_.Init(fs_);
-  65              		.loc 1 7 17 view .LVU12
-  66              		.cfi_endproc
-  67              	.LFE3677:
-  69              		.section	.text._ZN5voice7ProcessEf,"ax",%progbits
-  70              		.align	1
-  71              		.p2align 2,,3
-  72              		.global	_ZN5voice7ProcessEf
-  73              		.syntax unified
-  74              		.thumb
-  75              		.thumb_func
-  76              		.fpu fpv5-d16
-  78              	_ZN5voice7ProcessEf:
-  79              	.LVL5:
-  80              	.LFB3678:
-   9:voice.cpp     **** 
-  10:voice.cpp     **** float voice::Process(float sample) 
-  11:voice.cpp     **** {
-  81              		.loc 1 11 1 is_stmt 1 view -0
-  82              		.cfi_startproc
-  83              		@ args = 0, pretend = 0, frame = 0
-  84              		@ frame_needed = 0, uses_anonymous_args = 0
-  12:voice.cpp     ****     float ret, ret2;;
-  85              		.loc 1 12 5 view .LVU14
-  86              		.loc 1 12 21 view .LVU15
-  13:voice.cpp     ****     env_value_ = env_.Process(gate_);
-  87              		.loc 1 13 5 view .LVU16
-  11:voice.cpp     ****     float ret, ret2;;
-  88              		.loc 1 11 1 is_stmt 0 view .LVU17
-  89 0000 10B5     		push	{r4, lr}
-  90              		.cfi_def_cfa_offset 8
-  91              		.cfi_offset 4, -8
-  92              		.cfi_offset 14, -4
-  93 0002 0446     		mov	r4, r0
-  94              		.loc 1 13 30 view .LVU18
-  95 0004 017E     		ldrb	r1, [r0, #24]	@ zero_extendqisi2
-  96 0006 1C30     		adds	r0, r0, #28
-  97              	.LVL6:
-  11:voice.cpp     ****     float ret, ret2;;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 3
+  55 0014 04F15800 		add	r0, r4, #88
+  56 0018 FFF7FEFF 		bl	_ZN7daisysp8ReverbSc4InitEf
+  57              	.LVL3:
+   8:voice.cpp     ****     delay_line_.Init();
+  58              		.loc 1 8 5 is_stmt 1 view .LVU10
+  59              	.LBB66:
+  60              	.LBI66:
+  61              		.file 2 "../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h"
+   1:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** /*
+   2:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** Copyright (c) 2020 Electrosmith, Corp
+   3:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+   4:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** Use of this source code is governed by an MIT-style
+   5:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** license that can be found in the LICENSE file or at
+   6:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** https://opensource.org/licenses/MIT.
+   7:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** */
+   8:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+   9:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** #pragma once
+  10:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** #ifndef DSY_DELAY_H
+  11:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** #define DSY_DELAY_H
+  12:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** #include <stdlib.h>
+  13:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** #include <stdint.h>
+  14:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** namespace daisysp
+  15:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** {
+  16:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** /** Simple Delay line.
+  17:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** November 2019
+  18:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  19:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** Converted to Template December 2019
+  20:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  21:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** declaration example: (1 second of floats)
+  22:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  23:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** DelayLine<float, SAMPLE_RATE> del;
+  24:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  25:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** By: shensley
+  26:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** */
+  27:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** template <typename T, size_t max_size>
+  28:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** class DelayLine
+  29:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** {
+  30:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****   public:
+  31:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     DelayLine() {}
+  32:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     ~DelayLine() {}
+  33:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     /** initializes the delay line by clearing the values within, and setting delay to 1 sample.
+  34:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     */
+  35:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     void Init() { Reset(); }
+  62              		.loc 2 35 10 view .LVU11
+  63              	.LBB67:
+  64              	.LBI67:
+  36:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     /** clears buffer, sets write ptr to 0, and delay to 1 sample.
+  37:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     */
+  38:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     void Reset()
+  65              		.loc 2 38 10 view .LVU12
+  66              	.LBB68:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 3
 
 
-  98              		.loc 1 11 1 view .LVU19
-  99 0008 2DED028B 		vpush.64	{d8}
- 100              		.cfi_def_cfa_offset 16
- 101              		.cfi_offset 80, -16
- 102              		.cfi_offset 81, -12
-  11:voice.cpp     ****     float ret, ret2;;
- 103              		.loc 1 11 1 view .LVU20
- 104 000c B0EE408A 		vmov.f32	s16, s0
- 105              		.loc 1 13 30 view .LVU21
- 106 0010 FFF7FEFF 		bl	_ZN7daisysp4Adsr7ProcessEb
- 107              	.LVL7:
-  14:voice.cpp     ****     ret = sample * (volume_ + env_value_*env_amount_);
- 108              		.loc 1 14 29 view .LVU22
- 109 0014 94ED017A 		vldr.32	s14, [r4, #4]
- 110 0018 D4ED027A 		vldr.32	s15, [r4, #8]
-  13:voice.cpp     ****     env_value_ = env_.Process(gate_);
- 111              		.loc 1 13 16 view .LVU23
- 112 001c 84ED000A 		vstr.32	s0, [r4]
- 113              		.loc 1 14 5 is_stmt 1 view .LVU24
- 114              		.loc 1 14 29 is_stmt 0 view .LVU25
- 115 0020 E0EE077A 		vfma.f32	s15, s0, s14
- 116              	.LVL8:
+  67              	.LBB69:
+  39:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+  40:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         for(size_t i = 0; i < max_size; i++)
+  68              		.loc 2 40 29 view .LVU13
+  41:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         {
+  42:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****             line_[i] = T(0);
+  69              		.loc 2 42 22 is_stmt 0 view .LVU14
+  70 001c 0748     		ldr	r0, .L4
+  71 001e 084A     		ldr	r2, .L4+4
+  72 0020 0021     		movs	r1, #0
+  73 0022 2044     		add	r0, r0, r4
+  74              	.LBE69:
+  43:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         }
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         write_ptr_ = 0;
+  75              		.loc 2 44 20 view .LVU15
+  76 0024 04F5C024 		add	r4, r4, #393216
+  77              	.LVL4:
+  78              	.LBB70:
+  42:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         }
+  79              		.loc 2 42 22 view .LVU16
+  80 0028 FFF7FEFF 		bl	memset
+  81              	.LVL5:
+  42:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         }
+  82              		.loc 2 42 22 view .LVU17
+  83              	.LBE70:
+  84              		.loc 2 44 20 view .LVU18
+  85 002c 0022     		movs	r2, #0
+  45:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_     = 1;
+  86              		.loc 2 45 20 view .LVU19
+  87 002e 0123     		movs	r3, #1
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_     = 1;
+  88              		.loc 2 44 20 view .LVU20
+  89 0030 C4F8A02B 		str	r2, [r4, #2976]
+  90              		.loc 2 45 20 view .LVU21
+  91 0034 C4F8A43B 		str	r3, [r4, #2980]
+  92              	.LVL6:
+  93              		.loc 2 45 20 view .LVU22
+  94              	.LBE68:
+  95              	.LBE67:
+  96              	.LBE66:
+   9:voice.cpp     **** }
+  97              		.loc 1 9 1 view .LVU23
+  98 0038 10BD     		pop	{r4, pc}
+  99              	.LVL7:
+ 100              	.L5:
+ 101              		.loc 1 9 1 view .LVU24
+ 102 003a 00BF     		.align	2
+ 103              	.L4:
+ 104 003c A80B0600 		.word	396200
+ 105 0040 00770100 		.word	96000
+ 106              		.cfi_endproc
+ 107              	.LFE3677:
+ 109              		.section	.text._ZN5voice7ProcessEf,"ax",%progbits
+ 110              		.align	1
+ 111              		.p2align 2,,3
+ 112              		.global	_ZN5voice7ProcessEf
+ 113              		.syntax unified
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 4
+
+
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.fpu fpv5-d16
+ 118              	_ZN5voice7ProcessEf:
+ 119              	.LVL8:
+ 120              	.LFB3678:
+  10:voice.cpp     **** 
+  11:voice.cpp     **** float voice::Process(float sample) 
+  12:voice.cpp     **** {
+ 121              		.loc 1 12 1 is_stmt 1 view -0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+  13:voice.cpp     ****     float ret, delay_out;
+ 125              		.loc 1 13 5 view .LVU26
+  14:voice.cpp     ****     env_value_ = env_.Process(gate_);
+ 126              		.loc 1 14 5 view .LVU27
+  12:voice.cpp     ****     float ret, delay_out;
+ 127              		.loc 1 12 1 is_stmt 0 view .LVU28
+ 128 0000 70B5     		push	{r4, r5, r6, lr}
+ 129              		.cfi_def_cfa_offset 16
+ 130              		.cfi_offset 4, -16
+ 131              		.cfi_offset 5, -12
+ 132              		.cfi_offset 6, -8
+ 133              		.cfi_offset 14, -4
+ 134 0002 0446     		mov	r4, r0
+ 135              		.loc 1 14 30 view .LVU29
+ 136 0004 90F82410 		ldrb	r1, [r0, #36]	@ zero_extendqisi2
+ 137 0008 2830     		adds	r0, r0, #40
+ 138              	.LVL9:
+  12:voice.cpp     ****     float ret, delay_out;
+ 139              		.loc 1 12 1 view .LVU30
+ 140 000a 2DED028B 		vpush.64	{d8}
+ 141              		.cfi_def_cfa_offset 24
+ 142              		.cfi_offset 80, -24
+ 143              		.cfi_offset 81, -20
+  12:voice.cpp     ****     float ret, delay_out;
+ 144              		.loc 1 12 1 view .LVU31
+ 145 000e B0EE408A 		vmov.f32	s16, s0
+ 146              		.loc 1 14 30 view .LVU32
+ 147 0012 FFF7FEFF 		bl	_ZN7daisysp4Adsr7ProcessEb
+ 148              	.LVL10:
+ 149              	.LBB75:
+ 150              	.LBB76:
+  46:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+  47:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  48:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     /** sets the delay time in samples
+  49:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         If a float is passed in, a fractional component will be calculated for interpolating the de
+  50:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     */
+  51:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     inline void SetDelay(size_t delay)
+  52:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+  53:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         frac_  = 0.0f;
+  54:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = delay < max_size ? delay : max_size - 1;
+  55:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+  56:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  57:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     /** sets the delay time in samples
+  58:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         If a float is passed in, a fractional component will be calculated for interpolating the de
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 5
+
+
+  59:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     */
+  60:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     inline void SetDelay(float delay)
+  61:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+  62:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         int32_t int_delay = static_cast<int32_t>(delay);
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         frac_             = delay - static_cast<float>(int_delay);
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+  65:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+  66:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+  67:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  68:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     /** writes the sample of type T to the delay line, and advances the write ptr
+  69:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     */
+  70:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     inline void Write(const T sample)
+  71:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+  72:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         line_[write_ptr_] = sample;
+  73:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         write_ptr_        = (write_ptr_ - 1 + max_size) % max_size;
+  74:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+  75:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h **** 
+  76:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     /** returns the next sample of type T in the delay line, interpolated if necessary.
+  77:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     */
+  78:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     inline const T Read() const
+  79:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+  80:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T a = line_[(write_ptr_ + delay_) % max_size];
+ 151              		.loc 2 80 22 view .LVU33
+ 152 0016 04F5C02C 		add	ip, r4, #393216
+ 153              		.loc 2 80 43 view .LVU34
+ 154 001a 274A     		ldr	r2, .L8
+ 155              	.LBE76:
+ 156              	.LBE75:
+  15:voice.cpp     ****     ret = 0.5f*sample * (volume_ + env_value_);
+ 157              		.loc 1 15 34 view .LVU35
+ 158 001c D4ED026A 		vldr.32	s13, [r4, #8]
+ 159              		.loc 1 15 15 view .LVU36
+ 160 0020 F6EE007A 		vmov.f32	s15, #5.0e-1
+ 161              	.LBB85:
+ 162              	.LBB77:
+ 163              		.loc 2 80 22 view .LVU37
+ 164 0024 DCF8A05B 		ldr	r5, [ip, #2976]
+ 165              		.loc 2 80 11 view .LVU38
+ 166 0028 0CF69C31 		addw	r1, ip, #2972
+ 167              		.loc 2 80 33 view .LVU39
+ 168 002c DCF8A43B 		ldr	r3, [ip, #2980]
+ 169              	.LBE77:
+ 170              	.LBE85:
+ 171              		.loc 1 15 34 view .LVU40
+ 172 0030 70EE266A 		vadd.f32	s13, s0, s13
+  16:voice.cpp     **** 
+  17:voice.cpp     ****     delay_out = delay_line_.Read()* 0.4f;
+  18:voice.cpp     ****     //ret = reverb_.Process(ret, ret, &ret, &ret2);
+  19:voice.cpp     ****     
+  20:voice.cpp     ****     delay_line_.Write(delay_out * feedback_ + ret);
+ 173              		.loc 1 20 33 view .LVU41
+ 174 0034 94ED067A 		vldr.32	s14, [r4, #24]
+  15:voice.cpp     ****     ret = 0.5f*sample * (volume_ + env_value_);
+ 175              		.loc 1 15 15 view .LVU42
+ 176 0038 68EE277A 		vmul.f32	s15, s16, s15
+ 177              	.LBB86:
+ 178              	.LBB78:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 6
+
+
+ 179              		.loc 2 80 33 view .LVU43
+ 180 003c 2B44     		add	r3, r3, r5
+  81:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+  82:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         return a + (b - a) * frac_;
+ 181              		.loc 2 82 30 view .LVU44
+ 182 003e D1ED004A 		vldr.32	s9, [r1]
+ 183              	.LBE78:
+ 184              	.LBE86:
+  21:voice.cpp     ****     ret += delay_out * delay_mix_;
+ 185              		.loc 1 21 22 view .LVU45
+ 186 0042 D4ED075A 		vldr.32	s11, [r4, #28]
+ 187              	.LBB87:
+ 188              	.LBB79:
+  80:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+ 189              		.loc 2 80 43 view .LVU46
+ 190 0046 A2FB036E 		umull	r6, lr, r2, r3
+  81:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+ 191              		.loc 2 81 42 view .LVU47
+ 192 004a 581C     		adds	r0, r3, #1
+ 193              	.LBE79:
+ 194              	.LBE87:
+  14:voice.cpp     ****     ret = 0.5f*sample * (volume_ + env_value_);
+ 195              		.loc 1 14 16 view .LVU48
+ 196 004c 84ED000A 		vstr.32	s0, [r4]
   15:voice.cpp     **** 
-  16:voice.cpp     ****     //ret = reverb_.Process(ret, ret, &ret, &ret2);
-  17:voice.cpp     **** 
-  18:voice.cpp     ****     return ret;
- 117              		.loc 1 18 5 is_stmt 1 view .LVU26
-  19:voice.cpp     **** }
- 118              		.loc 1 19 1 is_stmt 0 view .LVU27
- 119 0024 27EE880A 		vmul.f32	s0, s15, s16
- 120              	.LVL9:
- 121              		.loc 1 19 1 view .LVU28
- 122 0028 BDEC028B 		vldm	sp!, {d8}
- 123              		.cfi_restore 80
- 124              		.cfi_restore 81
- 125              		.cfi_def_cfa_offset 8
- 126              	.LVL10:
- 127              		.loc 1 19 1 view .LVU29
- 128 002c 10BD     		pop	{r4, pc}
- 129              		.loc 1 19 1 view .LVU30
- 130              		.cfi_endproc
- 131              	.LFE3678:
- 133 002e 00BF     		.section	.text._ZN5voice10set_attackEf,"ax",%progbits
- 134              		.align	1
- 135              		.p2align 2,,3
- 136              		.global	_ZN5voice10set_attackEf
- 137              		.syntax unified
- 138              		.thumb
- 139              		.thumb_func
- 140              		.fpu fpv5-d16
- 142              	_ZN5voice10set_attackEf:
- 143              	.LVL11:
- 144              	.LFB3679:
-  20:voice.cpp     **** void voice::set_attack(float time)
-  21:voice.cpp     **** {    
- 145              		.loc 1 21 1 is_stmt 1 view -0
- 146              		.cfi_startproc
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 4
+ 197              		.loc 1 15 5 is_stmt 1 view .LVU49
+ 198              	.LVL11:
+  17:voice.cpp     ****     //ret = reverb_.Process(ret, ret, &ret, &ret2);
+ 199              		.loc 1 17 5 view .LVU50
+ 200              	.LBB88:
+ 201              	.LBI75:
+  78:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+ 202              		.loc 2 78 20 view .LVU51
+ 203              	.LBB80:
+  80:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+ 204              		.loc 2 80 43 is_stmt 0 view .LVU52
+ 205 0050 45F6C054 		movw	r4, #24000
+ 206              	.LVL12:
+  80:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+ 207              		.loc 2 80 43 view .LVU53
+ 208 0054 4FEA5E2E 		lsr	lr, lr, #9
+ 209              	.LBE80:
+ 210              	.LBE88:
+  17:voice.cpp     ****     //ret = reverb_.Process(ret, ret, &ret, &ret2);
+ 211              		.loc 1 17 15 view .LVU54
+ 212 0058 9FED185A 		vldr.32	s10, .L8+4
+ 213              	.LBB89:
+ 214              	.LBB81:
+  80:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+ 215              		.loc 2 80 43 view .LVU55
+ 216 005c 04FB1E33 		mls	r3, r4, lr, r3
+  80:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         T b = line_[(write_ptr_ + delay_ + 1) % max_size];
+ 217              		.loc 2 80 11 view .LVU56
+ 218 0060 01EB8303 		add	r3, r1, r3, lsl #2
+ 219 0064 93ED030A 		vldr.32	s0, [r3, #12]
+ 220              	.LVL13:
+  81:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         return a + (b - a) * frac_;
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 7
 
 
- 147              		@ args = 0, pretend = 0, frame = 0
- 148              		@ frame_needed = 0, uses_anonymous_args = 0
-  22:voice.cpp     ****     /*float max = 10.0f;
-  23:voice.cpp     ****     float min = 0.002f;    
-  24:voice.cpp     ****     time = powf(time, 3.3)*(max - min);
-  25:voice.cpp     ****     env_.SetAttackTime(fclamp(time, min, max));   */ 
-  26:voice.cpp     ****     
-  27:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
- 149              		.loc 1 27 5 view .LVU32
-  21:voice.cpp     ****     /*float max = 10.0f;
- 150              		.loc 1 21 1 is_stmt 0 view .LVU33
- 151 0000 10B5     		push	{r4, lr}
- 152              		.cfi_def_cfa_offset 8
- 153              		.cfi_offset 4, -8
- 154              		.cfi_offset 14, -4
- 155              		.loc 1 27 16 view .LVU34
- 156 0002 DFED0C0A 		vldr.32	s1, .L8
-  21:voice.cpp     ****     /*float max = 10.0f;
- 157              		.loc 1 21 1 view .LVU35
- 158 0006 0446     		mov	r4, r0
- 159              		.loc 1 27 16 view .LVU36
- 160 0008 FFF7FEFF 		bl	powf
- 161              	.LVL12:
-  28:voice.cpp     ****     env_.SetAttackTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 162              		.loc 1 28 5 is_stmt 1 view .LVU37
- 163              	.LBB48:
- 164              	.LBI48:
- 165              		.file 2 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h"
+ 221              		.loc 2 81 47 view .LVU57
+ 222 0068 A2FB0063 		umull	r6, r3, r2, r0
+ 223 006c 5B0A     		lsrs	r3, r3, #9
+ 224 006e 04FB1300 		mls	r0, r4, r3, r0
+ 225              	.LVL14:
+  81:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         return a + (b - a) * frac_;
+ 226              		.loc 2 81 47 view .LVU58
+ 227              	.LBE81:
+ 228              	.LBE89:
+ 229              	.LBB90:
+ 230              	.LBB91:
+  73:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+ 231              		.loc 2 73 45 view .LVU59
+ 232 0072 45F6BF53 		movw	r3, #23999
+ 233              	.LBE91:
+ 234              	.LBE90:
+ 235              	.LBB94:
+ 236              	.LBB82:
+  81:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         return a + (b - a) * frac_;
+ 237              		.loc 2 81 11 view .LVU60
+ 238 0076 01EB8000 		add	r0, r1, r0, lsl #2
+ 239              	.LBE82:
+ 240              	.LBE94:
+ 241              	.LBB95:
+ 242              	.LBB92:
+  73:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+ 243              		.loc 2 73 45 view .LVU61
+ 244 007a 2B44     		add	r3, r3, r5
+  72:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         write_ptr_        = (write_ptr_ - 1 + max_size) % max_size;
+ 245              		.loc 2 72 27 view .LVU62
+ 246 007c 01EB8501 		add	r1, r1, r5, lsl #2
+ 247              	.LBE92:
+ 248              	.LBE95:
+ 249              	.LBB96:
+ 250              	.LBB83:
+ 251              		.loc 2 82 23 view .LVU63
+ 252 0080 90ED036A 		vldr.32	s12, [r0, #12]
+ 253 0084 36EE406A 		vsub.f32	s12, s12, s0
+ 254              	.LBE83:
+ 255              	.LBE96:
+  22:voice.cpp     ****     return ret;
+  23:voice.cpp     **** }
+ 256              		.loc 1 23 1 view .LVU64
+ 257 0088 BDEC028B 		vldm	sp!, {d8}
+ 258              		.cfi_restore 80
+ 259              		.cfi_restore 81
+ 260              		.cfi_def_cfa_offset 16
+ 261              	.LVL15:
+ 262              	.LBB97:
+ 263              	.LBB84:
+ 264              		.loc 2 82 30 view .LVU65
+ 265 008c A6EE240A 		vfma.f32	s0, s12, s9
+ 266              	.LVL16:
+ 267              		.loc 2 82 30 view .LVU66
+ 268              	.LBE84:
+ 269              	.LBE97:
+  17:voice.cpp     ****     //ret = reverb_.Process(ret, ret, &ret, &ret2);
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 8
+
+
+ 270              		.loc 1 17 15 view .LVU67
+ 271 0090 20EE050A 		vmul.f32	s0, s0, s10
+ 272              	.LVL17:
+  20:voice.cpp     ****     ret += delay_out * delay_mix_;
+ 273              		.loc 1 20 5 is_stmt 1 view .LVU68
+  20:voice.cpp     ****     ret += delay_out * delay_mix_;
+ 274              		.loc 1 20 33 is_stmt 0 view .LVU69
+ 275 0094 20EE077A 		vmul.f32	s14, s0, s14
+  21:voice.cpp     ****     return ret;
+ 276              		.loc 1 21 22 view .LVU70
+ 277 0098 20EE250A 		vmul.f32	s0, s0, s11
+ 278              	.LVL18:
+  20:voice.cpp     ****     ret += delay_out * delay_mix_;
+ 279              		.loc 1 20 22 view .LVU71
+ 280 009c A7EEA67A 		vfma.f32	s14, s15, s13
+ 281              	.LVL19:
+ 282              	.LBB98:
+ 283              	.LBI90:
+  70:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+ 284              		.loc 2 70 17 is_stmt 1 view .LVU72
+ 285              	.LBE98:
+ 286              		.loc 1 23 1 is_stmt 0 view .LVU73
+ 287 00a0 A7EEA60A 		vfma.f32	s0, s15, s13
+ 288              	.LBB99:
+ 289              	.LBB93:
+  72:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         write_ptr_        = (write_ptr_ - 1 + max_size) % max_size;
+ 290              		.loc 2 72 27 view .LVU74
+ 291 00a4 81ED037A 		vstr.32	s14, [r1, #12]
+ 292              	.LVL20:
+  73:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+ 293              		.loc 2 73 57 view .LVU75
+ 294 00a8 A2FB0312 		umull	r1, r2, r2, r3
+ 295 00ac 520A     		lsrs	r2, r2, #9
+ 296 00ae 04FB1232 		mls	r2, r4, r2, r3
+  73:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+ 297              		.loc 2 73 27 view .LVU76
+ 298 00b2 CCF8A02B 		str	r2, [ip, #2976]
+ 299              	.LVL21:
+  73:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     }
+ 300              		.loc 2 73 27 view .LVU77
+ 301              	.LBE93:
+ 302              	.LBE99:
+  21:voice.cpp     ****     return ret;
+ 303              		.loc 1 21 5 is_stmt 1 view .LVU78
+  22:voice.cpp     **** }
+ 304              		.loc 1 22 5 view .LVU79
+ 305              		.loc 1 23 1 is_stmt 0 view .LVU80
+ 306 00b6 70BD     		pop	{r4, r5, r6, pc}
+ 307              	.L9:
+ 308              		.align	2
+ 309              	.L8:
+ 310 00b8 F1197605 		.word	91625969
+ 311 00bc CDCCCC3E 		.word	1053609165
+ 312              		.cfi_endproc
+ 313              	.LFE3678:
+ 315              		.section	.text._ZN5voice10set_attackEf,"ax",%progbits
+ 316              		.align	1
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 9
+
+
+ 317              		.p2align 2,,3
+ 318              		.global	_ZN5voice10set_attackEf
+ 319              		.syntax unified
+ 320              		.thumb
+ 321              		.thumb_func
+ 322              		.fpu fpv5-d16
+ 324              	_ZN5voice10set_attackEf:
+ 325              	.LVL22:
+ 326              	.LFB3679:
+  24:voice.cpp     **** void voice::set_attack(float time)
+  25:voice.cpp     **** {    
+ 327              		.loc 1 25 1 is_stmt 1 view -0
+ 328              		.cfi_startproc
+ 329              		@ args = 0, pretend = 0, frame = 0
+ 330              		@ frame_needed = 0, uses_anonymous_args = 0
+  26:voice.cpp     ****     /*float max = 10.0f;
+  27:voice.cpp     ****     float min = 0.002f;    
+  28:voice.cpp     ****     time = powf(time, 3.3)*(max - min);
+  29:voice.cpp     ****     env_.SetAttackTime(fclamp(time, min, max));   */ 
+  30:voice.cpp     ****     
+  31:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
+ 331              		.loc 1 31 5 view .LVU82
+  25:voice.cpp     ****     /*float max = 10.0f;
+ 332              		.loc 1 25 1 is_stmt 0 view .LVU83
+ 333 0000 10B5     		push	{r4, lr}
+ 334              		.cfi_def_cfa_offset 8
+ 335              		.cfi_offset 4, -8
+ 336              		.cfi_offset 14, -4
+ 337              		.loc 1 31 16 view .LVU84
+ 338 0002 DFED0C0A 		vldr.32	s1, .L12
+  25:voice.cpp     ****     /*float max = 10.0f;
+ 339              		.loc 1 25 1 view .LVU85
+ 340 0006 0446     		mov	r4, r0
+ 341              		.loc 1 31 16 view .LVU86
+ 342 0008 FFF7FEFF 		bl	powf
+ 343              	.LVL23:
+  32:voice.cpp     ****     env_.SetAttackTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 344              		.loc 1 32 5 is_stmt 1 view .LVU87
+ 345              	.LBB100:
+ 346              	.LBI100:
+ 347              		.file 3 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h"
    1:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /*
    2:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** Copyright (c) 2020 Electrosmith, Corp, Emilie Gillet
    3:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
@@ -225,6 +538,9 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   14:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <cassert>
   15:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <cstdint>
   16:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <random>
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 10
+
+
   17:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #include <cmath>
   18:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
   19:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** PIs
@@ -238,9 +554,6 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   27:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #define DSY_COUNTOF(_arr) (sizeof(_arr) / sizeof(_arr[0]))
   28:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** 
   29:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** namespace daisysp
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 5
-
-
   30:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
   31:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** //Avoids division for random floats. e.g. rand() * kRandFrac
   32:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** static constexpr float kRandFrac = 1.f / (float)RAND_MAX;
@@ -276,316 +589,319 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   62:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** /** quick fp clamp
   63:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** */
   64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** inline float fclamp(float in, float min, float max)
- 166              		.loc 2 64 14 view .LVU38
- 167              	.LBE48:
+ 348              		.loc 3 64 14 view .LVU88
+ 349              	.LBE100:
   65:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
   66:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h ****     return fmin(fmax(in, min), max);
- 168              		.loc 2 66 5 view .LVU39
- 169              	.LBB61:
- 170              	.LBB49:
- 171              	.LBI49:
+ 350              		.loc 3 66 5 view .LVU89
+ 351              	.LBB113:
+ 352              	.LBB101:
+ 353              	.LBI101:
   40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 172              		.loc 2 40 14 view .LVU40
- 173              	.LBB50:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 11
+
+
+ 354              		.loc 3 40 14 view .LVU90
+ 355              	.LBB102:
   42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 174              		.loc 2 42 5 view .LVU41
+ 356              		.loc 3 42 5 view .LVU91
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 175              		.loc 2 44 5 view .LVU42
- 176              	.LBE50:
- 177              	.LBE49:
- 178              	.LBE61:
-  27:voice.cpp     ****     env_.SetAttackTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 179              		.loc 1 27 10 is_stmt 0 view .LVU43
- 180 000c DFED0A6A 		vldr.32	s13, .L8+4
- 181              	.LBB62:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 6
-
-
- 182              	.LBB53:
- 183              	.LBB54:
+ 357              		.loc 3 44 5 view .LVU92
+ 358              	.LBE102:
+ 359              	.LBE101:
+ 360              	.LBE113:
+  31:voice.cpp     ****     env_.SetAttackTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 361              		.loc 1 31 10 is_stmt 0 view .LVU93
+ 362 000c DFED0A6A 		vldr.32	s13, .L12+4
+ 363              	.LBB114:
+ 364              	.LBB105:
+ 365              	.LBB106:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 184              		.loc 2 55 5 view .LVU44
- 185 0010 F2EE047A 		vmov.f32	s15, #1.0e+1
- 186              	.LBE54:
- 187              	.LBE53:
- 188              	.LBB57:
- 189              	.LBB51:
+ 366              		.loc 3 55 5 view .LVU94
+ 367 0010 F2EE047A 		vmov.f32	s15, #1.0e+1
+ 368              	.LBE106:
+ 369              	.LBE105:
+ 370              	.LBB109:
+ 371              	.LBB103:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 190              		.loc 2 44 5 view .LVU45
- 191 0014 9FED097A 		vldr.32	s14, .L8+8
- 192              	.LBE51:
- 193              	.LBE57:
- 194              	.LBE62:
-  27:voice.cpp     ****     env_.SetAttackTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 195              		.loc 1 27 10 view .LVU46
- 196 0018 20EE260A 		vmul.f32	s0, s0, s13
- 197              	.LVL13:
- 198              		.loc 1 28 23 view .LVU47
- 199 001c 04F11C00 		add	r0, r4, #28
- 200              	.LBB63:
- 201              	.LBB58:
- 202              	.LBB52:
+ 372              		.loc 3 44 5 view .LVU95
+ 373 0014 9FED097A 		vldr.32	s14, .L12+8
+ 374              	.LBE103:
+ 375              	.LBE109:
+ 376              	.LBE114:
+  31:voice.cpp     ****     env_.SetAttackTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 377              		.loc 1 31 10 view .LVU96
+ 378 0018 20EE260A 		vmul.f32	s0, s0, s13
+ 379              	.LVL24:
+ 380              		.loc 1 32 23 view .LVU97
+ 381 001c 04F12800 		add	r0, r4, #40
+ 382              	.LBB115:
+ 383              	.LBB110:
+ 384              	.LBB104:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 203              		.loc 2 44 5 view .LVU48
- 204              		.syntax unified
- 205              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 206 0020 80FE070A 		vmaxnm.f32 s0, s0, s14
- 207              	@ 0 "" 2
- 208              	.LVL14:
+ 385              		.loc 3 44 5 view .LVU98
+ 386              		.syntax unified
+ 387              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 388 0020 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 389              	@ 0 "" 2
+ 390              	.LVL25:
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 209              		.loc 2 48 5 is_stmt 1 view .LVU49
+ 391              		.loc 3 48 5 is_stmt 1 view .LVU99
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 210              		.loc 2 48 5 is_stmt 0 view .LVU50
- 211              		.thumb
- 212              		.syntax unified
- 213              	.LBE52:
- 214              	.LBE58:
- 215              	.LBB59:
- 216              	.LBI53:
+ 392              		.loc 3 48 5 is_stmt 0 view .LVU100
+ 393              		.thumb
+ 394              		.syntax unified
+ 395              	.LBE104:
+ 396              	.LBE110:
+ 397              	.LBB111:
+ 398              	.LBI105:
   51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 217              		.loc 2 51 14 is_stmt 1 view .LVU51
- 218              	.LBB55:
+ 399              		.loc 3 51 14 is_stmt 1 view .LVU101
+ 400              	.LBB107:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 12
+
+
   53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 219              		.loc 2 53 5 view .LVU52
+ 401              		.loc 3 53 5 view .LVU102
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 220              		.loc 2 55 5 view .LVU53
- 221              	.LBE55:
- 222              	.LBE59:
- 223              	.LBE63:
- 224              		.loc 1 28 23 is_stmt 0 view .LVU54
- 225 0024 DFED060A 		vldr.32	s1, .L8+12
- 226              	.LBB64:
- 227              	.LBB60:
- 228              	.LBB56:
+ 402              		.loc 3 55 5 view .LVU103
+ 403              	.LBE107:
+ 404              	.LBE111:
+ 405              	.LBE115:
+ 406              		.loc 1 32 23 is_stmt 0 view .LVU104
+ 407 0024 DFED060A 		vldr.32	s1, .L12+12
+ 408              	.LBB116:
+ 409              	.LBB112:
+ 410              	.LBB108:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 7
-
-
- 229              		.loc 2 55 5 view .LVU55
- 230              		.syntax unified
- 231              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 232 0028 80FE670A 		vminnm.f32 s0, s0, s15
- 233              	@ 0 "" 2
- 234              	.LVL15:
+ 411              		.loc 3 55 5 view .LVU105
+ 412              		.syntax unified
+ 413              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 414 0028 80FE670A 		vminnm.f32 s0, s0, s15
+ 415              	@ 0 "" 2
+ 416              	.LVL26:
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 235              		.loc 2 59 5 is_stmt 1 view .LVU56
+ 417              		.loc 3 59 5 is_stmt 1 view .LVU106
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 236              		.loc 2 59 5 is_stmt 0 view .LVU57
- 237              		.thumb
- 238              		.syntax unified
- 239              	.LBE56:
- 240              	.LBE60:
- 241              	.LBE64:
-  29:voice.cpp     **** }
- 242              		.loc 1 29 1 view .LVU58
- 243 002c BDE81040 		pop	{r4, lr}
- 244              		.cfi_restore 14
- 245              		.cfi_restore 4
- 246              		.cfi_def_cfa_offset 0
- 247              	.LVL16:
-  28:voice.cpp     **** }
- 248              		.loc 1 28 23 view .LVU59
- 249 0030 FFF7FEBF 		b	_ZN7daisysp4Adsr13SetAttackTimeEff
- 250              	.LVL17:
- 251              	.L9:
-  28:voice.cpp     **** }
- 252              		.loc 1 28 23 view .LVU60
- 253              		.align	2
- 254              	.L8:
- 255 0034 33335340 		.word	1079194419
- 256 0038 CFF71F41 		.word	1092614095
- 257 003c 6F12033B 		.word	990057071
- 258 0040 00000000 		.word	0
- 259              		.cfi_endproc
- 260              	.LFE3679:
- 262              		.section	.text._ZN5voice9set_decayEf,"ax",%progbits
- 263              		.align	1
- 264              		.p2align 2,,3
- 265              		.global	_ZN5voice9set_decayEf
- 266              		.syntax unified
- 267              		.thumb
- 268              		.thumb_func
- 269              		.fpu fpv5-d16
- 271              	_ZN5voice9set_decayEf:
- 272              	.LVL18:
- 273              	.LFB3680:
-  30:voice.cpp     **** 
-  31:voice.cpp     **** void voice::set_decay(float time)
-  32:voice.cpp     **** {   
- 274              		.loc 1 32 1 is_stmt 1 view -0
- 275              		.cfi_startproc
- 276              		@ args = 0, pretend = 0, frame = 0
- 277              		@ frame_needed = 0, uses_anonymous_args = 0
-  33:voice.cpp     ****     /*float max = 10.0f;
-  34:voice.cpp     ****     float min = 0.002f;    
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 8
+ 418              		.loc 3 59 5 is_stmt 0 view .LVU107
+ 419              		.thumb
+ 420              		.syntax unified
+ 421              	.LBE108:
+ 422              	.LBE112:
+ 423              	.LBE116:
+  33:voice.cpp     **** }
+ 424              		.loc 1 33 1 view .LVU108
+ 425 002c BDE81040 		pop	{r4, lr}
+ 426              		.cfi_restore 14
+ 427              		.cfi_restore 4
+ 428              		.cfi_def_cfa_offset 0
+ 429              	.LVL27:
+  32:voice.cpp     **** }
+ 430              		.loc 1 32 23 view .LVU109
+ 431 0030 FFF7FEBF 		b	_ZN7daisysp4Adsr13SetAttackTimeEff
+ 432              	.LVL28:
+ 433              	.L13:
+  32:voice.cpp     **** }
+ 434              		.loc 1 32 23 view .LVU110
+ 435              		.align	2
+ 436              	.L12:
+ 437 0034 33335340 		.word	1079194419
+ 438 0038 CFF71F41 		.word	1092614095
+ 439 003c 6F12033B 		.word	990057071
+ 440 0040 00000000 		.word	0
+ 441              		.cfi_endproc
+ 442              	.LFE3679:
+ 444              		.section	.text._ZN5voice9set_decayEf,"ax",%progbits
+ 445              		.align	1
+ 446              		.p2align 2,,3
+ 447              		.global	_ZN5voice9set_decayEf
+ 448              		.syntax unified
+ 449              		.thumb
+ 450              		.thumb_func
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 13
 
 
-  35:voice.cpp     ****     time = powf(time, 3.3)*(max - min);
-  36:voice.cpp     ****     env_.SetDecayTime(fclamp(time, min, max));*/
-  37:voice.cpp     **** 
-  38:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
- 278              		.loc 1 38 5 view .LVU62
-  32:voice.cpp     ****     /*float max = 10.0f;
- 279              		.loc 1 32 1 is_stmt 0 view .LVU63
- 280 0000 10B5     		push	{r4, lr}
- 281              		.cfi_def_cfa_offset 8
- 282              		.cfi_offset 4, -8
- 283              		.cfi_offset 14, -4
- 284              		.loc 1 38 16 view .LVU64
- 285 0002 DFED0B0A 		vldr.32	s1, .L12
-  32:voice.cpp     ****     /*float max = 10.0f;
- 286              		.loc 1 32 1 view .LVU65
- 287 0006 0446     		mov	r4, r0
- 288              		.loc 1 38 16 view .LVU66
- 289 0008 FFF7FEFF 		bl	powf
- 290              	.LVL19:
-  39:voice.cpp     ****     env_.SetDecayTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 291              		.loc 1 39 5 is_stmt 1 view .LVU67
- 292              	.LBB65:
- 293              	.LBI65:
-  64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 294              		.loc 2 64 14 view .LVU68
- 295              	.LBE65:
- 296              		.loc 2 66 5 view .LVU69
- 297              	.LBB78:
- 298              	.LBB66:
- 299              	.LBI66:
-  40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 300              		.loc 2 40 14 view .LVU70
- 301              	.LBB67:
-  42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 302              		.loc 2 42 5 view .LVU71
-  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 303              		.loc 2 44 5 view .LVU72
- 304              	.LBE67:
- 305              	.LBE66:
- 306              	.LBE78:
-  38:voice.cpp     ****     env_.SetDecayTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 307              		.loc 1 38 10 is_stmt 0 view .LVU73
- 308 000c DFED096A 		vldr.32	s13, .L12+4
- 309              	.LBB79:
- 310              	.LBB70:
- 311              	.LBB71:
-  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 312              		.loc 2 55 5 view .LVU74
- 313 0010 F2EE047A 		vmov.f32	s15, #1.0e+1
- 314              	.LBE71:
- 315              	.LBE70:
- 316              	.LBB74:
- 317              	.LBB68:
-  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 318              		.loc 2 44 5 view .LVU75
- 319 0014 9FED087A 		vldr.32	s14, .L12+8
- 320              	.LBE68:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 9
-
-
- 321              	.LBE74:
- 322              	.LBE79:
-  38:voice.cpp     ****     env_.SetDecayTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 323              		.loc 1 38 10 view .LVU76
- 324 0018 20EE260A 		vmul.f32	s0, s0, s13
- 325              	.LVL20:
- 326              		.loc 1 39 22 view .LVU77
- 327 001c 04F11C00 		add	r0, r4, #28
- 328              	.LBB80:
- 329              	.LBB75:
- 330              	.LBB69:
-  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 331              		.loc 2 44 5 view .LVU78
- 332              		.syntax unified
- 333              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 334 0020 80FE070A 		vmaxnm.f32 s0, s0, s14
- 335              	@ 0 "" 2
- 336              	.LVL21:
-  48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 337              		.loc 2 48 5 is_stmt 1 view .LVU79
-  48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 338              		.loc 2 48 5 is_stmt 0 view .LVU80
- 339              		.thumb
- 340              		.syntax unified
- 341              	.LBE69:
- 342              	.LBE75:
- 343              	.LBB76:
- 344              	.LBI70:
-  51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 345              		.loc 2 51 14 is_stmt 1 view .LVU81
- 346              	.LBB72:
-  53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 347              		.loc 2 53 5 view .LVU82
-  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 348              		.loc 2 55 5 view .LVU83
- 349              	.LBE72:
- 350              	.LBE76:
- 351              	.LBE80:
-  40:voice.cpp     **** }
- 352              		.loc 1 40 1 is_stmt 0 view .LVU84
- 353 0024 BDE81040 		pop	{r4, lr}
- 354              		.cfi_restore 14
- 355              		.cfi_restore 4
- 356              		.cfi_def_cfa_offset 0
- 357              	.LVL22:
- 358              	.LBB81:
- 359              	.LBB77:
- 360              	.LBB73:
-  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 361              		.loc 2 55 5 view .LVU85
- 362              		.syntax unified
- 363              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 364 0028 80FE670A 		vminnm.f32 s0, s0, s15
- 365              	@ 0 "" 2
- 366              	.LVL23:
-  59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 367              		.loc 2 59 5 is_stmt 1 view .LVU86
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 10
-
-
-  59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 368              		.loc 2 59 5 is_stmt 0 view .LVU87
- 369              		.thumb
- 370              		.syntax unified
- 371              	.LBE73:
- 372              	.LBE77:
- 373              	.LBE81:
-  39:voice.cpp     **** }
- 374              		.loc 1 39 22 view .LVU88
- 375 002c FFF7FEBF 		b	_ZN7daisysp4Adsr12SetDecayTimeEf
- 376              	.LVL24:
- 377              	.L13:
-  39:voice.cpp     **** }
- 378              		.loc 1 39 22 view .LVU89
- 379              		.align	2
- 380              	.L12:
- 381 0030 33335340 		.word	1079194419
- 382 0034 CFF71F41 		.word	1092614095
- 383 0038 6F12033B 		.word	990057071
- 384              		.cfi_endproc
- 385              	.LFE3680:
- 387              		.section	.text._ZN5voice11set_sustainEf,"ax",%progbits
- 388              		.align	1
- 389              		.p2align 2,,3
- 390              		.global	_ZN5voice11set_sustainEf
- 391              		.syntax unified
- 392              		.thumb
- 393              		.thumb_func
- 394              		.fpu fpv5-d16
- 396              	_ZN5voice11set_sustainEf:
- 397              	.LVL25:
- 398              	.LFB3681:
+ 451              		.fpu fpv5-d16
+ 453              	_ZN5voice9set_decayEf:
+ 454              	.LVL29:
+ 455              	.LFB3680:
+  34:voice.cpp     **** 
+  35:voice.cpp     **** void voice::set_decay(float time)
+  36:voice.cpp     **** {   
+ 456              		.loc 1 36 1 is_stmt 1 view -0
+ 457              		.cfi_startproc
+ 458              		@ args = 0, pretend = 0, frame = 0
+ 459              		@ frame_needed = 0, uses_anonymous_args = 0
+  37:voice.cpp     ****     /*float max = 10.0f;
+  38:voice.cpp     ****     float min = 0.002f;    
+  39:voice.cpp     ****     time = powf(time, 3.3)*(max - min);
+  40:voice.cpp     ****     env_.SetDecayTime(fclamp(time, min, max));*/
   41:voice.cpp     **** 
-  42:voice.cpp     **** void voice::set_sustain(float level)
-  43:voice.cpp     **** {
- 399              		.loc 1 43 1 is_stmt 1 view -0
- 400              		.cfi_startproc
- 401              		@ args = 0, pretend = 0, frame = 0
- 402              		@ frame_needed = 0, uses_anonymous_args = 0
- 403              		@ link register save eliminated.
-  44:voice.cpp     ****     env_.SetSustainLevel(level);
- 404              		.loc 1 44 5 view .LVU91
- 405              	.LBB82:
- 406              	.LBI82:
- 407              		.file 3 "../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h"
+  42:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
+ 460              		.loc 1 42 5 view .LVU112
+  36:voice.cpp     ****     /*float max = 10.0f;
+ 461              		.loc 1 36 1 is_stmt 0 view .LVU113
+ 462 0000 10B5     		push	{r4, lr}
+ 463              		.cfi_def_cfa_offset 8
+ 464              		.cfi_offset 4, -8
+ 465              		.cfi_offset 14, -4
+ 466              		.loc 1 42 16 view .LVU114
+ 467 0002 DFED0B0A 		vldr.32	s1, .L16
+  36:voice.cpp     ****     /*float max = 10.0f;
+ 468              		.loc 1 36 1 view .LVU115
+ 469 0006 0446     		mov	r4, r0
+ 470              		.loc 1 42 16 view .LVU116
+ 471 0008 FFF7FEFF 		bl	powf
+ 472              	.LVL30:
+  43:voice.cpp     ****     env_.SetDecayTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 473              		.loc 1 43 5 is_stmt 1 view .LVU117
+ 474              	.LBB117:
+ 475              	.LBI117:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 476              		.loc 3 64 14 view .LVU118
+ 477              	.LBE117:
+ 478              		.loc 3 66 5 view .LVU119
+ 479              	.LBB130:
+ 480              	.LBB118:
+ 481              	.LBI118:
+  40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 482              		.loc 3 40 14 view .LVU120
+ 483              	.LBB119:
+  42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 484              		.loc 3 42 5 view .LVU121
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 485              		.loc 3 44 5 view .LVU122
+ 486              	.LBE119:
+ 487              	.LBE118:
+ 488              	.LBE130:
+  42:voice.cpp     ****     env_.SetDecayTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 489              		.loc 1 42 10 is_stmt 0 view .LVU123
+ 490 000c DFED096A 		vldr.32	s13, .L16+4
+ 491              	.LBB131:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 14
+
+
+ 492              	.LBB122:
+ 493              	.LBB123:
+  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 494              		.loc 3 55 5 view .LVU124
+ 495 0010 F2EE047A 		vmov.f32	s15, #1.0e+1
+ 496              	.LBE123:
+ 497              	.LBE122:
+ 498              	.LBB126:
+ 499              	.LBB120:
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 500              		.loc 3 44 5 view .LVU125
+ 501 0014 9FED087A 		vldr.32	s14, .L16+8
+ 502              	.LBE120:
+ 503              	.LBE126:
+ 504              	.LBE131:
+  42:voice.cpp     ****     env_.SetDecayTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 505              		.loc 1 42 10 view .LVU126
+ 506 0018 20EE260A 		vmul.f32	s0, s0, s13
+ 507              	.LVL31:
+ 508              		.loc 1 43 22 view .LVU127
+ 509 001c 04F12800 		add	r0, r4, #40
+ 510              	.LBB132:
+ 511              	.LBB127:
+ 512              	.LBB121:
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 513              		.loc 3 44 5 view .LVU128
+ 514              		.syntax unified
+ 515              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 516 0020 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 517              	@ 0 "" 2
+ 518              	.LVL32:
+  48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 519              		.loc 3 48 5 is_stmt 1 view .LVU129
+  48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 520              		.loc 3 48 5 is_stmt 0 view .LVU130
+ 521              		.thumb
+ 522              		.syntax unified
+ 523              	.LBE121:
+ 524              	.LBE127:
+ 525              	.LBB128:
+ 526              	.LBI122:
+  51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 527              		.loc 3 51 14 is_stmt 1 view .LVU131
+ 528              	.LBB124:
+  53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 529              		.loc 3 53 5 view .LVU132
+  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 530              		.loc 3 55 5 view .LVU133
+ 531              	.LBE124:
+ 532              	.LBE128:
+ 533              	.LBE132:
+  44:voice.cpp     **** }
+ 534              		.loc 1 44 1 is_stmt 0 view .LVU134
+ 535 0024 BDE81040 		pop	{r4, lr}
+ 536              		.cfi_restore 14
+ 537              		.cfi_restore 4
+ 538              		.cfi_def_cfa_offset 0
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 15
+
+
+ 539              	.LVL33:
+ 540              	.LBB133:
+ 541              	.LBB129:
+ 542              	.LBB125:
+  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 543              		.loc 3 55 5 view .LVU135
+ 544              		.syntax unified
+ 545              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 546 0028 80FE670A 		vminnm.f32 s0, s0, s15
+ 547              	@ 0 "" 2
+ 548              	.LVL34:
+  59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 549              		.loc 3 59 5 is_stmt 1 view .LVU136
+  59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 550              		.loc 3 59 5 is_stmt 0 view .LVU137
+ 551              		.thumb
+ 552              		.syntax unified
+ 553              	.LBE125:
+ 554              	.LBE129:
+ 555              	.LBE133:
+  43:voice.cpp     **** }
+ 556              		.loc 1 43 22 view .LVU138
+ 557 002c FFF7FEBF 		b	_ZN7daisysp4Adsr12SetDecayTimeEf
+ 558              	.LVL35:
+ 559              	.L17:
+  43:voice.cpp     **** }
+ 560              		.loc 1 43 22 view .LVU139
+ 561              		.align	2
+ 562              	.L16:
+ 563 0030 33335340 		.word	1079194419
+ 564 0034 CFF71F41 		.word	1092614095
+ 565 0038 6F12033B 		.word	990057071
+ 566              		.cfi_endproc
+ 567              	.LFE3680:
+ 569              		.section	.text._ZN5voice11set_sustainEf,"ax",%progbits
+ 570              		.align	1
+ 571              		.p2align 2,,3
+ 572              		.global	_ZN5voice11set_sustainEf
+ 573              		.syntax unified
+ 574              		.thumb
+ 575              		.thumb_func
+ 576              		.fpu fpv5-d16
+ 578              	_ZN5voice11set_sustainEf:
+ 579              	.LVL36:
+ 580              	.LFB3681:
+  45:voice.cpp     **** 
+  46:voice.cpp     **** void voice::set_sustain(float level)
+  47:voice.cpp     **** {
+ 581              		.loc 1 47 1 is_stmt 1 view -0
+ 582              		.cfi_startproc
+ 583              		@ args = 0, pretend = 0, frame = 0
+ 584              		@ frame_needed = 0, uses_anonymous_args = 0
+ 585              		@ link register save eliminated.
+  48:voice.cpp     ****     env_.SetSustainLevel(level);
+ 586              		.loc 1 48 5 view .LVU141
+ 587              	.LBB134:
+ 588              	.LBI134:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 16
+
+
+ 589              		.file 4 "../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h"
    1:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** /*
    2:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** Copyright (c) 2020 Electrosmith, Corp, Paul Batchelor
    3:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** 
@@ -598,9 +914,6 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   10:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** #ifndef DSY_ADSR_H
   11:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** #define DSY_ADSR_H
   12:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 11
-
-
   13:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** #include <stdint.h>
   14:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** #ifdef __cplusplus
   15:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** 
@@ -645,6 +958,9 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   54:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     void Retrigger(bool hard);
   55:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     /** Processes one sample through the filter and returns one sample.
   56:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****         \param gate - trigger the envelope, hold it to sustain 
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 17
+
+
   57:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     */
   58:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     float Process(bool gate);
   59:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     /** Sets time
@@ -658,570 +974,572 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   67:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****   private:
   68:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     void SetTimeConstant(float timeInS, float& time, float& coeff);
   69:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 12
-
-
   70:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****   public:
   71:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     /** Sustain level
   72:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****         \param sus_level - sets sustain level, 0...1.0
   73:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     */
   74:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     inline void SetSustainLevel(float sus_level)
- 408              		.loc 3 74 17 view .LVU92
- 409              	.LBB83:
+ 590              		.loc 4 74 17 view .LVU142
+ 591              	.LBB135:
   75:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     {
   76:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****         sus_level = (sus_level <= 0.f) ? -0.01f // forces envelope into idle
- 410              		.loc 3 76 9 view .LVU93
- 411              		.loc 3 76 40 is_stmt 0 view .LVU94
- 412 0000 B5EEC00A 		vcmpe.f32	s0, #0
- 413 0004 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 414 0008 0AD9     		bls	.L16
+ 592              		.loc 4 76 9 view .LVU143
+ 593              		.loc 4 76 40 is_stmt 0 view .LVU144
+ 594 0000 B5EEC00A 		vcmpe.f32	s0, #0
+ 595 0004 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 596 0008 0AD9     		bls	.L20
   77:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****                                        : (sus_level > 1.f) ? 1.f : sus_level;
- 415              		.loc 3 77 60 view .LVU95
- 416 000a F7EE007A 		vmov.f32	s15, #1.0e+0
- 417 000e B4EE670A 		vcmp.f32	s0, s15
- 418 0012 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 419 0016 37FE800A 		vselgt.f32	s0, s15, s0
- 420              	.LVL26:
+ 597              		.loc 4 77 60 view .LVU145
+ 598 000a F7EE007A 		vmov.f32	s15, #1.0e+0
+ 599 000e B4EE670A 		vcmp.f32	s0, s15
+ 600 0012 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 601 0016 37FE800A 		vselgt.f32	s0, s15, s0
+ 602              	.LVL37:
   78:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****         sus_level_ = sus_level;
- 421              		.loc 3 78 9 is_stmt 1 view .LVU96
- 422              		.loc 3 78 20 is_stmt 0 view .LVU97
- 423 001a 80ED070A 		vstr.32	s0, [r0, #28]
- 424              	.LVL27:
- 425              		.loc 3 78 20 view .LVU98
- 426              	.LBE83:
- 427              	.LBE82:
-  45:voice.cpp     **** }
- 428              		.loc 1 45 1 view .LVU99
- 429 001e 7047     		bx	lr
- 430              	.LVL28:
- 431              	.L16:
- 432              	.LBB85:
- 433              	.LBB84:
+ 603              		.loc 4 78 9 is_stmt 1 view .LVU146
+ 604              		.loc 4 78 20 is_stmt 0 view .LVU147
+ 605 001a 80ED0A0A 		vstr.32	s0, [r0, #40]
+ 606              	.LVL38:
+ 607              		.loc 4 78 20 view .LVU148
+ 608              	.LBE135:
+ 609              	.LBE134:
+  49:voice.cpp     **** }
+ 610              		.loc 1 49 1 view .LVU149
+ 611 001e 7047     		bx	lr
+ 612              	.LVL39:
+ 613              	.L20:
+ 614              	.LBB137:
+ 615              	.LBB136:
   76:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****                                        : (sus_level > 1.f) ? 1.f : sus_level;
- 434              		.loc 3 76 40 view .LVU100
- 435 0020 9FED020A 		vldr.32	s0, .L18
- 436              	.LVL29:
- 437              		.loc 3 78 9 is_stmt 1 view .LVU101
- 438              		.loc 3 78 20 is_stmt 0 view .LVU102
- 439 0024 80ED070A 		vstr.32	s0, [r0, #28]
- 440              	.LVL30:
- 441              		.loc 3 78 20 view .LVU103
- 442              	.LBE84:
- 443              	.LBE85:
- 444              		.loc 1 45 1 view .LVU104
- 445 0028 7047     		bx	lr
- 446              	.L19:
- 447 002a 00BF     		.align	2
- 448              	.L18:
- 449 002c 0AD723BC 		.word	-1138501878
- 450              		.cfi_endproc
- 451              	.LFE3681:
- 453              		.section	.text._ZN5voice11set_releaseEf,"ax",%progbits
- 454              		.align	1
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 13
+ 616              		.loc 4 76 40 view .LVU150
+ 617 0020 9FED020A 		vldr.32	s0, .L22
+ 618              	.LVL40:
+ 619              		.loc 4 78 9 is_stmt 1 view .LVU151
+ 620              		.loc 4 78 20 is_stmt 0 view .LVU152
+ 621 0024 80ED0A0A 		vstr.32	s0, [r0, #40]
+ 622              	.LVL41:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 18
 
 
- 455              		.p2align 2,,3
- 456              		.global	_ZN5voice11set_releaseEf
- 457              		.syntax unified
- 458              		.thumb
- 459              		.thumb_func
- 460              		.fpu fpv5-d16
- 462              	_ZN5voice11set_releaseEf:
- 463              	.LVL31:
- 464              	.LFB3682:
-  46:voice.cpp     **** 
-  47:voice.cpp     **** void voice::set_release(float time)
-  48:voice.cpp     **** {
- 465              		.loc 1 48 1 is_stmt 1 view -0
- 466              		.cfi_startproc
- 467              		@ args = 0, pretend = 0, frame = 0
- 468              		@ frame_needed = 0, uses_anonymous_args = 0
-  49:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
- 469              		.loc 1 49 5 view .LVU106
-  48:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
- 470              		.loc 1 48 1 is_stmt 0 view .LVU107
- 471 0000 10B5     		push	{r4, lr}
- 472              		.cfi_def_cfa_offset 8
- 473              		.cfi_offset 4, -8
- 474              		.cfi_offset 14, -4
- 475              		.loc 1 49 16 view .LVU108
- 476 0002 DFED0B0A 		vldr.32	s1, .L22
-  48:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
- 477              		.loc 1 48 1 view .LVU109
- 478 0006 0446     		mov	r4, r0
- 479              		.loc 1 49 16 view .LVU110
- 480 0008 FFF7FEFF 		bl	powf
- 481              	.LVL32:
-  50:voice.cpp     ****     env_.SetReleaseTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 482              		.loc 1 50 5 is_stmt 1 view .LVU111
- 483              	.LBB86:
- 484              	.LBI86:
+ 623              		.loc 4 78 20 view .LVU153
+ 624              	.LBE136:
+ 625              	.LBE137:
+ 626              		.loc 1 49 1 view .LVU154
+ 627 0028 7047     		bx	lr
+ 628              	.L23:
+ 629 002a 00BF     		.align	2
+ 630              	.L22:
+ 631 002c 0AD723BC 		.word	-1138501878
+ 632              		.cfi_endproc
+ 633              	.LFE3681:
+ 635              		.section	.text._ZN5voice11set_releaseEf,"ax",%progbits
+ 636              		.align	1
+ 637              		.p2align 2,,3
+ 638              		.global	_ZN5voice11set_releaseEf
+ 639              		.syntax unified
+ 640              		.thumb
+ 641              		.thumb_func
+ 642              		.fpu fpv5-d16
+ 644              	_ZN5voice11set_releaseEf:
+ 645              	.LVL42:
+ 646              	.LFB3682:
+  50:voice.cpp     **** 
+  51:voice.cpp     **** void voice::set_release(float time)
+  52:voice.cpp     **** {
+ 647              		.loc 1 52 1 is_stmt 1 view -0
+ 648              		.cfi_startproc
+ 649              		@ args = 0, pretend = 0, frame = 0
+ 650              		@ frame_needed = 0, uses_anonymous_args = 0
+  53:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
+ 651              		.loc 1 53 5 view .LVU156
+  52:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
+ 652              		.loc 1 52 1 is_stmt 0 view .LVU157
+ 653 0000 10B5     		push	{r4, lr}
+ 654              		.cfi_def_cfa_offset 8
+ 655              		.cfi_offset 4, -8
+ 656              		.cfi_offset 14, -4
+ 657              		.loc 1 53 16 view .LVU158
+ 658 0002 DFED0B0A 		vldr.32	s1, .L26
+  52:voice.cpp     ****     time = powf(time, 3.3)*(SEGMENT_MAX - SEGMENT_MIN);
+ 659              		.loc 1 52 1 view .LVU159
+ 660 0006 0446     		mov	r4, r0
+ 661              		.loc 1 53 16 view .LVU160
+ 662 0008 FFF7FEFF 		bl	powf
+ 663              	.LVL43:
+  54:voice.cpp     ****     env_.SetReleaseTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 664              		.loc 1 54 5 is_stmt 1 view .LVU161
+ 665              	.LBB138:
+ 666              	.LBI138:
   64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 485              		.loc 2 64 14 view .LVU112
- 486              	.LBE86:
- 487              		.loc 2 66 5 view .LVU113
- 488              	.LBB99:
- 489              	.LBB87:
- 490              	.LBI87:
+ 667              		.loc 3 64 14 view .LVU162
+ 668              	.LBE138:
+ 669              		.loc 3 66 5 view .LVU163
+ 670              	.LBB151:
+ 671              	.LBB139:
+ 672              	.LBI139:
   40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 491              		.loc 2 40 14 view .LVU114
- 492              	.LBB88:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 19
+
+
+ 673              		.loc 3 40 14 view .LVU164
+ 674              	.LBB140:
   42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 493              		.loc 2 42 5 view .LVU115
+ 675              		.loc 3 42 5 view .LVU165
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 494              		.loc 2 44 5 view .LVU116
- 495              	.LBE88:
- 496              	.LBE87:
- 497              	.LBE99:
-  49:voice.cpp     ****     env_.SetReleaseTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 498              		.loc 1 49 10 is_stmt 0 view .LVU117
- 499 000c DFED096A 		vldr.32	s13, .L22+4
- 500              	.LBB100:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 14
-
-
- 501              	.LBB91:
- 502              	.LBB92:
+ 676              		.loc 3 44 5 view .LVU166
+ 677              	.LBE140:
+ 678              	.LBE139:
+ 679              	.LBE151:
+  53:voice.cpp     ****     env_.SetReleaseTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 680              		.loc 1 53 10 is_stmt 0 view .LVU167
+ 681 000c DFED096A 		vldr.32	s13, .L26+4
+ 682              	.LBB152:
+ 683              	.LBB143:
+ 684              	.LBB144:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 503              		.loc 2 55 5 view .LVU118
- 504 0010 F2EE047A 		vmov.f32	s15, #1.0e+1
- 505              	.LBE92:
- 506              	.LBE91:
- 507              	.LBB95:
- 508              	.LBB89:
+ 685              		.loc 3 55 5 view .LVU168
+ 686 0010 F2EE047A 		vmov.f32	s15, #1.0e+1
+ 687              	.LBE144:
+ 688              	.LBE143:
+ 689              	.LBB147:
+ 690              	.LBB141:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 509              		.loc 2 44 5 view .LVU119
- 510 0014 9FED087A 		vldr.32	s14, .L22+8
- 511              	.LBE89:
- 512              	.LBE95:
- 513              	.LBE100:
-  49:voice.cpp     ****     env_.SetReleaseTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
- 514              		.loc 1 49 10 view .LVU120
- 515 0018 20EE260A 		vmul.f32	s0, s0, s13
- 516              	.LVL33:
- 517              		.loc 1 50 24 view .LVU121
- 518 001c 04F11C00 		add	r0, r4, #28
- 519              	.LBB101:
- 520              	.LBB96:
- 521              	.LBB90:
+ 691              		.loc 3 44 5 view .LVU169
+ 692 0014 9FED087A 		vldr.32	s14, .L26+8
+ 693              	.LBE141:
+ 694              	.LBE147:
+ 695              	.LBE152:
+  53:voice.cpp     ****     env_.SetReleaseTime(fclamp(time, SEGMENT_MIN, SEGMENT_MAX));
+ 696              		.loc 1 53 10 view .LVU170
+ 697 0018 20EE260A 		vmul.f32	s0, s0, s13
+ 698              	.LVL44:
+ 699              		.loc 1 54 24 view .LVU171
+ 700 001c 04F12800 		add	r0, r4, #40
+ 701              	.LBB153:
+ 702              	.LBB148:
+ 703              	.LBB142:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 522              		.loc 2 44 5 view .LVU122
- 523              		.syntax unified
- 524              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 525 0020 80FE070A 		vmaxnm.f32 s0, s0, s14
- 526              	@ 0 "" 2
- 527              	.LVL34:
+ 704              		.loc 3 44 5 view .LVU172
+ 705              		.syntax unified
+ 706              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 707 0020 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 708              	@ 0 "" 2
+ 709              	.LVL45:
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 528              		.loc 2 48 5 is_stmt 1 view .LVU123
+ 710              		.loc 3 48 5 is_stmt 1 view .LVU173
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 529              		.loc 2 48 5 is_stmt 0 view .LVU124
- 530              		.thumb
- 531              		.syntax unified
- 532              	.LBE90:
- 533              	.LBE96:
- 534              	.LBB97:
- 535              	.LBI91:
+ 711              		.loc 3 48 5 is_stmt 0 view .LVU174
+ 712              		.thumb
+ 713              		.syntax unified
+ 714              	.LBE142:
+ 715              	.LBE148:
+ 716              	.LBB149:
+ 717              	.LBI143:
   51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 536              		.loc 2 51 14 is_stmt 1 view .LVU125
- 537              	.LBB93:
+ 718              		.loc 3 51 14 is_stmt 1 view .LVU175
+ 719              	.LBB145:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 20
+
+
   53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 538              		.loc 2 53 5 view .LVU126
+ 720              		.loc 3 53 5 view .LVU176
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 539              		.loc 2 55 5 view .LVU127
- 540              	.LBE93:
- 541              	.LBE97:
- 542              	.LBE101:
-  51:voice.cpp     **** }
- 543              		.loc 1 51 1 is_stmt 0 view .LVU128
- 544 0024 BDE81040 		pop	{r4, lr}
- 545              		.cfi_restore 14
- 546              		.cfi_restore 4
- 547              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 15
-
-
- 548              	.LVL35:
- 549              	.LBB102:
- 550              	.LBB98:
- 551              	.LBB94:
+ 721              		.loc 3 55 5 view .LVU177
+ 722              	.LBE145:
+ 723              	.LBE149:
+ 724              	.LBE153:
+  55:voice.cpp     **** }
+ 725              		.loc 1 55 1 is_stmt 0 view .LVU178
+ 726 0024 BDE81040 		pop	{r4, lr}
+ 727              		.cfi_restore 14
+ 728              		.cfi_restore 4
+ 729              		.cfi_def_cfa_offset 0
+ 730              	.LVL46:
+ 731              	.LBB154:
+ 732              	.LBB150:
+ 733              	.LBB146:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 552              		.loc 2 55 5 view .LVU129
- 553              		.syntax unified
- 554              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 555 0028 80FE670A 		vminnm.f32 s0, s0, s15
- 556              	@ 0 "" 2
- 557              	.LVL36:
+ 734              		.loc 3 55 5 view .LVU179
+ 735              		.syntax unified
+ 736              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 737 0028 80FE670A 		vminnm.f32 s0, s0, s15
+ 738              	@ 0 "" 2
+ 739              	.LVL47:
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 558              		.loc 2 59 5 is_stmt 1 view .LVU130
+ 740              		.loc 3 59 5 is_stmt 1 view .LVU180
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 559              		.loc 2 59 5 is_stmt 0 view .LVU131
- 560              		.thumb
- 561              		.syntax unified
- 562              	.LBE94:
- 563              	.LBE98:
- 564              	.LBE102:
-  50:voice.cpp     **** }
- 565              		.loc 1 50 24 view .LVU132
- 566 002c FFF7FEBF 		b	_ZN7daisysp4Adsr14SetReleaseTimeEf
- 567              	.LVL37:
- 568              	.L23:
-  50:voice.cpp     **** }
- 569              		.loc 1 50 24 view .LVU133
- 570              		.align	2
- 571              	.L22:
- 572 0030 33335340 		.word	1079194419
- 573 0034 CFF71F41 		.word	1092614095
- 574 0038 6F12033B 		.word	990057071
- 575              		.cfi_endproc
- 576              	.LFE3682:
- 578              		.section	.text._ZN5voice8set_gateEb,"ax",%progbits
- 579              		.align	1
- 580              		.p2align 2,,3
- 581              		.global	_ZN5voice8set_gateEb
- 582              		.syntax unified
- 583              		.thumb
- 584              		.thumb_func
- 585              		.fpu fpv5-d16
- 587              	_ZN5voice8set_gateEb:
- 588              	.LVL38:
- 589              	.LFB3683:
-  52:voice.cpp     **** 
-  53:voice.cpp     **** void voice::set_gate(bool gate)
-  54:voice.cpp     **** {
- 590              		.loc 1 54 1 is_stmt 1 view -0
- 591              		.cfi_startproc
- 592              		@ args = 0, pretend = 0, frame = 0
- 593              		@ frame_needed = 0, uses_anonymous_args = 0
- 594              		@ link register save eliminated.
-  55:voice.cpp     ****     gate_ = gate;
- 595              		.loc 1 55 5 view .LVU135
- 596              		.loc 1 55 11 is_stmt 0 view .LVU136
- 597 0000 0176     		strb	r1, [r0, #24]
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 16
+ 741              		.loc 3 59 5 is_stmt 0 view .LVU181
+ 742              		.thumb
+ 743              		.syntax unified
+ 744              	.LBE146:
+ 745              	.LBE150:
+ 746              	.LBE154:
+  54:voice.cpp     **** }
+ 747              		.loc 1 54 24 view .LVU182
+ 748 002c FFF7FEBF 		b	_ZN7daisysp4Adsr14SetReleaseTimeEf
+ 749              	.LVL48:
+ 750              	.L27:
+  54:voice.cpp     **** }
+ 751              		.loc 1 54 24 view .LVU183
+ 752              		.align	2
+ 753              	.L26:
+ 754 0030 33335340 		.word	1079194419
+ 755 0034 CFF71F41 		.word	1092614095
+ 756 0038 6F12033B 		.word	990057071
+ 757              		.cfi_endproc
+ 758              	.LFE3682:
+ 760              		.section	.text._ZN5voice8set_gateEb,"ax",%progbits
+ 761              		.align	1
+ 762              		.p2align 2,,3
+ 763              		.global	_ZN5voice8set_gateEb
+ 764              		.syntax unified
+ 765              		.thumb
+ 766              		.thumb_func
+ 767              		.fpu fpv5-d16
+ 769              	_ZN5voice8set_gateEb:
+ 770              	.LVL49:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 21
 
 
-  56:voice.cpp     **** }
- 598              		.loc 1 56 1 view .LVU137
- 599 0002 7047     		bx	lr
- 600              		.cfi_endproc
- 601              	.LFE3683:
- 603              		.section	.text._ZN5voice8get_gateEv,"ax",%progbits
- 604              		.align	1
- 605              		.p2align 2,,3
- 606              		.global	_ZN5voice8get_gateEv
- 607              		.syntax unified
- 608              		.thumb
- 609              		.thumb_func
- 610              		.fpu fpv5-d16
- 612              	_ZN5voice8get_gateEv:
- 613              	.LVL39:
- 614              	.LFB3684:
-  57:voice.cpp     **** 
-  58:voice.cpp     **** bool voice::get_gate()
-  59:voice.cpp     **** {
- 615              		.loc 1 59 1 is_stmt 1 view -0
- 616              		.cfi_startproc
- 617              		@ args = 0, pretend = 0, frame = 0
- 618              		@ frame_needed = 0, uses_anonymous_args = 0
- 619              		@ link register save eliminated.
-  60:voice.cpp     ****     return gate_;
- 620              		.loc 1 60 5 view .LVU139
-  61:voice.cpp     **** }
- 621              		.loc 1 61 1 is_stmt 0 view .LVU140
- 622 0000 007E     		ldrb	r0, [r0, #24]	@ zero_extendqisi2
- 623              	.LVL40:
- 624              		.loc 1 61 1 view .LVU141
- 625 0002 7047     		bx	lr
- 626              		.cfi_endproc
- 627              	.LFE3684:
- 629              		.section	.text._ZN5voice14set_env_amountEf,"ax",%progbits
- 630              		.align	1
- 631              		.p2align 2,,3
- 632              		.global	_ZN5voice14set_env_amountEf
- 633              		.syntax unified
- 634              		.thumb
- 635              		.thumb_func
- 636              		.fpu fpv5-d16
- 638              	_ZN5voice14set_env_amountEf:
- 639              	.LVL41:
- 640              	.LFB3685:
-  62:voice.cpp     **** 
-  63:voice.cpp     **** void voice::set_env_amount(float amount)
-  64:voice.cpp     **** {
- 641              		.loc 1 64 1 is_stmt 1 view -0
- 642              		.cfi_startproc
- 643              		@ args = 0, pretend = 0, frame = 0
- 644              		@ frame_needed = 0, uses_anonymous_args = 0
- 645              		@ link register save eliminated.
-  65:voice.cpp     ****     env_amount_ = amount;
- 646              		.loc 1 65 5 view .LVU143
- 647              		.loc 1 65 17 is_stmt 0 view .LVU144
- 648 0000 80ED010A 		vstr.32	s0, [r0, #4]
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 17
+ 771              	.LFB3683:
+  56:voice.cpp     **** 
+  57:voice.cpp     **** void voice::set_gate(bool gate)
+  58:voice.cpp     **** {
+ 772              		.loc 1 58 1 is_stmt 1 view -0
+ 773              		.cfi_startproc
+ 774              		@ args = 0, pretend = 0, frame = 0
+ 775              		@ frame_needed = 0, uses_anonymous_args = 0
+ 776              		@ link register save eliminated.
+  59:voice.cpp     ****     gate_ = gate;
+ 777              		.loc 1 59 5 view .LVU185
+ 778              		.loc 1 59 11 is_stmt 0 view .LVU186
+ 779 0000 80F82410 		strb	r1, [r0, #36]
+  60:voice.cpp     **** }
+ 780              		.loc 1 60 1 view .LVU187
+ 781 0004 7047     		bx	lr
+ 782              		.cfi_endproc
+ 783              	.LFE3683:
+ 785 0006 00BF     		.section	.text._ZN5voice8get_gateEv,"ax",%progbits
+ 786              		.align	1
+ 787              		.p2align 2,,3
+ 788              		.global	_ZN5voice8get_gateEv
+ 789              		.syntax unified
+ 790              		.thumb
+ 791              		.thumb_func
+ 792              		.fpu fpv5-d16
+ 794              	_ZN5voice8get_gateEv:
+ 795              	.LVL50:
+ 796              	.LFB3684:
+  61:voice.cpp     **** 
+  62:voice.cpp     **** bool voice::get_gate()
+  63:voice.cpp     **** {
+ 797              		.loc 1 63 1 is_stmt 1 view -0
+ 798              		.cfi_startproc
+ 799              		@ args = 0, pretend = 0, frame = 0
+ 800              		@ frame_needed = 0, uses_anonymous_args = 0
+ 801              		@ link register save eliminated.
+  64:voice.cpp     ****     return gate_;
+ 802              		.loc 1 64 5 view .LVU189
+  65:voice.cpp     **** }
+ 803              		.loc 1 65 1 is_stmt 0 view .LVU190
+ 804 0000 90F82400 		ldrb	r0, [r0, #36]	@ zero_extendqisi2
+ 805              	.LVL51:
+ 806              		.loc 1 65 1 view .LVU191
+ 807 0004 7047     		bx	lr
+ 808              		.cfi_endproc
+ 809              	.LFE3684:
+ 811 0006 00BF     		.section	.text._ZN5voice14set_env_amountEf,"ax",%progbits
+ 812              		.align	1
+ 813              		.p2align 2,,3
+ 814              		.global	_ZN5voice14set_env_amountEf
+ 815              		.syntax unified
+ 816              		.thumb
+ 817              		.thumb_func
+ 818              		.fpu fpv5-d16
+ 820              	_ZN5voice14set_env_amountEf:
+ 821              	.LVL52:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 22
 
 
-  66:voice.cpp     **** }
- 649              		.loc 1 66 1 view .LVU145
- 650 0004 7047     		bx	lr
- 651              		.cfi_endproc
- 652              	.LFE3685:
- 654 0006 00BF     		.section	.text._ZN5voice13get_env_valueEv,"ax",%progbits
- 655              		.align	1
- 656              		.p2align 2,,3
- 657              		.global	_ZN5voice13get_env_valueEv
- 658              		.syntax unified
- 659              		.thumb
- 660              		.thumb_func
- 661              		.fpu fpv5-d16
- 663              	_ZN5voice13get_env_valueEv:
- 664              	.LVL42:
- 665              	.LFB3686:
-  67:voice.cpp     **** 
-  68:voice.cpp     **** float voice::get_env_value()
-  69:voice.cpp     **** {
- 666              		.loc 1 69 1 is_stmt 1 view -0
- 667              		.cfi_startproc
- 668              		@ args = 0, pretend = 0, frame = 0
- 669              		@ frame_needed = 0, uses_anonymous_args = 0
- 670              		@ link register save eliminated.
-  70:voice.cpp     ****     return env_value_;
- 671              		.loc 1 70 5 view .LVU147
-  71:voice.cpp     **** }
- 672              		.loc 1 71 1 is_stmt 0 view .LVU148
- 673 0000 90ED000A 		vldr.32	s0, [r0]
- 674 0004 7047     		bx	lr
- 675              		.cfi_endproc
- 676              	.LFE3686:
- 678              		.section	.text._ZN5voice10set_volumeEf,"ax",%progbits
- 679              		.align	1
- 680              		.p2align 2,,3
- 681              		.global	_ZN5voice10set_volumeEf
- 682              		.syntax unified
- 683              		.thumb
- 684              		.thumb_func
- 685              		.fpu fpv5-d16
- 687              	_ZN5voice10set_volumeEf:
- 688              	.LVL43:
- 689              	.LFB3687:
-  72:voice.cpp     **** 
-  73:voice.cpp     **** void voice::set_volume(float volume)
-  74:voice.cpp     **** {
- 690              		.loc 1 74 1 is_stmt 1 view -0
- 691              		.cfi_startproc
- 692              		@ args = 0, pretend = 0, frame = 0
- 693              		@ frame_needed = 0, uses_anonymous_args = 0
- 694              		@ link register save eliminated.
-  75:voice.cpp     ****     volume_ = fclamp(volume * 1.1f - 0.05f, 0.0f, 1.0f);   
- 695              		.loc 1 75 5 view .LVU150
- 696              		.loc 1 75 21 is_stmt 0 view .LVU151
- 697 0000 9FED086A 		vldr.32	s12, .L29
- 698              	.LBB103:
- 699              	.LBB104:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 18
+ 822              	.LFB3685:
+  66:voice.cpp     **** 
+  67:voice.cpp     **** void voice::set_env_amount(float amount)
+  68:voice.cpp     **** {
+ 823              		.loc 1 68 1 is_stmt 1 view -0
+ 824              		.cfi_startproc
+ 825              		@ args = 0, pretend = 0, frame = 0
+ 826              		@ frame_needed = 0, uses_anonymous_args = 0
+ 827              		@ link register save eliminated.
+  69:voice.cpp     ****     env_amount_ = amount;
+ 828              		.loc 1 69 5 view .LVU193
+ 829              		.loc 1 69 17 is_stmt 0 view .LVU194
+ 830 0000 80ED010A 		vstr.32	s0, [r0, #4]
+  70:voice.cpp     **** }
+ 831              		.loc 1 70 1 view .LVU195
+ 832 0004 7047     		bx	lr
+ 833              		.cfi_endproc
+ 834              	.LFE3685:
+ 836 0006 00BF     		.section	.text._ZN5voice13get_env_valueEv,"ax",%progbits
+ 837              		.align	1
+ 838              		.p2align 2,,3
+ 839              		.global	_ZN5voice13get_env_valueEv
+ 840              		.syntax unified
+ 841              		.thumb
+ 842              		.thumb_func
+ 843              		.fpu fpv5-d16
+ 845              	_ZN5voice13get_env_valueEv:
+ 846              	.LVL53:
+ 847              	.LFB3686:
+  71:voice.cpp     **** 
+  72:voice.cpp     **** float voice::get_env_value()
+  73:voice.cpp     **** {
+ 848              		.loc 1 73 1 is_stmt 1 view -0
+ 849              		.cfi_startproc
+ 850              		@ args = 0, pretend = 0, frame = 0
+ 851              		@ frame_needed = 0, uses_anonymous_args = 0
+ 852              		@ link register save eliminated.
+  74:voice.cpp     ****     return env_value_;
+ 853              		.loc 1 74 5 view .LVU197
+  75:voice.cpp     **** }
+ 854              		.loc 1 75 1 is_stmt 0 view .LVU198
+ 855 0000 90ED000A 		vldr.32	s0, [r0]
+ 856 0004 7047     		bx	lr
+ 857              		.cfi_endproc
+ 858              	.LFE3686:
+ 860              		.section	.text._ZN5voice10set_volumeEf,"ax",%progbits
+ 861              		.align	1
+ 862              		.p2align 2,,3
+ 863              		.global	_ZN5voice10set_volumeEf
+ 864              		.syntax unified
+ 865              		.thumb
+ 866              		.thumb_func
+ 867              		.fpu fpv5-d16
+ 869              	_ZN5voice10set_volumeEf:
+ 870              	.LVL54:
+ 871              	.LFB3687:
+  76:voice.cpp     **** 
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 23
 
 
- 700              	.LBB105:
+  77:voice.cpp     **** void voice::set_volume(float volume)
+  78:voice.cpp     **** {
+ 872              		.loc 1 78 1 is_stmt 1 view -0
+ 873              		.cfi_startproc
+ 874              		@ args = 0, pretend = 0, frame = 0
+ 875              		@ frame_needed = 0, uses_anonymous_args = 0
+ 876              		@ link register save eliminated.
+  79:voice.cpp     ****     volume_ = fclamp(volume * 1.1f - 0.05f, 0.0f, 1.0f);   
+ 877              		.loc 1 79 5 view .LVU200
+ 878              		.loc 1 79 21 is_stmt 0 view .LVU201
+ 879 0000 9FED086A 		vldr.32	s12, .L33
+ 880              	.LBB155:
+ 881              	.LBB156:
+ 882              	.LBB157:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 701              		.loc 2 55 5 view .LVU152
- 702 0004 B7EE007A 		vmov.f32	s14, #1.0e+0
- 703              	.LBE105:
- 704              	.LBE104:
- 705              	.LBE103:
- 706              		.loc 1 75 21 view .LVU153
- 707 0008 DFED077A 		vldr.32	s15, .L29+4
- 708              	.LBB112:
- 709              	.LBB107:
- 710              	.LBB108:
+ 883              		.loc 3 55 5 view .LVU202
+ 884 0004 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 885              	.LBE157:
+ 886              	.LBE156:
+ 887              	.LBE155:
+ 888              		.loc 1 79 21 view .LVU203
+ 889 0008 DFED077A 		vldr.32	s15, .L33+4
+ 890              	.LBB164:
+ 891              	.LBB159:
+ 892              	.LBB160:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 711              		.loc 2 44 5 view .LVU154
- 712 000c DFED076A 		vldr.32	s13, .L29+8
- 713              	.LBE108:
- 714              	.LBE107:
- 715              	.LBE112:
- 716              		.loc 1 75 21 view .LVU155
- 717 0010 E0EE067A 		vfma.f32	s15, s0, s12
- 718              	.LVL44:
- 719              	.LBB113:
- 720              	.LBI103:
+ 893              		.loc 3 44 5 view .LVU204
+ 894 000c DFED076A 		vldr.32	s13, .L33+8
+ 895              	.LBE160:
+ 896              	.LBE159:
+ 897              	.LBE164:
+ 898              		.loc 1 79 21 view .LVU205
+ 899 0010 E0EE067A 		vfma.f32	s15, s0, s12
+ 900              	.LVL55:
+ 901              	.LBB165:
+ 902              	.LBI155:
   64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 721              		.loc 2 64 14 is_stmt 1 view .LVU156
- 722              	.LBE113:
- 723              		.loc 2 66 5 view .LVU157
- 724              	.LBB114:
- 725              	.LBB110:
- 726              	.LBI107:
+ 903              		.loc 3 64 14 is_stmt 1 view .LVU206
+ 904              	.LBE165:
+ 905              		.loc 3 66 5 view .LVU207
+ 906              	.LBB166:
+ 907              	.LBB162:
+ 908              	.LBI159:
   40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 727              		.loc 2 40 14 view .LVU158
- 728              	.LBB109:
+ 909              		.loc 3 40 14 view .LVU208
+ 910              	.LBB161:
   42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 729              		.loc 2 42 5 view .LVU159
+ 911              		.loc 3 42 5 view .LVU209
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 730              		.loc 2 44 5 view .LVU160
- 731              		.syntax unified
- 732              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 733 0014 C7FEA67A 		vmaxnm.f32 s15, s15, s13
- 734              	@ 0 "" 2
- 735              	.LVL45:
+ 912              		.loc 3 44 5 view .LVU210
+ 913              		.syntax unified
+ 914              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 915 0014 C7FEA67A 		vmaxnm.f32 s15, s15, s13
+ 916              	@ 0 "" 2
+ 917              	.LVL56:
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 736              		.loc 2 48 5 view .LVU161
+ 918              		.loc 3 48 5 view .LVU211
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 24
+
+
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 737              		.loc 2 48 5 is_stmt 0 view .LVU162
- 738              		.thumb
- 739              		.syntax unified
- 740              	.LBE109:
- 741              	.LBE110:
- 742              	.LBB111:
- 743              	.LBI104:
+ 919              		.loc 3 48 5 is_stmt 0 view .LVU212
+ 920              		.thumb
+ 921              		.syntax unified
+ 922              	.LBE161:
+ 923              	.LBE162:
+ 924              	.LBB163:
+ 925              	.LBI156:
   51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 744              		.loc 2 51 14 is_stmt 1 view .LVU163
- 745              	.LBB106:
+ 926              		.loc 3 51 14 is_stmt 1 view .LVU213
+ 927              	.LBB158:
   53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 746              		.loc 2 53 5 view .LVU164
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 19
-
-
+ 928              		.loc 3 53 5 view .LVU214
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 747              		.loc 2 55 5 view .LVU165
- 748              		.syntax unified
- 749              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 750 0018 C7FEC77A 		vminnm.f32 s15, s15, s14
- 751              	@ 0 "" 2
- 752              	.LVL46:
+ 929              		.loc 3 55 5 view .LVU215
+ 930              		.syntax unified
+ 931              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 932 0018 C7FEC77A 		vminnm.f32 s15, s15, s14
+ 933              	@ 0 "" 2
+ 934              	.LVL57:
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 753              		.loc 2 59 5 view .LVU166
+ 935              		.loc 3 59 5 view .LVU216
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 754              		.loc 2 59 5 is_stmt 0 view .LVU167
- 755              		.thumb
- 756              		.syntax unified
- 757              	.LBE106:
- 758              	.LBE111:
- 759              	.LBE114:
- 760              		.loc 1 75 13 view .LVU168
- 761 001c C0ED027A 		vstr.32	s15, [r0, #8]
-  76:voice.cpp     **** }
- 762              		.loc 1 76 1 view .LVU169
- 763 0020 7047     		bx	lr
- 764              	.L30:
- 765 0022 00BF     		.align	2
- 766              	.L29:
- 767 0024 CDCC8C3F 		.word	1066192077
- 768 0028 CDCC4CBD 		.word	-1119040307
- 769 002c 00000000 		.word	0
- 770              		.cfi_endproc
- 771              	.LFE3687:
- 773              		.section	.text._ZN5voice12set_feedbackEf,"ax",%progbits
- 774              		.align	1
- 775              		.p2align 2,,3
- 776              		.global	_ZN5voice12set_feedbackEf
- 777              		.syntax unified
- 778              		.thumb
- 779              		.thumb_func
- 780              		.fpu fpv5-d16
- 782              	_ZN5voice12set_feedbackEf:
- 783              	.LVL47:
- 784              	.LFB3688:
-  77:voice.cpp     **** 
-  78:voice.cpp     **** void voice::set_feedback(float feedback)
-  79:voice.cpp     **** {
- 785              		.loc 1 79 1 is_stmt 1 view -0
- 786              		.cfi_startproc
- 787              		@ args = 0, pretend = 0, frame = 0
- 788              		@ frame_needed = 0, uses_anonymous_args = 0
- 789              		@ link register save eliminated.
-  80:voice.cpp     ****     feedback = fclamp(feedback * 1.1f - 0.05f, 0.0f, 0.99f);
- 790              		.loc 1 80 5 view .LVU171
- 791              		.loc 1 80 22 is_stmt 0 view .LVU172
- 792 0000 9FED086A 		vldr.32	s12, .L32
- 793 0004 DFED087A 		vldr.32	s15, .L32+4
- 794              	.LBB115:
- 795              	.LBB116:
- 796              	.LBB117:
+ 936              		.loc 3 59 5 is_stmt 0 view .LVU217
+ 937              		.thumb
+ 938              		.syntax unified
+ 939              	.LBE158:
+ 940              	.LBE163:
+ 941              	.LBE166:
+ 942              		.loc 1 79 13 view .LVU218
+ 943 001c C0ED027A 		vstr.32	s15, [r0, #8]
+  80:voice.cpp     **** }
+ 944              		.loc 1 80 1 view .LVU219
+ 945 0020 7047     		bx	lr
+ 946              	.L34:
+ 947 0022 00BF     		.align	2
+ 948              	.L33:
+ 949 0024 CDCC8C3F 		.word	1066192077
+ 950 0028 CDCC4CBD 		.word	-1119040307
+ 951 002c 00000000 		.word	0
+ 952              		.cfi_endproc
+ 953              	.LFE3687:
+ 955              		.section	.text._ZN5voice12set_feedbackEf,"ax",%progbits
+ 956              		.align	1
+ 957              		.p2align 2,,3
+ 958              		.global	_ZN5voice12set_feedbackEf
+ 959              		.syntax unified
+ 960              		.thumb
+ 961              		.thumb_func
+ 962              		.fpu fpv5-d16
+ 964              	_ZN5voice12set_feedbackEf:
+ 965              	.LVL58:
+ 966              	.LFB3688:
+  81:voice.cpp     **** 
+  82:voice.cpp     **** void voice::set_feedback(float feedback)
+  83:voice.cpp     **** {
+ 967              		.loc 1 83 1 is_stmt 1 view -0
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 25
+
+
+ 968              		.cfi_startproc
+ 969              		@ args = 0, pretend = 0, frame = 0
+ 970              		@ frame_needed = 0, uses_anonymous_args = 0
+ 971              		@ link register save eliminated.
+  84:voice.cpp     ****     feedback = fclamp(feedback * 1.1f - 0.05f, 0.0f, 0.99f);
+ 972              		.loc 1 84 5 view .LVU221
+ 973              		.loc 1 84 22 is_stmt 0 view .LVU222
+ 974 0000 9FED097A 		vldr.32	s14, .L36
+ 975 0004 DFED097A 		vldr.32	s15, .L36+4
+ 976              	.LBB167:
+ 977              	.LBB168:
+ 978              	.LBB169:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 20
-
-
- 797              		.loc 2 44 5 view .LVU173
- 798 0008 DFED086A 		vldr.32	s13, .L32+8
- 799              	.LBE117:
- 800              	.LBE116:
- 801              	.LBE115:
- 802              		.loc 1 80 22 view .LVU174
- 803 000c E0EE067A 		vfma.f32	s15, s0, s12
- 804              	.LVL48:
- 805              	.LBB126:
- 806              	.LBI115:
+ 979              		.loc 3 44 5 view .LVU223
+ 980 0008 DFED096A 		vldr.32	s13, .L36+8
+ 981              	.LBE169:
+ 982              	.LBE168:
+ 983              	.LBE167:
+ 984              		.loc 1 84 22 view .LVU224
+ 985 000c E0EE077A 		vfma.f32	s15, s0, s14
+ 986              	.LVL59:
+ 987              	.LBB178:
+ 988              	.LBI167:
   64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 807              		.loc 2 64 14 is_stmt 1 view .LVU175
- 808              	.LBE126:
- 809              		.loc 2 66 5 view .LVU176
- 810              	.LBB127:
- 811              	.LBB120:
- 812              	.LBI116:
+ 989              		.loc 3 64 14 is_stmt 1 view .LVU225
+ 990              	.LBE178:
+ 991              		.loc 3 66 5 view .LVU226
+ 992              	.LBB179:
+ 993              	.LBB172:
+ 994              	.LBI168:
   40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 813              		.loc 2 40 14 view .LVU177
- 814              	.LBB118:
+ 995              		.loc 3 40 14 view .LVU227
+ 996              	.LBB170:
   42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 815              		.loc 2 42 5 view .LVU178
+ 997              		.loc 3 42 5 view .LVU228
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 816              		.loc 2 44 5 view .LVU179
- 817              	.LBE118:
- 818              	.LBE120:
- 819              	.LBB121:
- 820              	.LBB122:
+ 998              		.loc 3 44 5 view .LVU229
+ 999              	.LBE170:
+ 1000              	.LBE172:
+ 1001              	.LBB173:
+ 1002              	.LBB174:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 821              		.loc 2 55 5 is_stmt 0 view .LVU180
- 822 0010 9FED077A 		vldr.32	s14, .L32+12
- 823              	.LBE122:
- 824              	.LBE121:
- 825              	.LBB124:
- 826              	.LBB119:
+ 1003              		.loc 3 55 5 is_stmt 0 view .LVU230
+ 1004 0010 9FED087A 		vldr.32	s14, .L36+12
+ 1005              	.LBE174:
+ 1006              	.LBE173:
+ 1007              	.LBB176:
+ 1008              	.LBB171:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 827              		.loc 2 44 5 view .LVU181
- 828              		.syntax unified
- 829              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 830 0014 C7FEA67A 		vmaxnm.f32 s15, s15, s13
- 831              	@ 0 "" 2
- 832              	.LVL49:
+ 1009              		.loc 3 44 5 view .LVU231
+ 1010              		.syntax unified
+ 1011              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1012 0014 C7FEA67A 		vmaxnm.f32 s15, s15, s13
+ 1013              	@ 0 "" 2
+ 1014              	.LVL60:
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 833              		.loc 2 48 5 is_stmt 1 view .LVU182
+ 1015              		.loc 3 48 5 is_stmt 1 view .LVU232
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 26
+
+
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 834              		.loc 2 48 5 is_stmt 0 view .LVU183
- 835              		.thumb
- 836              		.syntax unified
- 837              	.LBE119:
- 838              	.LBE124:
- 839              	.LBB125:
- 840              	.LBI121:
+ 1016              		.loc 3 48 5 is_stmt 0 view .LVU233
+ 1017              		.thumb
+ 1018              		.syntax unified
+ 1019              	.LBE171:
+ 1020              	.LBE176:
+ 1021              	.LBB177:
+ 1022              	.LBI173:
   51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 841              		.loc 2 51 14 is_stmt 1 view .LVU184
- 842              	.LBB123:
+ 1023              		.loc 3 51 14 is_stmt 1 view .LVU234
+ 1024              	.LBB175:
   53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 843              		.loc 2 53 5 view .LVU185
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 21
-
-
+ 1025              		.loc 3 53 5 view .LVU235
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 844              		.loc 2 55 5 view .LVU186
- 845              		.syntax unified
- 846              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 847 0018 C7FEC77A 		vminnm.f32 s15, s15, s14
- 848              	@ 0 "" 2
- 849              	.LVL50:
+ 1026              		.loc 3 55 5 view .LVU236
+ 1027              		.syntax unified
+ 1028              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1029 0018 C7FEC77A 		vminnm.f32 s15, s15, s14
+ 1030              	@ 0 "" 2
+ 1031              	.LVL61:
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 850              		.loc 2 59 5 view .LVU187
+ 1032              		.loc 3 59 5 view .LVU237
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 851              		.loc 2 59 5 is_stmt 0 view .LVU188
- 852              		.thumb
- 853              		.syntax unified
- 854              	.LBE123:
- 855              	.LBE125:
- 856              	.LBE127:
-  81:voice.cpp     ****     reverb_.SetFeedback(feedback);
- 857              		.loc 1 81 5 is_stmt 1 view .LVU189
- 858              	.LBB128:
- 859              	.LBI128:
- 860              		.file 4 "../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h"
+ 1033              		.loc 3 59 5 is_stmt 0 view .LVU238
+ 1034              		.thumb
+ 1035              		.syntax unified
+ 1036              	.LBE175:
+ 1037              	.LBE177:
+ 1038              	.LBE179:
+  85:voice.cpp     ****     feedback_ = feedback;
+ 1039              		.loc 1 85 5 is_stmt 1 view .LVU239
+ 1040              		.loc 1 85 15 is_stmt 0 view .LVU240
+ 1041 001c C0ED067A 		vstr.32	s15, [r0, #24]
+  86:voice.cpp     ****     reverb_.SetFeedback(feedback);
+ 1042              		.loc 1 86 5 is_stmt 1 view .LVU241
+ 1043              	.LVL62:
+ 1044              	.LBB180:
+ 1045              	.LBI180:
+ 1046              		.file 5 "../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h"
    1:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** /*
    2:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** Copyright (c) 2023 Electrosmith, Corp, Sean Costello, Istvan Varga, Paul Batchelor
    3:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** 
@@ -1240,6 +1558,9 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   16:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** {
   17:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** /**Delay line for internal reverb use
   18:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** */
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 27
+
+
   19:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** typedef struct
   20:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** {
   21:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     int    write_pos;         /**< write position */
@@ -1258,9 +1579,6 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   34:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** class ReverbSc
   35:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h **** {
   36:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****   public:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 22
-
-
   37:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     ReverbSc() {}
   38:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     ~ReverbSc() {}
   39:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     /** Initializes the reverb module, and sets the sample_rate at which the Process function will 
@@ -1276,265 +1594,517 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 1
   49:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****         \param fb - sets reverb time. range: 0.0 to 1.0
   50:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     */
   51:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     inline void SetFeedback(const float &fb) { feedback_ = fb; }
- 861              		.loc 4 51 17 view .LVU190
- 862              	.LBB129:
- 863              		.loc 4 51 48 view .LVU191
- 864              		.loc 4 51 58 is_stmt 0 view .LVU192
- 865 001c C0ED137A 		vstr.32	s15, [r0, #76]
- 866              	.LVL51:
- 867              		.loc 4 51 58 view .LVU193
- 868              	.LBE129:
- 869              	.LBE128:
-  82:voice.cpp     **** }
- 870              		.loc 1 82 1 view .LVU194
- 871 0020 7047     		bx	lr
- 872              	.L33:
- 873 0022 00BF     		.align	2
- 874              	.L32:
- 875 0024 CDCC8C3F 		.word	1066192077
- 876 0028 CDCC4CBD 		.word	-1119040307
- 877 002c 00000000 		.word	0
- 878 0030 A4707D3F 		.word	1065185444
- 879              		.cfi_endproc
- 880              	.LFE3688:
- 882              		.section	.text._ZN5voice20set_dampening_filterEf,"ax",%progbits
- 883              		.align	1
- 884              		.p2align 2,,3
- 885              		.global	_ZN5voice20set_dampening_filterEf
- 886              		.syntax unified
- 887              		.thumb
- 888              		.thumb_func
- 889              		.fpu fpv5-d16
- 891              	_ZN5voice20set_dampening_filterEf:
- 892              	.LVL52:
- 893              	.LFB3689:
-  83:voice.cpp     **** 
-  84:voice.cpp     **** void voice::set_dampening_filter(float dampening)
-  85:voice.cpp     **** {  
- 894              		.loc 1 85 1 is_stmt 1 view -0
- 895              		.cfi_startproc
- 896              		@ args = 0, pretend = 0, frame = 0
- 897              		@ frame_needed = 0, uses_anonymous_args = 0
-  86:voice.cpp     ****     dampening = powf(dampening, 3.3f)*(LPF_FREQ_MAX - LPF_FREQ_MIN);
- 898              		.loc 1 86 5 view .LVU196
-  85:voice.cpp     ****     dampening = powf(dampening, 3.3f)*(LPF_FREQ_MAX - LPF_FREQ_MIN);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 23
+ 1047              		.loc 5 51 17 view .LVU242
+ 1048              	.LBB181:
+ 1049              		.loc 5 51 48 view .LVU243
+ 1050              		.loc 5 51 58 is_stmt 0 view .LVU244
+ 1051 0020 C0ED167A 		vstr.32	s15, [r0, #88]
+ 1052              	.LVL63:
+ 1053              		.loc 5 51 58 view .LVU245
+ 1054              	.LBE181:
+ 1055              	.LBE180:
+  87:voice.cpp     **** }
+ 1056              		.loc 1 87 1 view .LVU246
+ 1057 0024 7047     		bx	lr
+ 1058              	.L37:
+ 1059 0026 00BF     		.align	2
+ 1060              	.L36:
+ 1061 0028 CDCC8C3F 		.word	1066192077
+ 1062 002c CDCC4CBD 		.word	-1119040307
+ 1063 0030 00000000 		.word	0
+ 1064 0034 A4707D3F 		.word	1065185444
+ 1065              		.cfi_endproc
+ 1066              	.LFE3688:
+ 1068              		.section	.text._ZN5voice20set_dampening_filterEf,"ax",%progbits
+ 1069              		.align	1
+ 1070              		.p2align 2,,3
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 28
 
 
- 899              		.loc 1 85 1 is_stmt 0 view .LVU197
- 900 0000 10B5     		push	{r4, lr}
- 901              		.cfi_def_cfa_offset 8
- 902              		.cfi_offset 4, -8
- 903              		.cfi_offset 14, -4
- 904              		.loc 1 86 21 view .LVU198
- 905 0002 DFED0A0A 		vldr.32	s1, .L36
-  85:voice.cpp     ****     dampening = powf(dampening, 3.3f)*(LPF_FREQ_MAX - LPF_FREQ_MIN);
- 906              		.loc 1 85 1 view .LVU199
- 907 0006 0446     		mov	r4, r0
- 908              		.loc 1 86 21 view .LVU200
- 909 0008 FFF7FEFF 		bl	powf
- 910              	.LVL53:
-  87:voice.cpp     ****     dampening = fclamp(dampening, LPF_FREQ_MIN, LPF_FREQ_MAX);
- 911              		.loc 1 87 5 is_stmt 1 view .LVU201
- 912              	.LBB130:
- 913              	.LBI130:
+ 1071              		.global	_ZN5voice20set_dampening_filterEf
+ 1072              		.syntax unified
+ 1073              		.thumb
+ 1074              		.thumb_func
+ 1075              		.fpu fpv5-d16
+ 1077              	_ZN5voice20set_dampening_filterEf:
+ 1078              	.LVL64:
+ 1079              	.LFB3689:
+  88:voice.cpp     **** 
+  89:voice.cpp     **** void voice::set_dampening_filter(float dampening)
+  90:voice.cpp     **** {  
+ 1080              		.loc 1 90 1 is_stmt 1 view -0
+ 1081              		.cfi_startproc
+ 1082              		@ args = 0, pretend = 0, frame = 0
+ 1083              		@ frame_needed = 0, uses_anonymous_args = 0
+  91:voice.cpp     ****     dampening = powf(dampening, 3.3f)*(LPF_FREQ_MAX - LPF_FREQ_MIN);
+ 1084              		.loc 1 91 5 view .LVU248
+  90:voice.cpp     ****     dampening = powf(dampening, 3.3f)*(LPF_FREQ_MAX - LPF_FREQ_MIN);
+ 1085              		.loc 1 90 1 is_stmt 0 view .LVU249
+ 1086 0000 10B5     		push	{r4, lr}
+ 1087              		.cfi_def_cfa_offset 8
+ 1088              		.cfi_offset 4, -8
+ 1089              		.cfi_offset 14, -4
+ 1090              		.loc 1 91 21 view .LVU250
+ 1091 0002 DFED0A0A 		vldr.32	s1, .L40
+  90:voice.cpp     ****     dampening = powf(dampening, 3.3f)*(LPF_FREQ_MAX - LPF_FREQ_MIN);
+ 1092              		.loc 1 90 1 view .LVU251
+ 1093 0006 0446     		mov	r4, r0
+ 1094              		.loc 1 91 21 view .LVU252
+ 1095 0008 FFF7FEFF 		bl	powf
+ 1096              	.LVL65:
+  92:voice.cpp     ****     dampening = fclamp(dampening, LPF_FREQ_MIN, LPF_FREQ_MAX);
+ 1097              		.loc 1 92 5 is_stmt 1 view .LVU253
+ 1098              	.LBB182:
+ 1099              	.LBI182:
   64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 914              		.loc 2 64 14 view .LVU202
- 915              	.LBE130:
- 916              		.loc 2 66 5 view .LVU203
- 917              	.LBB141:
- 918              	.LBB131:
- 919              	.LBI131:
+ 1100              		.loc 3 64 14 view .LVU254
+ 1101              	.LBE182:
+ 1102              		.loc 3 66 5 view .LVU255
+ 1103              	.LBB193:
+ 1104              	.LBB183:
+ 1105              	.LBI183:
   40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 920              		.loc 2 40 14 view .LVU204
- 921              	.LBB132:
+ 1106              		.loc 3 40 14 view .LVU256
+ 1107              	.LBB184:
   42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 922              		.loc 2 42 5 view .LVU205
+ 1108              		.loc 3 42 5 view .LVU257
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 923              		.loc 2 44 5 view .LVU206
- 924              	.LBE132:
- 925              	.LBE131:
- 926              	.LBE141:
-  86:voice.cpp     ****     dampening = fclamp(dampening, LPF_FREQ_MIN, LPF_FREQ_MAX);
- 927              		.loc 1 86 38 is_stmt 0 view .LVU207
- 928 000c DFED086A 		vldr.32	s13, .L36+4
- 929              	.LBB142:
- 930              	.LBB135:
- 931              	.LBB133:
+ 1109              		.loc 3 44 5 view .LVU258
+ 1110              	.LBE184:
+ 1111              	.LBE183:
+ 1112              	.LBE193:
+  91:voice.cpp     ****     dampening = fclamp(dampening, LPF_FREQ_MIN, LPF_FREQ_MAX);
+ 1113              		.loc 1 91 38 is_stmt 0 view .LVU259
+ 1114 000c DFED086A 		vldr.32	s13, .L40+4
+ 1115              	.LBB194:
+ 1116              	.LBB187:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 29
+
+
+ 1117              	.LBB185:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 932              		.loc 2 44 5 view .LVU208
- 933 0010 B3EE047A 		vmov.f32	s14, #2.0e+1
- 934              	.LBE133:
- 935              	.LBE135:
- 936              	.LBB136:
- 937              	.LBB137:
+ 1118              		.loc 3 44 5 view .LVU260
+ 1119 0010 B3EE047A 		vmov.f32	s14, #2.0e+1
+ 1120              	.LBE185:
+ 1121              	.LBE187:
+ 1122              	.LBB188:
+ 1123              	.LBB189:
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 938              		.loc 2 55 5 view .LVU209
- 939 0014 DFED077A 		vldr.32	s15, .L36+8
- 940              	.LBE137:
- 941              	.LBE136:
- 942              	.LBE142:
-  86:voice.cpp     ****     dampening = fclamp(dampening, LPF_FREQ_MIN, LPF_FREQ_MAX);
- 943              		.loc 1 86 38 view .LVU210
- 944 0018 20EE260A 		vmul.f32	s0, s0, s13
- 945              	.LVL54:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 24
-
-
- 946              	.LBB143:
- 947              	.LBB139:
- 948              	.LBB134:
+ 1124              		.loc 3 55 5 view .LVU261
+ 1125 0014 DFED077A 		vldr.32	s15, .L40+8
+ 1126              	.LBE189:
+ 1127              	.LBE188:
+ 1128              	.LBE194:
+  91:voice.cpp     ****     dampening = fclamp(dampening, LPF_FREQ_MIN, LPF_FREQ_MAX);
+ 1129              		.loc 1 91 38 view .LVU262
+ 1130 0018 20EE260A 		vmul.f32	s0, s0, s13
+ 1131              	.LVL66:
+ 1132              	.LBB195:
+ 1133              	.LBB191:
+ 1134              	.LBB186:
   44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 949              		.loc 2 44 5 view .LVU211
- 950              		.syntax unified
- 951              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 952 001c 80FE070A 		vmaxnm.f32 s0, s0, s14
- 953              	@ 0 "" 2
- 954              	.LVL55:
+ 1135              		.loc 3 44 5 view .LVU263
+ 1136              		.syntax unified
+ 1137              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1138 001c 80FE070A 		vmaxnm.f32 s0, s0, s14
+ 1139              	@ 0 "" 2
+ 1140              	.LVL67:
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 955              		.loc 2 48 5 is_stmt 1 view .LVU212
+ 1141              		.loc 3 48 5 is_stmt 1 view .LVU264
   48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 956              		.loc 2 48 5 is_stmt 0 view .LVU213
- 957              		.thumb
- 958              		.syntax unified
- 959              	.LBE134:
- 960              	.LBE139:
- 961              	.LBB140:
- 962              	.LBI136:
+ 1142              		.loc 3 48 5 is_stmt 0 view .LVU265
+ 1143              		.thumb
+ 1144              		.syntax unified
+ 1145              	.LBE186:
+ 1146              	.LBE191:
+ 1147              	.LBB192:
+ 1148              	.LBI188:
   51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
- 963              		.loc 2 51 14 is_stmt 1 view .LVU214
- 964              	.LBB138:
+ 1149              		.loc 3 51 14 is_stmt 1 view .LVU266
+ 1150              	.LBB190:
   53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
- 965              		.loc 2 53 5 view .LVU215
+ 1151              		.loc 3 53 5 view .LVU267
   55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
- 966              		.loc 2 55 5 view .LVU216
- 967              		.syntax unified
- 968              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
- 969 0020 80FE670A 		vminnm.f32 s0, s0, s15
- 970              	@ 0 "" 2
- 971              	.LVL56:
+ 1152              		.loc 3 55 5 view .LVU268
+ 1153              		.syntax unified
+ 1154              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1155 0020 80FE670A 		vminnm.f32 s0, s0, s15
+ 1156              	@ 0 "" 2
+ 1157              	.LVL68:
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 972              		.loc 2 59 5 view .LVU217
+ 1158              		.loc 3 59 5 view .LVU269
   59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
- 973              		.loc 2 59 5 is_stmt 0 view .LVU218
- 974              		.thumb
- 975              		.syntax unified
- 976              	.LBE138:
- 977              	.LBE140:
- 978              	.LBE143:
-  88:voice.cpp     ****     reverb_.SetLpFreq(dampening);
- 979              		.loc 1 88 5 is_stmt 1 view .LVU219
- 980              	.LBB144:
- 981              	.LBI144:
+ 1159              		.loc 3 59 5 is_stmt 0 view .LVU270
+ 1160              		.thumb
+ 1161              		.syntax unified
+ 1162              	.LBE190:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 30
+
+
+ 1163              	.LBE192:
+ 1164              	.LBE195:
+  93:voice.cpp     ****     reverb_.SetLpFreq(dampening);
+ 1165              		.loc 1 93 5 is_stmt 1 view .LVU271
+ 1166              	.LBB196:
+ 1167              	.LBI196:
   52:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     /** controls the internal dampening filter's cutoff frequency.
   53:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****         \param freq - low pass frequency. range: 0.0 to sample_rate / 2
   54:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     */
   55:../../../../../DaisyExamples/DaisySP//Source/../DaisySP-LGPL/Source/Effects/reverbsc.h ****     inline void SetLpFreq(const float &freq) { lpfreq_ = freq; }
- 982              		.loc 4 55 17 view .LVU220
- 983              	.LBB145:
- 984              		.loc 4 55 48 view .LVU221
- 985              		.loc 4 55 56 is_stmt 0 view .LVU222
- 986 0024 84ED140A 		vstr.32	s0, [r4, #80]
- 987              	.LVL57:
- 988              		.loc 4 55 56 view .LVU223
- 989              	.LBE145:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 25
+ 1168              		.loc 5 55 17 view .LVU272
+ 1169              	.LBB197:
+ 1170              		.loc 5 55 48 view .LVU273
+ 1171              		.loc 5 55 56 is_stmt 0 view .LVU274
+ 1172 0024 84ED170A 		vstr.32	s0, [r4, #92]
+ 1173              	.LVL69:
+ 1174              		.loc 5 55 56 view .LVU275
+ 1175              	.LBE197:
+ 1176              	.LBE196:
+  94:voice.cpp     **** }
+ 1177              		.loc 1 94 1 view .LVU276
+ 1178 0028 10BD     		pop	{r4, pc}
+ 1179              	.LVL70:
+ 1180              	.L41:
+ 1181              		.loc 1 94 1 view .LVU277
+ 1182 002a 00BF     		.align	2
+ 1183              	.L40:
+ 1184 002c 33335340 		.word	1079194419
+ 1185 0030 00189C46 		.word	1184634880
+ 1186 0034 00409C46 		.word	1184645120
+ 1187              		.cfi_endproc
+ 1188              	.LFE3689:
+ 1190              		.section	.text._ZN5voice14set_delay_timeEf,"ax",%progbits
+ 1191              		.align	1
+ 1192              		.p2align 2,,3
+ 1193              		.global	_ZN5voice14set_delay_timeEf
+ 1194              		.syntax unified
+ 1195              		.thumb
+ 1196              		.thumb_func
+ 1197              		.fpu fpv5-d16
+ 1199              	_ZN5voice14set_delay_timeEf:
+ 1200              	.LVL71:
+ 1201              	.LFB3690:
+  95:voice.cpp     **** 
+  96:voice.cpp     **** void voice::set_delay_time(float time)
+  97:voice.cpp     **** {
+ 1202              		.loc 1 97 1 is_stmt 1 view -0
+ 1203              		.cfi_startproc
+ 1204              		@ args = 0, pretend = 0, frame = 0
+ 1205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1206              		@ link register save eliminated.
+  98:voice.cpp     ****     float max_delay_seconds = static_cast<float>(MAX_DELAY) / fs_;
+ 1207              		.loc 1 98 5 view .LVU279
+ 1208              		.loc 1 98 63 is_stmt 0 view .LVU280
+ 1209 0000 90ED037A 		vldr.32	s14, [r0, #12]
+ 1210              	.LVL72:
+  99:voice.cpp     ****     time = time * max_delay_seconds;
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 31
 
 
- 990              	.LBE144:
-  89:voice.cpp     **** }...
- 991              		.loc 1 89 1 view .LVU224
- 992 0028 10BD     		pop	{r4, pc}
- 993              	.LVL58:
- 994              	.L37:
- 995              		.loc 1 89 1 view .LVU225
- 996 002a 00BF     		.align	2
- 997              	.L36:
- 998 002c 33335340 		.word	1079194419
- 999 0030 00189C46 		.word	1184634880
- 1000 0034 00409C46 		.word	1184645120
- 1001              		.cfi_endproc
- 1002              	.LFE3689:
- 1004              		.text
- 1005              	.Letext0:
- 1006              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1007              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
- 1008              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
- 1009              		.file 8 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
- 1010              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
- 1011              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
- 1012              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
- 1013              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
- 1014              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
- 1015              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
- 1016              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
- 1017              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
- 1018              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
- 1019              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
- 1020              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
- 1021              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
- 1022              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
- 1023              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\charconv.h
- 1024              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
- 1025              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
- 1026              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
- 1027              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
- 1028              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
- 1029              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
- 1030              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
- 1031              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
- 1032              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
- 1033              		.file 32 "../../../../../DaisyExamples/DaisySP//Source/Control/adenv.h"
- 1034              		.file 33 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
- 1035              		.file 34 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
- 1036              		.file 35 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
- 1037              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
- 1038              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
- 1039              		.file 38 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
- 1040              		.file 39 "voice.h"
- 1041              		.file 40 "<built-in>"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s 			page 26
+ 1211              		.loc 1 99 5 is_stmt 1 view .LVU281
+ 100:voice.cpp     ****     float delay_in_samples = time * fs_;
+ 1212              		.loc 1 100 5 view .LVU282
+ 1213              	.LBB198:
+ 1214              	.LBB199:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+ 1215              		.loc 2 64 60 is_stmt 0 view .LVU283
+ 1216 0004 45F6BF53 		movw	r3, #23999
+ 1217              	.LBE199:
+ 1218              	.LBE198:
+  98:voice.cpp     ****     time = time * max_delay_seconds;
+ 1219              		.loc 1 98 11 view .LVU284
+ 1220 0008 DFED0D6A 		vldr.32	s13, .L43
+ 1221              	.LBB203:
+ 1222              	.LBB200:
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+ 1223              		.loc 2 63 27 view .LVU285
+ 1224 000c 00F5C020 		add	r0, r0, #393216
+ 1225              	.LVL73:
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+ 1226              		.loc 2 63 27 view .LVU286
+ 1227              	.LBE200:
+ 1228              	.LBE203:
+  98:voice.cpp     ****     time = time * max_delay_seconds;
+ 1229              		.loc 1 98 11 view .LVU287
+ 1230 0010 C6EE877A 		vdiv.f32	s15, s13, s14
+ 1231              	.LVL74:
+ 1232              	.LBB204:
+ 1233              	.LBB201:
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+ 1234              		.loc 2 63 27 view .LVU288
+ 1235 0014 00F69C32 		addw	r2, r0, #2972
+ 1236              	.LBE201:
+ 1237              	.LBE204:
+  99:voice.cpp     ****     float delay_in_samples = time * fs_;
+ 1238              		.loc 1 99 10 view .LVU289
+ 1239 0018 27EE800A 		vmul.f32	s0, s15, s0
+ 1240              	.LVL75:
+ 1241              		.loc 1 100 11 view .LVU290
+ 1242 001c 20EE070A 		vmul.f32	s0, s0, s14
+ 1243              	.LVL76:
+ 101:voice.cpp     ****     delay_line_.SetDelay(delay_in_samples);
+ 1244              		.loc 1 101 5 is_stmt 1 view .LVU291
+ 1245              	.LBB205:
+ 1246              	.LBI198:
+  60:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****     {
+ 1247              		.loc 2 60 17 view .LVU292
+ 1248              	.LBB202:
+  62:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         frac_             = delay - static_cast<float>(int_delay);
+ 1249              		.loc 2 62 17 is_stmt 0 view .LVU293
+ 1250 0020 FDEEC07A 		vcvt.s32.f32	s15, s0
+ 1251              	.LVL77:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+ 1252              		.loc 2 64 60 view .LVU294
+ 1253 0024 17EE901A 		vmov	r1, s15	@ int
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+ 1254              		.loc 2 63 37 view .LVU295
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 32
+
+
+ 1255 0028 B8EEE77A 		vcvt.f32.s32	s14, s15
+ 1256              	.LVL78:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+ 1257              		.loc 2 64 60 view .LVU296
+ 1258 002c 9942     		cmp	r1, r3
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+ 1259              		.loc 2 63 35 view .LVU297
+ 1260 002e 30EE470A 		vsub.f32	s0, s0, s14
+ 1261              	.LVL79:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+ 1262              		.loc 2 64 60 view .LVU298
+ 1263 0032 28BF     		it	cs
+ 1264 0034 1946     		movcs	r1, r3
+  63:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****         delay_ = static_cast<size_t>(int_delay) < max_size ? int_delay
+ 1265              		.loc 2 63 27 view .LVU299
+ 1266 0036 82ED000A 		vstr.32	s0, [r2]
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+ 1267              		.loc 2 64 16 view .LVU300
+ 1268 003a C0F8A41B 		str	r1, [r0, #2980]
+ 1269              	.LVL80:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/delayline.h ****                                                            : max_size - 1;
+ 1270              		.loc 2 64 16 view .LVU301
+ 1271              	.LBE202:
+ 1272              	.LBE205:
+ 102:voice.cpp     **** }
+ 1273              		.loc 1 102 1 view .LVU302
+ 1274 003e 7047     		bx	lr
+ 1275              	.L44:
+ 1276              		.align	2
+ 1277              	.L43:
+ 1278 0040 0080BB46 		.word	1186693120
+ 1279              		.cfi_endproc
+ 1280              	.LFE3690:
+ 1282              		.section	.text._ZN5voice13set_delay_mixEf,"ax",%progbits
+ 1283              		.align	1
+ 1284              		.p2align 2,,3
+ 1285              		.global	_ZN5voice13set_delay_mixEf
+ 1286              		.syntax unified
+ 1287              		.thumb
+ 1288              		.thumb_func
+ 1289              		.fpu fpv5-d16
+ 1291              	_ZN5voice13set_delay_mixEf:
+ 1292              	.LVL81:
+ 1293              	.LFB3691:
+ 103:voice.cpp     **** 
+ 104:voice.cpp     **** void voice::set_delay_mix(float mix)
+ 105:voice.cpp     **** {
+ 1294              		.loc 1 105 1 is_stmt 1 view -0
+ 1295              		.cfi_startproc
+ 1296              		@ args = 0, pretend = 0, frame = 0
+ 1297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1298              		@ link register save eliminated.
+ 106:voice.cpp     ****     mix = fclamp(mix * 1.1f - 0.05f, 0.0f, 1.0f);
+ 1299              		.loc 1 106 5 view .LVU304
+ 1300              		.loc 1 106 17 is_stmt 0 view .LVU305
+ 1301 0000 9FED086A 		vldr.32	s12, .L46
+ 1302              	.LBB206:
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 33
+
+
+ 1303              	.LBB207:
+ 1304              	.LBB208:
+  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1305              		.loc 3 55 5 view .LVU306
+ 1306 0004 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 1307              	.LBE208:
+ 1308              	.LBE207:
+ 1309              	.LBE206:
+ 1310              		.loc 1 106 17 view .LVU307
+ 1311 0008 DFED077A 		vldr.32	s15, .L46+4
+ 1312              	.LBB215:
+ 1313              	.LBB210:
+ 1314              	.LBB211:
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1315              		.loc 3 44 5 view .LVU308
+ 1316 000c DFED076A 		vldr.32	s13, .L46+8
+ 1317              	.LBE211:
+ 1318              	.LBE210:
+ 1319              	.LBE215:
+ 1320              		.loc 1 106 17 view .LVU309
+ 1321 0010 E0EE067A 		vfma.f32	s15, s0, s12
+ 1322              	.LVL82:
+ 1323              	.LBB216:
+ 1324              	.LBI206:
+  64:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1325              		.loc 3 64 14 is_stmt 1 view .LVU310
+ 1326              	.LBE216:
+ 1327              		.loc 3 66 5 view .LVU311
+ 1328              	.LBB217:
+ 1329              	.LBB213:
+ 1330              	.LBI210:
+  40:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1331              		.loc 3 40 14 view .LVU312
+ 1332              	.LBB212:
+  42:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ 1333              		.loc 3 42 5 view .LVU313
+  44:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1334              		.loc 3 44 5 view .LVU314
+ 1335              		.syntax unified
+ 1336              	@ 44 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1337 0014 C7FEA67A 		vmaxnm.f32 s15, s15, s13
+ 1338              	@ 0 "" 2
+ 1339              	.LVL83:
+  48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1340              		.loc 3 48 5 view .LVU315
+  48:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1341              		.loc 3 48 5 is_stmt 0 view .LVU316
+ 1342              		.thumb
+ 1343              		.syntax unified
+ 1344              	.LBE212:
+ 1345              	.LBE213:
+ 1346              	.LBB214:
+ 1347              	.LBI207:
+  51:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** {
+ 1348              		.loc 3 51 14 is_stmt 1 view .LVU317
+ 1349              	.LBB209:
+  53:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #ifdef __arm__
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 34
+
+
+ 1350              		.loc 3 53 5 view .LVU318
+  55:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** #else
+ 1351              		.loc 3 55 5 view .LVU319
+ 1352              		.syntax unified
+ 1353              	@ 55 "../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h" 1
+ 1354 0018 C7FEC77A 		vminnm.f32 s15, s15, s14
+ 1355              	@ 0 "" 2
+ 1356              	.LVL84:
+  59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1357              		.loc 3 59 5 view .LVU320
+  59:../../../../../DaisyExamples/DaisySP//Source/Utility/dsp.h **** }
+ 1358              		.loc 3 59 5 is_stmt 0 view .LVU321
+ 1359              		.thumb
+ 1360              		.syntax unified
+ 1361              	.LBE209:
+ 1362              	.LBE214:
+ 1363              	.LBE217:
+ 107:voice.cpp     ****     delay_mix_ = mix;
+ 1364              		.loc 1 107 5 is_stmt 1 view .LVU322
+ 1365              		.loc 1 107 16 is_stmt 0 view .LVU323
+ 1366 001c C0ED077A 		vstr.32	s15, [r0, #28]
+ 108:voice.cpp     **** }...
+ 1367              		.loc 1 108 1 view .LVU324
+ 1368 0020 7047     		bx	lr
+ 1369              	.L47:
+ 1370 0022 00BF     		.align	2
+ 1371              	.L46:
+ 1372 0024 CDCC8C3F 		.word	1066192077
+ 1373 0028 CDCC4CBD 		.word	-1119040307
+ 1374 002c 00000000 		.word	0
+ 1375              		.cfi_endproc
+ 1376              	.LFE3691:
+ 1378              		.text
+ 1379              	.Letext0:
+ 1380              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1381              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1382              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 1383              		.file 9 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 1384              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 1385              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 1386              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 1387              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 1388              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ 1389              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 1390              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
+ 1391              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 1392              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 1393              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ 1394              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
+ 1395              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 1396              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
+ 1397              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\charconv.h
+ 1398              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 1399              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 1400              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 1401              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 1402              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 35
+
+
+ 1403              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 1404              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 1405              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 1406              		.file 32 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 1407              		.file 33 "../../../../../DaisyExamples/DaisySP//Source/Control/adenv.h"
+ 1408              		.file 34 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 1409              		.file 35 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
+ 1410              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
+ 1411              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 1412              		.file 38 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 1413              		.file 39 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 1414              		.file 40 "voice.h"
+ 1415              		.file 41 "<built-in>"
+ARM GAS  C:\Users\samue\AppData\Local\Temp\ccLWAphj.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 voice.cpp
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:17     .text._ZN5voice4InitEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:26     .text._ZN5voice4InitEf:00000000 _ZN5voice4InitEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:70     .text._ZN5voice7ProcessEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:78     .text._ZN5voice7ProcessEf:00000000 _ZN5voice7ProcessEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:134    .text._ZN5voice10set_attackEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:142    .text._ZN5voice10set_attackEf:00000000 _ZN5voice10set_attackEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:255    .text._ZN5voice10set_attackEf:00000034 $d
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:263    .text._ZN5voice9set_decayEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:271    .text._ZN5voice9set_decayEf:00000000 _ZN5voice9set_decayEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:381    .text._ZN5voice9set_decayEf:00000030 $d
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:388    .text._ZN5voice11set_sustainEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:396    .text._ZN5voice11set_sustainEf:00000000 _ZN5voice11set_sustainEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:449    .text._ZN5voice11set_sustainEf:0000002c $d
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:454    .text._ZN5voice11set_releaseEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:462    .text._ZN5voice11set_releaseEf:00000000 _ZN5voice11set_releaseEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:572    .text._ZN5voice11set_releaseEf:00000030 $d
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:579    .text._ZN5voice8set_gateEb:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:587    .text._ZN5voice8set_gateEb:00000000 _ZN5voice8set_gateEb
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:604    .text._ZN5voice8get_gateEv:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:612    .text._ZN5voice8get_gateEv:00000000 _ZN5voice8get_gateEv
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:630    .text._ZN5voice14set_env_amountEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:638    .text._ZN5voice14set_env_amountEf:00000000 _ZN5voice14set_env_amountEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:655    .text._ZN5voice13get_env_valueEv:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:663    .text._ZN5voice13get_env_valueEv:00000000 _ZN5voice13get_env_valueEv
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:679    .text._ZN5voice10set_volumeEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:687    .text._ZN5voice10set_volumeEf:00000000 _ZN5voice10set_volumeEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:767    .text._ZN5voice10set_volumeEf:00000024 $d
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:774    .text._ZN5voice12set_feedbackEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:782    .text._ZN5voice12set_feedbackEf:00000000 _ZN5voice12set_feedbackEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:875    .text._ZN5voice12set_feedbackEf:00000024 $d
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:883    .text._ZN5voice20set_dampening_filterEf:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:891    .text._ZN5voice20set_dampening_filterEf:00000000 _ZN5voice20set_dampening_filterEf
-C:\Users\samue\AppData\Local\Temp\ccAQAbSI.s:998    .text._ZN5voice20set_dampening_filterEf:0000002c $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:17     .text._ZN5voice4InitEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:26     .text._ZN5voice4InitEf:00000000 _ZN5voice4InitEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:104    .text._ZN5voice4InitEf:0000003c $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:110    .text._ZN5voice7ProcessEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:118    .text._ZN5voice7ProcessEf:00000000 _ZN5voice7ProcessEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:310    .text._ZN5voice7ProcessEf:000000b8 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:316    .text._ZN5voice10set_attackEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:324    .text._ZN5voice10set_attackEf:00000000 _ZN5voice10set_attackEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:437    .text._ZN5voice10set_attackEf:00000034 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:445    .text._ZN5voice9set_decayEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:453    .text._ZN5voice9set_decayEf:00000000 _ZN5voice9set_decayEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:563    .text._ZN5voice9set_decayEf:00000030 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:570    .text._ZN5voice11set_sustainEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:578    .text._ZN5voice11set_sustainEf:00000000 _ZN5voice11set_sustainEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:631    .text._ZN5voice11set_sustainEf:0000002c $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:636    .text._ZN5voice11set_releaseEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:644    .text._ZN5voice11set_releaseEf:00000000 _ZN5voice11set_releaseEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:754    .text._ZN5voice11set_releaseEf:00000030 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:761    .text._ZN5voice8set_gateEb:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:769    .text._ZN5voice8set_gateEb:00000000 _ZN5voice8set_gateEb
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:786    .text._ZN5voice8get_gateEv:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:794    .text._ZN5voice8get_gateEv:00000000 _ZN5voice8get_gateEv
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:812    .text._ZN5voice14set_env_amountEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:820    .text._ZN5voice14set_env_amountEf:00000000 _ZN5voice14set_env_amountEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:837    .text._ZN5voice13get_env_valueEv:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:845    .text._ZN5voice13get_env_valueEv:00000000 _ZN5voice13get_env_valueEv
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:861    .text._ZN5voice10set_volumeEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:869    .text._ZN5voice10set_volumeEf:00000000 _ZN5voice10set_volumeEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:949    .text._ZN5voice10set_volumeEf:00000024 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:956    .text._ZN5voice12set_feedbackEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:964    .text._ZN5voice12set_feedbackEf:00000000 _ZN5voice12set_feedbackEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1061   .text._ZN5voice12set_feedbackEf:00000028 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1069   .text._ZN5voice20set_dampening_filterEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1077   .text._ZN5voice20set_dampening_filterEf:00000000 _ZN5voice20set_dampening_filterEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1184   .text._ZN5voice20set_dampening_filterEf:0000002c $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1191   .text._ZN5voice14set_delay_timeEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1199   .text._ZN5voice14set_delay_timeEf:00000000 _ZN5voice14set_delay_timeEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1278   .text._ZN5voice14set_delay_timeEf:00000040 $d
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1283   .text._ZN5voice13set_delay_mixEf:00000000 $t
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1291   .text._ZN5voice13set_delay_mixEf:00000000 _ZN5voice13set_delay_mixEf
+C:\Users\samue\AppData\Local\Temp\ccLWAphj.s:1372   .text._ZN5voice13set_delay_mixEf:00000024 $d
 
 UNDEFINED SYMBOLS
 _ZN7daisysp4Adsr4InitEfi
 _ZN7daisysp8ReverbSc4InitEf
+memset
 _ZN7daisysp4Adsr7ProcessEb
 powf
 _ZN7daisysp4Adsr13SetAttackTimeEff

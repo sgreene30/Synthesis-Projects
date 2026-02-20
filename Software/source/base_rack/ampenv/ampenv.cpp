@@ -14,7 +14,7 @@ voice ampenv;
 
 enum
 {
-	volume, env_amount, attack, decay, sustain, release, gate, env_out, feedback, dampening_filter
+	volume, attack, decay, sustain, release, gate, env_out, feedback, delay_mix, delay_time
 };
 
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
@@ -28,14 +28,14 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 
 int main(void)
 {
-	board.add_dual_control(volume, board.in_2, board.knob_1);
-	board.add_dual_control(env_amount, board.in_3, board.knob_8);
-	board.add_knob(attack, board.knob_4);
-	board.add_knob(decay, board.knob_6);
+	board.add_dual_control(volume, board.in_2, board.knob_4);
+	board.add_dual_control(delay_mix, board.in_3, board.knob_1);
+	board.add_knob(attack, board.knob_6);
+	board.add_knob(decay, board.knob_7);
 	board.add_knob(sustain, board.knob_5);
-	board.add_knob(release, board.knob_7);
+	board.add_knob(release, board.knob_8);
 	board.add_dual_control(feedback, board.in_6, board.knob_2);
-	board.add_dual_control(dampening_filter, board.in_7, board.knob_3);
+	board.add_dual_control(delay_time, board.in_7, board.knob_3);
 
 	board.add_gate_in(gate, board.in_5);
 	board.add_cv(env_out, board.out_2);
@@ -56,13 +56,13 @@ int main(void)
 		board.seed.SetLed(slow_blink);	
 
 		ampenv.set_volume(board.get_dual_control(volume));
-		ampenv.set_env_amount(board.get_dual_control(env_amount));
+		ampenv.set_delay_time(board.get_dual_control(delay_time));
 		ampenv.set_attack(board.get_knob(attack));
 		ampenv.set_decay(board.get_knob(decay));
 		ampenv.set_sustain(board.get_knob(sustain));
 		ampenv.set_release(board.get_knob(release));
 		ampenv.set_feedback(board.get_dual_control(feedback));
-		ampenv.set_dampening_filter(board.get_dual_control(dampening_filter));
+		ampenv.set_delay_mix(board.get_dual_control(delay_mix));
 
 		//search for gate input
 		ampenv.set_gate(board.get_gate_in(gate));
