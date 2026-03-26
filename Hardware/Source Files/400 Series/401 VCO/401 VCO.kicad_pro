@@ -409,11 +409,22 @@
     "reuse_designators": true,
     "subpart_first_id": 65,
     "subpart_id_separator": 0,
-    "top_level_sheets": [],
-    "used_designators": "",
+    "top_level_sheets": [
+      {
+        "filename": "401 VCO.kicad_sch",
+        "name": "401 VCO",
+        "uuid": "cf55bb40-d94f-4c17-b902-8e79a6a26311"
+      }
+    ],
+    "used_designators": "Q1,R1-8,U1,D1,#PWR1-11,C1-5",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "cf55bb40-d94f-4c17-b902-8e79a6a26311",
+      "401 VCO"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
