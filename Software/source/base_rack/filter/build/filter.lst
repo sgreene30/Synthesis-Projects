@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   36              	.LBI240:
   37              		.file 2 "../../../../../DaisyExamples/libDaisy//src/daisy_seed.h"
    1:../../../../../DaisyExamples/libDaisy//src/daisy_seed.h **** #pragma once
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 2
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 2
 
 
    2:../../../../../DaisyExamples/libDaisy//src/daisy_seed.h **** #ifndef DSY_SEED_H
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   30:../../../../../DaisyExamples/libDaisy//src/sys/system.h **** 
   31:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****         /** Method to call on the struct to set to defaults
   32:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****          ** CPU Freq set to 400MHz
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 3
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 3
 
 
   33:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****          ** Cache Enabled
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   87:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****         {
   88:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****             LT_v6_0 = 0, // Less than v6.0
   89:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****             NONE,        // No bootloader present
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 4
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 4
 
 
   90:../../../../../DaisyExamples/libDaisy//src/sys/system.h ****             v6_0,        // v6.0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   41:../../../../../DaisyExamples/libDaisy//src/hid/usb.h **** 
   42:../../../../../DaisyExamples/libDaisy//src/hid/usb.h ****     ~UsbHandle() {}
   48              		.loc 4 42 5 is_stmt 1 view .LVU4
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 5
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 5
 
 
   49              		.loc 4 42 5 is_stmt 0 view .LVU5
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   50:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****         SPEED_64CYCLES_5,
   51:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****         SPEED_387CYCLES_5,
   52:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****         SPEED_810CYCLES_5,
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 6
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 6
 
 
   53:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****     };
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  107:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****     };
  108:../../../../../DaisyExamples/libDaisy//src/per/adc.h **** 
  109:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****     AdcHandle() {}
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 7
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 7
 
 
  110:../../../../../DaisyExamples/libDaisy//src/per/adc.h ****     ~AdcHandle() {}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   48:../../../../../DaisyExamples/libDaisy//src/hid/audio.h ****           output_compensation(1.f)
   49:../../../../../DaisyExamples/libDaisy//src/hid/audio.h ****         {
   50:../../../../../DaisyExamples/libDaisy//src/hid/audio.h ****         }
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 8
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 8
 
 
   51:../../../../../DaisyExamples/libDaisy//src/hid/audio.h ****     };
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
    2:../../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #ifndef DSY_SWITCH_H
    3:../../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #define DSY_SWITCH_H
    4:../../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #include "daisy_core.h"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 9
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 9
 
 
    5:../../../../../DaisyExamples/libDaisy//src/hid/switch.h **** #include "per/gpio.h"
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   11:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****     {
   12:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         POS_CENTER = 0,
   13:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         POS_LEFT   = 1,
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 10
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 10
 
 
   14:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         POS_UP     = 1,
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
    6:../../../../../DaisyExamples/DaisySP//Source/Filters/onepole.h **** https://opensource.org/licenses/MIT.
    7:../../../../../DaisyExamples/DaisySP//Source/Filters/onepole.h **** */
    8:../../../../../DaisyExamples/DaisySP//Source/Filters/onepole.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 11
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 11
 
 
    9:../../../../../DaisyExamples/DaisySP//Source/Filters/onepole.h **** #ifndef DSY_ONEPOLE_H
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  117              	.LBE249:
  118              	.LBB250:
  119              	.LBI250:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 12
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 12
 
 
  120              		.file 12 "../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
    3:../../../../../DaisyExamples/DaisySP//Source/Filters/svf.h **** 
    4:../../../../../DaisyExamples/DaisySP//Source/Filters/svf.h **** Use of this source code is governed by an MIT-style
    5:../../../../../DaisyExamples/DaisySP//Source/Filters/svf.h **** license that can be found in the LICENSE file or at
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 13
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 13
 
 
    6:../../../../../DaisyExamples/DaisySP//Source/Filters/svf.h **** https://opensource.org/licenses/MIT.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
    4:filter.cpp    **** #include "voice.h"
    5:filter.cpp    **** 
    6:filter.cpp    **** using namespace daisy;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 14
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 14
 
 
    7:filter.cpp    **** using namespace daisysp;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  190 001a 03EB8405 		add	r5, r3, r4, lsl #2
   22:filter.cpp    **** 	{
  191              		.loc 14 22 2 discriminator 2 view .LVU39
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 15
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 15
 
 
  192 001e 0134     		adds	r4, r4, #1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  238              		.loc 14 31 1 is_stmt 1 view -0
  239              		.cfi_startproc
  240              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 16
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 16
 
 
  241              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  288 003c FFF7FEFF 		bl	_ZN5daisy11daisyCommon8add_knobEii
  289              	.LVL12:
   38:filter.cpp    **** 	board.add_knob(decay, board.knob_7);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 17
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 17
 
 
  290              		.loc 14 38 2 is_stmt 1 view .LVU59
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  335 0080 FFF7FEFF 		bl	_ZN5daisy9DaisySeed17SetAudioBlockSizeEj
  336              	.LVL19:
   48:filter.cpp    **** 	board.seed.SetAudioSampleRate(SaiHandle::Config::SampleRate::SAI_48KHZ);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 18
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 18
 
 
  337              		.loc 14 48 2 is_stmt 1 view .LVU73
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  371              	.LBB270:
   37:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****     {
   38:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****         if(!dsy_gpio_read(&pina_gpio_))
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 19
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 19
 
 
   39:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****             return POS_UP;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   36:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****     {
  397              		.loc 8 36 9 view .LVU91
  398              	.LBB276:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 20
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 20
 
 
   38:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****             return POS_UP;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  436              		.loc 14 93 3 view .LVU104
  437              		.loc 14 93 24 is_stmt 0 view .LVU105
  438 00e0 5848     		ldr	r0, .L32+32
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 21
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 21
 
 
  439 00e2 FFF7FEFF 		bl	_ZN5daisy6Switch8DebounceEv
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   99:filter.cpp    **** 		}
  100:filter.cpp    **** 
  101:filter.cpp    **** 		//search for gate input
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 22
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 22
 
 
  102:filter.cpp    **** 		filter.set_gate(board.get_gate_in(gate));
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  503              		.loc 14 56 39 view .LVU125
  504 0124 C1F30901 		ubfx	r1, r1, #0, #10
  505              	.LVL44:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 23
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 23
 
 
   57:filter.cpp    **** 		filter.set_cutoff(board.get_dual_control(cutoff));
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   62:filter.cpp    **** 		filter.set_sustain(board.get_knob(sustain));
  550              		.loc 14 62 19 is_stmt 0 view .LVU136
  551 016e 0421     		movs	r1, #4
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 24
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 24
 
 
  552 0170 2C48     		ldr	r0, .L32
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  595              		.loc 8 38 9 view .LVU147
  596 01ac 0146     		mov	r1, r0
  597 01ae 0028     		cmp	r0, #0
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 25
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 25
 
 
  598 01b0 7FF47DAF 		bne	.L18
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  637              		.loc 14 94 3 is_stmt 1 view .LVU162
  638              	.LBB288:
  639              		.loc 7 70 17 view .LVU163
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 26
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 26
 
 
  640              	.LBB285:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   41:../../../../../DaisyExamples/libDaisy//src/hid/switch3.h ****             return POS_DOWN;
  688              		.loc 8 41 13 is_stmt 1 view .LVU174
  689              		.loc 8 41 13 is_stmt 0 view .LVU175
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 27
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 27
 
 
  690              	.LBE271:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  736 0248 A4000000 		.word	.LANCHOR1+164
  737 024c 20010000 		.word	.LANCHOR1+288
  738 0250 F4000000 		.word	.LANCHOR1+244
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 28
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 28
 
 
  739 0254 B8000000 		.word	.LANCHOR1+184
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   22:../../../../../DaisyExamples/libDaisy//src/per/gpio.h **** {
   23:../../../../../DaisyExamples/libDaisy//src/per/gpio.h ****   public:
   24:../../../../../DaisyExamples/libDaisy//src/per/gpio.h ****     /** @brief Mode of operation for the specified GPIO */
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 29
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 29
 
 
   25:../../../../../DaisyExamples/libDaisy//src/per/gpio.h ****     enum class Mode
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   68:../../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         : pin(), mode(Mode::INPUT), pull(Pull::NOPULL), speed(Speed::LOW)
  775              		.loc 15 68 9 view .LVU190
  776              	.LBB439:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 30
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 30
 
 
  777              	.LBB440:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   51:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** 
   52:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** /** shorthand macro for simplifying the reading of the right 
   53:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****  *  channel of a non-interleaved output buffer named out */
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 31
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 31
 
 
   54:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** #define OUT_R out[1]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  108:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** FORCE_INLINE int8_t f2s8(float x)
  109:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** {
  110:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 32
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 32
 
 
  111:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  165:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     x = x <= FBIPMIN ? FBIPMIN : x;
  166:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     x = x >= FBIPMAX ? FBIPMAX : x;
  167:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     return (int32_t)(x * F2S32_SCALE);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 33
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 33
 
 
  168:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  222:../../../../../DaisyExamples/libDaisy//src/daisy_core.h ****     return p;
  223:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** }
  224:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 34
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 34
 
 
  225:../../../../../DaisyExamples/libDaisy//src/daisy_core.h **** /** Helper for testing sameness of two dsy_gpio_pins
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  787              	.LBE437:
  788              	.LBE436:
  789              	.LBB450:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 35
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 35
 
 
  790              	.LBI450:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  841              	.LBE482:
  842              	.LBE481:
  843              	.LBE480:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 36
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 36
 
 
  844              	.LBE479:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  895              		.loc 16 272 15 view .LVU215
  896              		.loc 16 272 15 is_stmt 0 view .LVU216
  897              	.LBE525:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 37
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 37
 
 
  898              	.LBE524:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  949              		.loc 15 69 73 view .LVU223
  950 000e 0024     		movs	r4, #0
  951              	.LBE442:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 38
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 38
 
 
  952              	.LBE444:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1004              	.LBE552:
  1005              	.LBB553:
  1006              	.LBB518:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 39
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 39
 
 
  1007              	.LBB516:
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1061              	.LBB477:
  1062              	.LBB475:
  1063              	.LBB473:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 40
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 40
 
 
  1064              	.LBB471:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1118              	.LBB543:
  1119              	.LBB541:
  1120 004c C0E92644 		strd	r4, r4, [r0, #152]
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 41
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 41
 
 
  1121              	.LVL78:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   68:../../../../../DaisyExamples/libDaisy//src/per/gpio.h ****         : pin(), mode(Mode::INPUT), pull(Pull::NOPULL), speed(Speed::LOW)
  1172              		.loc 15 68 9 view .LVU236
  1173              	.LBB595:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 42
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 42
 
 
  1174              	.LBB596:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1226              	.LBE621:
  1227              	.LBB622:
  1228              	.LBB604:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 43
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 43
 
 
  1229              	.LBB602:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   15:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****  ** For now connecting the DAC through other internal peripherals is also not supported.
   16:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****  **
   17:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****  ** Since the DAC channels have dedicated pins we don't need to pass in a pin config like with
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 44
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 44
 
 
   18:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****  ** other modules. However, it is still important to not try to use the DAC pins for anything else.
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   72:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****         /** Target Samplerate in Hz used to configure the internal 
   73:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****          ** timebase for DMA mode. Does nothing in POLLING mode.
   74:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****          ** If the value is 0 at Init time this will default to 48000Hz 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 45
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 45
 
 
   75:../../../../../DaisyExamples/libDaisy//src/per/dac.h ****          ** otherwise the driver will attempt meet the target.*/
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1309              	.LBE644:
  1310              	.LBB645:
  1311              	.LBB619:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 46
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 46
 
 
  1312              	.LBB617:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   16:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****     __attribute__((section( \
   17:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         ".qspiflash_bss"))) /**< used for reading memory in memory_mapped mode. */
   18:../../../../../DaisyExamples/libDaisy//src/per/qspi.h **** 
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 47
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 47
 
 
   19:../../../../../DaisyExamples/libDaisy//src/per/qspi.h **** namespace daisy
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   73:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         */
   74:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         enum Mode
   75:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         {
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 48
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 48
 
 
   76:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****             MEMORY_MAPPED,    /**< & */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  130:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         \return Result::OK or Result::ERR
  131:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****         */
  132:../../../../../DaisyExamples/libDaisy//src/per/qspi.h ****     Result Write(uint32_t address, uint32_t size, uint8_t* buffer);
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 49
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 49
 
 
  133:../../../../../DaisyExamples/libDaisy//src/per/qspi.h **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1360              	.LBE636:
  1361              	.LBB637:
  1362              	.LBI629:
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 50
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 50
 
 
  1363              		.loc 17 84 5 is_stmt 1 view .LVU262
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   35:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  sai_config.pin_config.sb   = {DSY_GPIOE, 3};
   36:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  // Then Initialize
   37:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  SaiHandle sai;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 51
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 51
 
 
   38:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****  *  sai.Init(sai_config);
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
   92:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****         {
   93:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****             dsy_gpio_pin mclk, fs, sck, sa, sb;
   94:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****         } pin_config;
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 52
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 52
 
 
   95:../../../../../DaisyExamples/libDaisy//src/per/sai.h ****         SampleRate sr;
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
    9:filter.cpp    **** int blocksize = 32;
  1415              		.loc 14 9 13 view .LVU273
  1416 00ce 1549     		ldr	r1, .L36+8
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 53
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 53
 
 
  1417              	.LBB660:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1459              	.LBB667:
   44:../../../../../DaisyExamples/DaisySP//Source/Control/adsr.h ****     ~Adsr() {}
  1460              		.loc 12 44 12 is_stmt 0 view .LVU286
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 54
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 54
 
 
  1461 00dc 1248     		ldr	r0, .L36+12
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1510              		.align	2
  1511              	.L36:
  1512 011c 00000000 		.word	.LANCHOR1
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 55
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 55
 
 
  1513 0120 00000000 		.word	__dso_handle
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1570              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
  1571              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
  1572              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 56
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 56
 
 
  1573              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
@@ -3337,37 +3337,37 @@ ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 1
  1606              		.file 60 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
  1607              		.file 61 "<built-in>"
  1608              		.file 62 "../../../../../DaisyExamples/libDaisy//src/dev/sr_595.h"
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 57
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 57
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 filter.cpp
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:17     .text._ZN5daisy11daisyCommonD2Ev:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD2Ev
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD1Ev
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:89     .text._ZN5voiceD2Ev:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD2Ev
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD1Ev
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:143    .text._Z13AudioCallbackPKPKfPPfj:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:151    .text._Z13AudioCallbackPKPKfPPfj:00000000 _Z13AudioCallbackPKPKfPPfj
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:223    .text._Z13AudioCallbackPKPKfPPfj:00000038 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:228    .text.startup.main:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:236    .text.startup.main:00000000 main
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:727    .text.startup.main:00000224 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:745    .text.startup._GLOBAL__sub_I_board:00000000 $t
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:752    .text.startup._GLOBAL__sub_I_board:00000000 _GLOBAL__sub_I_board
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1512   .text.startup._GLOBAL__sub_I_board:0000011c $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1524   .init_array:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1542   .bss.button_trigger:00000000 button_trigger
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1549   .bss.filter:00000000 filter
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1562   .data.fs:00000000 fs
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1555   .data.blocksize:00000000 blocksize
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1536   .bss.board:00000000 board
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1532   .bss.board:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1543   .bss.button_trigger:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1545   .bss.filter:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1552   .data.blocksize:00000000 $d
-C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s:1558   .data.fs:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:17     .text._ZN5daisy11daisyCommonD2Ev:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD2Ev
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:26     .text._ZN5daisy11daisyCommonD2Ev:00000000 _ZN5daisy11daisyCommonD1Ev
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:89     .text._ZN5voiceD2Ev:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD2Ev
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:97     .text._ZN5voiceD2Ev:00000000 _ZN5voiceD1Ev
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:143    .text._Z13AudioCallbackPKPKfPPfj:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:151    .text._Z13AudioCallbackPKPKfPPfj:00000000 _Z13AudioCallbackPKPKfPPfj
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:223    .text._Z13AudioCallbackPKPKfPPfj:00000038 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:228    .text.startup.main:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:236    .text.startup.main:00000000 main
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:727    .text.startup.main:00000224 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:745    .text.startup._GLOBAL__sub_I_board:00000000 $t
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:752    .text.startup._GLOBAL__sub_I_board:00000000 _GLOBAL__sub_I_board
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1512   .text.startup._GLOBAL__sub_I_board:0000011c $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1524   .init_array:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1542   .bss.button_trigger:00000000 button_trigger
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1549   .bss.filter:00000000 filter
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1562   .data.fs:00000000 fs
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1555   .data.blocksize:00000000 blocksize
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1536   .bss.board:00000000 board
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1532   .bss.board:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1543   .bss.button_trigger:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1545   .bss.filter:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1552   .data.blocksize:00000000 $d
+C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s:1558   .data.fs:00000000 $d
                            .group:00000000 _ZN5daisy11daisyCommonD5Ev
                            .group:00000000 _ZN5voiceD5Ev
 
@@ -3397,7 +3397,7 @@ _ZN5daisy6System6GetNowEv
 _ZN5daisy9DaisySeed6SetLedEb
 _ZN5daisy11daisyCommon16get_dual_controlEi
 _ZN5voice10set_cutoffEf
-ARM GAS  C:\Users\samue\AppData\Local\Temp\ccmm5o8g.s 			page 58
+ARM GAS  C:\Users\samue\AppData\Local\Temp\cccaq0Dy.s 			page 58
 
 
 _ZN5voice7set_resEf

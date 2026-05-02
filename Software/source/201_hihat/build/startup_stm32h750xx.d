@@ -1,4 +1,5 @@
-build/voice.o: voice.cpp \
+build/startup_stm32h750xx.o: \
+ ../../../../DaisyExamples/libDaisy//core/startup_stm32h750xx.c \
  ../../../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../../../DaisyExamples/libDaisy//Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
  ../../../../DaisyExamples/libDaisy//Drivers/CMSIS/Include/core_cm7.h \
