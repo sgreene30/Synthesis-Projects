@@ -28,7 +28,7 @@ class voice
         uint8_t noise_mode_;
         Oscillator osc_1_, osc_2_, osc_3_, osc_4_, osc_5_, osc_6_;
         Overdrive distortion_;
-        WhiteNoise noise_;
+        WhiteNoise noise_;0
         float osc_1_base_freq_ = 264.0f;
         float osc_2_base_freq_ = 318.0f;
         float osc_3_base_freq_ = 375.0f;
