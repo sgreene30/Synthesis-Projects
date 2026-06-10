@@ -1,13 +1,13 @@
 (footprint "SW_TOGGLE_2MS3T1B3M2QES"
-	(version 20240108)
+	(version 20260206)
 	(generator "pcbnew")
-	(generator_version "8.0")
+	(generator_version "10.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
 		(at -1.778 -3.302 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "d85fe76a-08b4-4a07-b67a-1060be11bfb8")
+		(uuid "bfcd4327-45f8-4816-aed6-e45a90045d19")
 		(effects
 			(font
 				(size 1 1)
@@ -20,22 +20,10 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "7b9d202b-329e-4288-bf90-00aaced940e0")
+		(uuid "7e55a67e-480e-48fc-91f2-c7dc980cedeb")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Footprint" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "e19572cb-33e6-43e6-8d45-33ff8175e50c")
-		(effects
-			(font
-				(size 1.27 1.27)
 				(thickness 0.15)
 			)
 		)
@@ -44,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "5dc4b1a7-2302-471e-9f04-93deeae815a8")
+		(uuid "8801454b-6c1d-4050-ad14-804d29b05c2a")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -56,7 +44,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "27d323d5-ddaa-4cd6-a900-f55fe07c12f1")
+		(uuid "a975cb09-2636-40e0-a8c7-ef32d36a2fdf")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -65,6 +53,7 @@
 		)
 	)
 	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
 	(fp_rect
 		(start -4.064 -2.54)
 		(end 4.064 2.54)
@@ -72,9 +61,9 @@
 			(width 0.1)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.SilkS")
-		(uuid "cc23235f-bf53-49fe-b128-d40a44895c35")
+		(uuid "25fe89ee-4009-4420-996a-73aa6bcb9c22")
 	)
 	(fp_rect
 		(start -4.064 -2.54)
@@ -83,9 +72,9 @@
 			(width 0.05)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.CrtYd")
-		(uuid "5e6efd16-a06c-43f4-95a7-66cc29bf9052")
+		(uuid "27b99eb5-8095-4e09-b93b-e10b34f97f5a")
 	)
 	(fp_rect
 		(start -4.064 -2.54)
@@ -94,15 +83,15 @@
 			(width 0.1)
 			(type default)
 		)
-		(fill none)
+		(fill no)
 		(layer "F.Fab")
-		(uuid "a9d3fa18-08ce-4741-b405-196df9763590")
+		(uuid "f03f1ad9-d8d7-435b-bc44-86b9c42eb533")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 3.302 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "371e1b3d-37e1-4527-9662-105d8113c2f3")
+		(uuid "1490784b-43b2-49c6-a728-48cfe6a1a822")
 		(effects
 			(font
 				(size 1 1)
@@ -116,7 +105,7 @@
 		(drill 1.1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "4b758a8c-3151-43b5-a243-ab96a0375bcc")
+		(uuid "05c19e4b-8de9-46f9-bd3d-48619bac30a4")
 	)
 	(pad "2" thru_hole circle
 		(at 0 0)
@@ -124,7 +113,7 @@
 		(drill 1.1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b674c8b5-48b3-4605-a291-159c97d893c6")
+		(uuid "cb33752d-a3ca-4baa-bd4c-4aa3d33ec8c5")
 	)
 	(pad "3" thru_hole circle
 		(at 2.54 0)
@@ -132,9 +121,10 @@
 		(drill 1.1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "0c88bc31-fbcd-44c3-9f09-b6ab53151fb1")
+		(uuid "d720f43c-d4cd-4cef-912a-2ea2d01e3f24")
 	)
-	(model "C:/Users/z003tf7t/Documents/projects/Hardware/lib/3d models/2MS3T1B3M2QES.stp"
+	(embedded_fonts no)
+	(model "${KICAD_DIALTONE}/2MS3T1B3M2QES.stp"
 		(offset
 			(xyz 0 0 0)
 		)
